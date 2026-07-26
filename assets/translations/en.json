@@ -46,6 +46,14 @@
     "add_group": "Add group",
     "add_entry": "Add entry"
   },
+  "move_mode": {
+    "copy": "Copy",
+    "cut": "Cut",
+    "paste": "Paste",
+    "delete": "Delete",
+    "confirm_delete": "Are you sure you want to move the selected items to the trash?",
+    "invalid_target": "You can't paste a folder inside itself"
+  },
   "add_entry": {
     "add_entry": "Add entry",
     "edit_entry": "Edit entry",

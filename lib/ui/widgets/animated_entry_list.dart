@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
 import 'package:keepassux/ui/model/drag_item.dart';
+import 'package:keepassux/ui/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/draggable_group_item.dart';
 import 'package:keepassux/ui/widgets/fade_in_item.dart';
@@ -31,6 +32,7 @@ class AnimatedEntryList extends StatefulWidget {
     this.isTrashMode = false,
     this.onDeleteEntry,
     this.onDeleteGroup,
+    this.enableSelection = false,
     super.key,
   });
 
@@ -48,6 +50,8 @@ class AnimatedEntryList extends StatefulWidget {
   final void Function(String entryUuid)? onDeleteEntry;
   final void Function(String groupUuid)? onDeleteGroup;
 
+  final bool enableSelection;
+
   @override
   State<AnimatedEntryList> createState() => _AnimatedEntryListState();
 }
@@ -59,6 +63,26 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
   List<DbGroup> _displayedGroups = [];
   List<DbEntry> _displayedEntries = [];
   bool _isDragging = false;
+
+  SelectionModeController get _selection => SelectionModeController.instance;
+
+  bool get _selectionActive => widget.enableSelection && _selection.isActive;
+
+  @override
+  void initState() {
+    super.initState();
+    _selection.addListener(_onSelectionChanged);
+  }
+
+  @override
+  void dispose() {
+    _selection.removeListener(_onSelectionChanged);
+    super.dispose();
+  }
+
+  void _onSelectionChanged() {
+    if (mounted) setState(() {});
+  }
 
   bool get _trashHasItems {
     final trash = widget.trashGroup;
@@ -143,12 +167,12 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
       );
       oldList.removeAt(index);
     }
-    oldUuids = oldList.map(getUuid).toList();
 
     for (int i = 0; i < newList.length; i++) {
       final newItem = newList[i];
       final newItemUuid = getUuid(newItem);
-      final oldIndex = oldUuids.indexOf(newItemUuid);
+      final oldIndex =
+          oldList.indexWhere((item) => getUuid(item) == newItemUuid);
       if (oldIndex == -1) {
         listKey.currentState?.insertItem(i, duration: const Duration(milliseconds: 300));
         oldList.insert(i, newItem);
@@ -285,7 +309,9 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                 SizedBox(width: 16),
                 Expanded(
                   child: InkWell(
-                    onTap: () => widget.onGroupTap?.call(trash),
+                    onTap: _selectionActive
+                        ? null
+                        : () => widget.onGroupTap?.call(trash),
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 200),
                       decoration: cardDecoration(context).copyWith(
@@ -481,6 +507,7 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                 ),
               );
             }
+            final isGroupSelected = _selection.isGroupSelected(currentGroup.uuid);
             return SizeTransition(
               sizeFactor: animation,
               axisAlignment: -1.0,
@@ -490,6 +517,16 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                   group: currentGroup,
                   sourceGroupUuid: widget.group!.uuid,
                   onTap: () => widget.onGroupTap?.call(currentGroup),
+                  selectionEnabled: _selectionActive,
+                  isSelected: isGroupSelected,
+                  isTinted: isGroupSelected && _selection.isPasting,
+                  isFaded:
+                      isGroupSelected && _selection.isPasting && _selection.isCut,
+                  onSelectionTap: _selection.isSelecting
+                      ? () => _selection.toggleGroup(currentGroup.uuid)
+                      : (_selection.isPasting && !isGroupSelected
+                          ? () => widget.onGroupTap?.call(currentGroup)
+                          : null),
                   onDragStarted: _handleDragStarted,
                   onDragEnd: _handleDragEnded,
                   isDescendantOf: (ancestorUuid, descendantUuid) {
@@ -549,6 +586,7 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                 ),
               );
             }
+            final isEntrySelected = _selection.isEntrySelected(currentEntry.uuid);
             return SizeTransition(
               sizeFactor: animation,
               axisAlignment: -1.0,
@@ -557,6 +595,14 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                 child: DraggableEntryItem(
                   entry: currentEntry,
                   sourceGroupUuid: widget.group!.uuid,
+                  selectionEnabled: _selectionActive,
+                  isSelected: isEntrySelected,
+                  isTinted: isEntrySelected && _selection.isPasting,
+                  isFaded:
+                      isEntrySelected && _selection.isPasting && _selection.isCut,
+                  onSelectionTap: _selection.isSelecting
+                      ? () => _selection.toggleEntry(currentEntry.uuid)
+                      : null,
                   onDragStarted: _handleDragStarted,
                   onDragEnd: _handleDragEnded,
                 ),

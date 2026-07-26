@@ -183,6 +183,63 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
         replyPort.send(
           KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
         );
+      } else if (command is MoveItemsCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        final toGroup = _findGroup(kdbx!, command.toGroupUuid);
+        for (final groupUuid in command.groupUuids) {
+          final groupToMove = _findGroup(kdbx!, groupUuid);
+          if (groupToMove.uuid.uuid == toGroup.uuid.uuid) continue;
+          if (groupToMove.parent?.uuid.uuid == toGroup.uuid.uuid) continue;
+          final descendants =
+              groupToMove.getAllGroups().map((g) => g.uuid.uuid).toList();
+          if (descendants.contains(toGroup.uuid.uuid)) {
+            throw Exception('Cannot move group into its own descendant');
+          }
+          kdbx!.move(groupToMove, toGroup);
+        }
+        for (final entryUuid in command.entryUuids) {
+          final entry = _findEntry(kdbx!, entryUuid);
+          if (entry.parent?.uuid.uuid == toGroup.uuid.uuid) continue;
+          kdbx!.move(entry, toGroup);
+        }
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
+      } else if (command is DeleteItemsCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        for (final groupUuid in command.groupUuids) {
+          final group = _findGroup(kdbx!, groupUuid);
+          kdbx!.deleteGroup(group);
+        }
+        for (final entryUuid in command.entryUuids) {
+          final entry = _findEntry(kdbx!, entryUuid);
+          kdbx!.deleteEntry(entry);
+        }
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
+      } else if (command is CopyItemsCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        final toGroup = _findGroup(kdbx!, command.toGroupUuid);
+        for (final groupUuid in command.groupUuids) {
+          final source = _findGroup(kdbx!, groupUuid);
+          if (source.uuid.uuid == toGroup.uuid.uuid ||
+              source
+                  .getAllGroups()
+                  .any((g) => g.uuid.uuid == toGroup.uuid.uuid)) {
+            throw Exception('Cannot copy group into its own descendant');
+          }
+          _cloneGroup(kdbx!, source, toGroup);
+        }
+        for (final entryUuid in command.entryUuids) {
+          _cloneEntry(kdbx!, _findEntry(kdbx!, entryUuid), toGroup);
+        }
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
       } else if (command is UpdateGroupCmd) {
         if (kdbx == null) throw Exception('No database loaded');
         final group = _findGroup(kdbx!, command.groupUuid);
@@ -327,6 +384,39 @@ KdbxEntry _findEntry(KdbxFile kdbx, String uuid) {
     if (entry.uuid.uuid == uuid) return entry;
   }
   throw Exception('Entry not found: $uuid');
+}
+
+KdbxEntry _cloneEntry(KdbxFile kdbx, KdbxEntry source, KdbxGroup target) {
+  final copy = KdbxEntry.create(kdbx, target);
+  target.addEntry(copy);
+  for (final field in source.stringEntries) {
+    if (field.value != null) {
+      copy.setString(field.key, field.value);
+    }
+  }
+  final icon = source.icon.get();
+  if (icon != null) copy.icon.set(icon);
+  if (source.customIcon != null) copy.customIcon = source.customIcon;
+  return copy;
+}
+
+KdbxGroup _cloneGroup(KdbxFile kdbx, KdbxGroup source, KdbxGroup targetParent) {
+  final copy = KdbxGroup.create(
+    ctx: kdbx.ctx,
+    parent: targetParent,
+    name: source.name.get() ?? '',
+  );
+  targetParent.addGroup(copy);
+  final icon = source.icon.get();
+  if (icon != null) copy.icon.set(icon);
+  if (source.customIcon != null) copy.customIcon = source.customIcon;
+  for (final entry in source.entries.toList()) {
+    _cloneEntry(kdbx, entry, copy);
+  }
+  for (final child in source.groups.toList()) {
+    _cloneGroup(kdbx, child, copy);
+  }
+  return copy;
 }
 
 DbRoot _serializeRoot(KdbxFile kdbx) {

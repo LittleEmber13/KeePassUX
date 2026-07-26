@@ -83,6 +83,34 @@ class MoveGroupCmd extends KdbxCommand {
   });
 }
 
+class MoveItemsCmd extends KdbxCommand {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+  final String toGroupUuid;
+  MoveItemsCmd({
+    required this.entryUuids,
+    required this.groupUuids,
+    required this.toGroupUuid,
+  });
+}
+
+class CopyItemsCmd extends KdbxCommand {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+  final String toGroupUuid;
+  CopyItemsCmd({
+    required this.entryUuids,
+    required this.groupUuids,
+    required this.toGroupUuid,
+  });
+}
+
+class DeleteItemsCmd extends KdbxCommand {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+  DeleteItemsCmd({required this.entryUuids, required this.groupUuids});
+}
+
 class UpdateGroupCmd extends KdbxCommand {
   final String groupUuid;
   final String name;

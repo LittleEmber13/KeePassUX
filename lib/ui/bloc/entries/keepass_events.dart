@@ -80,6 +80,37 @@ class MoveGroup extends KeePassEvent {
   });
 }
 
+class MoveItems extends KeePassEvent {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+  final String toGroupUuid;
+
+  MoveItems({
+    required this.entryUuids,
+    required this.groupUuids,
+    required this.toGroupUuid,
+  });
+}
+
+class CopyItems extends KeePassEvent {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+  final String toGroupUuid;
+
+  CopyItems({
+    required this.entryUuids,
+    required this.groupUuids,
+    required this.toGroupUuid,
+  });
+}
+
+class DeleteItems extends KeePassEvent {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+
+  DeleteItems({required this.entryUuids, required this.groupUuids});
+}
+
 class UpdateEntry extends KeePassEvent {
   final String entryUuid;
   final String title;

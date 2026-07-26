@@ -25,6 +25,9 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     on<UpdateEntry>(_onUpdateEntry);
     on<MoveEntry>(_onMoveEntry);
     on<MoveGroup>(_onMoveGroup);
+    on<MoveItems>(_onMoveItems);
+    on<CopyItems>(_onCopyItems);
+    on<DeleteItems>(_onDeleteItems);
     on<UpdateGroup>(_onUpdateGroup);
     on<DeleteEntry>(_onDeleteEntry);
     on<DeleteGroup>(_onDeleteGroup);
@@ -39,6 +42,8 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
   final KdbxIsolate _kdbxIsolate = KdbxIsolate();
   SharedPreferences? preferences;
   DbGroup? _currentRoot;
+
+  DbGroup? get currentRoot => _currentRoot;
 
   Logger logger = Logger();
 
@@ -250,6 +255,77 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassMoveSuccess());
+    } catch (e) {
+      logger.e(e);
+      emit(KeePassError(tr("exception.unknown")));
+    }
+  }
+
+  Future<void> _onMoveItems(MoveItems event, Emitter<KeePassState> emit) async {
+    try {
+      emit(KeePassLoading());
+
+      final result = await _kdbxIsolate.send<KdbxActionResult>(
+        MoveItemsCmd(
+          entryUuids: event.entryUuids,
+          groupUuids: event.groupUuids,
+          toGroupUuid: event.toGroupUuid,
+        ),
+      );
+      _currentRoot = result.root.rootGroup;
+
+      await _saveBytes(result.savedBytes);
+
+      emit(KeePassRootGroup(_currentRoot!));
+      emit(KeePassMoveSuccess());
+    } catch (e) {
+      logger.e(e);
+      emit(KeePassError(tr("exception.unknown")));
+    }
+  }
+
+  Future<void> _onCopyItems(CopyItems event, Emitter<KeePassState> emit) async {
+    try {
+      emit(KeePassLoading());
+
+      final result = await _kdbxIsolate.send<KdbxActionResult>(
+        CopyItemsCmd(
+          entryUuids: event.entryUuids,
+          groupUuids: event.groupUuids,
+          toGroupUuid: event.toGroupUuid,
+        ),
+      );
+      _currentRoot = result.root.rootGroup;
+
+      await _saveBytes(result.savedBytes);
+
+      emit(KeePassRootGroup(_currentRoot!));
+      emit(KeePassMoveSuccess());
+    } catch (e) {
+      logger.e(e);
+      emit(KeePassError(tr("exception.unknown")));
+    }
+  }
+
+  Future<void> _onDeleteItems(
+    DeleteItems event,
+    Emitter<KeePassState> emit,
+  ) async {
+    try {
+      emit(KeePassLoading());
+
+      final result = await _kdbxIsolate.send<KdbxActionResult>(
+        DeleteItemsCmd(
+          entryUuids: event.entryUuids,
+          groupUuids: event.groupUuids,
+        ),
+      );
+      _currentRoot = result.root.rootGroup;
+
+      await _saveBytes(result.savedBytes);
+
+      emit(KeePassRootGroup(_currentRoot!));
+      emit(KeePassDeleteEntrySuccess());
     } catch (e) {
       logger.e(e);
       emit(KeePassError(tr("exception.unknown")));

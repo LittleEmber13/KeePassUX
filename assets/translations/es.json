@@ -46,6 +46,14 @@
     "add_group": "Añadir grupo",
     "add_entry": "Añadir entrada"
   },
+  "move_mode": {
+    "copy": "Copiar",
+    "cut": "Cortar",
+    "paste": "Pegar",
+    "delete": "Eliminar",
+    "confirm_delete": "¿Seguro que quieres mover los elementos seleccionados a la papelera?",
+    "invalid_target": "No puedes pegar una carpeta dentro de sí misma"
+  },
   "add_entry": {
     "add_entry": "Añadir entrada",
     "edit_entry": "Editar entrada",

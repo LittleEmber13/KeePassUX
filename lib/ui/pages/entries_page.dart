@@ -119,6 +119,7 @@ class _EntriesTabState extends State<EntriesTab>
               group: group,
               rootGroup: _rootGroup,
               trashGroup: _trashGroup,
+              enableSelection: true,
               onGroupTap: (g) {
                 if (g.isRecycleBin) {
                   Navigator.push(

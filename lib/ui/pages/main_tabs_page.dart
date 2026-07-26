@@ -9,8 +9,10 @@ import 'package:keepassux/ui/pages/entries_page.dart';
 import 'package:keepassux/ui/pages/search_page.dart';
 import 'package:keepassux/ui/pages/settings_page.dart';
 import 'package:keepassux/ui/pages/start_page.dart';
+import 'package:keepassux/ui/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
+import 'package:keepassux/ui/widgets/move_mode_bar.dart';
 import 'package:keepassux/ui/widgets/root_app_bar.dart';
 
 class MainTabsPage extends StatefulWidget {
@@ -65,16 +67,23 @@ class _MainTabsPageState extends State<MainTabsPage>
     );
   }
 
+  SelectionModeController get _selection => SelectionModeController.instance;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<KeePassBloc, KeePassState>(
       builder: (context, state) {
-        return Stack(
-          fit: StackFit.expand,
-          children: [
-            _page(),
-            LoadingOverlay(isLoading: state is KeePassLoading),
-          ],
+        return ListenableBuilder(
+          listenable: _selection,
+          builder: (context, _) {
+            return Stack(
+              fit: StackFit.expand,
+              children: [
+                _page(),
+                LoadingOverlay(isLoading: state is KeePassLoading),
+              ],
+            );
+          },
         );
       },
     );
@@ -83,10 +92,12 @@ class _MainTabsPageState extends State<MainTabsPage>
   Widget _page() {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedIndex: _currentIndex,
-        onTabSelected: _onTabSelected,
-      ),
+      bottomNavigationBar: _selection.isActive
+          ? MoveModeBar(currentGroupUuid: null)
+          : CustomBottomNavigationBar(
+              selectedIndex: _currentIndex,
+              onTabSelected: _onTabSelected,
+            ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,11 +119,26 @@ class _MainTabsPageState extends State<MainTabsPage>
                     (Route<dynamic> route) => false,
                   );
                 },
+                onTapMove: _currentIndex == 0
+                    ? () {
+                        if (_selection.isActive) {
+                          _selection.cancel();
+                        } else {
+                          final rootUuid =
+                              context.read<KeePassBloc>().currentRoot?.uuid;
+                          if (rootUuid != null) _selection.start(rootUuid);
+                        }
+                      }
+                    : null,
+                moveActive: _selection.isActive,
               ),
             ),
             Expanded(
               child: PageView(
                 controller: _pageController,
+                physics: _selection.isActive
+                    ? const NeverScrollableScrollPhysics()
+                    : null,
                 onPageChanged: (index) {
                   setState(() => _currentIndex = index);
                 },

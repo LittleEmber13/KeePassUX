@@ -5,10 +5,12 @@ import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
 import 'package:keepassux/ui/model/drag_item.dart';
+import 'package:keepassux/ui/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/widgets/animated_entry_list.dart';
 import 'package:keepassux/ui/widgets/group_app_bar.dart';
 import 'package:keepassux/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
+import 'package:keepassux/ui/widgets/move_mode_bar.dart';
 import 'package:keepassux/ui/pages/add_group.dart';
 
 import '../model/db_group.dart';
@@ -27,12 +29,23 @@ class _GroupEntriesPageState extends State<GroupEntriesPage> {
   DbGroup? _rootGroup;
   bool _isDragging = false;
 
+  SelectionModeController get _selection => SelectionModeController.instance;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<KeePassBloc>().add(GetRootGroup());
     });
+  }
+
+  @override
+  void dispose() {
+    if (_selection.isSelecting &&
+        _selection.sourceGroupUuid == widget.uuidGroup) {
+      _selection.cancel();
+    }
+    super.dispose();
   }
 
   void _onDragStateChanged(bool dragging) {
@@ -90,12 +103,17 @@ class _GroupEntriesPageState extends State<GroupEntriesPage> {
         }
       },
       builder: (context, state) {
-        return Stack(
-          fit: StackFit.expand,
-          children: [
-            _page(),
-            LoadingOverlay(isLoading: state is KeePassLoading),
-          ],
+        return ListenableBuilder(
+          listenable: _selection,
+          builder: (context, _) {
+            return Stack(
+              fit: StackFit.expand,
+              children: [
+                _page(),
+                LoadingOverlay(isLoading: state is KeePassLoading),
+              ],
+            );
+          },
         );
       },
     );
@@ -117,6 +135,15 @@ class _GroupEntriesPageState extends State<GroupEntriesPage> {
             child: GroupAppBar(
               title: group?.name ?? '',
               onTapExit: () => Navigator.pop(context),
+              onTapMove: () {
+                if (_selection.isActive) {
+                  _selection.cancel();
+                } else {
+                  _selection.start(widget.uuidGroup);
+                }
+              },
+              moveActive: _selection.isActive,
+              hideExit: _selection.isSelecting,
               onTapEdit: group != null
                   ? () {
                       Navigator.push(
@@ -131,10 +158,12 @@ class _GroupEntriesPageState extends State<GroupEntriesPage> {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        uuidGroup: widget.uuidGroup,
-        selectedIndex: 0,
-      ),
+      bottomNavigationBar: _selection.isActive
+          ? MoveModeBar(currentGroupUuid: widget.uuidGroup)
+          : CustomBottomNavigationBar(
+              uuidGroup: widget.uuidGroup,
+              selectedIndex: 0,
+            ),
       body: SafeArea(
         child: Column(
           children: [
@@ -142,6 +171,7 @@ class _GroupEntriesPageState extends State<GroupEntriesPage> {
             AnimatedEntryList(
               group: group,
               rootGroup: _rootGroup,
+              enableSelection: true,
               onGroupTap: (g) {
                 Navigator.push(
                   context,

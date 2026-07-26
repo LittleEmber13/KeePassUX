@@ -16,6 +16,11 @@ class DraggableEntryItem extends StatelessWidget {
     required this.sourceGroupUuid,
     required this.onDragStarted,
     required this.onDragEnd,
+    this.selectionEnabled = false,
+    this.isSelected = false,
+    this.isTinted = false,
+    this.isFaded = false,
+    this.onSelectionTap,
     super.key,
   });
 
@@ -24,8 +29,27 @@ class DraggableEntryItem extends StatelessWidget {
   final VoidCallback? onDragStarted;
   final VoidCallback? onDragEnd;
 
+  final bool selectionEnabled;
+  final bool isSelected;
+  final bool isTinted;
+  final bool isFaded;
+  final VoidCallback? onSelectionTap;
+
   @override
   Widget build(BuildContext context) {
+    if (selectionEnabled) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Opacity(
+          opacity: isFaded ? 0.5 : 1.0,
+          child: InkWell(
+            onTap: onSelectionTap,
+            borderRadius: BorderRadius.circular(8),
+            child: _buildEntryItem(context),
+          ),
+        ),
+      );
+    }
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: LongPressDraggable<DragItem>(
@@ -89,8 +113,20 @@ class DraggableEntryItem extends StatelessWidget {
   }
 
   Widget _buildEntryItem(BuildContext context) {
+    var decoration = cardDecoration(context);
+    if (isSelected) {
+      decoration = decoration.copyWith(
+        color: isTinted
+            ? Color.alphaBlend(
+                Colors.lightBlueAccent.withValues(alpha: 0.12),
+                context.appColors.cardBackground,
+              )
+            : null,
+        border: Border.all(color: Colors.lightBlueAccent, width: 2),
+      );
+    }
     return Container(
-      decoration: cardDecoration(context),
+      decoration: decoration,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(

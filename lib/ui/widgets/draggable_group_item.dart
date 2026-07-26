@@ -13,6 +13,11 @@ class DraggableGroupItem extends StatelessWidget {
     required this.onDragEnd,
     required this.onAccept,
     required this.isDescendantOf,
+    this.selectionEnabled = false,
+    this.isSelected = false,
+    this.isTinted = false,
+    this.isFaded = false,
+    this.onSelectionTap,
     super.key,
   });
 
@@ -24,8 +29,57 @@ class DraggableGroupItem extends StatelessWidget {
   final void Function(DragItem draggedItem) onAccept;
   final bool Function(String ancestorUuid, String descendantUuid) isDescendantOf;
 
+  final bool selectionEnabled;
+  final bool isSelected;
+  final bool isTinted;
+  final bool isFaded;
+  final VoidCallback? onSelectionTap;
+
+  BoxDecoration _selectionDecoration(BuildContext context) {
+    var decoration = cardDecoration(context);
+    if (isSelected) {
+      decoration = decoration.copyWith(
+        color: isTinted
+            ? Color.alphaBlend(
+                Colors.lightBlueAccent.withValues(alpha: 0.12),
+                context.appColors.cardBackground,
+              )
+            : null,
+        border: Border.all(color: Colors.lightBlueAccent, width: 2),
+      );
+    }
+    return decoration;
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (selectionEnabled) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Opacity(
+          opacity: isFaded ? 0.5 : 1.0,
+          child: Row(
+            children: [
+              Icon(FontAwesomeIcons.folder),
+              SizedBox(width: 16),
+              Expanded(
+                child: InkWell(
+                  onTap: onSelectionTap,
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    decoration: _selectionDecoration(context),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Text(group.name),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: LongPressDraggable<DragItem>(
