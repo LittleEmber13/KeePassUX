@@ -135,14 +135,9 @@ class _GroupEntriesPageState extends State<GroupEntriesPage> {
             child: GroupAppBar(
               title: group?.name ?? '',
               onTapExit: () => Navigator.pop(context),
-              onTapMove: () {
-                if (_selection.isActive) {
-                  _selection.cancel();
-                } else {
-                  _selection.start(widget.uuidGroup);
-                }
-              },
-              moveActive: _selection.isActive,
+              onTapCloseSelection:
+                  _selection.isActive ? () => _selection.cancel() : null,
+              selectionActive: _selection.isActive,
               hideExit: _selection.isSelecting,
               onTapEdit: group != null
                   ? () {

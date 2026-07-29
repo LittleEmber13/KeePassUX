@@ -119,18 +119,10 @@ class _MainTabsPageState extends State<MainTabsPage>
                     (Route<dynamic> route) => false,
                   );
                 },
-                onTapMove: _currentIndex == 0
-                    ? () {
-                        if (_selection.isActive) {
-                          _selection.cancel();
-                        } else {
-                          final rootUuid =
-                              context.read<KeePassBloc>().currentRoot?.uuid;
-                          if (rootUuid != null) _selection.start(rootUuid);
-                        }
-                      }
+                onTapCloseSelection: _currentIndex == 0 && _selection.isActive
+                    ? () => _selection.cancel()
                     : null,
-                moveActive: _selection.isActive,
+                selectionActive: _selection.isActive,
               ),
             ),
             Expanded(

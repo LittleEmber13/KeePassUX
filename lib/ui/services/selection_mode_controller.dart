@@ -15,6 +15,8 @@ class SelectionModeController extends ChangeNotifier {
   final Set<String> _entryUuids = {};
   final Set<String> _groupUuids = {};
 
+  String? _activationUuid;
+
   SelectionPhase get phase => _phase;
   SelectionAction get action => _action;
   bool get isActive => _phase != SelectionPhase.inactive;
@@ -29,16 +31,20 @@ class SelectionModeController extends ChangeNotifier {
   bool isEntrySelected(String uuid) => _entryUuids.contains(uuid);
   bool isGroupSelected(String uuid) => _groupUuids.contains(uuid);
 
-  void start(String sourceGroupUuid) {
+  void start(String sourceGroupUuid, {String? entryUuid, String? groupUuid}) {
     _phase = SelectionPhase.selecting;
     _action = SelectionAction.none;
     _sourceGroupUuid = sourceGroupUuid;
     _entryUuids.clear();
     _groupUuids.clear();
+    if (entryUuid != null) _entryUuids.add(entryUuid);
+    if (groupUuid != null) _groupUuids.add(groupUuid);
+    _activationUuid = entryUuid ?? groupUuid;
     notifyListeners();
   }
 
   void toggleEntry(String uuid) {
+    if (_consumeActivation(uuid)) return;
     if (!_entryUuids.remove(uuid)) {
       _entryUuids.add(uuid);
     }
@@ -46,14 +52,23 @@ class SelectionModeController extends ChangeNotifier {
   }
 
   void toggleGroup(String uuid) {
+    if (_consumeActivation(uuid)) return;
     if (!_groupUuids.remove(uuid)) {
       _groupUuids.add(uuid);
     }
     notifyListeners();
   }
 
+  bool _consumeActivation(String uuid) {
+    if (_activationUuid == null) return false;
+    final isActivationItem = _activationUuid == uuid;
+    _activationUuid = null;
+    return isActivationItem;
+  }
+
   void arm(SelectionAction action) {
     if (!hasSelection || action == SelectionAction.none) return;
+    _activationUuid = null;
     _action = action;
     _phase = SelectionPhase.pasting;
     notifyListeners();
@@ -70,6 +85,7 @@ class SelectionModeController extends ChangeNotifier {
     _phase = SelectionPhase.inactive;
     _action = SelectionAction.none;
     _sourceGroupUuid = null;
+    _activationUuid = null;
     _entryUuids.clear();
     _groupUuids.clear();
     notifyListeners();

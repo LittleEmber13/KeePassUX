@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:keepassux/ui/model/drag_item.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/entry_data.dart';
+import 'package:keepassux/ui/widgets/hold_detector.dart';
 import 'package:keepassux/ui/widgets/kdbx_icon_widget.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
 
@@ -21,6 +23,7 @@ class DraggableEntryItem extends StatelessWidget {
     this.isTinted = false,
     this.isFaded = false,
     this.onSelectionTap,
+    this.onHoldSelect,
     super.key,
   });
 
@@ -35,80 +38,83 @@ class DraggableEntryItem extends StatelessWidget {
   final bool isFaded;
   final VoidCallback? onSelectionTap;
 
+  final VoidCallback? onHoldSelect;
+
   @override
   Widget build(BuildContext context) {
-    if (selectionEnabled) {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: Opacity(
-          opacity: isFaded ? 0.5 : 1.0,
-          child: InkWell(
-            onTap: onSelectionTap,
-            borderRadius: BorderRadius.circular(8),
-            child: _buildEntryItem(context),
-          ),
-        ),
-      );
-    }
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
-      child: LongPressDraggable<DragItem>(
-        data: DragItem(
-          type: DragType.entry,
-          uuid: entry.uuid,
-          sourceGroupUuid: sourceGroupUuid,
-        ),
-        onDragStarted: onDragStarted,
-        onDragUpdate: (details) =>
-            DragAutoScroll.of(context)?.onDragUpdate(details.globalPosition),
-        onDragEnd: (_) {
-          DragAutoScroll.of(context)?.onDragEnd();
-          onDragEnd?.call();
-        },
-        feedback: _buildDragFeedback(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.7,
+      child: Opacity(
+        opacity: isFaded ? 0.5 : 1.0,
+        child: LongPressDraggable<DragItem>(
+          data: DragItem(
+            type: DragType.entry,
+            uuid: entry.uuid,
+            sourceGroupUuid: sourceGroupUuid,
+          ),
+          delay: onHoldSelect != null
+              ? kSelectionDragHoldDelay
+              : kLongPressTimeout,
+          onDragStarted: onDragStarted,
+          onDragUpdate: (details) =>
+              DragAutoScroll.of(context)?.onDragUpdate(details.globalPosition),
+          onDragEnd: (_) {
+            DragAutoScroll.of(context)?.onDragEnd();
+            onDragEnd?.call();
+          },
+          feedback: _buildDragFeedback(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: _buildEntryItem(context),
+            ),
+          ),
+          childWhenDragging: Opacity(
+            opacity: 0.4,
             child: _buildEntryItem(context),
           ),
-        ),
-        childWhenDragging: Opacity(
-          opacity: 0.4,
-          child: _buildEntryItem(context),
-        ),
-        child: InkWell(
-          onTap: () {
-            showModalBottomSheet(
-              context: context,
-              backgroundColor: Theme.of(context).colorScheme.surface,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(20),
-                ),
-              ),
-              isScrollControlled: true,
-              builder: (BuildContext ctx) {
-                return SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.75,
-                  child: BlocBuilder<KeePassBloc, KeePassState>(
-                    builder: (context, state) {
-                      return Stack(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(24),
-                            child: EntryData(entry: entry),
-                          ),
-                          LoadingOverlay(isLoading: state is KeePassLoading),
-                        ],
-                      );
-                    },
-                  ),
-                );
-              },
-            );
-          },
-          child: _buildEntryItem(context),
+          child: HoldDetector(
+            onHold: onHoldSelect,
+            child: InkWell(
+              onTap: selectionEnabled
+                  ? onSelectionTap
+                  : () => _showEntryDetails(context),
+              borderRadius: BorderRadius.circular(8),
+              child: _buildEntryItem(context),
+            ),
+          ),
         ),
       ),
+    );
+  }
+
+  void _showEntryDetails(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      isScrollControlled: true,
+      builder: (BuildContext ctx) {
+        return SizedBox(
+          height: MediaQuery.of(context).size.height * 0.75,
+          child: BlocBuilder<KeePassBloc, KeePassState>(
+            builder: (context, state) {
+              return Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: EntryData(entry: entry),
+                  ),
+                  LoadingOverlay(isLoading: state is KeePassLoading),
+                ],
+              );
+            },
+          ),
+        );
+      },
     );
   }
 

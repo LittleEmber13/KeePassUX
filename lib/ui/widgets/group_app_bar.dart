@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
 class GroupAppBar extends StatelessWidget {
@@ -9,17 +8,18 @@ class GroupAppBar extends StatelessWidget {
     required this.title,
     this.onTapEdit,
     this.onTapDelete,
-    this.onTapMove,
-    this.moveActive = false,
+    this.onTapCloseSelection,
+    this.selectionActive = false,
     bool? hideExit,
-  }) : hideExit = hideExit ?? moveActive;
+  }) : hideExit = hideExit ?? selectionActive;
 
   final Function() onTapExit;
   final String title;
   final Function()? onTapEdit;
   final Function()? onTapDelete;
-  final Function()? onTapMove;
-  final bool moveActive;
+
+  final Function()? onTapCloseSelection;
+  final bool selectionActive;
   final bool hideExit;
 
   @override
@@ -72,10 +72,10 @@ class GroupAppBar extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          if (onTapMove != null) ...[
+          if (onTapCloseSelection != null) ...[
             const SizedBox(width: 8),
             InkWell(
-              onTap: onTapMove,
+              onTap: onTapCloseSelection,
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 padding: const EdgeInsets.all(10),
@@ -91,7 +91,7 @@ class GroupAppBar extends StatelessWidget {
                   ],
                 ),
                 child: Icon(
-                  moveActive ? Icons.close : FontAwesomeIcons.hand,
+                  Icons.close,
                   color: Theme.of(context).colorScheme.onSurface,
                   size: 20,
                 ),

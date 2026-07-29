@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
 class RootAppBar extends StatelessWidget {
@@ -10,26 +9,27 @@ class RootAppBar extends StatelessWidget {
     required this.isExit,
     required this.title,
     this.onTapDelete,
-    this.onTapMove,
-    this.moveActive = false,
+    this.onTapCloseSelection,
+    this.selectionActive = false,
   });
 
   final Function() onTapExit;
   final bool isExit;
   final String title;
   final Function()? onTapDelete;
-  final Function()? onTapMove;
-  final bool moveActive;
+
+  final Function()? onTapCloseSelection;
+  final bool selectionActive;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         IgnorePointer(
-          ignoring: moveActive,
+          ignoring: selectionActive,
           child: AnimatedOpacity(
             duration: const Duration(milliseconds: 200),
-            opacity: moveActive ? 0.0 : 1.0,
+            opacity: selectionActive ? 0.0 : 1.0,
             child: InkWell(
               onTap: onTapExit,
               child: Container(
@@ -68,10 +68,10 @@ class RootAppBar extends StatelessWidget {
             ),
           ),
         ),
-        if (onTapMove != null) ...[
+        if (onTapCloseSelection != null) ...[
           SizedBox(width: 8),
           InkWell(
-            onTap: onTapMove,
+            onTap: onTapCloseSelection,
             child: Container(
               decoration: cardDecoration(context),
               child: Padding(
@@ -80,7 +80,7 @@ class RootAppBar extends StatelessWidget {
                   vertical: 16,
                 ),
                 child: Icon(
-                  moveActive ? Icons.close : FontAwesomeIcons.hand,
+                  Icons.close,
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),

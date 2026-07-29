@@ -1,4 +1,5 @@
 ﻿import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -91,8 +92,20 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
   }
 
   void _handleDragStarted() {
+    if (_selection.isActive) _selection.cancel();
     setState(() => _isDragging = true);
     widget.onDragStarted?.call();
+  }
+
+  void _activateSelection({String? entryUuid, String? groupUuid}) {
+    if (!widget.enableSelection || widget.group == null) return;
+    if (_selection.isActive) return;
+    HapticFeedback.selectionClick();
+    _selection.start(
+      widget.group!.uuid,
+      entryUuid: entryUuid,
+      groupUuid: groupUuid,
+    );
   }
 
   void _handleDragEnded() {
@@ -527,6 +540,9 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                       : (_selection.isPasting && !isGroupSelected
                           ? () => widget.onGroupTap?.call(currentGroup)
                           : null),
+                  onHoldSelect: widget.enableSelection
+                      ? () => _activateSelection(groupUuid: currentGroup.uuid)
+                      : null,
                   onDragStarted: _handleDragStarted,
                   onDragEnd: _handleDragEnded,
                   isDescendantOf: (ancestorUuid, descendantUuid) {
@@ -602,6 +618,9 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                       isEntrySelected && _selection.isPasting && _selection.isCut,
                   onSelectionTap: _selection.isSelecting
                       ? () => _selection.toggleEntry(currentEntry.uuid)
+                      : null,
+                  onHoldSelect: widget.enableSelection
+                      ? () => _activateSelection(entryUuid: currentEntry.uuid)
                       : null,
                   onDragStarted: _handleDragStarted,
                   onDragEnd: _handleDragEnded,
