@@ -43,6 +43,7 @@ dependencies:
   shared_preferences: ^2.5.3
   uri_content: ^3.1.1
   content_resolver: ^0.3.6
+  synchronized: ^3.4.0
   easy_localization: ^3.0.8
   local_auth: ^2.3.0
   flutter_secure_storage: ^9.2.4

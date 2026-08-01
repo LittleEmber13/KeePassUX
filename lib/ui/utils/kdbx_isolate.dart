@@ -82,8 +82,9 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
 
   KdbxFormat? format;
   KdbxFile? kdbx;
+  Future<void> pending = Future<void>.value();
 
-  receivePort.listen((dynamic message) async {
+  Future<void> handle(dynamic message) async {
     final List<dynamic> parts = message;
     final KdbxCommand command = parts[0] as KdbxCommand;
     final SendPort replyPort = parts[1] as SendPort;
@@ -99,6 +100,19 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
       } else if (command is ReloadDatabaseCmd) {
         if (kdbx == null) throw Exception('No database loaded');
         kdbx = await format!.read(command.bytes, kdbx!.credentials);
+        replyPort.send(_serializeRoot(kdbx!));
+      } else if (command is RollbackCmd) {
+        if (format == null) throw Exception('No database loaded');
+        final password = command.password;
+        if (kdbx == null && password == null) {
+          throw Exception('No database loaded');
+        }
+        kdbx = await format!.read(
+          command.bytes,
+          password != null
+              ? Credentials(ProtectedValue.fromString(password))
+              : kdbx!.credentials,
+        );
         replyPort.send(_serializeRoot(kdbx!));
       } else if (command is AddEntryCmd) {
         if (kdbx == null) throw Exception('No database loaded');
@@ -362,6 +376,10 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
     } catch (e) {
       replyPort.send(KdbxIsolateError(e.toString()));
     }
+  }
+
+  receivePort.listen((dynamic message) {
+    pending = pending.then((_) => handle(message)).catchError((_) {});
   });
 }
 

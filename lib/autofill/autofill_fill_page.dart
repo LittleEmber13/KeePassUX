@@ -1,4 +1,3 @@
-import 'package:content_resolver/content_resolver.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_autofill_service/flutter_autofill_service.dart';
 import '../ui/model/db_entry.dart';
 import '../ui/model/db_root.dart';
 import '../ui/model/kdbx_action_result.dart';
+import '../ui/services/vault_storage_service.dart';
 import '../ui/theme/theme.dart';
 import '../ui/utils/kdbx_command.dart';
 import '../ui/utils/kdbx_isolate.dart';
@@ -93,7 +93,16 @@ class _AutofillFillPageState extends State<AutofillFillPage> {
       if (choice == null) return; // dismissed
       if (choice) {
         setState(() => _busy = true);
-        await _associate(entry, pkg);
+        final associated = await _associate(entry, pkg);
+        if (mounted) setState(() => _busy = false);
+        if (!associated && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(tr('autofill.associate_error')),
+              duration: const Duration(seconds: 3),
+            ),
+          );
+        }
       }
     }
     await _fill(entry);
@@ -125,7 +134,7 @@ class _AutofillFillPageState extends State<AutofillFillPage> {
     );
   }
 
-  Future<void> _associate(DbEntry entry, String pkg) async {
+  Future<bool> _associate(DbEntry entry, String pkg) async {
     try {
       final result = await widget.isolate.send<KdbxActionResult>(
         AssociateAppCmd(
@@ -133,8 +142,22 @@ class _AutofillFillPageState extends State<AutofillFillPage> {
           association: 'androidapp://$pkg',
         ),
       );
-      await ContentResolver.writeContent(widget.kdbxUri, result.savedBytes);
-    } catch (_) {
+      await vaultStorage.save(widget.kdbxUri, result.savedBytes);
+      return true;
+    } catch (e) {
+      debugPrint('Autofill association failed: $e');
+      await _restoreIsolate();
+      return false;
+    }
+  }
+
+  Future<void> _restoreIsolate() async {
+    final previous = vaultStorage.baseline;
+    if (previous == null) return;
+    try {
+      await widget.isolate.send<DbRoot>(RollbackCmd(bytes: previous));
+    } catch (e) {
+      debugPrint('Autofill rollback failed: $e');
     }
   }
 

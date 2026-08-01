@@ -1,11 +1,14 @@
-import 'package:content_resolver/content_resolver.dart';
+import 'dart:typed_data';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
 import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
+import 'package:keepassux/ui/services/vault_storage_service.dart';
 import 'package:keepassux/ui/utils/kdbx_isolate.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uri_content/uri_content.dart';
 
 import '../../model/db_group.dart';
@@ -15,7 +18,9 @@ import '../../model/kdf_info.dart';
 import '../../utils/kdbx_command.dart';
 
 class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
-  KeePassBloc() : super(KeePassInitial()) {
+  KeePassBloc({VaultStorageService? storage})
+    : _vaultStorage = storage ?? vaultStorage,
+      super(KeePassInitial()) {
     on<LoadDatabase>(_onLoadDatabase);
     on<ReloadDatabase>(_onReloadDatabase);
     on<AddEntry>(_onAddEntry);
@@ -40,6 +45,8 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
   }
 
   final KdbxIsolate _kdbxIsolate = KdbxIsolate();
+  final VaultStorageService _vaultStorage;
+  final Lock _lock = Lock();
   SharedPreferences? preferences;
   DbGroup? _currentRoot;
 
@@ -51,6 +58,59 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     await _kdbxIsolate.init();
   }
 
+  @override
+  Future<void> close() {
+    _kdbxIsolate.dispose();
+    _vaultStorage.forgetBaseline();
+    return super.close();
+  }
+
+  Future<void> _mutate(KdbxCommand command, {String? rollbackPassword}) async {
+    await _lock.synchronized(() async {
+      final result = await _kdbxIsolate.send<KdbxActionResult>(command);
+      try {
+        await _saveBytes(result.savedBytes);
+      } catch (_) {
+        await _restoreIsolate(rollbackPassword);
+        rethrow;
+      }
+      _currentRoot = result.root.rootGroup;
+    });
+  }
+
+  Future<void> _restoreIsolate(String? password) async {
+    final previous = _vaultStorage.baseline;
+    if (previous == null) return;
+    try {
+      final root = await _kdbxIsolate.send<DbRoot>(
+        RollbackCmd(bytes: previous, password: password),
+      );
+      _currentRoot = root.rootGroup;
+    } catch (e) {
+      logger.e(e);
+    }
+  }
+
+  Future<void> _saveBytes(Uint8List bytes) async {
+    String? uri = preferences?.getString('kdbx_uri');
+    if (uri != null) {
+      await _vaultStorage.save(uri, bytes);
+    } else {
+      throw Exception('No URI saved');
+    }
+  }
+
+  KeePassError _errorFor(Object error) {
+    if (error is VaultWriteException) {
+      return KeePassError(
+        error.rolledBack
+            ? tr("exception.save_failed")
+            : tr("exception.save_failed_unrecoverable"),
+      );
+    }
+    return KeePassError(tr("exception.unknown"));
+  }
+
   Future<void> _onLoadDatabase(
     LoadDatabase event,
     Emitter<KeePassState> emit,
@@ -60,10 +120,15 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
 
       preferences = await SharedPreferences.getInstance();
 
-      final root = await _kdbxIsolate.send<DbRoot>(
-        LoadDatabaseCmd(bytes: event.bytes, password: event.password),
-      );
-      _currentRoot = root.rootGroup;
+      await _lock.synchronized(() async {
+        final root = await _kdbxIsolate.send<DbRoot>(
+          LoadDatabaseCmd(bytes: event.bytes, password: event.password),
+        );
+        _currentRoot = root.rootGroup;
+
+        final uri = preferences?.getString('kdbx_uri');
+        if (uri != null) _vaultStorage.rememberBaseline(uri, event.bytes);
+      });
 
       emit(KeePassLoaded());
     } catch (e) {
@@ -72,7 +137,7 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
           e.toString().contains('decrypt')) {
         emit(KeePassError(tr("exception.invalid_password")));
       } else {
-        emit(KeePassError(tr("exception.unknown")));
+        emit(_errorFor(e));
       }
     }
   }
@@ -86,11 +151,16 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
       preferences ??= await SharedPreferences.getInstance();
       final uri = preferences?.getString('kdbx_uri');
       if (uri == null || uri.isEmpty) return;
-      final bytes = await UriContent().from(Uri.parse(uri));
-      final root = await _kdbxIsolate.send<DbRoot>(
-        ReloadDatabaseCmd(bytes: bytes),
-      );
-      _currentRoot = root.rootGroup;
+
+      await _lock.synchronized(() async {
+        final bytes = await UriContent().from(Uri.parse(uri));
+        final root = await _kdbxIsolate.send<DbRoot>(
+          ReloadDatabaseCmd(bytes: bytes),
+        );
+        _currentRoot = root.rootGroup;
+        _vaultStorage.rememberBaseline(uri, bytes);
+      });
+
       emit(KeePassRootGroup(_currentRoot!));
     } catch (e) {
       logger.e(e);
@@ -110,18 +180,21 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
 
       preferences = await SharedPreferences.getInstance();
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
-        CreateDatabaseCmd(password: event.password),
-      );
-      _currentRoot = result.root.rootGroup;
+      await _lock.synchronized(() async {
+        final result = await _kdbxIsolate.send<KdbxActionResult>(
+          CreateDatabaseCmd(password: event.password),
+        );
 
-      await ContentResolver.writeContent(event.uri, result.savedBytes);
-      await preferences!.setString('kdbx_uri', event.uri);
+        _vaultStorage.forgetBaseline();
+        await _vaultStorage.save(event.uri, result.savedBytes);
+        await preferences!.setString('kdbx_uri', event.uri);
+        _currentRoot = result.root.rootGroup;
+      });
 
       emit(KeePassCreated());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -138,7 +211,7 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         AddEntryCmd(
           groupUuid: event.uuidGroup ?? _currentRoot!.uuid,
           title: event.title,
@@ -150,15 +223,12 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
           customIconData: event.customIconData,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassAddEntrySuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -166,21 +236,18 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         AddGroupCmd(
           parentUuid: event.uuidGroup ?? _currentRoot!.uuid,
           name: event.title,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassAddGroupSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -191,7 +258,7 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         UpdateEntryCmd(
           entryUuid: event.entryUuid,
           title: event.title,
@@ -203,15 +270,12 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
           customIconData: event.customIconData,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassUpdateEntrySuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -219,22 +283,19 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         MoveEntryCmd(
           entryUuid: event.entryUuid,
           fromGroupUuid: event.fromGroupUuid,
           toGroupUuid: event.toGroupUuid,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassMoveSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -242,22 +303,19 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         MoveGroupCmd(
           groupUuid: event.groupUuid,
           fromGroupUuid: event.fromGroupUuid,
           toGroupUuid: event.toGroupUuid,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassMoveSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -265,22 +323,19 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         MoveItemsCmd(
           entryUuids: event.entryUuids,
           groupUuids: event.groupUuids,
           toGroupUuid: event.toGroupUuid,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassMoveSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -288,22 +343,19 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         CopyItemsCmd(
           entryUuids: event.entryUuids,
           groupUuids: event.groupUuids,
           toGroupUuid: event.toGroupUuid,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassMoveSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -314,21 +366,18 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         DeleteItemsCmd(
           entryUuids: event.entryUuids,
           groupUuids: event.groupUuids,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassDeleteEntrySuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -336,21 +385,18 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         UpdateGroupCmd(
           groupUuid: event.groupUuid,
           name: event.name,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassUpdateGroupSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -358,18 +404,13 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
-        DeleteEntryCmd(entryUuid: event.entryUuid),
-      );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
+      await _mutate(DeleteEntryCmd(entryUuid: event.entryUuid));
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassDeleteEntrySuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -377,18 +418,13 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
-        DeleteGroupCmd(groupUuid: event.groupUuid),
-      );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
+      await _mutate(DeleteGroupCmd(groupUuid: event.groupUuid));
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassDeleteGroupSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -396,18 +432,13 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
-        DeleteEntryPermanentlyCmd(entryUuid: event.entryUuid),
-      );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
+      await _mutate(DeleteEntryPermanentlyCmd(entryUuid: event.entryUuid));
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassDeleteEntrySuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -415,18 +446,13 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
-        DeleteGroupPermanentlyCmd(groupUuid: event.groupUuid),
-      );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
+      await _mutate(DeleteGroupPermanentlyCmd(groupUuid: event.groupUuid));
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassDeleteGroupSuccess());
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -437,15 +463,13 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         ChangeMasterPasswordCmd(
           oldPassword: event.oldPassword,
           newPassword: event.newPassword,
         ),
+        rollbackPassword: event.oldPassword,
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassChangeMasterPasswordSuccess());
     } catch (e) {
@@ -453,7 +477,7 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
       if (e.toString().contains('Invalid current password')) {
         emit(KeePassError(tr("change_password_page.error_wrong_current")));
       } else {
-        emit(KeePassError(tr("exception.unknown")));
+        emit(_errorFor(e));
       }
     }
   }
@@ -470,7 +494,7 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
       emit(KeePassKdfParameters(info));
     } catch (e) {
       logger.e(e);
-      emit(KeePassError(tr("exception.unknown")));
+      emit(_errorFor(e));
     }
   }
 
@@ -481,16 +505,13 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     try {
       emit(KeePassLoading());
 
-      final result = await _kdbxIsolate.send<KdbxActionResult>(
+      await _mutate(
         ChangeKdfParametersCmd(
           memoryBytes: event.memoryBytes,
           iterations: event.iterations,
           parallelism: event.parallelism,
         ),
       );
-      _currentRoot = result.root.rootGroup;
-
-      await _saveBytes(result.savedBytes);
 
       emit(KeePassChangeKdfParametersSuccess());
     } catch (e) {
@@ -498,17 +519,8 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
       if (e.toString().contains('Unsupported KDF type')) {
         emit(KeePassError(tr("kdf_settings_page.error_unsupported_aes")));
       } else {
-        emit(KeePassError(tr("exception.unknown")));
+        emit(_errorFor(e));
       }
-    }
-  }
-
-  Future<void> _saveBytes(dynamic bytes) async {
-    String? uri = preferences?.getString('kdbx_uri');
-    if (uri != null) {
-      await ContentResolver.writeContent(uri, bytes);
-    } else {
-      throw Exception('No URI saved');
     }
   }
 }

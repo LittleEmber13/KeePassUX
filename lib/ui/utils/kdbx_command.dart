@@ -13,6 +13,12 @@ class ReloadDatabaseCmd extends KdbxCommand {
   ReloadDatabaseCmd({required this.bytes});
 }
 
+class RollbackCmd extends KdbxCommand {
+  final Uint8List bytes;
+  final String? password;
+  RollbackCmd({required this.bytes, this.password});
+}
+
 class AddEntryCmd extends KdbxCommand {
   final String groupUuid;
   final String title;

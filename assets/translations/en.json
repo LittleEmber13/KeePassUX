@@ -4,7 +4,9 @@
   },
   "exception": {
     "invalid_password": "Invalid password",
-    "unknown": "Unknown error"
+    "unknown": "Unknown error",
+    "save_failed": "Could not save. The changes were discarded and your database is unchanged.",
+    "save_failed_unrecoverable": "Could not save or restore the previous state. Close the app and check your file before continuing."
   },
   "start_page": {
     "title": "KeePass",
@@ -211,6 +213,7 @@
     "saving_status": "Saving password…",
     "saved_status": "Password saved",
     "group_label": "Group: {group}",
-    "open_in_app": "Open in KeepassUX"
+    "open_in_app": "Open in KeepassUX",
+    "associate_error": "Could not remember this app, but the password will still be filled in."
   }
 }

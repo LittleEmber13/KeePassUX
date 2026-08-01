@@ -1,4 +1,3 @@
-import 'package:content_resolver/content_resolver.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,6 +5,7 @@ import 'package:flutter_autofill_service/flutter_autofill_service.dart';
 
 import '../ui/model/db_root.dart';
 import '../ui/model/kdbx_action_result.dart';
+import '../ui/services/vault_storage_service.dart';
 import '../ui/utils/kdbx_command.dart';
 import '../ui/utils/kdbx_isolate.dart';
 import 'autofill_matcher.dart';
@@ -87,7 +87,7 @@ class _AutofillSavePageState extends State<AutofillSavePage> {
           password: _password,
         ),
       );
-      await ContentResolver.writeContent(widget.kdbxUri, result.savedBytes);
+      await vaultStorage.save(widget.kdbxUri, result.savedBytes);
       await AutofillService().onSaveComplete();
       if (mounted) {
         setState(() => _phase = _SavePhase.saved);

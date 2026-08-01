@@ -8,6 +8,7 @@ import 'package:uri_content/uri_content.dart';
 
 import '../ui/model/db_root.dart';
 import '../ui/services/biometric_service.dart';
+import '../ui/services/vault_storage_service.dart';
 import '../ui/theme/theme.dart';
 import '../ui/theme/theme_controller.dart';
 import '../ui/widgets/loading_overlay.dart';
@@ -85,6 +86,7 @@ class _AutofillGateState extends State<_AutofillGate> {
       }
 
       _bytes = await UriContent().from(Uri.parse(_kdbxUri));
+      vaultStorage.rememberBaseline(_kdbxUri, _bytes!);
 
       final isolate = KdbxIsolate();
       await isolate.init();

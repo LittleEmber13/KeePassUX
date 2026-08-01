@@ -4,9 +4,11 @@
   },
   "exception": {
     "invalid_password": "Contraseña inválida",
-    "unknown": "Error desconocido"
+    "unknown": "Error desconocido",
+    "save_failed": "No se pudo guardar. Los cambios se han descartado y tu base de datos sigue intacta.",
+    "save_failed_unrecoverable": "No se pudo guardar ni restaurar el estado anterior. Cierra la app y revisa tu archivo antes de seguir."
   },
-  "start_page":{
+  "start_page": {
     "title": "KeePass",
     "folder_hint": "Base de datos",
     "password_hint": "Contraseña",
@@ -211,6 +213,7 @@
     "saving_status": "Guardando contraseña…",
     "saved_status": "Contraseña guardada",
     "group_label": "Grupo: {group}",
-    "open_in_app": "Abrir en KeepassUX"
+    "open_in_app": "Abrir en KeepassUX",
+    "associate_error": "No se pudo recordar esta aplicación, pero la contraseña se rellenará igualmente."
   }
 }
