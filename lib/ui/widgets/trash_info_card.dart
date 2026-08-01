@@ -28,15 +28,21 @@ class TrashInfoCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildInstruction(
-              icon: Icons.delete_outline,
-              iconColor: context.appColors.danger,
-              text: tr("trash.info_delete"),
+              icon: Icons.info_outline,
+              iconColor: context.appColors.secondaryText,
+              text: tr("trash.info_content"),
             ),
             const SizedBox(height: 8),
             _buildInstruction(
-              icon: Icons.restore,
+              icon: Icons.more_horiz,
               iconColor: Colors.orange,
-              text: tr("trash.info_restore"),
+              text: tr("trash.info_options"),
+            ),
+            const SizedBox(height: 8),
+            _buildInstruction(
+              icon: Icons.delete_forever_outlined,
+              iconColor: context.appColors.danger,
+              text: tr("trash.info_permanent"),
             ),
           ],
         ),

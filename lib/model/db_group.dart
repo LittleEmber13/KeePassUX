@@ -38,6 +38,15 @@ class DbGroup {
     return null;
   }
 
+  DbGroup? findGroupOfEntry(String entryUuid) {
+    if (entries.any((e) => e.uuid == entryUuid)) return this;
+    for (final child in groups) {
+      final found = child.findGroupOfEntry(entryUuid);
+      if (found != null) return found;
+    }
+    return null;
+  }
+
   DbGroup? findParentOf(String childUuid) {
     for (final child in groups) {
       if (child.uuid == childUuid) return this;

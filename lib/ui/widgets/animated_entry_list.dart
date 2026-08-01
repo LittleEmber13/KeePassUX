@@ -33,6 +33,8 @@ class AnimatedEntryList extends StatefulWidget {
     this.isTrashMode = false,
     this.onDeleteEntry,
     this.onDeleteGroup,
+    this.onRestoreEntry,
+    this.onRestoreGroup,
     this.enableSelection = false,
     super.key,
   });
@@ -50,6 +52,8 @@ class AnimatedEntryList extends StatefulWidget {
   final bool isTrashMode;
   final void Function(String entryUuid)? onDeleteEntry;
   final void Function(String groupUuid)? onDeleteGroup;
+  final void Function(String entryUuid)? onRestoreEntry;
+  final void Function(String groupUuid)? onRestoreGroup;
 
   final bool enableSelection;
 
@@ -515,6 +519,8 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                     onTap: () => widget.onGroupTap?.call(currentGroup),
                     onDragStarted: widget.onDragStarted,
                     onDragEnd: widget.onDragEnded,
+                    onRestore: () =>
+                        widget.onRestoreGroup?.call(currentGroup.uuid),
                     onDelete: () => widget.onDeleteGroup?.call(currentGroup.uuid),
                   ),
                 ),
@@ -598,6 +604,10 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                     sourceGroupUuid: widget.group!.uuid,
                     onDragStarted: widget.onDragStarted,
                     onDragEnd: widget.onDragEnded,
+                    onRestore: () =>
+                        widget.onRestoreEntry?.call(currentEntry.uuid),
+                    onDelete: () =>
+                        widget.onDeleteEntry?.call(currentEntry.uuid),
                   ),
                 ),
               );

@@ -39,6 +39,8 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     on<DeleteGroup>(_onDeleteGroup);
     on<DeleteEntryPermanently>(_onDeleteEntryPermanently);
     on<DeleteGroupPermanently>(_onDeleteGroupPermanently);
+    on<RestoreEntry>(_onRestoreEntry);
+    on<RestoreGroup>(_onRestoreGroup);
     on<ChangeMasterPassword>(_onChangeMasterPassword);
     on<GetKdfParameters>(_onGetKdfParameters);
     on<ChangeKdfParameters>(_onChangeKdfParameters);
@@ -451,6 +453,34 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
 
       emit(KeePassRootGroup(_currentRoot!));
       emit(KeePassDeleteGroupSuccess());
+    } catch (e) {
+      logger.e(e);
+      emit(_errorFor(e));
+    }
+  }
+
+  Future<void> _onRestoreEntry(RestoreEntry event, Emitter<KeePassState> emit) async {
+    try {
+      emit(KeePassLoading());
+
+      await _mutate(RestoreEntryCmd(entryUuid: event.entryUuid));
+
+      emit(KeePassRootGroup(_currentRoot!));
+      emit(KeePassMoveSuccess());
+    } catch (e) {
+      logger.e(e);
+      emit(_errorFor(e));
+    }
+  }
+
+  Future<void> _onRestoreGroup(RestoreGroup event, Emitter<KeePassState> emit) async {
+    try {
+      emit(KeePassLoading());
+
+      await _mutate(RestoreGroupCmd(groupUuid: event.groupUuid));
+
+      emit(KeePassRootGroup(_currentRoot!));
+      emit(KeePassMoveSuccess());
     } catch (e) {
       logger.e(e);
       emit(_errorFor(e));

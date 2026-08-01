@@ -28,6 +28,8 @@ class _TrashPageState extends State<TrashPage> {
   DbGroup? _rootGroup;
   DbGroup? _trashGroup;
   bool _isDragging = false;
+  String? _pendingRestoreEntryUuid;
+  String? _pendingRestoreGroupUuid;
 
   @override
   void initState() {
@@ -58,6 +60,37 @@ class _TrashPageState extends State<TrashPage> {
   void _deleteGroup(String groupUuid) {
     context.read<KeePassBloc>().add(
       DeleteGroupPermanently(groupUuid: groupUuid),
+    );
+  }
+
+  void _restoreEntryToPreviousGroup(String entryUuid) {
+    _pendingRestoreEntryUuid = entryUuid;
+    context.read<KeePassBloc>().add(RestoreEntry(entryUuid: entryUuid));
+  }
+
+  void _restoreGroupToPreviousGroup(String groupUuid) {
+    _pendingRestoreGroupUuid = groupUuid;
+    context.read<KeePassBloc>().add(RestoreGroup(groupUuid: groupUuid));
+  }
+
+  void _announceRestore() {
+    final entryUuid = _pendingRestoreEntryUuid;
+    final groupUuid = _pendingRestoreGroupUuid;
+    _pendingRestoreEntryUuid = null;
+    _pendingRestoreGroupUuid = null;
+
+    final destination = entryUuid != null
+        ? _rootGroup?.findGroupOfEntry(entryUuid)
+        : (groupUuid != null ? _rootGroup?.findParentOf(groupUuid) : null);
+    if (destination == null) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          tr("trash.restored_in", namedArgs: {"group": destination.name}),
+        ),
+        duration: const Duration(seconds: 2),
+      ),
     );
   }
 
@@ -100,6 +133,9 @@ class _TrashPageState extends State<TrashPage> {
               );
             }
           });
+        }
+        if (state is KeePassMoveSuccess) {
+          _announceRestore();
         }
         if (state is KeePassError) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -160,6 +196,8 @@ class _TrashPageState extends State<TrashPage> {
               isTrashMode: true,
               onDeleteEntry: _deleteEntry,
               onDeleteGroup: _deleteGroup,
+              onRestoreEntry: _restoreEntryToPreviousGroup,
+              onRestoreGroup: _restoreGroupToPreviousGroup,
               onGroupTap: (g) {
                 Navigator.push(
                   context,

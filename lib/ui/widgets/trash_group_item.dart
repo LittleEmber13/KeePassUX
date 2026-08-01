@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,6 +6,7 @@ import 'package:keepassux/bloc/entries/keepass_events.dart';
 import 'package:keepassux/model/drag_item.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
+import 'package:keepassux/ui/widgets/trash_actions_sheet.dart';
 
 class TrashGroupItem extends StatelessWidget {
   const TrashGroupItem({
@@ -15,6 +15,7 @@ class TrashGroupItem extends StatelessWidget {
     required this.onTap,
     required this.onDragStarted,
     required this.onDragEnd,
+    required this.onRestore,
     required this.onDelete,
     this.rootGroup,
     super.key,
@@ -25,32 +26,17 @@ class TrashGroupItem extends StatelessWidget {
   final VoidCallback? onTap;
   final VoidCallback? onDragStarted;
   final VoidCallback? onDragEnd;
+  final VoidCallback onRestore;
   final VoidCallback onDelete;
   final dynamic rootGroup;
 
-  void _showDeleteDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(tr("trash.delete")),
-        content: Text(tr("trash.confirm_delete_group")),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(tr("delete.cancel")),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              onDelete();
-            },
-            child: Text(
-              tr("trash.delete"),
-              style: TextStyle(color: context.appColors.danger),
-            ),
-          ),
-        ],
-      ),
+  void _showActionsSheet(BuildContext context) {
+    TrashActionsSheet.show(
+      context,
+      name: group.name,
+      isEntry: false,
+      onRestore: onRestore,
+      onDelete: onDelete,
     );
   }
 
@@ -174,22 +160,7 @@ class TrashGroupItem extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 8),
-                InkWell(
-                  onTap: () => _showDeleteDialog(context),
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: context.appColors.danger.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(
-                      Icons.delete_outline,
-                      color: context.appColors.danger,
-                      size: 20,
-                    ),
-                  ),
-                ),
+                TrashOptionsButton(onTap: () => _showActionsSheet(context)),
               ],
             );
           },

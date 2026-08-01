@@ -176,8 +176,11 @@
     "confirm_delete_entry": "¿Estás seguro de que quieres eliminar permanentemente esta entrada?",
     "confirm_delete_group": "¿Estás seguro de que quieres eliminar permanentemente este grupo y todo su contenido?",
     "delete": "Eliminar permanentemente",
-    "info_delete": "Para eliminar un elemento de forma permanente, pulsa el botón de eliminar junto a él.",
-    "info_restore": "Para restaurar un elemento, mantenlo pulsado y arrástralo fuera de la papelera."
+    "restore": "Restaurar",
+    "restored_in": "Restaurado en «{group}»",
+    "info_content": "Estos elementos ya se han quitado de tus carpetas, pero siguen guardados en la base de datos.",
+    "info_options": "Pulsa el botón de opciones junto a un elemento para restaurarlo a su carpeta original o eliminarlo.",
+    "info_permanent": "Si lo eliminas desde aquí, se borrará de forma permanente y no podrás recuperarlo."
   },
   "autofill": {
     "needs_setup_message": "Abre KeepassUX y selecciona tu base de datos antes de usar el autocompletado.",

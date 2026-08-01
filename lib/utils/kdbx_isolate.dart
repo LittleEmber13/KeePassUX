@@ -278,6 +278,22 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
         replyPort.send(
           KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
         );
+      } else if (command is RestoreEntryCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        final entry = _findEntry(kdbx!, command.entryUuid);
+        kdbx!.move(entry, _restoreTarget(kdbx!, entry));
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
+      } else if (command is RestoreGroupCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        final group = _findGroup(kdbx!, command.groupUuid);
+        kdbx!.move(group, _restoreTarget(kdbx!, group));
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
       } else if (command is DeleteEntryPermanentlyCmd) {
         if (kdbx == null) throw Exception('No database loaded');
         final entry = _findEntry(kdbx!, command.entryUuid);
@@ -389,6 +405,27 @@ KdbxGroup _findGroup(KdbxFile kdbx, String uuid) {
     (g) => g.uuid.uuid == uuid,
     orElse: () => kdbx.body.rootGroup,
   );
+}
+
+KdbxGroup _restoreTarget(KdbxFile kdbx, KdbxObject object) {
+  final root = kdbx.body.rootGroup;
+  final previousUuid = object.previousParentGroup.get()?.uuid;
+  if (previousUuid == null) return root;
+
+  final candidate = root.getAllGroups().firstWhereOrNull(
+    (g) => g.uuid.uuid == previousUuid,
+  );
+  if (candidate == null) return root;
+
+  final recycleBinUuid = kdbx.recycleBin?.uuid;
+  if (candidate.uuid == recycleBinUuid || candidate.isInRecycleBin()) {
+    return root;
+  }
+  if (object is KdbxGroup &&
+      (candidate.uuid == object.uuid || candidate.isInGroup(object))) {
+    return root;
+  }
+  return candidate;
 }
 
 KdbxEntry _findEntry(KdbxFile kdbx, String uuid) {

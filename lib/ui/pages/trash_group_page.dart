@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
@@ -25,6 +26,8 @@ class _TrashGroupPageState extends State<TrashGroupPage> {
   DbGroup? group;
   DbGroup? _rootGroup;
   bool _isDragging = false;
+  String? _pendingRestoreEntryUuid;
+  String? _pendingRestoreGroupUuid;
 
   @override
   void initState() {
@@ -54,6 +57,37 @@ class _TrashGroupPageState extends State<TrashGroupPage> {
   void _deleteGroup(String groupUuid) {
     context.read<KeePassBloc>().add(
       DeleteGroupPermanently(groupUuid: groupUuid),
+    );
+  }
+
+  void _restoreEntryToPreviousGroup(String entryUuid) {
+    _pendingRestoreEntryUuid = entryUuid;
+    context.read<KeePassBloc>().add(RestoreEntry(entryUuid: entryUuid));
+  }
+
+  void _restoreGroupToPreviousGroup(String groupUuid) {
+    _pendingRestoreGroupUuid = groupUuid;
+    context.read<KeePassBloc>().add(RestoreGroup(groupUuid: groupUuid));
+  }
+
+  void _announceRestore() {
+    final entryUuid = _pendingRestoreEntryUuid;
+    final groupUuid = _pendingRestoreGroupUuid;
+    _pendingRestoreEntryUuid = null;
+    _pendingRestoreGroupUuid = null;
+
+    final destination = entryUuid != null
+        ? _rootGroup?.findGroupOfEntry(entryUuid)
+        : (groupUuid != null ? _rootGroup?.findParentOf(groupUuid) : null);
+    if (destination == null) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          tr("trash.restored_in", namedArgs: {"group": destination.name}),
+        ),
+        duration: const Duration(seconds: 2),
+      ),
     );
   }
 
@@ -89,6 +123,9 @@ class _TrashGroupPageState extends State<TrashGroupPage> {
               (g) => g.uuid == widget.uuidGroup,
             );
           });
+        }
+        if (state is KeePassMoveSuccess) {
+          _announceRestore();
         }
         if (state is KeePassError) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -149,6 +186,8 @@ class _TrashGroupPageState extends State<TrashGroupPage> {
               isTrashMode: true,
               onDeleteEntry: _deleteEntry,
               onDeleteGroup: _deleteGroup,
+              onRestoreEntry: _restoreEntryToPreviousGroup,
+              onRestoreGroup: _restoreGroupToPreviousGroup,
               onGroupTap: (g) {
                 Navigator.push(
                   context,

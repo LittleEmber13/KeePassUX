@@ -142,46 +142,54 @@ class _CustomAppScrollState extends State<CustomAppScroll>
             _checkIfExceedsHeight(constraints);
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
-              child: Stack(
-                key: _viewportKey,
-                alignment: Alignment.topRight,
-                children: [
-                  if (_exceedsHeight)
-                    Column(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            width: 8,
-                            decoration: BoxDecoration(
-                              color: context.appColors.secondaryText.withOpacity(0.20),
-                              borderRadius: BorderRadius.circular(99),
+              child: NotificationListener<SizeChangedLayoutNotification>(
+                onNotification: (_) {
+                  _checkIfExceedsHeight(constraints);
+                  return false;
+                },
+                child: Stack(
+                  key: _viewportKey,
+                  alignment: Alignment.topRight,
+                  children: [
+                    if (_exceedsHeight)
+                      Column(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              width: 8,
+                              decoration: BoxDecoration(
+                                color: context.appColors.secondaryText.withOpacity(0.20),
+                                borderRadius: BorderRadius.circular(99),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    RawScrollbar(
+                      controller: _scrollController,
+                      thumbVisibility: true,
+                      thickness: 8.0,
+                      trackVisibility: false,
+                      thumbColor: context.appColors.cardBackground,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(99)),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(right: _exceedsHeight ? 24 : 0),
+                        child: SingleChildScrollView(
+                          controller: _scrollController,
+                          scrollDirection: Axis.vertical,
+                          child: SizeChangedLayoutNotifier(
+                            child: Column(
+                              key: _contentKey,
+                              children: [...widget.children],
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  RawScrollbar(
-                    controller: _scrollController,
-                    thumbVisibility: true,
-                    thickness: 8.0,
-                    trackVisibility: false,
-                    thumbColor: context.appColors.cardBackground,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(99)),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(right: _exceedsHeight ? 24 : 0),
-                      child: SingleChildScrollView(
-                        controller: _scrollController,
-                        scrollDirection: Axis.vertical,
-                        child: Column(
-                          key: _contentKey,
-                          children: [...widget.children],
-                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },
