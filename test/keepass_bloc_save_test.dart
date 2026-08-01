@@ -5,6 +5,7 @@ import 'package:kdbx/kdbx.dart';
 import 'package:keepassux/bloc/entries/keepass_bloc.dart';
 import 'package:keepassux/bloc/entries/keepass_events.dart';
 import 'package:keepassux/bloc/entries/keepass_states.dart';
+import 'package:keepassux/services/auto_lock_controller.dart';
 import 'package:keepassux/services/vault_storage_service.dart';
 import 'package:keepassux/utils/kdbx_isolate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -78,6 +79,55 @@ void main() {
     bloc.add(LoadDatabase(bytes: initialBytes, password: _password));
     await loaded;
   }
+
+  test('the session password is only available once the vault is open',
+      () async {
+    expect(bloc.sessionPassword, isNull);
+
+    await unlock();
+
+    expect(bloc.sessionPassword, _password);
+
+    await bloc.close();
+
+    expect(bloc.sessionPassword, isNull);
+  }, timeout: const Timeout(Duration(minutes: 2)));
+
+  test('locking clears the vault from memory and from the isolate', () async {
+    await unlock();
+    expect(autoLock.isArmed, isTrue);
+
+    final locked = bloc.stream.firstWhere((s) => s is KeePassLocked);
+    bloc.add(LockDatabase());
+    await locked;
+
+    expect(bloc.currentRoot, isNull);
+    expect(bloc.sessionPassword, isNull);
+    expect(autoLock.isArmed, isFalse);
+
+    final errored = bloc.stream.firstWhere((s) => s is KeePassError);
+    bloc.add(AddEntry(title: 'after lock', password: 'a'));
+    await errored;
+
+    expect(
+      document.completedWrites,
+      isEmpty,
+      reason: 'a locked vault must not be able to write to disk',
+    );
+  }, timeout: const Timeout(Duration(minutes: 2)));
+
+  test('reloading after a lock does not resurrect the vault', () async {
+    await unlock();
+
+    final locked = bloc.stream.firstWhere((s) => s is KeePassLocked);
+    bloc.add(LockDatabase());
+    await locked;
+
+    bloc.add(ReloadDatabase());
+    await Future<void>.delayed(const Duration(milliseconds: 200));
+
+    expect(bloc.currentRoot, isNull);
+  }, timeout: const Timeout(Duration(minutes: 2)));
 
   test('a slow write cannot be overtaken by the next mutation', () async {
     await unlock();

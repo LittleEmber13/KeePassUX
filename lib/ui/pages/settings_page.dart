@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
 import 'package:keepassux/ui/pages/autofill_settings_page.dart';
 import 'package:keepassux/ui/pages/change_password_page.dart';
 import 'package:keepassux/ui/pages/kdf_settings_page.dart';
@@ -67,6 +70,13 @@ class _SettingsTabState extends State<SettingsTab>
   }
 
   Future<void> _onBiometricToggle(bool value) async {
+    final uri = _prefs?.getString('kdbx_uri') ?? '';
+    final sessionPassword = context.read<KeePassBloc>().sessionPassword;
+    await _biometricService.syncSavedPassword(
+      uri,
+      enabled: value,
+      password: sessionPassword,
+    );
     await _prefs?.setBool('biometric_login_enabled', value);
     setState(() => biometricLoginEnabled = value);
   }
@@ -107,6 +117,7 @@ class _SettingsTabState extends State<SettingsTab>
     setState(() => screenshotProtectionEnabled = false);
 
     if (!mounted) return;
+    context.read<KeePassBloc>().add(LockDatabase());
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => StartPage()),

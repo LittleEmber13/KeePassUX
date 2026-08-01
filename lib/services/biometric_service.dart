@@ -45,4 +45,17 @@ class BiometricService {
   Future<void> deleteSavedPassword(String uri) async {
     await _secureStorage.delete(key: 'kdbx_password_$uri');
   }
+
+  Future<void> syncSavedPassword(
+    String uri, {
+    required bool enabled,
+    String? password,
+  }) async {
+    if (uri.isEmpty) return;
+    if (!enabled) {
+      await deleteSavedPassword(uri);
+    } else if (password != null && password.isNotEmpty) {
+      await savePassword(uri, password);
+    }
+  }
 }

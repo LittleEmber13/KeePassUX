@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +11,7 @@ import 'package:keepassux/ui/pages/entries_page.dart';
 import 'package:keepassux/ui/pages/search_page.dart';
 import 'package:keepassux/ui/pages/settings_page.dart';
 import 'package:keepassux/ui/pages/start_page.dart';
+import 'package:keepassux/services/auto_lock_controller.dart';
 import 'package:keepassux/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
@@ -28,6 +31,7 @@ class _MainTabsPageState extends State<MainTabsPage>
     with WidgetsBindingObserver {
   late final PageController _pageController;
   late int _currentIndex;
+  Timer? _autoLockTimer;
 
   static const List<String> _titleKeys = [
     "entries_page.title",
@@ -42,20 +46,48 @@ class _MainTabsPageState extends State<MainTabsPage>
     WidgetsBinding.instance.addObserver(this);
     _currentIndex = widget.initialIndex;
     _pageController = PageController(initialPage: widget.initialIndex);
+    _startAutoLockTimer();
   }
 
   @override
   void dispose() {
+    _autoLockTimer?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     _pageController.dispose();
     super.dispose();
   }
 
+  void _startAutoLockTimer() {
+    _autoLockTimer?.cancel();
+    _autoLockTimer = Timer.periodic(AutoLockController.checkInterval, (_) {
+      if (autoLock.isExpired()) _lockAndLeave();
+    });
+  }
+
+  void _lockAndLeave() {
+    _autoLockTimer?.cancel();
+    if (!mounted) return;
+    context.read<KeePassBloc>().add(LockDatabase());
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => StartPage()),
+      (Route<dynamic> route) => false,
+    );
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      context.read<KeePassBloc>().add(ReloadDatabase());
+    if (state != AppLifecycleState.resumed) {
+      _autoLockTimer?.cancel();
+      return;
     }
+    if (autoLock.isExpired()) {
+      _lockAndLeave();
+      return;
+    }
+    autoLock.registerInteraction();
+    _startAutoLockTimer();
+    context.read<KeePassBloc>().add(ReloadDatabase());
   }
 
   void _onTabSelected(int index) {
@@ -112,13 +144,7 @@ class _MainTabsPageState extends State<MainTabsPage>
               child: RootAppBar(
                 isExit: true,
                 title: tr(_titleKeys[_currentIndex]),
-                onTapExit: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => StartPage()),
-                    (Route<dynamic> route) => false,
-                  );
-                },
+                onTapExit: _lockAndLeave,
                 onTapCloseSelection: _currentIndex == 0 && _selection.isActive
                     ? () => _selection.cancel()
                     : null,

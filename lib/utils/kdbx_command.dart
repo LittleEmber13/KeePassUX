@@ -19,6 +19,8 @@ class RollbackCmd extends KdbxCommand {
   RollbackCmd({required this.bytes, this.password});
 }
 
+class LockDatabaseCmd extends KdbxCommand {}
+
 class AddEntryCmd extends KdbxCommand {
   final String groupUuid;
   final String title;

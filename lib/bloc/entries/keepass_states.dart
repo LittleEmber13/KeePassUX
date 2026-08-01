@@ -11,6 +11,8 @@ class KeePassLoaded extends KeePassState {}
 
 class KeePassCreated extends KeePassState {}
 
+class KeePassLocked extends KeePassState {}
+
 class KeePassRootGroup extends KeePassState {
   final DbGroup? rootGroup;
   KeePassRootGroup(this.rootGroup);

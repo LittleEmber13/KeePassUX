@@ -24,6 +24,10 @@ class ReloadDatabase extends KeePassEvent {
   ReloadDatabase();
 }
 
+class LockDatabase extends KeePassEvent {
+  LockDatabase();
+}
+
 class AddEntry extends KeePassEvent {
   final String? uuidGroup;
   final String title;

@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepassux/autofill/autofill_app.dart';
 import 'package:keepassux/bloc/entries/keepass_bloc.dart';
 import 'package:keepassux/ui/pages/start_page.dart';
+import 'package:keepassux/services/auto_lock_controller.dart';
 import 'package:keepassux/services/screenshot_protection_service.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/theme/theme_controller.dart';
@@ -84,6 +85,11 @@ class MyApp extends StatelessWidget {
             theme: lightThemeData,
             darkTheme: darkThemeData,
             themeMode: themeMode,
+            builder: (context, child) => Listener(
+              onPointerDown: (_) => autoLock.registerInteraction(),
+              onPointerMove: (_) => autoLock.registerInteraction(),
+              child: child ?? const SizedBox.shrink(),
+            ),
             home: StartPage(),
           );
         },

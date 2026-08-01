@@ -161,10 +161,11 @@ class _StartPageState extends State<StartPage> {
         await preferences!.setBool('biometric_login_enabled', result == true);
         await preferences!.setBool('biometric_asked', true);
       }
-      final uri = folderController.text;
-      if (uri.isNotEmpty) {
-        await _biometricService.savePassword(uri, passwordController.text);
-      }
+      await _biometricService.syncSavedPassword(
+        folderController.text,
+        enabled: preferences!.getBool('biometric_login_enabled') ?? false,
+        password: passwordController.text,
+      );
     }
     if (mounted) {
       Navigator.pushReplacement(

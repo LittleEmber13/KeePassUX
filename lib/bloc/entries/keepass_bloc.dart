@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keepassux/bloc/entries/keepass_events.dart';
 import 'package:keepassux/bloc/entries/keepass_states.dart';
 import 'package:keepassux/error/vault_write_exception.dart';
+import 'package:keepassux/services/auto_lock_controller.dart';
 import 'package:keepassux/services/vault_storage_service.dart';
 import 'package:keepassux/utils/kdbx_isolate.dart';
 import 'package:logger/logger.dart';
@@ -24,6 +25,7 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
       super(KeePassInitial()) {
     on<LoadDatabase>(_onLoadDatabase);
     on<ReloadDatabase>(_onReloadDatabase);
+    on<LockDatabase>(_onLockDatabase);
     on<AddEntry>(_onAddEntry);
     on<AddGroup>(_onAddGroup);
     on<GetRootGroup>(_onGetRootGroup);
@@ -52,8 +54,11 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
   final Lock _lock = Lock();
   SharedPreferences? preferences;
   DbGroup? _currentRoot;
+  String? _sessionPassword;
 
   DbGroup? get currentRoot => _currentRoot;
+
+  String? get sessionPassword => _sessionPassword;
 
   Logger logger = Logger();
 
@@ -65,6 +70,8 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
   Future<void> close() {
     _kdbxIsolate.dispose();
     _vaultStorage.forgetBaseline();
+    _sessionPassword = null;
+    autoLock.disarm();
     return super.close();
   }
 
@@ -133,6 +140,9 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
         if (uri != null) _vaultStorage.rememberBaseline(uri, event.bytes);
       });
 
+      _sessionPassword = event.password;
+      autoLock.arm();
+
       emit(KeePassLoaded());
     } catch (e) {
       logger.e(e);
@@ -170,6 +180,26 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     }
   }
 
+  Future<void> _onLockDatabase(
+    LockDatabase event,
+    Emitter<KeePassState> emit,
+  ) async {
+    await _lock.synchronized(() async {
+      try {
+        await _kdbxIsolate.send<bool>(LockDatabaseCmd());
+      } catch (e) {
+        logger.e(e);
+      }
+      _currentRoot = null;
+      _sessionPassword = null;
+      _vaultStorage.forgetBaseline();
+    });
+
+    autoLock.disarm();
+
+    emit(KeePassLocked());
+  }
+
   Future<void> _onCreateDatabase(
     CreateDatabase event,
     Emitter<KeePassState> emit,
@@ -193,6 +223,9 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
         await preferences!.setString('kdbx_uri', event.uri);
         _currentRoot = result.root.rootGroup;
       });
+
+      _sessionPassword = event.password;
+      autoLock.arm();
 
       emit(KeePassCreated());
     } catch (e) {
@@ -501,6 +534,8 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
         ),
         rollbackPassword: event.oldPassword,
       );
+
+      _sessionPassword = event.newPassword;
 
       emit(KeePassChangeMasterPasswordSuccess());
     } catch (e) {

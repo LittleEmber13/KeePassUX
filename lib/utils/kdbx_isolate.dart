@@ -114,6 +114,10 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
               : kdbx!.credentials,
         );
         replyPort.send(_serializeRoot(kdbx!));
+      } else if (command is LockDatabaseCmd) {
+        kdbx = null;
+        format = null;
+        replyPort.send(true);
       } else if (command is AddEntryCmd) {
         if (kdbx == null) throw Exception('No database loaded');
         final group = _findGroup(kdbx!, command.groupUuid);
