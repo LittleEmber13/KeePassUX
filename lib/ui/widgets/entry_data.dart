@@ -25,11 +25,7 @@ class EntryData extends StatefulWidget {
 class _EntryDataState extends State<EntryData> {
   bool obscurePassword = true;
 
-  late TextEditingController _titleController;
-  late TextEditingController _userController;
-  late TextEditingController _urlController;
   late TextEditingController _notesController;
-  late TextEditingController _passwordController;
 
   final _inputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(8),
@@ -39,20 +35,12 @@ class _EntryDataState extends State<EntryData> {
   @override
   void initState() {
     super.initState();
-    _titleController = TextEditingController(text: widget.entry.label);
-    _userController = TextEditingController(text: widget.entry.userName);
-    _urlController = TextEditingController(text: widget.entry.url);
     _notesController = TextEditingController(text: widget.entry.notes);
-    _passwordController = TextEditingController(text: widget.entry.password);
   }
 
   @override
   void dispose() {
-    _titleController.dispose();
-    _userController.dispose();
-    _urlController.dispose();
     _notesController.dispose();
-    _passwordController.dispose();
     super.dispose();
   }
 
@@ -125,25 +113,22 @@ class _EntryDataState extends State<EntryData> {
             horizontalPadding: 0,
             children: [
               _buildField(
-                controller: _titleController,
+                value: widget.entry.label,
                 label: tr("entry_data.title"),
-                showCopy: true,
                 onCopy: () {
                   Clipboard.setData(ClipboardData(text: widget.entry.label));
                 },
               ),
               _buildField(
-                controller: _userController,
+                value: widget.entry.userName,
                 label: tr("entry_data.user"),
-                showCopy: true,
                 onCopy: () {
                   Clipboard.setData(ClipboardData(text: widget.entry.userName));
                 },
               ),
               _buildField(
-                controller: _passwordController,
+                value: widget.entry.password,
                 label: tr("entry_data.password"),
-                showCopy: true,
                 obscure: obscurePassword,
                 onToggleObscure: () {
                   setState(() {
@@ -155,19 +140,13 @@ class _EntryDataState extends State<EntryData> {
                 },
               ),
               _buildField(
-                controller: _urlController,
+                value: widget.entry.url,
                 label: tr("entry_data.url"),
-                showCopy: true,
                 onCopy: () {
                   Clipboard.setData(ClipboardData(text: widget.entry.url));
                 },
               ),
-              _buildField(
-                controller: _notesController,
-                label: tr("entry_data.notes"),
-                showCopy: false,
-                maxLines: null,
-              ),
+              _buildNotesField(),
               const SizedBox(height: 8),
             ],
           ),
@@ -226,24 +205,21 @@ class _EntryDataState extends State<EntryData> {
   }
 
   Widget _buildField({
-    required TextEditingController controller,
+    required String value,
     required String label,
-    bool showCopy = true,
     bool? obscure,
     VoidCallback? onToggleObscure,
     VoidCallback? onCopy,
-    int? maxLines,
   }) {
+    final text = obscure == true ? '•' * value.length : value;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Row(
         children: [
           Expanded(
-            child: TextFormField(
-              controller: controller,
-              readOnly: true,
-              obscureText: obscure ?? false,
-              maxLines: (obscure == true) ? 1 : maxLines,
+            child: InputDecorator(
+              isEmpty: value.isEmpty,
               decoration: InputDecoration(
                 labelText: label,
                 suffixIcon:
@@ -261,13 +237,38 @@ class _EntryDataState extends State<EntryData> {
                 focusedBorder: _inputBorder,
                 disabledBorder: _inputBorder,
               ),
+              child: Text(
+                text,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
             ),
           ),
-          if (showCopy && onCopy != null) ...[
+          if (onCopy != null) ...[
             const SizedBox(width: 16),
             InkWell(onTap: onCopy, child: const Icon(Icons.copy)),
           ],
         ],
+      ),
+    );
+  }
+
+  Widget _buildNotesField() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: TextFormField(
+        controller: _notesController,
+        readOnly: true,
+        minLines: 2,
+        maxLines: null,
+        decoration: InputDecoration(
+          labelText: tr("entry_data.notes"),
+          enabledBorder: _inputBorder,
+          focusedBorder: _inputBorder,
+          disabledBorder: _inputBorder,
+        ),
       ),
     );
   }
