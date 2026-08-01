@@ -3,16 +3,16 @@ import 'dart:typed_data';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
 import 'package:keepassux/ui/widgets/icon_picker_dialog.dart';
 import 'package:keepassux/ui/widgets/password_generator_dialog.dart';
 import 'package:keepassux/ui/widgets/kdbx_icon_widget.dart';
 import 'package:keepassux/ui/widgets/group_app_bar.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
-import 'package:keepassux/ui/model/db_entry.dart';
+import 'package:keepassux/model/db_entry.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
 class AddEntryPage extends StatefulWidget {

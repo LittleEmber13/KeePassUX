@@ -4,11 +4,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../ui/model/db_root.dart';
-import '../ui/services/biometric_service.dart';
+import '../model/db_root.dart';
+import '../services/biometric_service.dart';
 import '../ui/theme/theme.dart';
-import '../ui/utils/kdbx_command.dart';
-import '../ui/utils/kdbx_isolate.dart';
+import '../utils/kdbx_command.dart';
+import '../utils/kdbx_isolate.dart';
 import '../ui/widgets/app_logo.dart';
 import '../ui/widgets/loading_overlay.dart';
 import '../ui/widgets/slide_to_open_button.dart';

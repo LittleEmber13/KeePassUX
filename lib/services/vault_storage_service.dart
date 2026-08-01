@@ -4,15 +4,7 @@ import 'package:collection/collection.dart';
 import 'package:content_resolver/content_resolver.dart';
 import 'package:uri_content/uri_content.dart';
 
-class VaultWriteException implements Exception {
-  VaultWriteException(this.message, {required this.rolledBack});
-
-  final String message;
-  final bool rolledBack;
-
-  @override
-  String toString() => 'VaultWriteException($message, rolledBack: $rolledBack)';
-}
+import 'package:keepassux/error/vault_write_exception.dart';
 
 typedef VaultBytesWriter = Future<void> Function(String uri, Uint8List bytes);
 typedef VaultBytesReader = Future<Uint8List> Function(String uri);

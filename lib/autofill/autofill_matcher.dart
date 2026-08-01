@@ -1,7 +1,7 @@
 import 'package:flutter_autofill_service/flutter_autofill_service.dart';
 
-import '../ui/model/db_entry.dart';
-import '../ui/model/db_group.dart';
+import '../model/db_entry.dart';
+import '../model/db_group.dart';
 
 class AutofillMatcher {
   static List<DbEntry> allEntries(DbGroup root) {

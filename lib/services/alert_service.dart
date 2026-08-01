@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:keepassux/ui/model/alert_item.dart';
-import 'package:keepassux/ui/model/db_group.dart';
+import 'package:keepassux/model/alert_item.dart';
+import 'package:keepassux/model/db_group.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AlertService {

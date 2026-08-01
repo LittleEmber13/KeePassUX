@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/model/drag_item.dart';
-import 'package:keepassux/ui/services/selection_mode_controller.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/model/drag_item.dart';
+import 'package:keepassux/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/draggable_group_item.dart';
 import 'package:keepassux/ui/widgets/fade_in_item.dart';
@@ -15,8 +15,8 @@ import 'package:keepassux/ui/widgets/trash_entry_item.dart';
 import 'package:keepassux/ui/widgets/trash_group_item.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
-import '../model/db_entry.dart';
-import '../model/db_group.dart';
+import '../../model/db_entry.dart';
+import '../../model/db_group.dart';
 
 class AnimatedEntryList extends StatefulWidget {
   const AnimatedEntryList({

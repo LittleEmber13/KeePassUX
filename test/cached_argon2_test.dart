@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:argon2_ffi_base/argon2_ffi_base.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:keepassux/ui/utils/cached_argon2.dart';
+import 'package:keepassux/utils/cached_argon2.dart';
 
 class _CountingArgon2 extends Argon2 {
   int calls = 0;

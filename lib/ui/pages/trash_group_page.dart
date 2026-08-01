@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
-import 'package:keepassux/ui/model/db_group.dart';
-import 'package:keepassux/ui/model/drag_item.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
+import 'package:keepassux/model/db_group.dart';
+import 'package:keepassux/model/drag_item.dart';
 import 'package:keepassux/ui/widgets/animated_entry_list.dart';
 import 'package:keepassux/ui/widgets/group_app_bar.dart';
 import 'package:keepassux/ui/widgets/trash_info_card.dart';

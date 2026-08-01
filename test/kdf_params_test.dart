@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kdbx/kdbx.dart';
 import 'package:kdbx/src/kdbx_var_dictionary.dart';
 import 'package:kdbx/src/utils/byte_utils.dart';
-import 'package:keepassux/ui/utils/kdbx_isolate.dart';
+import 'package:keepassux/utils/kdbx_isolate.dart';
 
 VarDictionary _initialParams() {
   return VarDictionary([

@@ -1,7 +1,7 @@
 import 'package:flutter_autofill_service/flutter_autofill_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keepassux/autofill/autofill_matcher.dart';
-import 'package:keepassux/ui/model/db_entry.dart';
+import 'package:keepassux/model/db_entry.dart';
 
 DbEntry _entry({
   String uuid = 'u',

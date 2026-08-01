@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
-import 'package:keepassux/ui/model/db_entry.dart';
-import 'package:keepassux/ui/model/drag_item.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
+import 'package:keepassux/model/db_entry.dart';
+import 'package:keepassux/model/drag_item.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/entry_data.dart';

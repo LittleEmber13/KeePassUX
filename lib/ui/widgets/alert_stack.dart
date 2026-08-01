@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keepassux/ui/model/alert_item.dart';
+import 'package:keepassux/model/alert_item.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
 class AlertStack extends StatefulWidget {

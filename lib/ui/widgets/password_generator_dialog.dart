@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:keepassux/ui/theme/theme.dart';
-import 'package:keepassux/ui/utils.dart';
+import 'package:keepassux/utils/password_generator.dart';
 import 'package:zxcvbnm/languages/en.dart' as en;
 import 'package:zxcvbnm/languages/es_es.dart' as es;
 import 'package:zxcvbnm/zxcvbnm.dart';

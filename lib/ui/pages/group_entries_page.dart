@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
-import 'package:keepassux/ui/model/drag_item.dart';
-import 'package:keepassux/ui/services/selection_mode_controller.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
+import 'package:keepassux/model/drag_item.dart';
+import 'package:keepassux/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/widgets/animated_entry_list.dart';
 import 'package:keepassux/ui/widgets/group_app_bar.dart';
 import 'package:keepassux/ui/widgets/custom_bottom_navigation_bar.dart';
@@ -13,7 +13,7 @@ import 'package:keepassux/ui/widgets/loading_overlay.dart';
 import 'package:keepassux/ui/widgets/move_mode_bar.dart';
 import 'package:keepassux/ui/pages/add_group.dart';
 
-import '../model/db_group.dart';
+import '../../model/db_group.dart';
 
 class GroupEntriesPage extends StatefulWidget {
   const GroupEntriesPage({required this.uuidGroup, super.key});

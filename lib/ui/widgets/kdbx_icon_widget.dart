@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:kdbx/kdbx.dart';
-import 'package:keepassux/ui/utils/kdbx_icons.dart';
+import 'package:keepassux/utils/kdbx_icons.dart';
 
 class KDBXIconWidget extends StatelessWidget {
   const KDBXIconWidget({

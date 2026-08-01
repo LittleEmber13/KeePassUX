@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:keepassux/ui/services/autofill_settings_service.dart';
+import 'package:keepassux/services/autofill_settings_service.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/group_app_bar.dart';

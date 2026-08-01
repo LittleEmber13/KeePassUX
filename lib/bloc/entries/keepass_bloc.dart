@@ -2,10 +2,11 @@ import 'dart:typed_data';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
-import 'package:keepassux/ui/services/vault_storage_service.dart';
-import 'package:keepassux/ui/utils/kdbx_isolate.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
+import 'package:keepassux/error/vault_write_exception.dart';
+import 'package:keepassux/services/vault_storage_service.dart';
+import 'package:keepassux/utils/kdbx_isolate.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:synchronized/synchronized.dart';

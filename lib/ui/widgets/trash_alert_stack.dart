@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:keepassux/ui/model/alert_item.dart';
+import 'package:keepassux/model/alert_item.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
 class TrashAlertStack extends StatelessWidget {

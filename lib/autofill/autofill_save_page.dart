@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_autofill_service/flutter_autofill_service.dart';
 
-import '../ui/model/db_root.dart';
-import '../ui/model/kdbx_action_result.dart';
-import '../ui/services/vault_storage_service.dart';
-import '../ui/utils/kdbx_command.dart';
-import '../ui/utils/kdbx_isolate.dart';
+import '../model/db_root.dart';
+import '../model/kdbx_action_result.dart';
+import '../services/vault_storage_service.dart';
+import '../utils/kdbx_command.dart';
+import '../utils/kdbx_isolate.dart';
 import 'autofill_matcher.dart';
 
 const _channel = MethodChannel('com.example.keepassux/autofill');

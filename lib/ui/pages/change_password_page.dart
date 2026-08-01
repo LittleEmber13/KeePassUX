@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
-import 'package:keepassux/ui/services/biometric_service.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
+import 'package:keepassux/services/biometric_service.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/widgets/custom_app_scroll.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';

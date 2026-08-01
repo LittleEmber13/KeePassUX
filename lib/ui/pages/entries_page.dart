@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_events.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_events.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
 import 'package:keepassux/ui/pages/group_entries_page.dart';
 import 'package:keepassux/ui/pages/trash_page.dart';
-import 'package:keepassux/ui/services/alert_service.dart';
-import 'package:keepassux/ui/services/biometric_service.dart';
+import 'package:keepassux/services/alert_service.dart';
+import 'package:keepassux/services/biometric_service.dart';
 import 'package:keepassux/ui/widgets/animated_entry_list.dart';
-import 'package:keepassux/ui/model/alert_item.dart';
+import 'package:keepassux/model/alert_item.dart';
 import 'package:keepassux/ui/widgets/alert_stack.dart';
 import 'package:keepassux/ui/widgets/fade_in_item.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../model/db_group.dart';
+import '../../model/db_group.dart';
 
 class EntriesTab extends StatefulWidget {
   const EntriesTab({super.key});

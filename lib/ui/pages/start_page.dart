@@ -4,12 +4,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_bloc.dart';
-import 'package:keepassux/ui/bloc/entries/keepass_states.dart';
+import 'package:keepassux/bloc/entries/keepass_bloc.dart';
+import 'package:keepassux/bloc/entries/keepass_states.dart';
 import 'package:keepassux/ui/pages/create_database_page.dart';
 import 'package:keepassux/ui/pages/main_tabs_page.dart';
-import 'package:keepassux/ui/services/biometric_service.dart';
-import 'package:keepassux/ui/services/saf_service.dart';
+import 'package:keepassux/services/biometric_service.dart';
+import 'package:keepassux/services/saf_service.dart';
 import 'package:keepassux/ui/widgets/app_logo.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
 import 'package:keepassux/ui/widgets/slide_to_open_button.dart';
@@ -17,7 +17,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uri_content/uri_content.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 
-import '../bloc/entries/keepass_events.dart';
+import '../../bloc/entries/keepass_events.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
