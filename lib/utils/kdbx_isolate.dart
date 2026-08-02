@@ -405,10 +405,9 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
 
 KdbxGroup _findGroup(KdbxFile kdbx, String uuid) {
   final allGroups = kdbx.body.rootGroup.getAllGroups();
-  return allGroups.firstWhere(
-    (g) => g.uuid.uuid == uuid,
-    orElse: () => kdbx.body.rootGroup,
-  );
+  final group = allGroups.firstWhereOrNull((g) => g.uuid.uuid == uuid);
+  if (group == null) throw Exception('Group not found: $uuid');
+  return group;
 }
 
 KdbxGroup _restoreTarget(KdbxFile kdbx, KdbxObject object) {
