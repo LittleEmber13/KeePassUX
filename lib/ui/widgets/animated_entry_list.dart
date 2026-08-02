@@ -2,6 +2,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keepassux/bloc/entries/keepass_bloc.dart';
 import 'package:keepassux/bloc/entries/keepass_events.dart';
@@ -263,9 +264,14 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16),
-                  child: Icon(
-                    Icons.delete_outline,
-                    color: context.appColors.secondaryText,
+                  child: SvgPicture.asset(
+                    'assets/images/trash.svg',
+                    width: 24,
+                    height: 24,
+                    colorFilter: ColorFilter.mode(
+                      context.appColors.secondaryText,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -286,9 +292,14 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
           opacity: 0.4,
           child: Row(
             children: [
-              Icon(
-                Icons.delete_outline,
-                color: context.appColors.secondaryText,
+              SvgPicture.asset(
+                'assets/images/trash.svg',
+                width: 24,
+                height: 24,
+                colorFilter: ColorFilter.mode(
+                  context.appColors.secondaryText,
+                  BlendMode.srcIn,
+                ),
               ),
               SizedBox(width: 16),
               Expanded(
@@ -319,9 +330,14 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
             final isHovering = candidateData.isNotEmpty;
             return Row(
               children: [
-                Icon(
-                  Icons.delete_outline,
-                  color: context.appColors.secondaryText,
+                SvgPicture.asset(
+                  'assets/images/trash.svg',
+                  width: 24,
+                  height: 24,
+                  colorFilter: ColorFilter.mode(
+                    context.appColors.secondaryText,
+                    BlendMode.srcIn,
+                  ),
                 ),
                 SizedBox(width: 16),
                 Expanded(
