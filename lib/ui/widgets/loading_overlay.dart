@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoadingOverlay extends StatefulWidget {
   const LoadingOverlay({super.key, required this.isLoading});
@@ -58,7 +59,13 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
         duration: LoadingOverlay.fadeDuration,
         child: Container(
           color: Colors.black.withOpacity(0.24),
-          child: const Center(child: CircularProgressIndicator()),
+          child: Center(
+            child: Lottie.asset(
+              'assets/animations/loading_keyhole_spinner.json',
+              width: 96,
+              height: 96,
+            ),
+          ),
         ),
       ),
     );

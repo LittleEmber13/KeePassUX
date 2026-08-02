@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_autofill_service/flutter_autofill_service.dart';
+import 'package:lottie/lottie.dart';
 
 import '../model/db_root.dart';
 import '../model/kdbx_action_result.dart';
@@ -140,7 +141,11 @@ class _AutofillSavePageState extends State<AutofillSavePage> {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CircularProgressIndicator(),
+            Lottie.asset(
+              'assets/animations/loading_keyhole_spinner.json',
+              width: 80,
+              height: 80,
+            ),
             const SizedBox(height: 20),
             Text(tr('autofill.saving_status')),
           ],
