@@ -158,12 +158,18 @@
     "very_strong": "Very strong"
   },
   "alerts": {
+    "empty_title": "Your database is empty",
+    "empty_text": "Tap the + button to add your first entries or folders.",
+    "selection_title": "Hold to select",
+    "selection_text": "Press and hold an entry or folder for half a second and the copy, cut and delete options will appear. You can pick several items and paste them into any folder.",
+    "drag_title": "Keep holding to drag",
+    "drag_text": "Hold a little longer and the item detaches, so you can drag it onto another folder or onto the trash to move it.",
     "biometric_title": "Biometric login available",
     "biometric_text": "You can enable biometric access to open your database with your fingerprint. Find it in Settings.",
-    "drag_title": "Organize your entries",
-    "drag_text": "Long-press any entry or folder and drag it to another folder to move it.",
-    "empty_title": "Your database is empty",
-    "empty_text": "Tap the + button to add your first entries or folders."
+    "autofill_title": "Password autofill",
+    "autofill_text": "KeepassUX can fill your passwords in other apps. Turn it on in system Settings > Passwords and autofill and pick KeepassUX as the service.",
+    "feedback_title": "Found a bug?",
+    "feedback_text": "Reporting it on the project repository would be much appreciated: github.com/LittleEmber13/keepassUX. Suggestions are welcome too."
   },
   "delete": {
     "title": "Move to trash",

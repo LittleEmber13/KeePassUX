@@ -14,6 +14,8 @@ class AlertStack extends StatefulWidget {
 
 class _AlertStackState extends State<AlertStack>
     with SingleTickerProviderStateMixin {
+  static const double _peekOffset = 8.0;
+
   late AnimationController _controller;
   bool _dismissing = false;
 
@@ -113,46 +115,64 @@ class _AlertStackState extends State<AlertStack>
       builder: (context, _) {
         final t = _controller.value;
         final isActive = _controller.isAnimating || _dismissing;
+        final nextTop = isActive ? t * (_hasAfterNext ? _peekOffset : 0.0) : 0.0;
 
-        return Stack(
+        final nextCard = _hasNext
+            ? Transform.scale(
+                scale: isActive ? (0.95 + t * 0.05) : 0.95,
+                alignment: Alignment.topCenter,
+                child: Opacity(
+                  opacity: isActive ? (0.7 + t * 0.3) : 0.7,
+                  child: _buildAlertCard(context, widget.alerts[1]),
+                ),
+              )
+            : null;
+
+        return AnimatedSize(
+          duration: const Duration(milliseconds: 300),
           alignment: Alignment.topCenter,
-          children: [
-            if (_hasAfterNext)
+          child: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              if (_hasAfterNext)
+                Positioned(
+                  top: isActive ? (_peekOffset - t * _peekOffset) : _peekOffset,
+                  left: 0,
+                  right: 0,
+                  child: Transform.scale(
+                    scale: 0.95,
+                    alignment: Alignment.topCenter,
+                    child: Opacity(
+                      opacity: isActive ? (0.5 + t * 0.2) : 0.5,
+                      child: _buildAlertCard(context, widget.alerts[2]),
+                    ),
+                  ),
+                ),
+              if (nextCard != null)
+                isActive
+                    ? Padding(
+                        padding: EdgeInsets.only(top: nextTop),
+                        child: nextCard,
+                      )
+                    : Positioned(
+                        top: nextTop,
+                        left: 0,
+                        right: 0,
+                        child: nextCard,
+                      ),
               Padding(
-                padding: EdgeInsets.only(top: isActive ? (8.0 - t * 8.0) : 8.0),
-                child: Transform.scale(
-                  scale: 0.95,
-                  alignment: Alignment.topCenter,
-                  child: Opacity(
-                    opacity: isActive ? (0.5 + t * 0.2) : 0.5,
-                    child: _buildAlertCard(context, widget.alerts[2]),
+                padding: EdgeInsets.only(top: _hasNext ? _peekOffset : 0.0),
+                child: Opacity(
+                  opacity: isActive ? (1.0 - t) : 1.0,
+                  child: _buildAlertCard(
+                    context,
+                    widget.alerts.first,
+                    onClose: _dismiss,
                   ),
                 ),
               ),
-            if (_hasNext)
-              Padding(
-                padding: EdgeInsets.only(top: isActive ? t * 8.0 : 0.0),
-                child: Transform.scale(
-                  scale: isActive ? (0.95 + t * 0.05) : 0.95,
-                  alignment: Alignment.topCenter,
-                  child: Opacity(
-                    opacity: isActive ? (0.7 + t * 0.3) : 0.7,
-                    child: _buildAlertCard(context, widget.alerts[1]),
-                  ),
-                ),
-              ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: Opacity(
-                opacity: isActive ? (1.0 - t) : 1.0,
-                child: _buildAlertCard(
-                  context,
-                  widget.alerts.first,
-                  onClose: _dismiss,
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );

@@ -240,6 +240,18 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
     return SizedBox.shrink();
   }
 
+  Widget _buildTrashIcon() {
+    return SvgPicture.asset(
+      'assets/images/trash.svg',
+      width: 24,
+      height: 24,
+      colorFilter: ColorFilter.mode(
+        IconTheme.of(context).color ?? Theme.of(context).colorScheme.onSurface,
+        BlendMode.srcIn,
+      ),
+    );
+  }
+
   Widget _buildTrashGroupItem() {
     final trash = widget.trashGroup!;
     return Padding(
@@ -268,15 +280,7 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16),
-                  child: SvgPicture.asset(
-                    'assets/images/trash.svg',
-                    width: 24,
-                    height: 24,
-                    colorFilter: ColorFilter.mode(
-                      context.appColors.secondaryText,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                  child: _buildTrashIcon(),
                 ),
                 Expanded(
                   child: Container(
@@ -296,15 +300,7 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
           opacity: 0.4,
           child: Row(
             children: [
-              SvgPicture.asset(
-                'assets/images/trash.svg',
-                width: 24,
-                height: 24,
-                colorFilter: ColorFilter.mode(
-                  context.appColors.secondaryText,
-                  BlendMode.srcIn,
-                ),
-              ),
+              _buildTrashIcon(),
               SizedBox(width: 16),
               Expanded(
                 child: Container(
@@ -334,15 +330,7 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
             final isHovering = candidateData.isNotEmpty;
             return Row(
               children: [
-                SvgPicture.asset(
-                  'assets/images/trash.svg',
-                  width: 24,
-                  height: 24,
-                  colorFilter: ColorFilter.mode(
-                    context.appColors.secondaryText,
-                    BlendMode.srcIn,
-                  ),
-                ),
+                _buildTrashIcon(),
                 SizedBox(width: 16),
                 Expanded(
                   child: InkWell(

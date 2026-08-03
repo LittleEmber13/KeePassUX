@@ -158,12 +158,18 @@
     "very_strong": "Muy fuerte"
   },
   "alerts": {
+    "empty_title": "Tu base de datos está vacía",
+    "empty_text": "Pulsa el botón + para añadir tus primeras entradas o carpetas.",
+    "selection_title": "Mantén pulsado para seleccionar",
+    "selection_text": "Mantén pulsada una entrada o carpeta durante medio segundo y aparecerán las opciones de copiar, cortar y eliminar. Puedes marcar varios elementos y pegarlos en la carpeta que quieras.",
+    "drag_title": "Sigue pulsando para arrastrar",
+    "drag_text": "Si mantienes pulsado un poco más, el elemento se despega y puedes arrastrarlo hasta otra carpeta o hasta la papelera para moverlo.",
     "biometric_title": "Login biométrico disponible",
     "biometric_text": "Puedes activar el acceso biométrico para abrir tu base de datos con tu huella. Encuéntralo en Ajustes.",
-    "drag_title": "Organiza tus entradas",
-    "drag_text": "Mantén pulsado cualquier entrada o carpeta y arrástrala a otra carpeta para moverla.",
-    "empty_title": "Tu base de datos está vacía",
-    "empty_text": "Pulsa el botón + para añadir tus primeras entradas o carpetas."
+    "autofill_title": "Autocompletado de contraseñas",
+    "autofill_text": "KeepassUX puede rellenar tus contraseñas en otras apps. Actívalo en Ajustes del sistema > Contraseñas y autocompletado y elige KeepassUX como servicio.",
+    "feedback_title": "¿Has encontrado algún fallo?",
+    "feedback_text": "Se agradecería mucho que lo reportes en el repositorio del proyecto: github.com/LittleEmber13/keepassUX. Las sugerencias también son bienvenidas."
   },
   "delete": {
     "title": "Mover a la papelera",
