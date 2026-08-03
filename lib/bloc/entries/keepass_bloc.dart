@@ -51,12 +51,18 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     _initIsolate();
   }
 
+  static const Duration _minChangeMasterPasswordAttempt = Duration(
+    milliseconds: 800,
+  );
+  static const Duration _maxChangeMasterPasswordBackoff = Duration(seconds: 30);
+
   final KdbxIsolate _kdbxIsolate = KdbxIsolate();
   final VaultStorageService _vaultStorage;
   final Lock _lock = Lock();
   SharedPreferences? preferences;
   DbGroup? _currentRoot;
   String? _sessionPassword;
+  int _changeMasterPasswordFailures = 0;
 
   DbGroup? get currentRoot => _currentRoot;
 
@@ -570,13 +576,30 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
     }
   }
 
+  Duration get _changeMasterPasswordBackoff {
+    if (_changeMasterPasswordFailures == 0) return Duration.zero;
+    final seconds = 1 << (_changeMasterPasswordFailures - 1);
+    return seconds >= _maxChangeMasterPasswordBackoff.inSeconds
+        ? _maxChangeMasterPasswordBackoff
+        : Duration(seconds: seconds);
+  }
+
+  Future<void> _delayChangeMasterPassword(DateTime startedAt) async {
+    final remaining =
+        _minChangeMasterPasswordAttempt - DateTime.now().difference(startedAt);
+    if (remaining > Duration.zero) await Future.delayed(remaining);
+  }
+
   Future<void> _onChangeMasterPassword(
     ChangeMasterPassword event,
     Emitter<KeePassState> emit,
   ) async {
-    try {
-      emit(KeePassLoading());
+    emit(KeePassLoading());
 
+    await Future.delayed(_changeMasterPasswordBackoff);
+    final startedAt = DateTime.now();
+
+    try {
       await _mutate(
         ChangeMasterPasswordCmd(
           oldPassword: event.oldPassword,
@@ -585,12 +608,22 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
         rollbackPassword: event.oldPassword,
       );
 
+      _changeMasterPasswordFailures = 0;
       _sessionPassword = event.newPassword;
+
+      await _delayChangeMasterPassword(startedAt);
 
       emit(KeePassChangeMasterPasswordSuccess());
     } catch (e) {
       logger.e(e);
-      if (e.toString().contains('Invalid current password')) {
+      final wrongPassword = e.toString().contains('Invalid current password');
+      if (wrongPassword && _changeMasterPasswordFailures < 8) {
+        _changeMasterPasswordFailures++;
+      }
+
+      await _delayChangeMasterPassword(startedAt);
+
+      if (wrongPassword) {
         emit(KeePassError(tr("change_password_page.error_wrong_current")));
       } else {
         emit(_errorFor(e));

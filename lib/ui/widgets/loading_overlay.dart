@@ -58,7 +58,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
         opacity: _visible ? 1 : 0,
         duration: LoadingOverlay.fadeDuration,
         child: Container(
-          color: Colors.black.withOpacity(0.24),
+          color: Colors.black.withOpacity(0.85),
           child: Center(
             child: Lottie.asset(
               'assets/animations/loading_keyhole_spinner.json',
