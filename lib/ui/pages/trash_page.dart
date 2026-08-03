@@ -7,12 +7,14 @@ import 'package:keepassux/bloc/entries/keepass_events.dart';
 import 'package:keepassux/bloc/entries/keepass_states.dart';
 import 'package:keepassux/model/db_group.dart';
 import 'package:keepassux/model/drag_item.dart';
+import 'package:keepassux/services/selection_mode_controller.dart';
 import 'package:keepassux/ui/pages/trash_group_page.dart';
 import 'package:keepassux/ui/widgets/animated_entry_list.dart';
 import 'package:keepassux/ui/widgets/group_app_bar.dart';
 import 'package:keepassux/ui/widgets/trash_info_card.dart';
 import 'package:keepassux/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
+import 'package:keepassux/ui/widgets/trash_selection_bar.dart';
 
 class TrashPage extends StatefulWidget {
   const TrashPage({this.uuidGroup, super.key});
@@ -30,6 +32,9 @@ class _TrashPageState extends State<TrashPage> {
   bool _isDragging = false;
   String? _pendingRestoreEntryUuid;
   String? _pendingRestoreGroupUuid;
+  bool _pendingBulkRestore = false;
+
+  SelectionModeController get _selection => SelectionModeController.instance;
 
   @override
   void initState() {
@@ -37,6 +42,14 @@ class _TrashPageState extends State<TrashPage> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<KeePassBloc>().add(GetRootGroup());
     });
+  }
+
+  @override
+  void dispose() {
+    if (_selection.isTrash && _selection.sourceGroupUuid == group?.uuid) {
+      _selection.cancel();
+    }
+    super.dispose();
   }
 
   void _onDragStateChanged(bool dragging) {
@@ -76,8 +89,20 @@ class _TrashPageState extends State<TrashPage> {
   void _announceRestore() {
     final entryUuid = _pendingRestoreEntryUuid;
     final groupUuid = _pendingRestoreGroupUuid;
+    final bulk = _pendingBulkRestore;
     _pendingRestoreEntryUuid = null;
     _pendingRestoreGroupUuid = null;
+    _pendingBulkRestore = false;
+
+    if (bulk) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(tr("trash.restored_items")),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+      return;
+    }
 
     final destination = entryUuid != null
         ? _rootGroup?.findGroupOfEntry(entryUuid)
@@ -147,12 +172,17 @@ class _TrashPageState extends State<TrashPage> {
         }
       },
       builder: (context, state) {
-        return Stack(
-          fit: StackFit.expand,
-          children: [
-            _page(),
-            LoadingOverlay(isLoading: state is KeePassLoading),
-          ],
+        return ListenableBuilder(
+          listenable: _selection,
+          builder: (context, _) {
+            return Stack(
+              fit: StackFit.expand,
+              children: [
+                _page(),
+                LoadingOverlay(isLoading: state is KeePassLoading),
+              ],
+            );
+          },
         );
       },
     );
@@ -174,14 +204,21 @@ class _TrashPageState extends State<TrashPage> {
             child: GroupAppBar(
               title: group?.name ?? tr("app_bar.trash"),
               onTapExit: () => Navigator.pop(context),
+              onTapCloseSelection:
+                  _selection.isActive ? () => _selection.cancel() : null,
+              selectionActive: _selection.isActive,
             ),
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        uuidGroup: widget.uuidGroup,
-        selectedIndex: 0,
-      ),
+      bottomNavigationBar: _selection.isActive
+          ? TrashSelectionBar(
+              onRestore: () => _pendingBulkRestore = true,
+            )
+          : CustomBottomNavigationBar(
+              uuidGroup: widget.uuidGroup,
+              selectedIndex: 0,
+            ),
       body: SafeArea(
         child: Column(
           children: [
@@ -194,6 +231,7 @@ class _TrashPageState extends State<TrashPage> {
               group: group,
               rootGroup: _rootGroup,
               isTrashMode: true,
+              enableSelection: true,
               onDeleteEntry: _deleteEntry,
               onDeleteGroup: _deleteGroup,
               onRestoreEntry: _restoreEntryToPreviousGroup,

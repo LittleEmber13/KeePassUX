@@ -314,6 +314,34 @@ void kdbxIsolateEntryPoint(SendPort mainSendPort) {
         replyPort.send(
           KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
         );
+      } else if (command is RestoreItemsCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        for (final groupUuid in command.groupUuids) {
+          final group = _findGroup(kdbx!, groupUuid);
+          kdbx!.move(group, _restoreTarget(kdbx!, group));
+        }
+        for (final entryUuid in command.entryUuids) {
+          final entry = _findEntry(kdbx!, entryUuid);
+          kdbx!.move(entry, _restoreTarget(kdbx!, entry));
+        }
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
+      } else if (command is DeleteItemsPermanentlyCmd) {
+        if (kdbx == null) throw Exception('No database loaded');
+        for (final groupUuid in command.groupUuids) {
+          final group = _findGroup(kdbx!, groupUuid);
+          kdbx!.deletePermanently(group);
+        }
+        for (final entryUuid in command.entryUuids) {
+          final entry = _findEntry(kdbx!, entryUuid);
+          kdbx!.deletePermanently(entry);
+        }
+        final bytes = await kdbx!.save();
+        replyPort.send(
+          KdbxActionResult(root: _serializeRoot(kdbx!), savedBytes: bytes),
+        );
       } else if (command is AssociateAppCmd) {
         if (kdbx == null) throw Exception('No database loaded');
         final entry = _findEntry(kdbx!, command.entryUuid);

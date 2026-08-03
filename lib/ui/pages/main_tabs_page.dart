@@ -124,7 +124,7 @@ class _MainTabsPageState extends State<MainTabsPage>
   Widget _page() {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      bottomNavigationBar: _selection.isActive
+      bottomNavigationBar: _selection.isActive && !_selection.isTrash
           ? MoveModeBar(currentGroupUuid: null)
           : CustomBottomNavigationBar(
               selectedIndex: _currentIndex,

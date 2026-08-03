@@ -183,6 +183,20 @@ class DeleteGroupPermanently extends KeePassEvent {
   DeleteGroupPermanently({required this.groupUuid});
 }
 
+class RestoreItems extends KeePassEvent {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+
+  RestoreItems({required this.entryUuids, required this.groupUuids});
+}
+
+class DeleteItemsPermanently extends KeePassEvent {
+  final List<String> entryUuids;
+  final List<String> groupUuids;
+
+  DeleteItemsPermanently({required this.entryUuids, required this.groupUuids});
+}
+
 class ChangeMasterPassword extends KeePassEvent {
   final String oldPassword;
   final String newPassword;

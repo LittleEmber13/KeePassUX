@@ -12,6 +12,7 @@ class SelectionModeController extends ChangeNotifier {
   SelectionPhase _phase = SelectionPhase.inactive;
   SelectionAction _action = SelectionAction.none;
   String? _sourceGroupUuid;
+  bool _isTrash = false;
   final Set<String> _entryUuids = {};
   final Set<String> _groupUuids = {};
 
@@ -23,6 +24,7 @@ class SelectionModeController extends ChangeNotifier {
   bool get isSelecting => _phase == SelectionPhase.selecting;
   bool get isPasting => _phase == SelectionPhase.pasting;
   bool get isCut => _action == SelectionAction.cut;
+  bool get isTrash => _isTrash;
   bool get hasSelection => _entryUuids.isNotEmpty || _groupUuids.isNotEmpty;
   String? get sourceGroupUuid => _sourceGroupUuid;
   Set<String> get entryUuids => Set.unmodifiable(_entryUuids);
@@ -31,10 +33,16 @@ class SelectionModeController extends ChangeNotifier {
   bool isEntrySelected(String uuid) => _entryUuids.contains(uuid);
   bool isGroupSelected(String uuid) => _groupUuids.contains(uuid);
 
-  void start(String sourceGroupUuid, {String? entryUuid, String? groupUuid}) {
+  void start(
+    String sourceGroupUuid, {
+    String? entryUuid,
+    String? groupUuid,
+    bool isTrash = false,
+  }) {
     _phase = SelectionPhase.selecting;
     _action = SelectionAction.none;
     _sourceGroupUuid = sourceGroupUuid;
+    _isTrash = isTrash;
     _entryUuids.clear();
     _groupUuids.clear();
     if (entryUuid != null) _entryUuids.add(entryUuid);
@@ -47,6 +55,9 @@ class SelectionModeController extends ChangeNotifier {
     if (_consumeActivation(uuid)) return;
     if (!_entryUuids.remove(uuid)) {
       _entryUuids.add(uuid);
+    } else if (!hasSelection) {
+      cancel();
+      return;
     }
     notifyListeners();
   }
@@ -55,6 +66,9 @@ class SelectionModeController extends ChangeNotifier {
     if (_consumeActivation(uuid)) return;
     if (!_groupUuids.remove(uuid)) {
       _groupUuids.add(uuid);
+    } else if (!hasSelection) {
+      cancel();
+      return;
     }
     notifyListeners();
   }
@@ -85,6 +99,7 @@ class SelectionModeController extends ChangeNotifier {
     _phase = SelectionPhase.inactive;
     _action = SelectionAction.none;
     _sourceGroupUuid = null;
+    _isTrash = false;
     _activationUuid = null;
     _entryUuids.clear();
     _groupUuids.clear();

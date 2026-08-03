@@ -72,7 +72,10 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
 
   SelectionModeController get _selection => SelectionModeController.instance;
 
-  bool get _selectionActive => widget.enableSelection && _selection.isActive;
+  bool get _selectionActive =>
+      widget.enableSelection &&
+      _selection.isActive &&
+      _selection.isTrash == widget.isTrashMode;
 
   @override
   void initState() {
@@ -110,6 +113,7 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
       widget.group!.uuid,
       entryUuid: entryUuid,
       groupUuid: groupUuid,
+      isTrash: widget.isTrashMode,
     );
   }
 
@@ -533,8 +537,15 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                     group: currentGroup,
                     sourceGroupUuid: widget.group!.uuid,
                     onTap: () => widget.onGroupTap?.call(currentGroup),
-                    onDragStarted: widget.onDragStarted,
-                    onDragEnd: widget.onDragEnded,
+                    selectionEnabled: _selectionActive,
+                    isSelected: _selection.isGroupSelected(currentGroup.uuid),
+                    onSelectionTap: () =>
+                        _selection.toggleGroup(currentGroup.uuid),
+                    onHoldSelect: widget.enableSelection
+                        ? () => _activateSelection(groupUuid: currentGroup.uuid)
+                        : null,
+                    onDragStarted: _handleDragStarted,
+                    onDragEnd: _handleDragEnded,
                     onRestore: () =>
                         widget.onRestoreGroup?.call(currentGroup.uuid),
                     onDelete: () => widget.onDeleteGroup?.call(currentGroup.uuid),
@@ -618,8 +629,15 @@ class _AnimatedEntryListState extends State<AnimatedEntryList> {
                   child: TrashEntryItem(
                     entry: currentEntry,
                     sourceGroupUuid: widget.group!.uuid,
-                    onDragStarted: widget.onDragStarted,
-                    onDragEnd: widget.onDragEnded,
+                    selectionEnabled: _selectionActive,
+                    isSelected: _selection.isEntrySelected(currentEntry.uuid),
+                    onSelectionTap: () =>
+                        _selection.toggleEntry(currentEntry.uuid),
+                    onHoldSelect: widget.enableSelection
+                        ? () => _activateSelection(entryUuid: currentEntry.uuid)
+                        : null,
+                    onDragStarted: _handleDragStarted,
+                    onDragEnd: _handleDragEnded,
                     onRestore: () =>
                         widget.onRestoreEntry?.call(currentEntry.uuid),
                     onDelete: () =>

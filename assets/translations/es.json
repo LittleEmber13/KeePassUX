@@ -175,9 +175,12 @@
     "restore_message": "Arrastra el item hacia afuera para restaurarlo",
     "confirm_delete_entry": "¿Estás seguro de que quieres eliminar permanentemente esta entrada?",
     "confirm_delete_group": "¿Estás seguro de que quieres eliminar permanentemente este grupo y todo su contenido?",
+    "confirm_delete_items": "¿Seguro que quieres eliminar permanentemente los elementos seleccionados? Los grupos se eliminarán con todo su contenido.",
     "delete": "Eliminar permanentemente",
+    "delete_short": "Eliminar",
     "restore": "Restaurar",
     "restored_in": "Restaurado en «{group}»",
+    "restored_items": "Elementos restaurados",
     "info_content": "Estos elementos ya se han quitado de tus carpetas, pero siguen guardados en la base de datos.",
     "info_options": "Pulsa el botón de opciones junto a un elemento para restaurarlo a su carpeta original o eliminarlo.",
     "info_permanent": "Si lo eliminas desde aquí, se borrará de forma permanente y no podrás recuperarlo."
