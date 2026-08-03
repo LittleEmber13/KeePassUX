@@ -139,6 +139,7 @@
     "parallelism_hint": "Paralelismo",
     "save": "Guardar",
     "success": "Configuración de seguridad actualizada",
+    "warning_heavy": "Estos valores son altos para un móvil. El desbloqueo puede ser muy lento y, en dispositivos con poca memoria libre, puede fallar directamente, incluida la ventana de autocompletado.",
     "error_unsupported_aes": "Esta base usa AES-KDF (obsoleto).",
     "error_out_of_range": "Debe ser un número entre {} y {}"
   },

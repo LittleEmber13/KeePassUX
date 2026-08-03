@@ -12,11 +12,13 @@ import 'package:keepassux/ui/widgets/group_app_bar.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
 
 const int _minMemoryMib = 1;
-const int _maxMemoryMib = 512;
+const int _maxMemoryMib = 128;
+const int _warnMemoryMib = 64;
 const int _minIterations = 1;
-const int _maxIterations = 100;
+const int _maxIterations = 20;
+const int _warnIterations = 10;
 const int _minParallelism = 1;
-const int _maxParallelism = 16;
+const int _maxParallelism = 8;
 
 class KdfSettingsPage extends StatefulWidget {
   const KdfSettingsPage({super.key});
@@ -34,6 +36,12 @@ class _KdfSettingsPageState extends State<KdfSettingsPage> {
 
   bool _loadedOnce = false;
   bool _isAes = false;
+
+  bool get _isHeavy {
+    final memoryMib = int.tryParse(memoryController.text) ?? 0;
+    final iterations = int.tryParse(iterationsController.text) ?? 0;
+    return memoryMib > _warnMemoryMib || iterations > _warnIterations;
+  }
 
   final OutlineInputBorder _inputBorder = const OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -159,6 +167,29 @@ class _KdfSettingsPageState extends State<KdfSettingsPage> {
                         ],
                       ),
                     ),
+                    if (_isHeavy) ...[
+                      const SizedBox(height: 16),
+                      _buildCard(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.warning_amber_rounded,
+                              color: Colors.amber,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                tr("kdf_settings_page.warning_heavy"),
+                                style: TextStyle(
+                                  color: context.appColors.secondaryText,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                     const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
@@ -207,6 +238,7 @@ class _KdfSettingsPageState extends State<KdfSettingsPage> {
       controller: controller,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      onChanged: (_) => setState(() {}),
       validator: (value) {
         if (value == null || value.isEmpty) {
           return tr("form_error.required");

@@ -19,21 +19,59 @@ const int kDefaultArgon2Iterations = 3;
 const int kDefaultArgon2Parallelism = 1;
 
 class KdbxIsolate {
+  static const Duration _handshakeTimeout = Duration(seconds: 30);
+
   Isolate? _isolate;
   SendPort? _sendPort;
-  final Completer<void> _initCompleter = Completer<void>();
+  Completer<void>? _initCompleter;
+  bool _disposed = false;
 
-  Future<void> init() async {
+  Future<void> init() {
+    if (_disposed) {
+      return Future<void>.error(StateError('KdbxIsolate already disposed'));
+    }
+    final pending = _initCompleter;
+    if (pending != null) return pending.future;
+
+    final completer = Completer<void>();
+    _initCompleter = completer;
+    unawaited(_spawn(completer));
+    return completer.future;
+  }
+
+  Future<void> _spawn(Completer<void> completer) async {
     final receivePort = ReceivePort();
-    _isolate = await Isolate.spawn(kdbxIsolateEntryPoint, receivePort.sendPort);
-    _sendPort = await receivePort.first as SendPort;
-    _initCompleter.complete();
+    try {
+      final isolate = await Isolate.spawn(
+        kdbxIsolateEntryPoint,
+        receivePort.sendPort,
+      );
+      final sendPort =
+          await receivePort.first.timeout(_handshakeTimeout) as SendPort;
+      if (_disposed) {
+        isolate.kill(priority: Isolate.immediate);
+        throw StateError('KdbxIsolate already disposed');
+      }
+      _isolate = isolate;
+      _sendPort = sendPort;
+      completer.complete();
+    } catch (error, stackTrace) {
+      receivePort.close();
+      _isolate?.kill(priority: Isolate.immediate);
+      _isolate = null;
+      _sendPort = null;
+      if (identical(_initCompleter, completer)) _initCompleter = null;
+      completer.completeError(error, stackTrace);
+    }
   }
 
   Future<T> send<T>(KdbxCommand command) async {
-    await _initCompleter.future;
+    await init();
+    final sendPort = _sendPort;
+    if (sendPort == null) throw StateError('KdbxIsolate is not running');
+
     final responsePort = ReceivePort();
-    _sendPort!.send([command, responsePort.sendPort]);
+    sendPort.send([command, responsePort.sendPort]);
     final result = await responsePort.first;
     if (result is KdbxIsolateError) {
       throw Exception(result.message);
@@ -42,6 +80,7 @@ class KdbxIsolate {
   }
 
   void dispose() {
+    _disposed = true;
     _isolate?.kill();
     _isolate = null;
     _sendPort = null;

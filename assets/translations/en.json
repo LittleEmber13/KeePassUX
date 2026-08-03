@@ -139,6 +139,7 @@
     "parallelism_hint": "Parallelism",
     "save": "Save",
     "success": "Security settings updated",
+    "warning_heavy": "These values are high for a phone. Unlocking may be very slow, and on devices with little free memory it can fail outright, including in the autofill window.",
     "error_unsupported_aes": "This database uses AES-KDF (legacy).",
     "error_out_of_range": "Must be a number between {} and {}"
   },

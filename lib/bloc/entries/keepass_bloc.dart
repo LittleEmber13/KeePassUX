@@ -65,7 +65,11 @@ class KeePassBloc extends Bloc<KeePassEvent, KeePassState> {
   Logger logger = Logger();
 
   Future<void> _initIsolate() async {
-    await _kdbxIsolate.init();
+    try {
+      await _kdbxIsolate.init();
+    } catch (e) {
+      logger.e(e);
+    }
   }
 
   @override
