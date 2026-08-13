@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Ce champ est obligatoire"
+  },
+  "exception": {
+    "invalid_password": "Mot de passe incorrect",
+    "unknown": "Erreur inconnue",
+    "save_failed": "Enregistrement impossible. Les modifications ont été annulées et votre base de données est inchangée.",
+    "save_failed_unrecoverable": "Impossible d'enregistrer ou de restaurer l'état précédent. Fermez l'application et vérifiez votre fichier avant de continuer."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Base de données",
+    "password_hint": "Mot de passe",
+    "open_database": "Ouvrir la base de données",
+    "open_database_error": "Impossible d'ouvrir le fichier de base de données. Veuillez le sélectionner à nouveau.",
+    "create_database": "Créer une base de données",
+    "open_with_biometric": "Ouvrir avec l'empreinte digitale",
+    "open_with_password": "Ouvrir avec le mot de passe",
+    "biometric_reason": "Authentifiez-vous pour ouvrir votre base de données",
+    "biometric_error": "Échec de l'authentification biométrique",
+    "biometric_locked": "Authentification biométrique temporairement bloquée",
+    "biometric_save_message": "Voulez-vous activer l'accès biométrique pour ouvrir votre base de données avec votre empreinte digitale ?",
+    "biometric_save_yes": "Oui, activer",
+    "biometric_save_no": "Non, merci"
+  },
+  "create_database_page": {
+    "title": "Créer une base de données",
+    "name_hint": "Nom du fichier",
+    "password_hint": "Mot de passe",
+    "open_database": "Ouvrir la base de données",
+    "create_database": "Créer une base de données"
+  },
+  "entries_page": {
+    "title": "Entrées",
+    "search": "Rechercher une entrée"
+  },
+  "search_page": {
+    "title": "Recherche",
+    "hint": "Rechercher des groupes et des entrées…",
+    "no_results": "Aucun résultat trouvé"
+  },
+  "app_bar": {
+    "trash": "Corbeille"
+  },
+  "nav_bar": {
+    "add": "Ajouter",
+    "add_group": "Ajouter un groupe",
+    "add_entry": "Ajouter une entrée"
+  },
+  "move_mode": {
+    "copy": "Copier",
+    "cut": "Couper",
+    "paste": "Coller",
+    "delete": "Supprimer",
+    "confirm_delete": "Voulez-vous vraiment déplacer les éléments sélectionnés vers la corbeille ?",
+    "invalid_target": "Vous ne pouvez pas coller un dossier dans lui-même"
+  },
+  "add_entry": {
+    "add_entry": "Ajouter une entrée",
+    "edit_entry": "Modifier l'entrée",
+    "information": "Informations",
+    "title": "Titre",
+    "user": "Utilisateur",
+    "url": "URL",
+    "notes": "Notes",
+    "password": "Mot de passe",
+    "password_hint": "Mot de passe",
+    "security": "Sécurité",
+    "special_characters": "Caractères spéciaux",
+    "save": "Enregistrer",
+    "edit_icon": "Modifier l'icône",
+    "generator_title": "Générateur de mots de passe",
+    "apply": "Appliquer"
+  },
+  "add_group": {
+    "information": "Informations",
+    "title": "Titre",
+    "save": "Enregistrer",
+    "add_group": "Ajouter un groupe",
+    "edit_group": "Modifier le groupe"
+  },
+  "entry_data": {
+    "title": "Titre",
+    "user": "Utilisateur",
+    "password": "Mot de passe",
+    "url": "URL",
+    "notes": "Notes",
+    "edit": "Modifier",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "settings_page": {
+    "title": "Paramètres",
+    "language": "Langue",
+    "biometric_login": "Connexion biométrique",
+    "dark_theme": "Thème sombre",
+    "change_password": "Changer le mot de passe maître",
+    "kdf_settings": "Sécurité de la base de données",
+    "autofill_settings": "Remplissage automatique",
+    "autofill_settings_active": "Actif",
+    "autofill_settings_inactive": "Inactif — appuyez pour configurer",
+    "screenshot_protection": "Bloquer les captures d'écran",
+    "screenshot_protection_subtitle": "Empêche les captures et l'enregistrement de l'écran pendant l'utilisation de l'application",
+    "screenshot_protection_disable_warning": "Désactiver la protection contre les captures d'écran réduit la sécurité. Par précaution, votre session sera fermée et vous devrez saisir à nouveau votre mot de passe maître. Voulez-vous continuer ?",
+    "screenshot_protection_cancel": "Annuler",
+    "screenshot_protection_confirm": "Désactiver"
+  },
+  "about_page": {
+    "title": "À propos",
+    "secure_title": "Sécurisé dès la conception",
+    "secure_text": "Votre base de données est chiffrée au format KeePass (.kdbx). Votre mot de passe maître et votre coffre ne quittent jamais votre appareil.",
+    "open_source_title": "Open source",
+    "open_source_text": "KeepassUX est un logiciel libre et open source. Chacun peut examiner le code, contribuer ou signaler des problèmes sur le dépôt officiel."
+  },
+  "autofill_settings_page": {
+    "title": "Remplissage automatique",
+    "intro": "Le remplissage automatique permet à KeepassUX de proposer et de saisir vos identifiants et mots de passe enregistrés dans d'autres applications et dans votre navigateur. Pour qu'il fonctionne correctement, vous devez activer l'option suivante.",
+    "autofill_toggle_title": "Service de remplissage automatique Android",
+    "autofill_toggle_description": "Fait de KeepassUX le service de remplissage automatique utilisé par Android, afin qu'il puisse proposer et saisir vos identifiants enregistrés directement dans les champs de connexion des applications et des navigateurs.",
+    "browser_note_title": "Remplissage automatique du navigateur",
+    "browser_note_description": "Certains navigateurs activent leur propre remplissage automatique par défaut. Activez KeepassUX depuis leurs paramètres de mots de passe en choisissant de remplir avec un autre service."
+  },
+  "change_password_page": {
+    "title": "Changer le mot de passe maître",
+    "current_password_hint": "Mot de passe actuel",
+    "new_password_hint": "Nouveau mot de passe",
+    "confirm_password_hint": "Confirmer le nouveau mot de passe",
+    "save": "Changer le mot de passe",
+    "success": "Mot de passe maître modifié avec succès",
+    "error_wrong_current": "Le mot de passe actuel est incorrect",
+    "error_mismatch": "Les mots de passe ne correspondent pas"
+  },
+  "kdf_settings_page": {
+    "title": "Sécurité de la base de données",
+    "help_text": "Ces valeurs déterminent le temps nécessaire au déverrouillage de la base de données et sa résistance aux attaques par force brute.",
+    "memory_hint": "Mémoire Argon2 (Mio)",
+    "iterations_hint": "Itérations",
+    "parallelism_hint": "Parallélisme",
+    "save": "Enregistrer",
+    "success": "Paramètres de sécurité mis à jour",
+    "warning_heavy": "Ces valeurs sont élevées pour un téléphone. Le déverrouillage peut être très lent et, sur les appareils disposant de peu de mémoire libre, il peut échouer complètement, y compris dans la fenêtre de remplissage automatique.",
+    "error_unsupported_aes": "Cette base de données utilise AES-KDF (obsolète).",
+    "error_out_of_range": "Doit être un nombre compris entre {} et {}"
+  },
+  "icon_picker": {
+    "title": "Sélectionner une icône",
+    "custom_icon": "Importer une icône personnalisée",
+    "change_custom_icon": "Changer l'icône personnalisée",
+    "select": "Sélectionner",
+    "cancel": "Annuler"
+  },
+  "password_generator": {
+    "very_weak": "Très faible",
+    "weak": "Faible",
+    "fair": "Moyen",
+    "strong": "Fort",
+    "very_strong": "Très fort"
+  },
+  "alerts": {
+    "empty_title": "Votre base de données est vide",
+    "empty_text": "Appuyez sur le bouton + pour ajouter vos premières entrées ou vos premiers dossiers.",
+    "selection_title": "Maintenez pour sélectionner",
+    "selection_text": "Maintenez une entrée ou un dossier enfoncé pendant une demi-seconde et les options copier, couper et supprimer apparaîtront. Vous pouvez sélectionner plusieurs éléments et les coller dans n'importe quel dossier.",
+    "drag_title": "Maintenez plus longtemps pour déplacer",
+    "drag_text": "Maintenez un peu plus longtemps et l'élément se détache : vous pouvez alors le faire glisser sur un autre dossier ou sur la corbeille pour le déplacer.",
+    "biometric_title": "Connexion biométrique disponible",
+    "biometric_text": "Vous pouvez activer l'accès biométrique pour ouvrir votre base de données avec votre empreinte digitale. L'option se trouve dans les Paramètres.",
+    "autofill_title": "Remplissage automatique des mots de passe",
+    "autofill_text": "KeepassUX peut saisir vos mots de passe dans d'autres applications. Activez-le dans les Paramètres du système > Mots de passe et remplissage automatique, puis choisissez KeepassUX comme service.",
+    "feedback_title": "Vous avez trouvé un bug ?",
+    "feedback_text": "Le signaler sur le dépôt du projet serait très apprécié : github.com/LittleEmber13/keepassUX. Les suggestions sont également les bienvenues."
+  },
+  "delete": {
+    "title": "Déplacer vers la corbeille",
+    "confirm_entry": "Voulez-vous vraiment déplacer cette entrée vers la corbeille ?",
+    "confirm_group": "Voulez-vous vraiment déplacer ce groupe et tout son contenu vers la corbeille ?",
+    "cancel": "Annuler",
+    "delete": "Déplacer vers la corbeille"
+  },
+  "trash": {
+    "restore_message": "Faites glisser l'élément hors de la corbeille pour le restaurer",
+    "confirm_delete_entry": "Voulez-vous vraiment supprimer définitivement cette entrée ?",
+    "confirm_delete_group": "Voulez-vous vraiment supprimer définitivement ce groupe et tout son contenu ?",
+    "confirm_delete_items": "Voulez-vous vraiment supprimer définitivement les éléments sélectionnés ? Les groupes seront supprimés avec tout leur contenu.",
+    "delete": "Supprimer définitivement",
+    "delete_short": "Supprimer",
+    "restore": "Restaurer",
+    "restored_in": "Restauré dans « {group} »",
+    "restored_items": "Éléments sélectionnés restaurés",
+    "info_content": "Ces éléments ont déjà été retirés de vos dossiers, mais ils sont toujours stockés dans la base de données.",
+    "info_options": "Appuyez sur le bouton d'options à côté d'un élément pour le restaurer dans son dossier d'origine ou le supprimer.",
+    "info_permanent": "Si vous le supprimez d'ici, il sera effacé définitivement et vous ne pourrez pas le récupérer."
+  },
+  "autofill": {
+    "needs_setup_message": "Ouvrez KeepassUX et sélectionnez votre base de données avant d'utiliser le remplissage automatique.",
+    "open_database_error": "Impossible d'ouvrir la base de données. Veuillez réessayer.",
+    "unlock_subtitle_save": "Déverrouillez pour enregistrer le mot de passe",
+    "unlock_subtitle_fill": "Déverrouillez pour saisir le mot de passe",
+    "unlock_default_subtitle": "Déverrouillez votre base de données",
+    "master_password_hint": "Mot de passe maître",
+    "unlock_empty_password_error": "Saisissez le mot de passe maître.",
+    "unlock_biometric_error": "Impossible de vérifier votre identité.",
+    "unlock_wrong_password_error": "Mot de passe incorrect.",
+    "unlock_button": "Déverrouiller",
+    "use_fingerprint_button": "Utiliser l'empreinte digitale",
+    "untitled_entry": "(sans titre)",
+    "this_app_fallback": "cette application",
+    "confirm_associate_title": "Mémoriser pour cette application",
+    "confirm_associate_message": "Associer « {label} » à {source} pour que l'entrée apparaisse automatiquement la prochaine fois ?",
+    "fill_only": "Remplir seulement",
+    "associate_and_fill": "Associer et remplir",
+    "cannot_autofill_title": "Remplissage automatique impossible ici",
+    "cannot_autofill_message": "Le formulaire de {where} ne prend pas en charge le remplissage automatique (fréquent dans les applications créées avec Jetpack Compose).\n\nOuvrez KeepassUX et copiez l'identifiant et le mot de passe de l'entrée pour les coller manuellement.",
+    "close": "Fermer",
+    "matches_header": "Correspondances",
+    "no_matches_header": "Aucune correspondance pour cette application",
+    "results_header": "Résultats",
+    "fill_password_title": "Saisir le mot de passe",
+    "for_source": "Pour : {source}",
+    "search_entry_hint": "Rechercher une entrée",
+    "no_results": "Aucun résultat",
+    "empty_no_matches": "Aucune entrée ne correspond à cette application.\nUtilisez la recherche ci-dessus pour en associer une.",
+    "default_group_name": "Base de données",
+    "save_error": "Impossible d'enregistrer l'entrée.",
+    "saving_status": "Enregistrement du mot de passe…",
+    "saved_status": "Mot de passe enregistré",
+    "group_label": "Groupe : {group}",
+    "open_in_app": "Ouvrir dans KeepassUX",
+    "associate_error": "Impossible de mémoriser cette application, mais le mot de passe sera tout de même saisi."
+  }
+}

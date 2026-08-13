@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Dette felt er obligatorisk"
+  },
+  "exception": {
+    "invalid_password": "Ugyldig adgangskode",
+    "unknown": "Ukendt fejl",
+    "save_failed": "Kunne ikke gemme. Ændringerne blev kasseret, og din database er uændret.",
+    "save_failed_unrecoverable": "Kunne hverken gemme eller gendanne den tidligere tilstand. Luk appen, og kontrollér din fil, før du fortsætter."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Database",
+    "password_hint": "Adgangskode",
+    "open_database": "Åbn database",
+    "open_database_error": "Databasefilen kunne ikke åbnes. Vælg den igen.",
+    "create_database": "Opret database",
+    "open_with_biometric": "Åbn med fingeraftryk",
+    "open_with_password": "Åbn med adgangskode",
+    "biometric_reason": "Godkend dig selv for at åbne din database",
+    "biometric_error": "Biometrisk godkendelse mislykkedes",
+    "biometric_locked": "Biometrisk godkendelse er midlertidigt spærret",
+    "biometric_save_message": "Vil du aktivere biometrisk adgang, så du kan åbne din database med dit fingeraftryk?",
+    "biometric_save_yes": "Ja, aktivér",
+    "biometric_save_no": "Nej tak"
+  },
+  "create_database_page": {
+    "title": "Opret database",
+    "name_hint": "Filnavn",
+    "password_hint": "Adgangskode",
+    "open_database": "Åbn database",
+    "create_database": "Opret database"
+  },
+  "entries_page": {
+    "title": "Poster",
+    "search": "Søg efter en post"
+  },
+  "search_page": {
+    "title": "Søg",
+    "hint": "Søg i grupper og poster …",
+    "no_results": "Ingen resultater fundet"
+  },
+  "app_bar": {
+    "trash": "Papirkurv"
+  },
+  "nav_bar": {
+    "add": "Tilføj",
+    "add_group": "Tilføj gruppe",
+    "add_entry": "Tilføj post"
+  },
+  "move_mode": {
+    "copy": "Kopiér",
+    "cut": "Klip",
+    "paste": "Sæt ind",
+    "delete": "Slet",
+    "confirm_delete": "Er du sikker på, at du vil flytte de valgte elementer til papirkurven?",
+    "invalid_target": "Du kan ikke sætte en mappe ind i sig selv"
+  },
+  "add_entry": {
+    "add_entry": "Tilføj post",
+    "edit_entry": "Rediger post",
+    "information": "Oplysninger",
+    "title": "Titel",
+    "user": "Bruger",
+    "url": "URL",
+    "notes": "Noter",
+    "password": "Adgangskode",
+    "password_hint": "Adgangskode",
+    "security": "Sikkerhed",
+    "special_characters": "Specialtegn",
+    "save": "Gem",
+    "edit_icon": "Rediger ikon",
+    "generator_title": "Adgangskodegenerator",
+    "apply": "Anvend"
+  },
+  "add_group": {
+    "information": "Oplysninger",
+    "title": "Titel",
+    "save": "Gem",
+    "add_group": "Tilføj gruppe",
+    "edit_group": "Rediger gruppe"
+  },
+  "entry_data": {
+    "title": "Titel",
+    "user": "Bruger",
+    "password": "Adgangskode",
+    "url": "URL",
+    "notes": "Noter",
+    "edit": "Rediger",
+    "save": "Gem",
+    "cancel": "Annuller"
+  },
+  "settings_page": {
+    "title": "Indstillinger",
+    "language": "Sprog",
+    "biometric_login": "Biometrisk login",
+    "dark_theme": "Mørkt tema",
+    "change_password": "Skift hovedadgangskode",
+    "kdf_settings": "Databasesikkerhed",
+    "autofill_settings": "Autofyld",
+    "autofill_settings_active": "Aktiv",
+    "autofill_settings_inactive": "Inaktiv – tryk for at konfigurere",
+    "screenshot_protection": "Blokér skærmbilleder",
+    "screenshot_protection_subtitle": "Forhindrer skærmbilleder og skærmoptagelse, mens du bruger appen",
+    "screenshot_protection_disable_warning": "Hvis du slår beskyttelsen mod skærmbilleder fra, bliver sikkerheden ringere. For en sikkerheds skyld lukkes din session, og du skal indtaste din hovedadgangskode igen. Vil du fortsætte?",
+    "screenshot_protection_cancel": "Annuller",
+    "screenshot_protection_confirm": "Slå fra"
+  },
+  "about_page": {
+    "title": "Om",
+    "secure_title": "Sikker fra bunden",
+    "secure_text": "Din database er krypteret med KeePass-formatet (.kdbx). Din hovedadgangskode og din boks forlader aldrig din enhed.",
+    "open_source_title": "Open source",
+    "open_source_text": "KeepassUX er fri software med åben kildekode. Alle kan gennemgå koden, bidrage eller rapportere problemer i det officielle kodelager."
+  },
+  "autofill_settings_page": {
+    "title": "Autofyld",
+    "intro": "Med autofyld kan KeepassUX foreslå og indsætte dine gemte brugernavne og adgangskoder i andre apps og i din browser. For at det virker korrekt skal du aktivere følgende indstilling.",
+    "autofill_toggle_title": "Androids autofyldtjeneste",
+    "autofill_toggle_description": "Gør KeepassUX til den autofyldtjeneste, som Android bruger, så dine gemte loginoplysninger kan foreslås og indsættes direkte i loginfelter i apps og browsere.",
+    "browser_note_title": "Autofyld i browseren",
+    "browser_note_description": "Nogle browsere har deres egen autofyld slået til som standard. Aktivér KeepassUX i deres indstillinger for adgangskoder ved at vælge at udfylde med en anden tjeneste."
+  },
+  "change_password_page": {
+    "title": "Skift hovedadgangskode",
+    "current_password_hint": "Nuværende adgangskode",
+    "new_password_hint": "Ny adgangskode",
+    "confirm_password_hint": "Bekræft ny adgangskode",
+    "save": "Skift adgangskode",
+    "success": "Hovedadgangskoden er ændret",
+    "error_wrong_current": "Den nuværende adgangskode er forkert",
+    "error_mismatch": "Adgangskoderne er ikke ens"
+  },
+  "kdf_settings_page": {
+    "title": "Databasesikkerhed",
+    "help_text": "Disse værdier bestemmer, hvor lang tid det tager at låse databasen op, og hvor modstandsdygtig den er over for brute force-angreb.",
+    "memory_hint": "Argon2-hukommelse (MiB)",
+    "iterations_hint": "Iterationer",
+    "parallelism_hint": "Parallelitet",
+    "save": "Gem",
+    "success": "Sikkerhedsindstillingerne er opdateret",
+    "warning_heavy": "Disse værdier er høje til en telefon. Oplåsningen kan blive meget langsom, og på enheder med lidt ledig hukommelse kan den slå helt fejl, også i autofyldvinduet.",
+    "error_unsupported_aes": "Denne database bruger AES-KDF (forældet).",
+    "error_out_of_range": "Skal være et tal mellem {} og {}"
+  },
+  "icon_picker": {
+    "title": "Vælg ikon",
+    "custom_icon": "Upload eget ikon",
+    "change_custom_icon": "Skift eget ikon",
+    "select": "Vælg",
+    "cancel": "Annuller"
+  },
+  "password_generator": {
+    "very_weak": "Meget svag",
+    "weak": "Svag",
+    "fair": "Rimelig",
+    "strong": "Stærk",
+    "very_strong": "Meget stærk"
+  },
+  "alerts": {
+    "empty_title": "Din database er tom",
+    "empty_text": "Tryk på +-knappen for at tilføje dine første poster eller mapper.",
+    "selection_title": "Hold nede for at vælge",
+    "selection_text": "Hold en post eller mappe nede i et halvt sekund, så dukker mulighederne kopiér, klip og slet op. Du kan vælge flere elementer og sætte dem ind i en hvilken som helst mappe.",
+    "drag_title": "Bliv ved med at holde for at trække",
+    "drag_text": "Hold lidt længere nede, så løsner elementet sig, og du kan trække det over på en anden mappe eller på papirkurven for at flytte det.",
+    "biometric_title": "Biometrisk login er tilgængeligt",
+    "biometric_text": "Du kan aktivere biometrisk adgang og åbne din database med dit fingeraftryk. Du finder det under Indstillinger.",
+    "autofill_title": "Autofyld af adgangskoder",
+    "autofill_text": "KeepassUX kan indsætte dine adgangskoder i andre apps. Slå det til under systemets Indstillinger > Adgangskoder og autofyld, og vælg KeepassUX som tjeneste.",
+    "feedback_title": "Har du fundet en fejl?",
+    "feedback_text": "Vi sætter stor pris på, hvis du rapporterer den i projektets kodelager: github.com/LittleEmber13/keepassUX. Forslag er også velkomne."
+  },
+  "delete": {
+    "title": "Flyt til papirkurv",
+    "confirm_entry": "Er du sikker på, at du vil flytte denne post til papirkurven?",
+    "confirm_group": "Er du sikker på, at du vil flytte denne gruppe og hele dens indhold til papirkurven?",
+    "cancel": "Annuller",
+    "delete": "Flyt til papirkurv"
+  },
+  "trash": {
+    "restore_message": "Træk elementet ud for at gendanne det",
+    "confirm_delete_entry": "Er du sikker på, at du vil slette denne post permanent?",
+    "confirm_delete_group": "Er du sikker på, at du vil slette denne gruppe og hele dens indhold permanent?",
+    "confirm_delete_items": "Er du sikker på, at du vil slette de valgte elementer permanent? Grupper slettes med hele deres indhold.",
+    "delete": "Slet permanent",
+    "delete_short": "Slet",
+    "restore": "Gendan",
+    "restored_in": "Gendannet i \"{group}\"",
+    "restored_items": "De valgte elementer er gendannet",
+    "info_content": "Disse elementer er allerede fjernet fra dine mapper, men de er stadig gemt i databasen.",
+    "info_options": "Tryk på knappen med indstillinger ved siden af et element for at gendanne det i dets oprindelige mappe eller for at slette det.",
+    "info_permanent": "Hvis du sletter det herfra, bliver det slettet permanent, og du kan ikke få det tilbage."
+  },
+  "autofill": {
+    "needs_setup_message": "Åbn KeepassUX, og vælg din database, før du bruger autofyld.",
+    "open_database_error": "Databasen kunne ikke åbnes. Prøv igen.",
+    "unlock_subtitle_save": "Lås op for at gemme adgangskoden",
+    "unlock_subtitle_fill": "Lås op for at indsætte adgangskoden",
+    "unlock_default_subtitle": "Lås din database op",
+    "master_password_hint": "Hovedadgangskode",
+    "unlock_empty_password_error": "Indtast hovedadgangskoden.",
+    "unlock_biometric_error": "Din identitet kunne ikke bekræftes.",
+    "unlock_wrong_password_error": "Forkert adgangskode.",
+    "unlock_button": "Lås op",
+    "use_fingerprint_button": "Brug fingeraftryk",
+    "untitled_entry": "(uden titel)",
+    "this_app_fallback": "denne app",
+    "confirm_associate_title": "Husk til denne app",
+    "confirm_associate_message": "Vil du knytte \"{label}\" til {source}, så posten dukker op automatisk næste gang?",
+    "fill_only": "Udfyld kun",
+    "associate_and_fill": "Knyt til og udfyld",
+    "cannot_autofill_title": "Autofyld virker ikke her",
+    "cannot_autofill_message": "Formularen i {where} understøtter ikke autofyld (det er almindeligt i apps, der er lavet med Jetpack Compose).\n\nÅbn KeepassUX, og kopiér postens brugernavn og adgangskode, så du kan sætte dem ind manuelt.",
+    "close": "Luk",
+    "matches_header": "Match",
+    "no_matches_header": "Ingen match til denne app",
+    "results_header": "Resultater",
+    "fill_password_title": "Indsæt adgangskode",
+    "for_source": "Til: {source}",
+    "search_entry_hint": "Søg efter post",
+    "no_results": "Ingen resultater",
+    "empty_no_matches": "Ingen post passer til denne app.\nSøg ovenfor for at knytte en til.",
+    "default_group_name": "Database",
+    "save_error": "Posten kunne ikke gemmes.",
+    "saving_status": "Gemmer adgangskode …",
+    "saved_status": "Adgangskoden er gemt",
+    "group_label": "Gruppe: {group}",
+    "open_in_app": "Åbn i KeepassUX",
+    "associate_error": "Denne app kunne ikke huskes, men adgangskoden bliver indsat alligevel."
+  }
+}

@@ -23,6 +23,38 @@ class SettingsTab extends StatefulWidget {
   State<SettingsTab> createState() => _SettingsTabState();
 }
 
+const _languageOptions = <String, String>{
+  'es': 'Español',
+  'en': 'English',
+  'id': 'Bahasa Indonesia',
+  'ca': 'Català',
+  'da': 'Dansk',
+  'de': 'Deutsch',
+  'fr': 'Français',
+  'hr': 'Hrvatski',
+  'it': 'Italiano',
+  'lt': 'Lietuvių',
+  'hu': 'Magyar',
+  'nl': 'Nederlands',
+  'nb': 'Norsk bokmål',
+  'pl': 'Polski',
+  'pt': 'Português',
+  'ro': 'Română',
+  'sk': 'Slovenčina',
+  'fi': 'Suomi',
+  'sv': 'Svenska',
+  'vi': 'Tiếng Việt',
+  'tr': 'Türkçe',
+  'el': 'Ελληνικά',
+  'bg': 'Български',
+  'ru': 'Русский',
+  'uk': 'Українська',
+  'hi': 'हिन्दी',
+  'zh': '中文（简体）',
+  'ja': '日本語',
+  'ko': '한국어',
+};
+
 class _SettingsTabState extends State<SettingsTab>
     with AutomaticKeepAliveClientMixin {
   @override
@@ -33,7 +65,7 @@ class _SettingsTabState extends State<SettingsTab>
   final ScreenshotProtectionService _screenshotProtectionService =
       ScreenshotProtectionService();
 
-  String selectedLanguage = 'Español';
+  String selectedLanguage = 'es';
   bool biometricLoginEnabled = false;
   bool screenshotProtectionEnabled = true;
   bool _hasBiometrics = false;
@@ -59,10 +91,8 @@ class _SettingsTabState extends State<SettingsTab>
       _autofillEnabled = await _autofillService.isEnabled;
     }
     setState(() {
-      if (currentLocale.languageCode == 'es') {
-        selectedLanguage = 'Español';
-      } else if (currentLocale.languageCode == 'en') {
-        selectedLanguage = 'Inglés';
+      if (_languageOptions.containsKey(currentLocale.languageCode)) {
+        selectedLanguage = currentLocale.languageCode;
       }
       biometricLoginEnabled = savedEnabled;
       screenshotProtectionEnabled = savedScreenshotProtection;
@@ -195,20 +225,17 @@ class _SettingsTabState extends State<SettingsTab>
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    items: const [
-                      DropdownMenuItem(
-                        value: 'Español',
-                        child: Text('Español'),
-                      ),
-                      DropdownMenuItem(value: 'Inglés', child: Text('Inglés')),
+                    items: [
+                      for (final entry in _languageOptions.entries)
+                        DropdownMenuItem(
+                          value: entry.key,
+                          child: Text(entry.value),
+                        ),
                     ],
                     onChanged: (value) {
-                      setState(() => selectedLanguage = value!);
-                      if (value == 'Español') {
-                        context.setLocale(const Locale('es'));
-                      } else if (value == 'Inglés') {
-                        context.setLocale(const Locale('en'));
-                      }
+                      if (value == null) return;
+                      setState(() => selectedLanguage = value);
+                      context.setLocale(Locale(value));
                     },
                   ),
                   const SizedBox(height: 12),

@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/material.dart';
 import 'package:flutter_autofill_service/flutter_autofill_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,6 +37,10 @@ class AutofillApp extends StatelessWidget {
           theme: lightThemeData,
           darkTheme: darkThemeData,
           themeMode: themeMode,
+          builder: (context, child) => Directionality(
+            textDirection: TextDirection.ltr,
+            child: child ?? const SizedBox.shrink(),
+          ),
           home: const _AutofillGate(),
         );
       },

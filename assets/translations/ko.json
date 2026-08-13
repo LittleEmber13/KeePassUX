@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "필수 입력 항목입니다"
+  },
+  "exception": {
+    "invalid_password": "비밀번호가 올바르지 않습니다",
+    "unknown": "알 수 없는 오류",
+    "save_failed": "저장하지 못했습니다. 변경 사항이 취소되었고 데이터베이스는 그대로입니다.",
+    "save_failed_unrecoverable": "저장도 이전 상태 복원도 하지 못했습니다. 앱을 닫고 파일을 확인한 뒤 계속하세요."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "데이터베이스",
+    "password_hint": "비밀번호",
+    "open_database": "데이터베이스 열기",
+    "open_database_error": "데이터베이스 파일을 열지 못했습니다. 다시 선택해 주세요.",
+    "create_database": "데이터베이스 만들기",
+    "open_with_biometric": "지문으로 열기",
+    "open_with_password": "비밀번호로 열기",
+    "biometric_reason": "데이터베이스를 열려면 본인 인증을 하세요",
+    "biometric_error": "생체 인증에 실패했습니다",
+    "biometric_locked": "생체 인증이 일시적으로 잠겼습니다",
+    "biometric_save_message": "지문으로 데이터베이스를 열 수 있도록 생체 인증 접근을 사용할까요?",
+    "biometric_save_yes": "예, 사용",
+    "biometric_save_no": "아니요, 괜찮습니다"
+  },
+  "create_database_page": {
+    "title": "데이터베이스 만들기",
+    "name_hint": "파일 이름",
+    "password_hint": "비밀번호",
+    "open_database": "데이터베이스 열기",
+    "create_database": "데이터베이스 만들기"
+  },
+  "entries_page": {
+    "title": "항목",
+    "search": "항목 검색"
+  },
+  "search_page": {
+    "title": "검색",
+    "hint": "그룹과 항목 검색…",
+    "no_results": "검색 결과가 없습니다"
+  },
+  "app_bar": {
+    "trash": "휴지통"
+  },
+  "nav_bar": {
+    "add": "추가",
+    "add_group": "그룹 추가",
+    "add_entry": "항목 추가"
+  },
+  "move_mode": {
+    "copy": "복사",
+    "cut": "잘라내기",
+    "paste": "붙여넣기",
+    "delete": "삭제",
+    "confirm_delete": "선택한 항목을 휴지통으로 옮길까요?",
+    "invalid_target": "폴더를 자기 자신 안에 붙여넣을 수 없습니다"
+  },
+  "add_entry": {
+    "add_entry": "항목 추가",
+    "edit_entry": "항목 편집",
+    "information": "정보",
+    "title": "제목",
+    "user": "사용자",
+    "url": "URL",
+    "notes": "메모",
+    "password": "비밀번호",
+    "password_hint": "비밀번호",
+    "security": "보안",
+    "special_characters": "특수 문자",
+    "save": "저장",
+    "edit_icon": "아이콘 편집",
+    "generator_title": "비밀번호 생성기",
+    "apply": "적용"
+  },
+  "add_group": {
+    "information": "정보",
+    "title": "제목",
+    "save": "저장",
+    "add_group": "그룹 추가",
+    "edit_group": "그룹 편집"
+  },
+  "entry_data": {
+    "title": "제목",
+    "user": "사용자",
+    "password": "비밀번호",
+    "url": "URL",
+    "notes": "메모",
+    "edit": "편집",
+    "save": "저장",
+    "cancel": "취소"
+  },
+  "settings_page": {
+    "title": "설정",
+    "language": "언어",
+    "biometric_login": "생체 인증 로그인",
+    "dark_theme": "어두운 테마",
+    "change_password": "마스터 비밀번호 변경",
+    "kdf_settings": "데이터베이스 보안",
+    "autofill_settings": "자동 완성",
+    "autofill_settings_active": "사용 중",
+    "autofill_settings_inactive": "사용 안 함 — 탭하여 설정",
+    "screenshot_protection": "화면 캡처 차단",
+    "screenshot_protection_subtitle": "앱을 사용하는 동안 화면 캡처와 화면 녹화를 막습니다",
+    "screenshot_protection_disable_warning": "화면 캡처 보호를 끄면 보안이 약해집니다. 안전을 위해 세션이 종료되며 마스터 비밀번호를 다시 입력해야 합니다. 계속할까요?",
+    "screenshot_protection_cancel": "취소",
+    "screenshot_protection_confirm": "끄기"
+  },
+  "about_page": {
+    "title": "정보",
+    "secure_title": "설계부터 안전하게",
+    "secure_text": "데이터베이스는 KeePass(.kdbx) 형식으로 암호화됩니다. 마스터 비밀번호와 보관함은 기기를 벗어나지 않습니다.",
+    "open_source_title": "오픈 소스",
+    "open_source_text": "KeepassUX는 자유 오픈 소스 소프트웨어입니다. 누구나 공식 저장소에서 코드를 검토하고, 기여하고, 문제를 신고할 수 있습니다."
+  },
+  "autofill_settings_page": {
+    "title": "자동 완성",
+    "intro": "자동 완성을 사용하면 KeepassUX가 저장된 사용자 이름과 비밀번호를 다른 앱과 브라우저에서 제안하고 입력해 줍니다. 제대로 작동하려면 아래 옵션을 켜야 합니다.",
+    "autofill_toggle_title": "Android 자동 완성 서비스",
+    "autofill_toggle_description": "KeepassUX를 Android가 사용하는 자동 완성 서비스로 지정합니다. 저장된 로그인 정보를 앱과 브라우저의 로그인 입력란에 바로 제안하고 채울 수 있습니다.",
+    "browser_note_title": "브라우저 자동 완성",
+    "browser_note_description": "일부 브라우저는 자체 자동 완성이 기본으로 켜져 있습니다. 해당 브라우저의 비밀번호 설정에서 다른 서비스로 채우기를 선택해 KeepassUX를 사용하도록 설정하세요."
+  },
+  "change_password_page": {
+    "title": "마스터 비밀번호 변경",
+    "current_password_hint": "현재 비밀번호",
+    "new_password_hint": "새 비밀번호",
+    "confirm_password_hint": "새 비밀번호 확인",
+    "save": "비밀번호 변경",
+    "success": "마스터 비밀번호를 변경했습니다",
+    "error_wrong_current": "현재 비밀번호가 올바르지 않습니다",
+    "error_mismatch": "비밀번호가 일치하지 않습니다"
+  },
+  "kdf_settings_page": {
+    "title": "데이터베이스 보안",
+    "help_text": "이 값들은 데이터베이스 잠금 해제에 걸리는 시간과 무차별 대입 공격에 대한 저항력을 결정합니다.",
+    "memory_hint": "Argon2 메모리(MiB)",
+    "iterations_hint": "반복 횟수",
+    "parallelism_hint": "병렬 처리 수",
+    "save": "저장",
+    "success": "보안 설정을 업데이트했습니다",
+    "warning_heavy": "휴대폰에는 다소 높은 값입니다. 잠금 해제가 매우 느려질 수 있고, 여유 메모리가 적은 기기에서는 자동 완성 창을 포함해 아예 실패할 수도 있습니다.",
+    "error_unsupported_aes": "이 데이터베이스는 AES-KDF(구형)를 사용합니다.",
+    "error_out_of_range": "{}에서 {} 사이의 숫자여야 합니다"
+  },
+  "icon_picker": {
+    "title": "아이콘 선택",
+    "custom_icon": "사용자 아이콘 업로드",
+    "change_custom_icon": "사용자 아이콘 변경",
+    "select": "선택",
+    "cancel": "취소"
+  },
+  "password_generator": {
+    "very_weak": "매우 약함",
+    "weak": "약함",
+    "fair": "보통",
+    "strong": "강함",
+    "very_strong": "매우 강함"
+  },
+  "alerts": {
+    "empty_title": "데이터베이스가 비어 있습니다",
+    "empty_text": "+ 버튼을 눌러 첫 항목이나 폴더를 추가해 보세요.",
+    "selection_title": "길게 눌러 선택",
+    "selection_text": "항목이나 폴더를 0.5초 정도 길게 누르면 복사, 잘라내기, 삭제 기능이 나타납니다. 여러 항목을 골라 원하는 폴더에 붙여넣을 수 있습니다.",
+    "drag_title": "더 길게 누르면 끌 수 있습니다",
+    "drag_text": "조금 더 길게 누르면 항목이 떨어져 나와, 다른 폴더나 휴지통으로 끌어다 옮길 수 있습니다.",
+    "biometric_title": "생체 인증 로그인 사용 가능",
+    "biometric_text": "생체 인증 접근을 켜면 지문으로 데이터베이스를 열 수 있습니다. 설정에서 바꿀 수 있습니다.",
+    "autofill_title": "비밀번호 자동 완성",
+    "autofill_text": "KeepassUX는 다른 앱에 비밀번호를 채워 넣을 수 있습니다. 시스템 설정 > 비밀번호 및 자동 완성에서 켜고 서비스로 KeepassUX를 선택하세요.",
+    "feedback_title": "버그를 발견하셨나요?",
+    "feedback_text": "프로젝트 저장소에 알려 주시면 큰 도움이 됩니다: github.com/LittleEmber13/keepassUX. 제안도 언제든 환영합니다."
+  },
+  "delete": {
+    "title": "휴지통으로 이동",
+    "confirm_entry": "이 항목을 휴지통으로 옮길까요?",
+    "confirm_group": "이 그룹과 그 안의 모든 내용을 휴지통으로 옮길까요?",
+    "cancel": "취소",
+    "delete": "휴지통으로 이동"
+  },
+  "trash": {
+    "restore_message": "항목을 밖으로 끌어내면 복원됩니다",
+    "confirm_delete_entry": "이 항목을 영구히 삭제할까요?",
+    "confirm_delete_group": "이 그룹과 그 안의 모든 내용을 영구히 삭제할까요?",
+    "confirm_delete_items": "선택한 항목을 영구히 삭제할까요? 그룹은 안의 내용과 함께 삭제됩니다.",
+    "delete": "영구 삭제",
+    "delete_short": "삭제",
+    "restore": "복원",
+    "restored_in": "\"{group}\"(으)로 복원했습니다",
+    "restored_items": "선택한 항목을 복원했습니다",
+    "info_content": "이 항목들은 폴더에서 이미 빠졌지만, 데이터베이스에는 아직 저장되어 있습니다.",
+    "info_options": "항목 옆의 옵션 버튼을 눌러 원래 폴더로 복원하거나 삭제할 수 있습니다.",
+    "info_permanent": "여기에서 삭제하면 영구히 지워지며 되돌릴 수 없습니다."
+  },
+  "autofill": {
+    "needs_setup_message": "자동 완성을 사용하기 전에 KeepassUX를 열고 데이터베이스를 선택하세요.",
+    "open_database_error": "데이터베이스를 열지 못했습니다. 다시 시도해 주세요.",
+    "unlock_subtitle_save": "비밀번호를 저장하려면 잠금을 해제하세요",
+    "unlock_subtitle_fill": "비밀번호를 채우려면 잠금을 해제하세요",
+    "unlock_default_subtitle": "데이터베이스의 잠금을 해제하세요",
+    "master_password_hint": "마스터 비밀번호",
+    "unlock_empty_password_error": "마스터 비밀번호를 입력하세요.",
+    "unlock_biometric_error": "본인 확인을 하지 못했습니다.",
+    "unlock_wrong_password_error": "비밀번호가 올바르지 않습니다.",
+    "unlock_button": "잠금 해제",
+    "use_fingerprint_button": "지문 사용",
+    "untitled_entry": "(제목 없음)",
+    "this_app_fallback": "이 앱",
+    "confirm_associate_title": "이 앱에 대해 기억하기",
+    "confirm_associate_message": "다음에 자동으로 표시되도록 \"{label}\"을(를) {source}과(와) 연결할까요?",
+    "fill_only": "채우기만",
+    "associate_and_fill": "연결하고 채우기",
+    "cannot_autofill_title": "여기서는 자동 완성을 쓸 수 없습니다",
+    "cannot_autofill_message": "{where}의 양식은 자동 완성을 지원하지 않습니다(Jetpack Compose로 만든 앱에서 흔합니다).\n\nKeepassUX를 열어 항목의 사용자 이름과 비밀번호를 복사한 뒤 직접 붙여넣으세요.",
+    "close": "닫기",
+    "matches_header": "일치 항목",
+    "no_matches_header": "이 앱과 일치하는 항목이 없습니다",
+    "results_header": "결과",
+    "fill_password_title": "비밀번호 채우기",
+    "for_source": "대상: {source}",
+    "search_entry_hint": "항목 검색",
+    "no_results": "결과 없음",
+    "empty_no_matches": "이 앱과 일치하는 항목이 없습니다.\n위에서 검색해 하나를 연결하세요.",
+    "default_group_name": "데이터베이스",
+    "save_error": "항목을 저장하지 못했습니다.",
+    "saving_status": "비밀번호 저장 중…",
+    "saved_status": "비밀번호를 저장했습니다",
+    "group_label": "그룹: {group}",
+    "open_in_app": "KeepassUX에서 열기",
+    "associate_error": "이 앱을 기억하지 못했지만 비밀번호는 채워집니다."
+  }
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autofill_unlock_label">Συμπλήρωση με το KeepassUX</string>
+    <string name="autofill_select_another_entry">Αναζήτηση άλλης καταχώρισης στο KeepassUX</string>
+</resources>

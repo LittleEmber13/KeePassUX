@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Este campo é obrigatório"
+  },
+  "exception": {
+    "invalid_password": "Palavra-passe inválida",
+    "unknown": "Erro desconhecido",
+    "save_failed": "Não foi possível guardar. As alterações foram descartadas e a sua base de dados não foi alterada.",
+    "save_failed_unrecoverable": "Não foi possível guardar nem restaurar o estado anterior. Feche a aplicação e verifique o seu ficheiro antes de continuar."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Base de dados",
+    "password_hint": "Palavra-passe",
+    "open_database": "Abrir base de dados",
+    "open_database_error": "Não foi possível abrir o ficheiro da base de dados. Selecione-o novamente.",
+    "create_database": "Criar base de dados",
+    "open_with_biometric": "Abrir com impressão digital",
+    "open_with_password": "Abrir com palavra-passe",
+    "biometric_reason": "Autentique-se para abrir a sua base de dados",
+    "biometric_error": "Falha na autenticação biométrica",
+    "biometric_locked": "Autenticação biométrica temporariamente bloqueada",
+    "biometric_save_message": "Quer ativar o acesso biométrico para abrir a sua base de dados com a impressão digital?",
+    "biometric_save_yes": "Sim, ativar",
+    "biometric_save_no": "Não, obrigado"
+  },
+  "create_database_page": {
+    "title": "Criar base de dados",
+    "name_hint": "Nome do ficheiro",
+    "password_hint": "Palavra-passe",
+    "open_database": "Abrir base de dados",
+    "create_database": "Criar base de dados"
+  },
+  "entries_page": {
+    "title": "Entradas",
+    "search": "Procurar uma entrada"
+  },
+  "search_page": {
+    "title": "Pesquisa",
+    "hint": "Procurar grupos e entradas…",
+    "no_results": "Não foram encontrados resultados"
+  },
+  "app_bar": {
+    "trash": "Reciclagem"
+  },
+  "nav_bar": {
+    "add": "Adicionar",
+    "add_group": "Adicionar grupo",
+    "add_entry": "Adicionar entrada"
+  },
+  "move_mode": {
+    "copy": "Copiar",
+    "cut": "Cortar",
+    "paste": "Colar",
+    "delete": "Eliminar",
+    "confirm_delete": "Tem a certeza de que quer mover os itens selecionados para a reciclagem?",
+    "invalid_target": "Não pode colar uma pasta dentro de si própria"
+  },
+  "add_entry": {
+    "add_entry": "Adicionar entrada",
+    "edit_entry": "Editar entrada",
+    "information": "Informação",
+    "title": "Título",
+    "user": "Utilizador",
+    "url": "URL",
+    "notes": "Notas",
+    "password": "Palavra-passe",
+    "password_hint": "Palavra-passe",
+    "security": "Segurança",
+    "special_characters": "Caracteres especiais",
+    "save": "Guardar",
+    "edit_icon": "Editar ícone",
+    "generator_title": "Gerador de palavras-passe",
+    "apply": "Aplicar"
+  },
+  "add_group": {
+    "information": "Informação",
+    "title": "Título",
+    "save": "Guardar",
+    "add_group": "Adicionar grupo",
+    "edit_group": "Editar grupo"
+  },
+  "entry_data": {
+    "title": "Título",
+    "user": "Utilizador",
+    "password": "Palavra-passe",
+    "url": "URL",
+    "notes": "Notas",
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "settings_page": {
+    "title": "Definições",
+    "language": "Idioma",
+    "biometric_login": "Início de sessão biométrico",
+    "dark_theme": "Tema escuro",
+    "change_password": "Alterar palavra-passe mestra",
+    "kdf_settings": "Segurança da base de dados",
+    "autofill_settings": "Preenchimento automático",
+    "autofill_settings_active": "Ativo",
+    "autofill_settings_inactive": "Inativo — toque para configurar",
+    "screenshot_protection": "Bloquear capturas de ecrã",
+    "screenshot_protection_subtitle": "Impede capturas e gravações de ecrã enquanto usa a aplicação",
+    "screenshot_protection_disable_warning": "Desativar a proteção contra capturas de ecrã reduz a segurança. Por precaução, a sua sessão será terminada e terá de introduzir novamente a palavra-passe mestra. Quer continuar?",
+    "screenshot_protection_cancel": "Cancelar",
+    "screenshot_protection_confirm": "Desativar"
+  },
+  "about_page": {
+    "title": "Acerca",
+    "secure_title": "Seguro por conceção",
+    "secure_text": "A sua base de dados é cifrada com o formato KeePass (.kdbx). A sua palavra-passe mestra e o seu cofre nunca saem do seu dispositivo.",
+    "open_source_title": "Código aberto",
+    "open_source_text": "O KeepassUX é software livre e de código aberto. Qualquer pessoa pode rever o código, contribuir ou comunicar problemas no repositório oficial."
+  },
+  "autofill_settings_page": {
+    "title": "Preenchimento automático",
+    "intro": "O preenchimento automático permite que o KeepassUX sugira e introduza os seus nomes de utilizador e palavras-passe guardados noutras aplicações e no navegador. Para funcionar corretamente, tem de ativar a opção seguinte.",
+    "autofill_toggle_title": "Serviço de preenchimento automático do Android",
+    "autofill_toggle_description": "Define o KeepassUX como o serviço de preenchimento automático usado pelo Android, para que possa sugerir e introduzir as suas credenciais guardadas diretamente nos campos de início de sessão em aplicações e navegadores.",
+    "browser_note_title": "Preenchimento automático no navegador",
+    "browser_note_description": "Alguns navegadores têm o seu próprio preenchimento automático ativado por predefinição. Ative o KeepassUX nas definições de palavras-passe desses navegadores, escolhendo preencher com outro serviço."
+  },
+  "change_password_page": {
+    "title": "Alterar palavra-passe mestra",
+    "current_password_hint": "Palavra-passe atual",
+    "new_password_hint": "Nova palavra-passe",
+    "confirm_password_hint": "Confirmar nova palavra-passe",
+    "save": "Alterar palavra-passe",
+    "success": "Palavra-passe mestra alterada com sucesso",
+    "error_wrong_current": "A palavra-passe atual está incorreta",
+    "error_mismatch": "As palavras-passe não coincidem"
+  },
+  "kdf_settings_page": {
+    "title": "Segurança da base de dados",
+    "help_text": "Estes valores determinam o tempo que a base de dados demora a desbloquear e a sua resistência a ataques de força bruta.",
+    "memory_hint": "Memória Argon2 (MiB)",
+    "iterations_hint": "Iterações",
+    "parallelism_hint": "Paralelismo",
+    "save": "Guardar",
+    "success": "Definições de segurança atualizadas",
+    "warning_heavy": "Estes valores são elevados para um telemóvel. O desbloqueio pode ser muito lento e, em dispositivos com pouca memória livre, pode falhar por completo, incluindo na janela de preenchimento automático.",
+    "error_unsupported_aes": "Esta base de dados usa AES-KDF (antigo).",
+    "error_out_of_range": "Tem de ser um número entre {} e {}"
+  },
+  "icon_picker": {
+    "title": "Selecionar ícone",
+    "custom_icon": "Carregar ícone personalizado",
+    "change_custom_icon": "Alterar ícone personalizado",
+    "select": "Selecionar",
+    "cancel": "Cancelar"
+  },
+  "password_generator": {
+    "very_weak": "Muito fraca",
+    "weak": "Fraca",
+    "fair": "Razoável",
+    "strong": "Forte",
+    "very_strong": "Muito forte"
+  },
+  "alerts": {
+    "empty_title": "A sua base de dados está vazia",
+    "empty_text": "Toque no botão + para adicionar as suas primeiras entradas ou pastas.",
+    "selection_title": "Mantenha premido para selecionar",
+    "selection_text": "Mantenha uma entrada ou pasta premida durante meio segundo e aparecerão as opções de copiar, cortar e eliminar. Pode escolher vários itens e colá-los em qualquer pasta.",
+    "drag_title": "Continue a premir para arrastar",
+    "drag_text": "Mantenha premido um pouco mais e o item solta-se, para que o possa arrastar para outra pasta ou para a reciclagem e assim movê-lo.",
+    "biometric_title": "Início de sessão biométrico disponível",
+    "biometric_text": "Pode ativar o acesso biométrico para abrir a sua base de dados com a impressão digital. Encontra a opção nas Definições.",
+    "autofill_title": "Preenchimento automático de palavras-passe",
+    "autofill_text": "O KeepassUX pode introduzir as suas palavras-passe noutras aplicações. Ative-o nas Definições do sistema > Palavras-passe e preenchimento automático e escolha o KeepassUX como serviço.",
+    "feedback_title": "Encontrou um erro?",
+    "feedback_text": "Agradecemos muito que o comunique no repositório do projeto: github.com/LittleEmber13/keepassUX. As sugestões também são bem-vindas."
+  },
+  "delete": {
+    "title": "Mover para a reciclagem",
+    "confirm_entry": "Tem a certeza de que quer mover esta entrada para a reciclagem?",
+    "confirm_group": "Tem a certeza de que quer mover este grupo e todo o seu conteúdo para a reciclagem?",
+    "cancel": "Cancelar",
+    "delete": "Mover para a reciclagem"
+  },
+  "trash": {
+    "restore_message": "Arraste o item para fora para o restaurar",
+    "confirm_delete_entry": "Tem a certeza de que quer eliminar permanentemente esta entrada?",
+    "confirm_delete_group": "Tem a certeza de que quer eliminar permanentemente este grupo e todo o seu conteúdo?",
+    "confirm_delete_items": "Tem a certeza de que quer eliminar permanentemente os itens selecionados? Os grupos serão eliminados com todo o seu conteúdo.",
+    "delete": "Eliminar permanentemente",
+    "delete_short": "Eliminar",
+    "restore": "Restaurar",
+    "restored_in": "Restaurado em \"{group}\"",
+    "restored_items": "Itens selecionados restaurados",
+    "info_content": "Estes itens já foram removidos das suas pastas, mas continuam guardados na base de dados.",
+    "info_options": "Toque no botão de opções junto a um item para o restaurar na pasta original ou para o eliminar.",
+    "info_permanent": "Se o eliminar aqui, será apagado permanentemente e não o poderá recuperar."
+  },
+  "autofill": {
+    "needs_setup_message": "Abra o KeepassUX e selecione a sua base de dados antes de usar o preenchimento automático.",
+    "open_database_error": "Não foi possível abrir a base de dados. Tente novamente.",
+    "unlock_subtitle_save": "Desbloqueie para guardar a palavra-passe",
+    "unlock_subtitle_fill": "Desbloqueie para introduzir a palavra-passe",
+    "unlock_default_subtitle": "Desbloqueie a sua base de dados",
+    "master_password_hint": "Palavra-passe mestra",
+    "unlock_empty_password_error": "Introduza a palavra-passe mestra.",
+    "unlock_biometric_error": "Não foi possível verificar a sua identidade.",
+    "unlock_wrong_password_error": "Palavra-passe incorreta.",
+    "unlock_button": "Desbloquear",
+    "use_fingerprint_button": "Usar impressão digital",
+    "untitled_entry": "(sem título)",
+    "this_app_fallback": "esta aplicação",
+    "confirm_associate_title": "Memorizar para esta aplicação",
+    "confirm_associate_message": "Associar \"{label}\" a {source} para que apareça automaticamente da próxima vez?",
+    "fill_only": "Só preencher",
+    "associate_and_fill": "Associar e preencher",
+    "cannot_autofill_title": "Não é possível preencher aqui",
+    "cannot_autofill_message": "O formulário de {where} não suporta preenchimento automático (é comum em aplicações criadas com Jetpack Compose).\n\nAbra o KeepassUX e copie o nome de utilizador e a palavra-passe da entrada para os colar manualmente.",
+    "close": "Fechar",
+    "matches_header": "Correspondências",
+    "no_matches_header": "Sem correspondências para esta aplicação",
+    "results_header": "Resultados",
+    "fill_password_title": "Preencher palavra-passe",
+    "for_source": "Para: {source}",
+    "search_entry_hint": "Procurar entrada",
+    "no_results": "Sem resultados",
+    "empty_no_matches": "Nenhuma entrada corresponde a esta aplicação.\nProcure acima para associar uma.",
+    "default_group_name": "Base de dados",
+    "save_error": "Não foi possível guardar a entrada.",
+    "saving_status": "A guardar palavra-passe…",
+    "saved_status": "Palavra-passe guardada",
+    "group_label": "Grupo: {group}",
+    "open_in_app": "Abrir no KeepassUX",
+    "associate_error": "Não foi possível memorizar esta aplicação, mas a palavra-passe será introduzida na mesma."
+  }
+}

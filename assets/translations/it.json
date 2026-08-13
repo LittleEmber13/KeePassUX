@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Questo campo è obbligatorio"
+  },
+  "exception": {
+    "invalid_password": "Password non valida",
+    "unknown": "Errore sconosciuto",
+    "save_failed": "Impossibile salvare. Le modifiche sono state annullate e il database è rimasto invariato.",
+    "save_failed_unrecoverable": "Impossibile salvare o ripristinare lo stato precedente. Chiudi l'app e controlla il file prima di continuare."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Database",
+    "password_hint": "Password",
+    "open_database": "Apri database",
+    "open_database_error": "Impossibile aprire il file del database. Selezionalo di nuovo.",
+    "create_database": "Crea database",
+    "open_with_biometric": "Apri con l'impronta digitale",
+    "open_with_password": "Apri con la password",
+    "biometric_reason": "Autenticati per aprire il tuo database",
+    "biometric_error": "Autenticazione biometrica non riuscita",
+    "biometric_locked": "Autenticazione biometrica temporaneamente bloccata",
+    "biometric_save_message": "Vuoi attivare l'accesso biometrico per aprire il database con l'impronta digitale?",
+    "biometric_save_yes": "Sì, attiva",
+    "biometric_save_no": "No, grazie"
+  },
+  "create_database_page": {
+    "title": "Crea database",
+    "name_hint": "Nome del file",
+    "password_hint": "Password",
+    "open_database": "Apri database",
+    "create_database": "Crea database"
+  },
+  "entries_page": {
+    "title": "Voci",
+    "search": "Cerca una voce"
+  },
+  "search_page": {
+    "title": "Cerca",
+    "hint": "Cerca gruppi e voci…",
+    "no_results": "Nessun risultato trovato"
+  },
+  "app_bar": {
+    "trash": "Cestino"
+  },
+  "nav_bar": {
+    "add": "Aggiungi",
+    "add_group": "Aggiungi gruppo",
+    "add_entry": "Aggiungi voce"
+  },
+  "move_mode": {
+    "copy": "Copia",
+    "cut": "Taglia",
+    "paste": "Incolla",
+    "delete": "Elimina",
+    "confirm_delete": "Vuoi davvero spostare gli elementi selezionati nel cestino?",
+    "invalid_target": "Non puoi incollare una cartella dentro se stessa"
+  },
+  "add_entry": {
+    "add_entry": "Aggiungi voce",
+    "edit_entry": "Modifica voce",
+    "information": "Informazioni",
+    "title": "Titolo",
+    "user": "Utente",
+    "url": "URL",
+    "notes": "Note",
+    "password": "Password",
+    "password_hint": "Password",
+    "security": "Sicurezza",
+    "special_characters": "Caratteri speciali",
+    "save": "Salva",
+    "edit_icon": "Modifica icona",
+    "generator_title": "Generatore di password",
+    "apply": "Applica"
+  },
+  "add_group": {
+    "information": "Informazioni",
+    "title": "Titolo",
+    "save": "Salva",
+    "add_group": "Aggiungi gruppo",
+    "edit_group": "Modifica gruppo"
+  },
+  "entry_data": {
+    "title": "Titolo",
+    "user": "Utente",
+    "password": "Password",
+    "url": "URL",
+    "notes": "Note",
+    "edit": "Modifica",
+    "save": "Salva",
+    "cancel": "Annulla"
+  },
+  "settings_page": {
+    "title": "Impostazioni",
+    "language": "Lingua",
+    "biometric_login": "Accesso biometrico",
+    "dark_theme": "Tema scuro",
+    "change_password": "Cambia password principale",
+    "kdf_settings": "Sicurezza del database",
+    "autofill_settings": "Compilazione automatica",
+    "autofill_settings_active": "Attiva",
+    "autofill_settings_inactive": "Non attiva — tocca per configurare",
+    "screenshot_protection": "Blocca screenshot",
+    "screenshot_protection_subtitle": "Impedisce screenshot e registrazioni dello schermo durante l'uso dell'app",
+    "screenshot_protection_disable_warning": "Disattivare la protezione dagli screenshot riduce la sicurezza. Per precauzione la sessione verrà chiusa e dovrai inserire di nuovo la password principale. Vuoi continuare?",
+    "screenshot_protection_cancel": "Annulla",
+    "screenshot_protection_confirm": "Disattiva"
+  },
+  "about_page": {
+    "title": "Informazioni",
+    "secure_title": "Sicuro fin dalla progettazione",
+    "secure_text": "Il tuo database è cifrato con il formato KeePass (.kdbx). La password principale e la tua cassaforte non lasciano mai il dispositivo.",
+    "open_source_title": "Open source",
+    "open_source_text": "KeepassUX è software libero e open source. Chiunque può esaminare il codice, contribuire o segnalare problemi nel repository ufficiale."
+  },
+  "autofill_settings_page": {
+    "title": "Compilazione automatica",
+    "intro": "La compilazione automatica permette a KeepassUX di suggerire e inserire i nomi utente e le password salvate in altre app e nel browser. Perché funzioni correttamente devi attivare l'opzione seguente.",
+    "autofill_toggle_title": "Servizio di compilazione automatica di Android",
+    "autofill_toggle_description": "Imposta KeepassUX come servizio di compilazione automatica usato da Android, così può suggerire e inserire le credenziali salvate direttamente nei campi di accesso di app e browser.",
+    "browser_note_title": "Compilazione automatica del browser",
+    "browser_note_description": "Alcuni browser hanno la propria compilazione automatica attiva per impostazione predefinita. Attiva KeepassUX dalle loro impostazioni delle password scegliendo di compilare con un altro servizio."
+  },
+  "change_password_page": {
+    "title": "Cambia password principale",
+    "current_password_hint": "Password attuale",
+    "new_password_hint": "Nuova password",
+    "confirm_password_hint": "Conferma la nuova password",
+    "save": "Cambia password",
+    "success": "Password principale cambiata correttamente",
+    "error_wrong_current": "La password attuale non è corretta",
+    "error_mismatch": "Le password non coincidono"
+  },
+  "kdf_settings_page": {
+    "title": "Sicurezza del database",
+    "help_text": "Questi valori determinano quanto tempo serve per sbloccare il database e quanto è resistente agli attacchi a forza bruta.",
+    "memory_hint": "Memoria Argon2 (MiB)",
+    "iterations_hint": "Iterazioni",
+    "parallelism_hint": "Parallelismo",
+    "save": "Salva",
+    "success": "Impostazioni di sicurezza aggiornate",
+    "warning_heavy": "Questi valori sono alti per un telefono. Lo sblocco può risultare molto lento e sui dispositivi con poca memoria libera può non riuscire del tutto, anche nella finestra di compilazione automatica.",
+    "error_unsupported_aes": "Questo database usa AES-KDF (obsoleto).",
+    "error_out_of_range": "Deve essere un numero compreso tra {} e {}"
+  },
+  "icon_picker": {
+    "title": "Seleziona icona",
+    "custom_icon": "Carica icona personalizzata",
+    "change_custom_icon": "Cambia icona personalizzata",
+    "select": "Seleziona",
+    "cancel": "Annulla"
+  },
+  "password_generator": {
+    "very_weak": "Molto debole",
+    "weak": "Debole",
+    "fair": "Discreta",
+    "strong": "Forte",
+    "very_strong": "Molto forte"
+  },
+  "alerts": {
+    "empty_title": "Il tuo database è vuoto",
+    "empty_text": "Tocca il pulsante + per aggiungere le tue prime voci o cartelle.",
+    "selection_title": "Tieni premuto per selezionare",
+    "selection_text": "Tieni premuta una voce o una cartella per mezzo secondo e compariranno le opzioni copia, taglia ed elimina. Puoi scegliere più elementi e incollarli in qualsiasi cartella.",
+    "drag_title": "Continua a tenere premuto per trascinare",
+    "drag_text": "Tieni premuto ancora un po' e l'elemento si stacca, così puoi trascinarlo su un'altra cartella o sul cestino per spostarlo.",
+    "biometric_title": "Accesso biometrico disponibile",
+    "biometric_text": "Puoi attivare l'accesso biometrico per aprire il database con l'impronta digitale. Lo trovi nelle Impostazioni.",
+    "autofill_title": "Compilazione automatica delle password",
+    "autofill_text": "KeepassUX può inserire le tue password in altre app. Attivalo nelle Impostazioni di sistema > Password e compilazione automatica e scegli KeepassUX come servizio.",
+    "feedback_title": "Hai trovato un bug?",
+    "feedback_text": "Segnalarlo nel repository del progetto sarebbe molto apprezzato: github.com/LittleEmber13/keepassUX. Anche i suggerimenti sono benvenuti."
+  },
+  "delete": {
+    "title": "Sposta nel cestino",
+    "confirm_entry": "Vuoi davvero spostare questa voce nel cestino?",
+    "confirm_group": "Vuoi davvero spostare questo gruppo e tutto il suo contenuto nel cestino?",
+    "cancel": "Annulla",
+    "delete": "Sposta nel cestino"
+  },
+  "trash": {
+    "restore_message": "Trascina fuori l'elemento per ripristinarlo",
+    "confirm_delete_entry": "Vuoi davvero eliminare definitivamente questa voce?",
+    "confirm_delete_group": "Vuoi davvero eliminare definitivamente questo gruppo e tutto il suo contenuto?",
+    "confirm_delete_items": "Vuoi davvero eliminare definitivamente gli elementi selezionati? I gruppi verranno eliminati con tutto il loro contenuto.",
+    "delete": "Elimina definitivamente",
+    "delete_short": "Elimina",
+    "restore": "Ripristina",
+    "restored_in": "Ripristinato in \"{group}\"",
+    "restored_items": "Elementi selezionati ripristinati",
+    "info_content": "Questi elementi sono già stati rimossi dalle tue cartelle, ma sono ancora archiviati nel database.",
+    "info_options": "Tocca il pulsante delle opzioni accanto a un elemento per ripristinarlo nella cartella originale o per eliminarlo.",
+    "info_permanent": "Se lo elimini da qui, verrà cancellato definitivamente e non potrai recuperarlo."
+  },
+  "autofill": {
+    "needs_setup_message": "Apri KeepassUX e seleziona il tuo database prima di usare la compilazione automatica.",
+    "open_database_error": "Impossibile aprire il database. Riprova.",
+    "unlock_subtitle_save": "Sblocca per salvare la password",
+    "unlock_subtitle_fill": "Sblocca per inserire la password",
+    "unlock_default_subtitle": "Sblocca il tuo database",
+    "master_password_hint": "Password principale",
+    "unlock_empty_password_error": "Inserisci la password principale.",
+    "unlock_biometric_error": "Impossibile verificare la tua identità.",
+    "unlock_wrong_password_error": "Password errata.",
+    "unlock_button": "Sblocca",
+    "use_fingerprint_button": "Usa l'impronta digitale",
+    "untitled_entry": "(senza titolo)",
+    "this_app_fallback": "questa app",
+    "confirm_associate_title": "Ricorda per questa app",
+    "confirm_associate_message": "Vuoi associare \"{label}\" a {source} in modo che compaia automaticamente la prossima volta?",
+    "fill_only": "Solo compila",
+    "associate_and_fill": "Associa e compila",
+    "cannot_autofill_title": "Qui non è possibile compilare",
+    "cannot_autofill_message": "Il modulo di {where} non supporta la compilazione automatica (succede spesso nelle app realizzate con Jetpack Compose).\n\nApri KeepassUX e copia il nome utente e la password della voce per incollarli manualmente.",
+    "close": "Chiudi",
+    "matches_header": "Corrispondenze",
+    "no_matches_header": "Nessuna corrispondenza per questa app",
+    "results_header": "Risultati",
+    "fill_password_title": "Inserisci password",
+    "for_source": "Per: {source}",
+    "search_entry_hint": "Cerca voce",
+    "no_results": "Nessun risultato",
+    "empty_no_matches": "Nessuna voce corrisponde a questa app.\nCerca qui sopra per associarne una.",
+    "default_group_name": "Database",
+    "save_error": "Impossibile salvare la voce.",
+    "saving_status": "Salvataggio della password…",
+    "saved_status": "Password salvata",
+    "group_label": "Gruppo: {group}",
+    "open_in_app": "Apri in KeepassUX",
+    "associate_error": "Non è stato possibile ricordare questa app, ma la password verrà comunque inserita."
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Dieses Feld ist erforderlich"
+  },
+  "exception": {
+    "invalid_password": "Ungültiges Passwort",
+    "unknown": "Unbekannter Fehler",
+    "save_failed": "Speichern nicht möglich. Die Änderungen wurden verworfen und Ihre Datenbank bleibt unverändert.",
+    "save_failed_unrecoverable": "Speichern und Wiederherstellen des vorherigen Stands sind fehlgeschlagen. Schließen Sie die App und prüfen Sie Ihre Datei, bevor Sie fortfahren."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Datenbank",
+    "password_hint": "Passwort",
+    "open_database": "Datenbank öffnen",
+    "open_database_error": "Die Datenbankdatei konnte nicht geöffnet werden. Bitte wählen Sie sie erneut aus.",
+    "create_database": "Datenbank erstellen",
+    "open_with_biometric": "Mit Fingerabdruck öffnen",
+    "open_with_password": "Mit Passwort öffnen",
+    "biometric_reason": "Authentifizieren Sie sich, um Ihre Datenbank zu öffnen",
+    "biometric_error": "Biometrische Authentifizierung fehlgeschlagen",
+    "biometric_locked": "Biometrische Authentifizierung vorübergehend gesperrt",
+    "biometric_save_message": "Möchten Sie den biometrischen Zugriff aktivieren, um Ihre Datenbank mit Ihrem Fingerabdruck zu öffnen?",
+    "biometric_save_yes": "Ja, aktivieren",
+    "biometric_save_no": "Nein, danke"
+  },
+  "create_database_page": {
+    "title": "Datenbank erstellen",
+    "name_hint": "Dateiname",
+    "password_hint": "Passwort",
+    "open_database": "Datenbank öffnen",
+    "create_database": "Datenbank erstellen"
+  },
+  "entries_page": {
+    "title": "Einträge",
+    "search": "Eintrag suchen"
+  },
+  "search_page": {
+    "title": "Suche",
+    "hint": "Gruppen und Einträge durchsuchen …",
+    "no_results": "Keine Ergebnisse gefunden"
+  },
+  "app_bar": {
+    "trash": "Papierkorb"
+  },
+  "nav_bar": {
+    "add": "Hinzufügen",
+    "add_group": "Gruppe hinzufügen",
+    "add_entry": "Eintrag hinzufügen"
+  },
+  "move_mode": {
+    "copy": "Kopieren",
+    "cut": "Ausschneiden",
+    "paste": "Einfügen",
+    "delete": "Löschen",
+    "confirm_delete": "Möchten Sie die ausgewählten Elemente wirklich in den Papierkorb verschieben?",
+    "invalid_target": "Ein Ordner kann nicht in sich selbst eingefügt werden"
+  },
+  "add_entry": {
+    "add_entry": "Eintrag hinzufügen",
+    "edit_entry": "Eintrag bearbeiten",
+    "information": "Informationen",
+    "title": "Titel",
+    "user": "Benutzer",
+    "url": "URL",
+    "notes": "Notizen",
+    "password": "Passwort",
+    "password_hint": "Passwort",
+    "security": "Sicherheit",
+    "special_characters": "Sonderzeichen",
+    "save": "Speichern",
+    "edit_icon": "Symbol bearbeiten",
+    "generator_title": "Passwortgenerator",
+    "apply": "Übernehmen"
+  },
+  "add_group": {
+    "information": "Informationen",
+    "title": "Titel",
+    "save": "Speichern",
+    "add_group": "Gruppe hinzufügen",
+    "edit_group": "Gruppe bearbeiten"
+  },
+  "entry_data": {
+    "title": "Titel",
+    "user": "Benutzer",
+    "password": "Passwort",
+    "url": "URL",
+    "notes": "Notizen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  },
+  "settings_page": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "biometric_login": "Biometrische Anmeldung",
+    "dark_theme": "Dunkles Design",
+    "change_password": "Master-Passwort ändern",
+    "kdf_settings": "Datenbanksicherheit",
+    "autofill_settings": "Automatisches Ausfüllen",
+    "autofill_settings_active": "Aktiv",
+    "autofill_settings_inactive": "Inaktiv – zum Einrichten tippen",
+    "screenshot_protection": "Screenshots blockieren",
+    "screenshot_protection_subtitle": "Verhindert Screenshots und Bildschirmaufnahmen während der Nutzung der App",
+    "screenshot_protection_disable_warning": "Das Deaktivieren des Screenshot-Schutzes verringert die Sicherheit. Aus Sicherheitsgründen wird Ihre Sitzung beendet und Sie müssen Ihr Master-Passwort erneut eingeben. Möchten Sie fortfahren?",
+    "screenshot_protection_cancel": "Abbrechen",
+    "screenshot_protection_confirm": "Deaktivieren"
+  },
+  "about_page": {
+    "title": "Über",
+    "secure_title": "Sicher von Grund auf",
+    "secure_text": "Ihre Datenbank ist mit dem KeePass-Format (.kdbx) verschlüsselt. Ihr Master-Passwort und Ihr Tresor verlassen niemals Ihr Gerät.",
+    "open_source_title": "Open Source",
+    "open_source_text": "KeepassUX ist freie und quelloffene Software. Jede und jeder kann den Code prüfen, mitwirken oder Probleme im offiziellen Repository melden."
+  },
+  "autofill_settings_page": {
+    "title": "Automatisches Ausfüllen",
+    "intro": "Mit dem automatischen Ausfüllen kann KeepassUX Ihre gespeicherten Benutzernamen und Passwörter in anderen Apps und im Browser vorschlagen und eintragen. Damit das zuverlässig funktioniert, müssen Sie die folgende Option aktivieren.",
+    "autofill_toggle_title": "Android-Dienst zum automatischen Ausfüllen",
+    "autofill_toggle_description": "Macht KeepassUX zu dem Dienst, den Android zum automatischen Ausfüllen verwendet, sodass Ihre gespeicherten Zugangsdaten direkt in Anmeldefeldern von Apps und Browsern vorgeschlagen und eingetragen werden.",
+    "browser_note_title": "Automatisches Ausfüllen im Browser",
+    "browser_note_description": "In manchen Browsern ist das eigene automatische Ausfüllen standardmäßig aktiviert. Aktivieren Sie KeepassUX in deren Passworteinstellungen, indem Sie das Ausfüllen über einen anderen Dienst auswählen."
+  },
+  "change_password_page": {
+    "title": "Master-Passwort ändern",
+    "current_password_hint": "Aktuelles Passwort",
+    "new_password_hint": "Neues Passwort",
+    "confirm_password_hint": "Neues Passwort bestätigen",
+    "save": "Passwort ändern",
+    "success": "Master-Passwort erfolgreich geändert",
+    "error_wrong_current": "Das aktuelle Passwort ist falsch",
+    "error_mismatch": "Die Passwörter stimmen nicht überein"
+  },
+  "kdf_settings_page": {
+    "title": "Datenbanksicherheit",
+    "help_text": "Diese Werte bestimmen, wie lange das Entsperren der Datenbank dauert und wie widerstandsfähig sie gegen Brute-Force-Angriffe ist.",
+    "memory_hint": "Argon2-Speicher (MiB)",
+    "iterations_hint": "Iterationen",
+    "parallelism_hint": "Parallelität",
+    "save": "Speichern",
+    "success": "Sicherheitseinstellungen aktualisiert",
+    "warning_heavy": "Diese Werte sind für ein Smartphone hoch. Das Entsperren kann sehr langsam sein und auf Geräten mit wenig freiem Speicher ganz fehlschlagen, auch im Fenster für das automatische Ausfüllen.",
+    "error_unsupported_aes": "Diese Datenbank verwendet AES-KDF (veraltet).",
+    "error_out_of_range": "Muss eine Zahl zwischen {} und {} sein"
+  },
+  "icon_picker": {
+    "title": "Symbol auswählen",
+    "custom_icon": "Eigenes Symbol hochladen",
+    "change_custom_icon": "Eigenes Symbol ändern",
+    "select": "Auswählen",
+    "cancel": "Abbrechen"
+  },
+  "password_generator": {
+    "very_weak": "Sehr schwach",
+    "weak": "Schwach",
+    "fair": "Mittel",
+    "strong": "Stark",
+    "very_strong": "Sehr stark"
+  },
+  "alerts": {
+    "empty_title": "Ihre Datenbank ist leer",
+    "empty_text": "Tippen Sie auf die Schaltfläche +, um Ihre ersten Einträge oder Ordner anzulegen.",
+    "selection_title": "Zum Auswählen gedrückt halten",
+    "selection_text": "Halten Sie einen Eintrag oder Ordner eine halbe Sekunde gedrückt, dann erscheinen die Optionen zum Kopieren, Ausschneiden und Löschen. Sie können mehrere Elemente auswählen und in einen beliebigen Ordner einfügen.",
+    "drag_title": "Weiter halten zum Ziehen",
+    "drag_text": "Halten Sie noch etwas länger gedrückt, dann löst sich das Element und Sie können es zum Verschieben auf einen anderen Ordner oder auf den Papierkorb ziehen.",
+    "biometric_title": "Biometrische Anmeldung verfügbar",
+    "biometric_text": "Sie können den biometrischen Zugriff aktivieren, um Ihre Datenbank mit Ihrem Fingerabdruck zu öffnen. Sie finden die Option in den Einstellungen.",
+    "autofill_title": "Passwörter automatisch ausfüllen",
+    "autofill_text": "KeepassUX kann Ihre Passwörter in anderen Apps eintragen. Aktivieren Sie es in den Systemeinstellungen unter „Passwörter und automatisches Ausfüllen“ und wählen Sie KeepassUX als Dienst aus.",
+    "feedback_title": "Einen Fehler gefunden?",
+    "feedback_text": "Wir freuen uns sehr über eine Meldung im Repository des Projekts: github.com/LittleEmber13/keepassUX. Vorschläge sind ebenfalls willkommen."
+  },
+  "delete": {
+    "title": "In den Papierkorb verschieben",
+    "confirm_entry": "Möchten Sie diesen Eintrag wirklich in den Papierkorb verschieben?",
+    "confirm_group": "Möchten Sie diese Gruppe und ihren gesamten Inhalt wirklich in den Papierkorb verschieben?",
+    "cancel": "Abbrechen",
+    "delete": "In den Papierkorb verschieben"
+  },
+  "trash": {
+    "restore_message": "Ziehen Sie das Element heraus, um es wiederherzustellen",
+    "confirm_delete_entry": "Möchten Sie diesen Eintrag wirklich endgültig löschen?",
+    "confirm_delete_group": "Möchten Sie diese Gruppe und ihren gesamten Inhalt wirklich endgültig löschen?",
+    "confirm_delete_items": "Möchten Sie die ausgewählten Elemente wirklich endgültig löschen? Gruppen werden mit ihrem gesamten Inhalt gelöscht.",
+    "delete": "Endgültig löschen",
+    "delete_short": "Löschen",
+    "restore": "Wiederherstellen",
+    "restored_in": "Wiederhergestellt in „{group}“",
+    "restored_items": "Ausgewählte Elemente wiederhergestellt",
+    "info_content": "Diese Elemente wurden bereits aus Ihren Ordnern entfernt, sind aber weiterhin in der Datenbank gespeichert.",
+    "info_options": "Tippen Sie auf die Optionsschaltfläche neben einem Element, um es in seinem ursprünglichen Ordner wiederherzustellen oder es zu löschen.",
+    "info_permanent": "Wenn Sie es hier löschen, wird es endgültig entfernt und kann nicht wiederhergestellt werden."
+  },
+  "autofill": {
+    "needs_setup_message": "Öffnen Sie KeepassUX und wählen Sie Ihre Datenbank aus, bevor Sie das automatische Ausfüllen verwenden.",
+    "open_database_error": "Die Datenbank konnte nicht geöffnet werden. Bitte versuchen Sie es erneut.",
+    "unlock_subtitle_save": "Entsperren, um das Passwort zu speichern",
+    "unlock_subtitle_fill": "Entsperren, um das Passwort einzutragen",
+    "unlock_default_subtitle": "Entsperren Sie Ihre Datenbank",
+    "master_password_hint": "Master-Passwort",
+    "unlock_empty_password_error": "Geben Sie das Master-Passwort ein.",
+    "unlock_biometric_error": "Ihre Identität konnte nicht bestätigt werden.",
+    "unlock_wrong_password_error": "Falsches Passwort.",
+    "unlock_button": "Entsperren",
+    "use_fingerprint_button": "Fingerabdruck verwenden",
+    "untitled_entry": "(ohne Titel)",
+    "this_app_fallback": "diese App",
+    "confirm_associate_title": "Für diese App merken",
+    "confirm_associate_message": "„{label}“ mit {source} verknüpfen, damit der Eintrag beim nächsten Mal automatisch erscheint?",
+    "fill_only": "Nur ausfüllen",
+    "associate_and_fill": "Verknüpfen und ausfüllen",
+    "cannot_autofill_title": "Automatisches Ausfüllen hier nicht möglich",
+    "cannot_autofill_message": "Das Formular in {where} unterstützt kein automatisches Ausfüllen (häufig bei Apps, die mit Jetpack Compose erstellt wurden).\n\nÖffnen Sie KeepassUX und kopieren Sie Benutzernamen und Passwort des Eintrags, um sie manuell einzufügen.",
+    "close": "Schließen",
+    "matches_header": "Treffer",
+    "no_matches_header": "Keine Treffer für diese App",
+    "results_header": "Ergebnisse",
+    "fill_password_title": "Passwort eintragen",
+    "for_source": "Für: {source}",
+    "search_entry_hint": "Eintrag suchen",
+    "no_results": "Keine Ergebnisse",
+    "empty_no_matches": "Kein Eintrag passt zu dieser App.\nSuchen Sie oben, um einen zu verknüpfen.",
+    "default_group_name": "Datenbank",
+    "save_error": "Der Eintrag konnte nicht gespeichert werden.",
+    "saving_status": "Passwort wird gespeichert …",
+    "saved_status": "Passwort gespeichert",
+    "group_label": "Gruppe: {group}",
+    "open_in_app": "In KeepassUX öffnen",
+    "associate_error": "Diese App konnte nicht gemerkt werden, das Passwort wird aber trotzdem eingetragen."
+  }
+}

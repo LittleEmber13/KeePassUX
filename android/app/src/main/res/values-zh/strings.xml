@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autofill_unlock_label">使用 KeepassUX 填充</string>
+    <string name="autofill_select_another_entry">在 KeepassUX 中查找其他条目</string>
+</resources>

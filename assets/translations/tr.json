@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Bu alan zorunludur"
+  },
+  "exception": {
+    "invalid_password": "Geçersiz parola",
+    "unknown": "Bilinmeyen hata",
+    "save_failed": "Kaydedilemedi. Değişiklikler geri alındı ve veritabanınız değişmedi.",
+    "save_failed_unrecoverable": "Kaydetme ve önceki duruma geri dönme işlemleri başarısız oldu. Devam etmeden önce uygulamayı kapatın ve dosyanızı kontrol edin."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Veritabanı",
+    "password_hint": "Parola",
+    "open_database": "Veritabanını aç",
+    "open_database_error": "Veritabanı dosyası açılamadı. Lütfen dosyayı yeniden seçin.",
+    "create_database": "Veritabanı oluştur",
+    "open_with_biometric": "Parmak iziyle aç",
+    "open_with_password": "Parolayla aç",
+    "biometric_reason": "Veritabanınızı açmak için kimliğinizi doğrulayın",
+    "biometric_error": "Biyometrik kimlik doğrulama başarısız oldu",
+    "biometric_locked": "Biyometrik kimlik doğrulama geçici olarak kilitlendi",
+    "biometric_save_message": "Veritabanınızı parmak izinizle açmak için biyometrik erişimi etkinleştirmek ister misiniz?",
+    "biometric_save_yes": "Evet, etkinleştir",
+    "biometric_save_no": "Hayır, teşekkürler"
+  },
+  "create_database_page": {
+    "title": "Veritabanı oluştur",
+    "name_hint": "Dosya adı",
+    "password_hint": "Parola",
+    "open_database": "Veritabanını aç",
+    "create_database": "Veritabanı oluştur"
+  },
+  "entries_page": {
+    "title": "Kayıtlar",
+    "search": "Kayıt ara"
+  },
+  "search_page": {
+    "title": "Ara",
+    "hint": "Gruplarda ve kayıtlarda ara…",
+    "no_results": "Sonuç bulunamadı"
+  },
+  "app_bar": {
+    "trash": "Çöp kutusu"
+  },
+  "nav_bar": {
+    "add": "Ekle",
+    "add_group": "Grup ekle",
+    "add_entry": "Kayıt ekle"
+  },
+  "move_mode": {
+    "copy": "Kopyala",
+    "cut": "Kes",
+    "paste": "Yapıştır",
+    "delete": "Sil",
+    "confirm_delete": "Seçili öğeleri çöp kutusuna taşımak istediğinizden emin misiniz?",
+    "invalid_target": "Bir klasörü kendi içine yapıştıramazsınız"
+  },
+  "add_entry": {
+    "add_entry": "Kayıt ekle",
+    "edit_entry": "Kaydı düzenle",
+    "information": "Bilgiler",
+    "title": "Başlık",
+    "user": "Kullanıcı",
+    "url": "URL",
+    "notes": "Notlar",
+    "password": "Parola",
+    "password_hint": "Parola",
+    "security": "Güvenlik",
+    "special_characters": "Özel karakterler",
+    "save": "Kaydet",
+    "edit_icon": "Simgeyi düzenle",
+    "generator_title": "Parola oluşturucu",
+    "apply": "Uygula"
+  },
+  "add_group": {
+    "information": "Bilgiler",
+    "title": "Başlık",
+    "save": "Kaydet",
+    "add_group": "Grup ekle",
+    "edit_group": "Grubu düzenle"
+  },
+  "entry_data": {
+    "title": "Başlık",
+    "user": "Kullanıcı",
+    "password": "Parola",
+    "url": "URL",
+    "notes": "Notlar",
+    "edit": "Düzenle",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "settings_page": {
+    "title": "Ayarlar",
+    "language": "Dil",
+    "biometric_login": "Biyometrik giriş",
+    "dark_theme": "Koyu tema",
+    "change_password": "Ana parolayı değiştir",
+    "kdf_settings": "Veritabanı güvenliği",
+    "autofill_settings": "Otomatik doldurma",
+    "autofill_settings_active": "Etkin",
+    "autofill_settings_inactive": "Etkin değil — yapılandırmak için dokunun",
+    "screenshot_protection": "Ekran görüntülerini engelle",
+    "screenshot_protection_subtitle": "Uygulamayı kullanırken ekran görüntüsü alınmasını ve ekran kaydını engeller",
+    "screenshot_protection_disable_warning": "Ekran görüntüsü korumasını kapatmak güvenliği azaltır. Güvenlik için oturumunuz kapatılacak ve ana parolanızı yeniden girmeniz gerekecek. Devam etmek istiyor musunuz?",
+    "screenshot_protection_cancel": "İptal",
+    "screenshot_protection_confirm": "Kapat"
+  },
+  "about_page": {
+    "title": "Hakkında",
+    "secure_title": "Tasarımı gereği güvenli",
+    "secure_text": "Veritabanınız KeePass (.kdbx) biçimiyle şifrelenir. Ana parolanız ve kasanız cihazınızdan asla çıkmaz.",
+    "open_source_title": "Açık kaynak",
+    "open_source_text": "KeepassUX özgür ve açık kaynaklı bir yazılımdır. Herkes kodu inceleyebilir, katkıda bulunabilir veya resmî depoda sorun bildirebilir."
+  },
+  "autofill_settings_page": {
+    "title": "Otomatik doldurma",
+    "intro": "Otomatik doldurma, KeepassUX'in kayıtlı kullanıcı adlarınızı ve parolalarınızı diğer uygulamalarda ve tarayıcınızda önermesini ve doldurmasını sağlar. Düzgün çalışması için aşağıdaki seçeneği etkinleştirmelisiniz.",
+    "autofill_toggle_title": "Android otomatik doldurma hizmeti",
+    "autofill_toggle_description": "KeepassUX'i Android'in kullandığı otomatik doldurma hizmeti yapar; böylece kayıtlı kimlik bilgileriniz uygulamalardaki ve tarayıcılardaki oturum açma alanlarına doğrudan önerilip doldurulabilir.",
+    "browser_note_title": "Tarayıcıda otomatik doldurma",
+    "browser_note_description": "Bazı tarayıcılarda kendi otomatik doldurma özelliği varsayılan olarak açıktır. Bu tarayıcıların parola ayarlarından başka bir hizmetle doldurma seçeneğini seçerek KeepassUX'i etkinleştirin."
+  },
+  "change_password_page": {
+    "title": "Ana parolayı değiştir",
+    "current_password_hint": "Mevcut parola",
+    "new_password_hint": "Yeni parola",
+    "confirm_password_hint": "Yeni parolayı onayla",
+    "save": "Parolayı değiştir",
+    "success": "Ana parola başarıyla değiştirildi",
+    "error_wrong_current": "Mevcut parola hatalı",
+    "error_mismatch": "Parolalar eşleşmiyor"
+  },
+  "kdf_settings_page": {
+    "title": "Veritabanı güvenliği",
+    "help_text": "Bu değerler, veritabanının kilidinin ne kadar sürede açıldığını ve kaba kuvvet saldırılarına ne kadar dayanıklı olduğunu belirler.",
+    "memory_hint": "Argon2 belleği (MiB)",
+    "iterations_hint": "Yineleme sayısı",
+    "parallelism_hint": "Paralellik",
+    "save": "Kaydet",
+    "success": "Güvenlik ayarları güncellendi",
+    "warning_heavy": "Bu değerler bir telefon için yüksek. Kilidin açılması çok yavaş olabilir ve boş belleği az olan cihazlarda, otomatik doldurma penceresi dahil, tamamen başarısız olabilir.",
+    "error_unsupported_aes": "Bu veritabanı AES-KDF kullanıyor (eski yöntem).",
+    "error_out_of_range": "{} ile {} arasında bir sayı olmalıdır"
+  },
+  "icon_picker": {
+    "title": "Simge seç",
+    "custom_icon": "Özel simge yükle",
+    "change_custom_icon": "Özel simgeyi değiştir",
+    "select": "Seç",
+    "cancel": "İptal"
+  },
+  "password_generator": {
+    "very_weak": "Çok zayıf",
+    "weak": "Zayıf",
+    "fair": "Orta",
+    "strong": "Güçlü",
+    "very_strong": "Çok güçlü"
+  },
+  "alerts": {
+    "empty_title": "Veritabanınız boş",
+    "empty_text": "İlk kayıtlarınızı veya klasörlerinizi eklemek için + düğmesine dokunun.",
+    "selection_title": "Seçmek için basılı tutun",
+    "selection_text": "Bir kaydı veya klasörü yarım saniye basılı tutun; kopyalama, kesme ve silme seçenekleri görünecektir. Birden fazla öğe seçip bunları istediğiniz klasöre yapıştırabilirsiniz.",
+    "drag_title": "Sürüklemek için basılı tutmayı sürdürün",
+    "drag_text": "Biraz daha basılı tutun; öğe yerinden ayrılır ve onu taşımak için başka bir klasörün ya da çöp kutusunun üzerine sürükleyebilirsiniz.",
+    "biometric_title": "Biyometrik giriş kullanılabilir",
+    "biometric_text": "Veritabanınızı parmak izinizle açmak için biyometrik erişimi etkinleştirebilirsiniz. Bu seçeneği Ayarlar'da bulabilirsiniz.",
+    "autofill_title": "Parolaları otomatik doldurma",
+    "autofill_text": "KeepassUX parolalarınızı diğer uygulamalarda doldurabilir. Sistem Ayarları > Parolalar ve otomatik doldurma bölümünden etkinleştirin ve hizmet olarak KeepassUX'i seçin.",
+    "feedback_title": "Bir hata mı buldunuz?",
+    "feedback_text": "Projenin deposunda bildirmeniz bizi çok mutlu eder: github.com/LittleEmber13/keepassUX. Öneriler de memnuniyetle karşılanır."
+  },
+  "delete": {
+    "title": "Çöp kutusuna taşı",
+    "confirm_entry": "Bu kaydı çöp kutusuna taşımak istediğinizden emin misiniz?",
+    "confirm_group": "Bu grubu ve tüm içeriğini çöp kutusuna taşımak istediğinizden emin misiniz?",
+    "cancel": "İptal",
+    "delete": "Çöp kutusuna taşı"
+  },
+  "trash": {
+    "restore_message": "Geri yüklemek için öğeyi dışarı sürükleyin",
+    "confirm_delete_entry": "Bu kaydı kalıcı olarak silmek istediğinizden emin misiniz?",
+    "confirm_delete_group": "Bu grubu ve tüm içeriğini kalıcı olarak silmek istediğinizden emin misiniz?",
+    "confirm_delete_items": "Seçili öğeleri kalıcı olarak silmek istediğinizden emin misiniz? Gruplar tüm içerikleriyle birlikte silinecektir.",
+    "delete": "Kalıcı olarak sil",
+    "delete_short": "Sil",
+    "restore": "Geri yükle",
+    "restored_in": "\"{group}\" içine geri yüklendi",
+    "restored_items": "Seçili öğeler geri yüklendi",
+    "info_content": "Bu öğeler klasörlerinizden zaten kaldırıldı, ancak hâlâ veritabanında saklanıyor.",
+    "info_options": "Bir öğeyi özgün klasörüne geri yüklemek veya silmek için yanındaki seçenekler düğmesine dokunun.",
+    "info_permanent": "Buradan silerseniz kalıcı olarak kaldırılır ve geri getiremezsiniz."
+  },
+  "autofill": {
+    "needs_setup_message": "Otomatik doldurmayı kullanmadan önce KeepassUX'i açın ve veritabanınızı seçin.",
+    "open_database_error": "Veritabanı açılamadı. Lütfen yeniden deneyin.",
+    "unlock_subtitle_save": "Parolayı kaydetmek için kilidi açın",
+    "unlock_subtitle_fill": "Parolayı doldurmak için kilidi açın",
+    "unlock_default_subtitle": "Veritabanınızın kilidini açın",
+    "master_password_hint": "Ana parola",
+    "unlock_empty_password_error": "Ana parolayı girin.",
+    "unlock_biometric_error": "Kimliğiniz doğrulanamadı.",
+    "unlock_wrong_password_error": "Parola hatalı.",
+    "unlock_button": "Kilidi aç",
+    "use_fingerprint_button": "Parmak izini kullan",
+    "untitled_entry": "(başlıksız)",
+    "this_app_fallback": "bu uygulama",
+    "confirm_associate_title": "Bu uygulama için hatırla",
+    "confirm_associate_message": "Bir dahaki sefere otomatik görünmesi için \"{label}\" kaydını {source} ile ilişkilendirmek ister misiniz?",
+    "fill_only": "Yalnızca doldur",
+    "associate_and_fill": "İlişkilendir ve doldur",
+    "cannot_autofill_title": "Burada otomatik doldurulamıyor",
+    "cannot_autofill_message": "{where} formu otomatik doldurmayı desteklemiyor (Jetpack Compose ile geliştirilen uygulamalarda sık görülür).\n\nKeepassUX'i açın ve kaydın kullanıcı adıyla parolasını kopyalayarak elle yapıştırın.",
+    "close": "Kapat",
+    "matches_header": "Eşleşmeler",
+    "no_matches_header": "Bu uygulama için eşleşme yok",
+    "results_header": "Sonuçlar",
+    "fill_password_title": "Parolayı doldur",
+    "for_source": "Şunun için: {source}",
+    "search_entry_hint": "Kayıt ara",
+    "no_results": "Sonuç yok",
+    "empty_no_matches": "Bu uygulamayla eşleşen kayıt yok.\nBirini ilişkilendirmek için yukarıdan arayın.",
+    "default_group_name": "Veritabanı",
+    "save_error": "Kayıt kaydedilemedi.",
+    "saving_status": "Parola kaydediliyor…",
+    "saved_status": "Parola kaydedildi",
+    "group_label": "Grup: {group}",
+    "open_in_app": "KeepassUX'te aç",
+    "associate_error": "Bu uygulama hatırlanamadı, ancak parola yine de doldurulacak."
+  }
+}

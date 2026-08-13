@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "To pole jest wymagane"
+  },
+  "exception": {
+    "invalid_password": "Nieprawidłowe hasło",
+    "unknown": "Nieznany błąd",
+    "save_failed": "Nie udało się zapisać. Zmiany zostały odrzucone, a baza danych pozostała bez zmian.",
+    "save_failed_unrecoverable": "Nie udało się zapisać ani przywrócić poprzedniego stanu. Zamknij aplikację i sprawdź plik, zanim przejdziesz dalej."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Baza danych",
+    "password_hint": "Hasło",
+    "open_database": "Otwórz bazę danych",
+    "open_database_error": "Nie udało się otworzyć pliku bazy danych. Wybierz go ponownie.",
+    "create_database": "Utwórz bazę danych",
+    "open_with_biometric": "Otwórz odciskiem palca",
+    "open_with_password": "Otwórz hasłem",
+    "biometric_reason": "Uwierzytelnij się, aby otworzyć bazę danych",
+    "biometric_error": "Uwierzytelnianie biometryczne nie powiodło się",
+    "biometric_locked": "Uwierzytelnianie biometryczne tymczasowo zablokowane",
+    "biometric_save_message": "Czy chcesz włączyć dostęp biometryczny, aby otwierać bazę danych odciskiem palca?",
+    "biometric_save_yes": "Tak, włącz",
+    "biometric_save_no": "Nie, dziękuję"
+  },
+  "create_database_page": {
+    "title": "Utwórz bazę danych",
+    "name_hint": "Nazwa pliku",
+    "password_hint": "Hasło",
+    "open_database": "Otwórz bazę danych",
+    "create_database": "Utwórz bazę danych"
+  },
+  "entries_page": {
+    "title": "Wpisy",
+    "search": "Szukaj wpisu"
+  },
+  "search_page": {
+    "title": "Szukaj",
+    "hint": "Szukaj w grupach i wpisach…",
+    "no_results": "Nie znaleziono wyników"
+  },
+  "app_bar": {
+    "trash": "Kosz"
+  },
+  "nav_bar": {
+    "add": "Dodaj",
+    "add_group": "Dodaj grupę",
+    "add_entry": "Dodaj wpis"
+  },
+  "move_mode": {
+    "copy": "Kopiuj",
+    "cut": "Wytnij",
+    "paste": "Wklej",
+    "delete": "Usuń",
+    "confirm_delete": "Czy na pewno chcesz przenieść zaznaczone elementy do kosza?",
+    "invalid_target": "Nie możesz wkleić folderu do niego samego"
+  },
+  "add_entry": {
+    "add_entry": "Dodaj wpis",
+    "edit_entry": "Edytuj wpis",
+    "information": "Informacje",
+    "title": "Tytuł",
+    "user": "Użytkownik",
+    "url": "Adres URL",
+    "notes": "Notatki",
+    "password": "Hasło",
+    "password_hint": "Hasło",
+    "security": "Bezpieczeństwo",
+    "special_characters": "Znaki specjalne",
+    "save": "Zapisz",
+    "edit_icon": "Edytuj ikonę",
+    "generator_title": "Generator haseł",
+    "apply": "Zastosuj"
+  },
+  "add_group": {
+    "information": "Informacje",
+    "title": "Tytuł",
+    "save": "Zapisz",
+    "add_group": "Dodaj grupę",
+    "edit_group": "Edytuj grupę"
+  },
+  "entry_data": {
+    "title": "Tytuł",
+    "user": "Użytkownik",
+    "password": "Hasło",
+    "url": "Adres URL",
+    "notes": "Notatki",
+    "edit": "Edytuj",
+    "save": "Zapisz",
+    "cancel": "Anuluj"
+  },
+  "settings_page": {
+    "title": "Ustawienia",
+    "language": "Język",
+    "biometric_login": "Logowanie biometryczne",
+    "dark_theme": "Ciemny motyw",
+    "change_password": "Zmień hasło główne",
+    "kdf_settings": "Bezpieczeństwo bazy danych",
+    "autofill_settings": "Autouzupełnianie",
+    "autofill_settings_active": "Aktywne",
+    "autofill_settings_inactive": "Nieaktywne — dotknij, aby skonfigurować",
+    "screenshot_protection": "Blokuj zrzuty ekranu",
+    "screenshot_protection_subtitle": "Uniemożliwia wykonywanie zrzutów i nagrywanie ekranu podczas korzystania z aplikacji",
+    "screenshot_protection_disable_warning": "Wyłączenie ochrony przed zrzutami ekranu obniża bezpieczeństwo. Dla pewności sesja zostanie zamknięta i trzeba będzie ponownie wpisać hasło główne. Czy chcesz kontynuować?",
+    "screenshot_protection_cancel": "Anuluj",
+    "screenshot_protection_confirm": "Wyłącz"
+  },
+  "about_page": {
+    "title": "O aplikacji",
+    "secure_title": "Bezpieczna z założenia",
+    "secure_text": "Twoja baza danych jest szyfrowana w formacie KeePass (.kdbx). Hasło główne i sejf nigdy nie opuszczają Twojego urządzenia.",
+    "open_source_title": "Otwarte źródła",
+    "open_source_text": "KeepassUX to wolne oprogramowanie o otwartym kodzie źródłowym. Każdy może przejrzeć kod, współtworzyć projekt lub zgłaszać problemy w oficjalnym repozytorium."
+  },
+  "autofill_settings_page": {
+    "title": "Autouzupełnianie",
+    "intro": "Autouzupełnianie pozwala aplikacji KeepassUX podpowiadać i wpisywać zapisane nazwy użytkownika oraz hasła w innych aplikacjach i w przeglądarce. Aby działało poprawnie, musisz włączyć poniższą opcję.",
+    "autofill_toggle_title": "Usługa autouzupełniania Androida",
+    "autofill_toggle_description": "Ustawia KeepassUX jako usługę autouzupełniania używaną przez Androida, dzięki czemu zapisane dane logowania będą podpowiadane i wpisywane bezpośrednio w polach logowania w aplikacjach i przeglądarkach.",
+    "browser_note_title": "Autouzupełnianie w przeglądarce",
+    "browser_note_description": "Niektóre przeglądarki mają domyślnie włączone własne autouzupełnianie. Włącz KeepassUX w ich ustawieniach haseł, wybierając uzupełnianie za pomocą innej usługi."
+  },
+  "change_password_page": {
+    "title": "Zmień hasło główne",
+    "current_password_hint": "Obecne hasło",
+    "new_password_hint": "Nowe hasło",
+    "confirm_password_hint": "Potwierdź nowe hasło",
+    "save": "Zmień hasło",
+    "success": "Hasło główne zostało zmienione",
+    "error_wrong_current": "Obecne hasło jest nieprawidłowe",
+    "error_mismatch": "Hasła nie są zgodne"
+  },
+  "kdf_settings_page": {
+    "title": "Bezpieczeństwo bazy danych",
+    "help_text": "Te wartości decydują o tym, jak długo trwa odblokowanie bazy danych i jak odporna jest ona na ataki siłowe.",
+    "memory_hint": "Pamięć Argon2 (MiB)",
+    "iterations_hint": "Iteracje",
+    "parallelism_hint": "Równoległość",
+    "save": "Zapisz",
+    "success": "Zaktualizowano ustawienia bezpieczeństwa",
+    "warning_heavy": "Te wartości są wysokie jak na telefon. Odblokowywanie może być bardzo wolne, a na urządzeniach z małą ilością wolnej pamięci może się w ogóle nie udać, również w oknie autouzupełniania.",
+    "error_unsupported_aes": "Ta baza danych używa AES-KDF (przestarzałe).",
+    "error_out_of_range": "Musi być liczbą z zakresu od {} do {}"
+  },
+  "icon_picker": {
+    "title": "Wybierz ikonę",
+    "custom_icon": "Prześlij własną ikonę",
+    "change_custom_icon": "Zmień własną ikonę",
+    "select": "Wybierz",
+    "cancel": "Anuluj"
+  },
+  "password_generator": {
+    "very_weak": "Bardzo słabe",
+    "weak": "Słabe",
+    "fair": "Przeciętne",
+    "strong": "Silne",
+    "very_strong": "Bardzo silne"
+  },
+  "alerts": {
+    "empty_title": "Twoja baza danych jest pusta",
+    "empty_text": "Dotknij przycisku +, aby dodać pierwsze wpisy lub foldery.",
+    "selection_title": "Przytrzymaj, aby zaznaczyć",
+    "selection_text": "Przytrzymaj wpis lub folder przez pół sekundy, a pojawią się opcje kopiowania, wycinania i usuwania. Możesz zaznaczyć kilka elementów i wkleić je do dowolnego folderu.",
+    "drag_title": "Przytrzymaj dłużej, aby przeciągnąć",
+    "drag_text": "Przytrzymaj jeszcze chwilę, a element się odczepi i będzie można przeciągnąć go na inny folder albo na kosz, aby go przenieść.",
+    "biometric_title": "Dostępne logowanie biometryczne",
+    "biometric_text": "Możesz włączyć dostęp biometryczny, aby otwierać bazę danych odciskiem palca. Znajdziesz tę opcję w Ustawieniach.",
+    "autofill_title": "Autouzupełnianie haseł",
+    "autofill_text": "KeepassUX może wpisywać Twoje hasła w innych aplikacjach. Włącz je w Ustawieniach systemu > Hasła i autouzupełnianie i wybierz KeepassUX jako usługę.",
+    "feedback_title": "Znalazłeś błąd?",
+    "feedback_text": "Będziemy wdzięczni za zgłoszenie go w repozytorium projektu: github.com/LittleEmber13/keepassUX. Sugestie również są mile widziane."
+  },
+  "delete": {
+    "title": "Przenieś do kosza",
+    "confirm_entry": "Czy na pewno chcesz przenieść ten wpis do kosza?",
+    "confirm_group": "Czy na pewno chcesz przenieść tę grupę wraz z całą zawartością do kosza?",
+    "cancel": "Anuluj",
+    "delete": "Przenieś do kosza"
+  },
+  "trash": {
+    "restore_message": "Przeciągnij element na zewnątrz, aby go przywrócić",
+    "confirm_delete_entry": "Czy na pewno chcesz trwale usunąć ten wpis?",
+    "confirm_delete_group": "Czy na pewno chcesz trwale usunąć tę grupę wraz z całą zawartością?",
+    "confirm_delete_items": "Czy na pewno chcesz trwale usunąć zaznaczone elementy? Grupy zostaną usunięte wraz z całą zawartością.",
+    "delete": "Usuń trwale",
+    "delete_short": "Usuń",
+    "restore": "Przywróć",
+    "restored_in": "Przywrócono do „{group}”",
+    "restored_items": "Przywrócono zaznaczone elementy",
+    "info_content": "Te elementy zostały już usunięte z Twoich folderów, ale nadal są przechowywane w bazie danych.",
+    "info_options": "Dotknij przycisku opcji obok elementu, aby przywrócić go do pierwotnego folderu lub go usunąć.",
+    "info_permanent": "Jeśli usuniesz go stąd, zostanie skasowany na stałe i nie będzie można go odzyskać."
+  },
+  "autofill": {
+    "needs_setup_message": "Otwórz KeepassUX i wybierz bazę danych, zanim skorzystasz z autouzupełniania.",
+    "open_database_error": "Nie udało się otworzyć bazy danych. Spróbuj ponownie.",
+    "unlock_subtitle_save": "Odblokuj, aby zapisać hasło",
+    "unlock_subtitle_fill": "Odblokuj, aby wpisać hasło",
+    "unlock_default_subtitle": "Odblokuj swoją bazę danych",
+    "master_password_hint": "Hasło główne",
+    "unlock_empty_password_error": "Wpisz hasło główne.",
+    "unlock_biometric_error": "Nie udało się zweryfikować Twojej tożsamości.",
+    "unlock_wrong_password_error": "Nieprawidłowe hasło.",
+    "unlock_button": "Odblokuj",
+    "use_fingerprint_button": "Użyj odcisku palca",
+    "untitled_entry": "(bez tytułu)",
+    "this_app_fallback": "ta aplikacja",
+    "confirm_associate_title": "Zapamiętaj dla tej aplikacji",
+    "confirm_associate_message": "Powiązać „{label}” z {source}, aby następnym razem pojawiło się automatycznie?",
+    "fill_only": "Tylko wpisz",
+    "associate_and_fill": "Powiąż i wpisz",
+    "cannot_autofill_title": "Tutaj nie można autouzupełnić",
+    "cannot_autofill_message": "Formularz w {where} nie obsługuje autouzupełniania (często zdarza się to w aplikacjach napisanych w Jetpack Compose).\n\nOtwórz KeepassUX i skopiuj nazwę użytkownika oraz hasło z wpisu, aby wkleić je ręcznie.",
+    "close": "Zamknij",
+    "matches_header": "Dopasowania",
+    "no_matches_header": "Brak dopasowań dla tej aplikacji",
+    "results_header": "Wyniki",
+    "fill_password_title": "Wpisz hasło",
+    "for_source": "Dla: {source}",
+    "search_entry_hint": "Szukaj wpisu",
+    "no_results": "Brak wyników",
+    "empty_no_matches": "Żaden wpis nie pasuje do tej aplikacji.\nWyszukaj powyżej, aby powiązać jeden z nich.",
+    "default_group_name": "Baza danych",
+    "save_error": "Nie udało się zapisać wpisu.",
+    "saving_status": "Zapisywanie hasła…",
+    "saved_status": "Hasło zapisane",
+    "group_label": "Grupa: {group}",
+    "open_in_app": "Otwórz w KeepassUX",
+    "associate_error": "Nie udało się zapamiętać tej aplikacji, ale hasło i tak zostanie wpisane."
+  }
+}

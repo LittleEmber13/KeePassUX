@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autofill_unlock_label">KeepassUX로 채우기</string>
+    <string name="autofill_select_another_entry">KeepassUX에서 다른 항목 찾기</string>
+</resources>

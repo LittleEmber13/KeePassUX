@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Šis laukas privalomas"
+  },
+  "exception": {
+    "invalid_password": "Neteisingas slaptažodis",
+    "unknown": "Nežinoma klaida",
+    "save_failed": "Nepavyko išsaugoti. Pakeitimai atmesti, o duomenų bazė liko nepakitusi.",
+    "save_failed_unrecoverable": "Nepavyko nei išsaugoti, nei atkurti ankstesnės būsenos. Uždarykite programėlę ir patikrinkite failą prieš tęsdami."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Duomenų bazė",
+    "password_hint": "Slaptažodis",
+    "open_database": "Atverti duomenų bazę",
+    "open_database_error": "Nepavyko atverti duomenų bazės failo. Pasirinkite jį iš naujo.",
+    "create_database": "Sukurti duomenų bazę",
+    "open_with_biometric": "Atverti piršto atspaudu",
+    "open_with_password": "Atverti slaptažodžiu",
+    "biometric_reason": "Patvirtinkite tapatybę, kad atvertumėte duomenų bazę",
+    "biometric_error": "Biometrinis tapatybės nustatymas nepavyko",
+    "biometric_locked": "Biometrinis tapatybės nustatymas laikinai užblokuotas",
+    "biometric_save_message": "Ar norite įjungti biometrinę prieigą, kad duomenų bazę atvertumėte piršto atspaudu?",
+    "biometric_save_yes": "Taip, įjungti",
+    "biometric_save_no": "Ne, ačiū"
+  },
+  "create_database_page": {
+    "title": "Sukurti duomenų bazę",
+    "name_hint": "Failo pavadinimas",
+    "password_hint": "Slaptažodis",
+    "open_database": "Atverti duomenų bazę",
+    "create_database": "Sukurti duomenų bazę"
+  },
+  "entries_page": {
+    "title": "Įrašai",
+    "search": "Ieškoti įrašo"
+  },
+  "search_page": {
+    "title": "Paieška",
+    "hint": "Ieškoti grupėse ir įrašuose…",
+    "no_results": "Rezultatų nerasta"
+  },
+  "app_bar": {
+    "trash": "Šiukšlinė"
+  },
+  "nav_bar": {
+    "add": "Pridėti",
+    "add_group": "Pridėti grupę",
+    "add_entry": "Pridėti įrašą"
+  },
+  "move_mode": {
+    "copy": "Kopijuoti",
+    "cut": "Iškirpti",
+    "paste": "Įklijuoti",
+    "delete": "Ištrinti",
+    "confirm_delete": "Ar tikrai norite perkelti pasirinktus elementus į šiukšlinę?",
+    "invalid_target": "Negalite įklijuoti aplanko į jį patį"
+  },
+  "add_entry": {
+    "add_entry": "Pridėti įrašą",
+    "edit_entry": "Redaguoti įrašą",
+    "information": "Informacija",
+    "title": "Pavadinimas",
+    "user": "Naudotojas",
+    "url": "URL",
+    "notes": "Pastabos",
+    "password": "Slaptažodis",
+    "password_hint": "Slaptažodis",
+    "security": "Saugumas",
+    "special_characters": "Specialieji simboliai",
+    "save": "Išsaugoti",
+    "edit_icon": "Redaguoti piktogramą",
+    "generator_title": "Slaptažodžių generatorius",
+    "apply": "Taikyti"
+  },
+  "add_group": {
+    "information": "Informacija",
+    "title": "Pavadinimas",
+    "save": "Išsaugoti",
+    "add_group": "Pridėti grupę",
+    "edit_group": "Redaguoti grupę"
+  },
+  "entry_data": {
+    "title": "Pavadinimas",
+    "user": "Naudotojas",
+    "password": "Slaptažodis",
+    "url": "URL",
+    "notes": "Pastabos",
+    "edit": "Redaguoti",
+    "save": "Išsaugoti",
+    "cancel": "Atšaukti"
+  },
+  "settings_page": {
+    "title": "Nustatymai",
+    "language": "Kalba",
+    "biometric_login": "Biometrinis prisijungimas",
+    "dark_theme": "Tamsi tema",
+    "change_password": "Keisti pagrindinį slaptažodį",
+    "kdf_settings": "Duomenų bazės saugumas",
+    "autofill_settings": "Automatinis pildymas",
+    "autofill_settings_active": "Įjungtas",
+    "autofill_settings_inactive": "Išjungtas – bakstelėkite, kad nustatytumėte",
+    "screenshot_protection": "Blokuoti ekrano nuotraukas",
+    "screenshot_protection_subtitle": "Neleidžia daryti ekrano nuotraukų ir įrašyti ekrano naudojantis programėle",
+    "screenshot_protection_disable_warning": "Išjungus apsaugą nuo ekrano nuotraukų sumažėja saugumas. Dėl atsargumo jūsų seansas bus uždarytas ir turėsite iš naujo įvesti pagrindinį slaptažodį. Ar norite tęsti?",
+    "screenshot_protection_cancel": "Atšaukti",
+    "screenshot_protection_confirm": "Išjungti"
+  },
+  "about_page": {
+    "title": "Apie",
+    "secure_title": "Saugi iš prigimties",
+    "secure_text": "Jūsų duomenų bazė užšifruota KeePass (.kdbx) formatu. Pagrindinis slaptažodis ir saugykla niekada nepalieka jūsų įrenginio.",
+    "open_source_title": "Atvirasis kodas",
+    "open_source_text": "KeepassUX yra laisva atvirojo kodo programinė įranga. Bet kas gali peržiūrėti kodą, prisidėti prie kūrimo ar pranešti apie problemas oficialioje saugykloje."
+  },
+  "autofill_settings_page": {
+    "title": "Automatinis pildymas",
+    "intro": "Automatinis pildymas leidžia KeepassUX siūlyti ir įvesti jūsų išsaugotus naudotojų vardus bei slaptažodžius kitose programėlėse ir naršyklėje. Kad jis veiktų tinkamai, turite įjungti toliau nurodytą parinktį.",
+    "autofill_toggle_title": "„Android“ automatinio pildymo paslauga",
+    "autofill_toggle_description": "Nustato KeepassUX kaip automatinio pildymo paslaugą, kurią naudoja „Android“, todėl išsaugoti prisijungimo duomenys gali būti siūlomi ir įvedami tiesiai į programėlių bei naršyklių prisijungimo laukus.",
+    "browser_note_title": "Naršyklės automatinis pildymas",
+    "browser_note_description": "Kai kuriose naršyklėse pagal numatytuosius nustatymus įjungtas jų pačių automatinis pildymas. Įjunkite KeepassUX jų slaptažodžių nustatymuose pasirinkdami pildymą naudojant kitą paslaugą."
+  },
+  "change_password_page": {
+    "title": "Keisti pagrindinį slaptažodį",
+    "current_password_hint": "Dabartinis slaptažodis",
+    "new_password_hint": "Naujas slaptažodis",
+    "confirm_password_hint": "Patvirtinkite naują slaptažodį",
+    "save": "Keisti slaptažodį",
+    "success": "Pagrindinis slaptažodis sėkmingai pakeistas",
+    "error_wrong_current": "Dabartinis slaptažodis neteisingas",
+    "error_mismatch": "Slaptažodžiai nesutampa"
+  },
+  "kdf_settings_page": {
+    "title": "Duomenų bazės saugumas",
+    "help_text": "Šios reikšmės lemia, kiek laiko trunka duomenų bazės atrakinimas ir kaip gerai ji atspari žiaurios jėgos atakoms.",
+    "memory_hint": "„Argon2“ atmintis (MiB)",
+    "iterations_hint": "Iteracijos",
+    "parallelism_hint": "Lygiagretumas",
+    "save": "Išsaugoti",
+    "success": "Saugumo nustatymai atnaujinti",
+    "warning_heavy": "Šios reikšmės telefonui yra didelės. Atrakinimas gali būti labai lėtas, o įrenginiuose su mažai laisvos atminties gali visai nepavykti, taip pat ir automatinio pildymo lange.",
+    "error_unsupported_aes": "Ši duomenų bazė naudoja AES-KDF (pasenusį).",
+    "error_out_of_range": "Turi būti skaičius nuo {} iki {}"
+  },
+  "icon_picker": {
+    "title": "Pasirinkite piktogramą",
+    "custom_icon": "Įkelti savo piktogramą",
+    "change_custom_icon": "Keisti savo piktogramą",
+    "select": "Pasirinkti",
+    "cancel": "Atšaukti"
+  },
+  "password_generator": {
+    "very_weak": "Labai silpnas",
+    "weak": "Silpnas",
+    "fair": "Vidutinis",
+    "strong": "Stiprus",
+    "very_strong": "Labai stiprus"
+  },
+  "alerts": {
+    "empty_title": "Jūsų duomenų bazė tuščia",
+    "empty_text": "Bakstelėkite mygtuką +, kad pridėtumėte pirmuosius įrašus ar aplankus.",
+    "selection_title": "Palaikykite, kad pažymėtumėte",
+    "selection_text": "Palaikykite įrašą ar aplanką nuspaustą pusę sekundės ir pasirodys kopijavimo, iškirpimo bei ištrynimo parinktys. Galite pasirinkti kelis elementus ir įklijuoti juos į bet kurį aplanką.",
+    "drag_title": "Laikykite ilgiau, kad vilktumėte",
+    "drag_text": "Palaikykite dar truputį ilgiau ir elementas atsikabins, todėl galėsite jį nuvilkti ant kito aplanko arba ant šiukšlinės, kad perkeltumėte.",
+    "biometric_title": "Galimas biometrinis prisijungimas",
+    "biometric_text": "Galite įjungti biometrinę prieigą ir atverti duomenų bazę piršto atspaudu. Rasite tai nustatymuose.",
+    "autofill_title": "Automatinis slaptažodžių pildymas",
+    "autofill_text": "KeepassUX gali įvesti jūsų slaptažodžius kitose programėlėse. Įjunkite tai sistemos nustatymuose > Slaptažodžiai ir automatinis pildymas ir pasirinkite KeepassUX kaip paslaugą.",
+    "feedback_title": "Radote klaidą?",
+    "feedback_text": "Būtume labai dėkingi, jei praneštumėte apie ją projekto saugykloje: github.com/LittleEmber13/keepassUX. Pasiūlymai taip pat laukiami."
+  },
+  "delete": {
+    "title": "Perkelti į šiukšlinę",
+    "confirm_entry": "Ar tikrai norite perkelti šį įrašą į šiukšlinę?",
+    "confirm_group": "Ar tikrai norite perkelti šią grupę ir visą jos turinį į šiukšlinę?",
+    "cancel": "Atšaukti",
+    "delete": "Perkelti į šiukšlinę"
+  },
+  "trash": {
+    "restore_message": "Nuvilkite elementą laukan, kad jį atkurtumėte",
+    "confirm_delete_entry": "Ar tikrai norite visam laikui ištrinti šį įrašą?",
+    "confirm_delete_group": "Ar tikrai norite visam laikui ištrinti šią grupę ir visą jos turinį?",
+    "confirm_delete_items": "Ar tikrai norite visam laikui ištrinti pasirinktus elementus? Grupės bus ištrintos su visu savo turiniu.",
+    "delete": "Ištrinti visam laikui",
+    "delete_short": "Ištrinti",
+    "restore": "Atkurti",
+    "restored_in": "Atkurta į „{group}“",
+    "restored_items": "Pasirinkti elementai atkurti",
+    "info_content": "Šie elementai jau pašalinti iš jūsų aplankų, tačiau vis dar saugomi duomenų bazėje.",
+    "info_options": "Bakstelėkite parinkčių mygtuką šalia elemento, kad atkurtumėte jį į pradinį aplanką arba ištrintumėte.",
+    "info_permanent": "Jei ištrinsite jį iš čia, jis bus pašalintas visam laikui ir jo nebeatkursite."
+  },
+  "autofill": {
+    "needs_setup_message": "Prieš naudodami automatinį pildymą atverkite KeepassUX ir pasirinkite savo duomenų bazę.",
+    "open_database_error": "Nepavyko atverti duomenų bazės. Bandykite dar kartą.",
+    "unlock_subtitle_save": "Atrakinkite, kad išsaugotumėte slaptažodį",
+    "unlock_subtitle_fill": "Atrakinkite, kad įvestumėte slaptažodį",
+    "unlock_default_subtitle": "Atrakinkite savo duomenų bazę",
+    "master_password_hint": "Pagrindinis slaptažodis",
+    "unlock_empty_password_error": "Įveskite pagrindinį slaptažodį.",
+    "unlock_biometric_error": "Nepavyko patvirtinti jūsų tapatybės.",
+    "unlock_wrong_password_error": "Neteisingas slaptažodis.",
+    "unlock_button": "Atrakinti",
+    "use_fingerprint_button": "Naudoti piršto atspaudą",
+    "untitled_entry": "(be pavadinimo)",
+    "this_app_fallback": "ši programėlė",
+    "confirm_associate_title": "Įsiminti šiai programėlei",
+    "confirm_associate_message": "Susieti „{label}“ su {source}, kad kitą kartą pasirodytų automatiškai?",
+    "fill_only": "Tik įvesti",
+    "associate_and_fill": "Susieti ir įvesti",
+    "cannot_autofill_title": "Čia automatiškai pildyti negalima",
+    "cannot_autofill_message": "{where} forma nepalaiko automatinio pildymo (tai dažna programėlėse, sukurtose su „Jetpack Compose“).\n\nAtverkite KeepassUX ir nukopijuokite įrašo naudotojo vardą bei slaptažodį, kad įklijuotumėte juos rankiniu būdu.",
+    "close": "Užverti",
+    "matches_header": "Atitikmenys",
+    "no_matches_header": "Šiai programėlei atitikmenų nėra",
+    "results_header": "Rezultatai",
+    "fill_password_title": "Įvesti slaptažodį",
+    "for_source": "Kam: {source}",
+    "search_entry_hint": "Ieškoti įrašo",
+    "no_results": "Rezultatų nėra",
+    "empty_no_matches": "Nė vienas įrašas neatitinka šios programėlės.\nIeškokite viršuje, kad susietumėte vieną iš jų.",
+    "default_group_name": "Duomenų bazė",
+    "save_error": "Nepavyko išsaugoti įrašo.",
+    "saving_status": "Išsaugomas slaptažodis…",
+    "saved_status": "Slaptažodis išsaugotas",
+    "group_label": "Grupė: {group}",
+    "open_in_app": "Atverti KeepassUX",
+    "associate_error": "Nepavyko įsiminti šios programėlės, bet slaptažodis vis tiek bus įvestas."
+  }
+}

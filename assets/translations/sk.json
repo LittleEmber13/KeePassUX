@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Toto pole je povinné"
+  },
+  "exception": {
+    "invalid_password": "Neplatné heslo",
+    "unknown": "Neznáma chyba",
+    "save_failed": "Nepodarilo sa uložiť. Zmeny boli zahodené a vaša databáza zostala nezmenená.",
+    "save_failed_unrecoverable": "Nepodarilo sa uložiť ani obnoviť predchádzajúci stav. Zatvorte aplikáciu a pred pokračovaním skontrolujte svoj súbor."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Databáza",
+    "password_hint": "Heslo",
+    "open_database": "Otvoriť databázu",
+    "open_database_error": "Súbor databázy sa nepodarilo otvoriť. Vyberte ho znova.",
+    "create_database": "Vytvoriť databázu",
+    "open_with_biometric": "Otvoriť odtlačkom prsta",
+    "open_with_password": "Otvoriť heslom",
+    "biometric_reason": "Overte svoju totožnosť na otvorenie databázy",
+    "biometric_error": "Biometrické overenie zlyhalo",
+    "biometric_locked": "Biometrické overenie je dočasne zablokované",
+    "biometric_save_message": "Chcete zapnúť biometrický prístup, aby ste mohli otvárať databázu odtlačkom prsta?",
+    "biometric_save_yes": "Áno, zapnúť",
+    "biometric_save_no": "Nie, ďakujem"
+  },
+  "create_database_page": {
+    "title": "Vytvoriť databázu",
+    "name_hint": "Názov súboru",
+    "password_hint": "Heslo",
+    "open_database": "Otvoriť databázu",
+    "create_database": "Vytvoriť databázu"
+  },
+  "entries_page": {
+    "title": "Záznamy",
+    "search": "Hľadať záznam"
+  },
+  "search_page": {
+    "title": "Hľadanie",
+    "hint": "Hľadať v skupinách a záznamoch…",
+    "no_results": "Nenašli sa žiadne výsledky"
+  },
+  "app_bar": {
+    "trash": "Kôš"
+  },
+  "nav_bar": {
+    "add": "Pridať",
+    "add_group": "Pridať skupinu",
+    "add_entry": "Pridať záznam"
+  },
+  "move_mode": {
+    "copy": "Kopírovať",
+    "cut": "Vystrihnúť",
+    "paste": "Prilepiť",
+    "delete": "Odstrániť",
+    "confirm_delete": "Naozaj chcete presunúť vybrané položky do koša?",
+    "invalid_target": "Priečinok nemôžete prilepiť do seba samého"
+  },
+  "add_entry": {
+    "add_entry": "Pridať záznam",
+    "edit_entry": "Upraviť záznam",
+    "information": "Informácie",
+    "title": "Názov",
+    "user": "Používateľ",
+    "url": "URL",
+    "notes": "Poznámky",
+    "password": "Heslo",
+    "password_hint": "Heslo",
+    "security": "Zabezpečenie",
+    "special_characters": "Špeciálne znaky",
+    "save": "Uložiť",
+    "edit_icon": "Upraviť ikonu",
+    "generator_title": "Generátor hesiel",
+    "apply": "Použiť"
+  },
+  "add_group": {
+    "information": "Informácie",
+    "title": "Názov",
+    "save": "Uložiť",
+    "add_group": "Pridať skupinu",
+    "edit_group": "Upraviť skupinu"
+  },
+  "entry_data": {
+    "title": "Názov",
+    "user": "Používateľ",
+    "password": "Heslo",
+    "url": "URL",
+    "notes": "Poznámky",
+    "edit": "Upraviť",
+    "save": "Uložiť",
+    "cancel": "Zrušiť"
+  },
+  "settings_page": {
+    "title": "Nastavenia",
+    "language": "Jazyk",
+    "biometric_login": "Biometrické prihlásenie",
+    "dark_theme": "Tmavá téma",
+    "change_password": "Zmeniť hlavné heslo",
+    "kdf_settings": "Zabezpečenie databázy",
+    "autofill_settings": "Automatické dopĺňanie",
+    "autofill_settings_active": "Zapnuté",
+    "autofill_settings_inactive": "Vypnuté – ťuknutím nastavíte",
+    "screenshot_protection": "Blokovať snímky obrazovky",
+    "screenshot_protection_subtitle": "Zabraňuje snímaniu a nahrávaniu obrazovky počas používania aplikácie",
+    "screenshot_protection_disable_warning": "Vypnutie ochrany pred snímkami obrazovky znižuje zabezpečenie. Pre istotu sa vaša relácia ukončí a budete musieť znova zadať hlavné heslo. Chcete pokračovať?",
+    "screenshot_protection_cancel": "Zrušiť",
+    "screenshot_protection_confirm": "Vypnúť"
+  },
+  "about_page": {
+    "title": "O aplikácii",
+    "secure_title": "Bezpečná už od návrhu",
+    "secure_text": "Vaša databáza je zašifrovaná vo formáte KeePass (.kdbx). Hlavné heslo ani trezor nikdy neopustia vaše zariadenie.",
+    "open_source_title": "Otvorený zdrojový kód",
+    "open_source_text": "KeepassUX je slobodný softvér s otvoreným zdrojovým kódom. Ktokoľvek si môže prezrieť kód, prispieť alebo nahlásiť problémy v oficiálnom repozitári."
+  },
+  "autofill_settings_page": {
+    "title": "Automatické dopĺňanie",
+    "intro": "Automatické dopĺňanie umožňuje aplikácii KeepassUX navrhovať a vypĺňať vaše uložené používateľské mená a heslá v iných aplikáciách a v prehliadači. Aby fungovalo správne, musíte zapnúť nasledujúcu možnosť.",
+    "autofill_toggle_title": "Služba automatického dopĺňania systému Android",
+    "autofill_toggle_description": "Nastaví KeepassUX ako službu automatického dopĺňania, ktorú používa Android, takže vaše uložené prihlasovacie údaje sa budú navrhovať a vypĺňať priamo v prihlasovacích poliach aplikácií a prehliadačov.",
+    "browser_note_title": "Automatické dopĺňanie v prehliadači",
+    "browser_note_description": "Niektoré prehliadače majú vlastné automatické dopĺňanie zapnuté predvolene. Zapnite KeepassUX v ich nastaveniach hesiel tak, že zvolíte dopĺňanie pomocou inej služby."
+  },
+  "change_password_page": {
+    "title": "Zmeniť hlavné heslo",
+    "current_password_hint": "Súčasné heslo",
+    "new_password_hint": "Nové heslo",
+    "confirm_password_hint": "Potvrďte nové heslo",
+    "save": "Zmeniť heslo",
+    "success": "Hlavné heslo bolo úspešne zmenené",
+    "error_wrong_current": "Súčasné heslo je nesprávne",
+    "error_mismatch": "Heslá sa nezhodujú"
+  },
+  "kdf_settings_page": {
+    "title": "Zabezpečenie databázy",
+    "help_text": "Tieto hodnoty určujú, ako dlho trvá odomknutie databázy a ako odolná je voči útokom hrubou silou.",
+    "memory_hint": "Pamäť Argon2 (MiB)",
+    "iterations_hint": "Iterácie",
+    "parallelism_hint": "Paralelizmus",
+    "save": "Uložiť",
+    "success": "Nastavenia zabezpečenia boli aktualizované",
+    "warning_heavy": "Tieto hodnoty sú na telefón vysoké. Odomykanie môže byť veľmi pomalé a na zariadeniach s malým množstvom voľnej pamäte môže úplne zlyhať, aj v okne automatického dopĺňania.",
+    "error_unsupported_aes": "Táto databáza používa AES-KDF (zastarané).",
+    "error_out_of_range": "Musí to byť číslo medzi {} a {}"
+  },
+  "icon_picker": {
+    "title": "Vybrať ikonu",
+    "custom_icon": "Nahrať vlastnú ikonu",
+    "change_custom_icon": "Zmeniť vlastnú ikonu",
+    "select": "Vybrať",
+    "cancel": "Zrušiť"
+  },
+  "password_generator": {
+    "very_weak": "Veľmi slabé",
+    "weak": "Slabé",
+    "fair": "Priemerné",
+    "strong": "Silné",
+    "very_strong": "Veľmi silné"
+  },
+  "alerts": {
+    "empty_title": "Vaša databáza je prázdna",
+    "empty_text": "Ťuknutím na tlačidlo + pridáte svoje prvé záznamy alebo priečinky.",
+    "selection_title": "Podržaním vyberiete",
+    "selection_text": "Podržte záznam alebo priečinok pol sekundy a zobrazia sa možnosti kopírovať, vystrihnúť a odstrániť. Môžete vybrať viacero položiek a prilepiť ich do ľubovoľného priečinka.",
+    "drag_title": "Podržte dlhšie a môžete ťahať",
+    "drag_text": "Podržte ešte chvíľu a položka sa uvoľní, takže ju môžete presunúť potiahnutím na iný priečinok alebo na kôš.",
+    "biometric_title": "Biometrické prihlásenie je k dispozícii",
+    "biometric_text": "Môžete zapnúť biometrický prístup a otvárať databázu odtlačkom prsta. Nájdete to v Nastaveniach.",
+    "autofill_title": "Automatické dopĺňanie hesiel",
+    "autofill_text": "KeepassUX dokáže vypĺňať vaše heslá v iných aplikáciách. Zapnite ho v Nastaveniach systému > Heslá a automatické dopĺňanie a vyberte KeepassUX ako službu.",
+    "feedback_title": "Našli ste chybu?",
+    "feedback_text": "Boli by sme veľmi vďační, keby ste ju nahlásili v repozitári projektu: github.com/LittleEmber13/keepassUX. Návrhy sú tiež vítané."
+  },
+  "delete": {
+    "title": "Presunúť do koša",
+    "confirm_entry": "Naozaj chcete presunúť tento záznam do koša?",
+    "confirm_group": "Naozaj chcete presunúť túto skupinu a celý jej obsah do koša?",
+    "cancel": "Zrušiť",
+    "delete": "Presunúť do koša"
+  },
+  "trash": {
+    "restore_message": "Položku obnovíte jej potiahnutím von",
+    "confirm_delete_entry": "Naozaj chcete natrvalo odstrániť tento záznam?",
+    "confirm_delete_group": "Naozaj chcete natrvalo odstrániť túto skupinu a celý jej obsah?",
+    "confirm_delete_items": "Naozaj chcete natrvalo odstrániť vybrané položky? Skupiny sa odstránia aj s celým svojím obsahom.",
+    "delete": "Odstrániť natrvalo",
+    "delete_short": "Odstrániť",
+    "restore": "Obnoviť",
+    "restored_in": "Obnovené do priečinka „{group}“",
+    "restored_items": "Vybrané položky boli obnovené",
+    "info_content": "Tieto položky už boli odstránené z vašich priečinkov, ale stále sú uložené v databáze.",
+    "info_options": "Ťuknite na tlačidlo možností vedľa položky, aby ste ju obnovili do pôvodného priečinka alebo ju odstránili.",
+    "info_permanent": "Ak ju odstránite odtiaľto, bude natrvalo vymazaná a nebudete ju môcť obnoviť."
+  },
+  "autofill": {
+    "needs_setup_message": "Pred použitím automatického dopĺňania otvorte KeepassUX a vyberte svoju databázu.",
+    "open_database_error": "Databázu sa nepodarilo otvoriť. Skúste to znova.",
+    "unlock_subtitle_save": "Odomknite, aby ste uložili heslo",
+    "unlock_subtitle_fill": "Odomknite, aby ste vyplnili heslo",
+    "unlock_default_subtitle": "Odomknite svoju databázu",
+    "master_password_hint": "Hlavné heslo",
+    "unlock_empty_password_error": "Zadajte hlavné heslo.",
+    "unlock_biometric_error": "Vašu totožnosť sa nepodarilo overiť.",
+    "unlock_wrong_password_error": "Nesprávne heslo.",
+    "unlock_button": "Odomknúť",
+    "use_fingerprint_button": "Použiť odtlačok prsta",
+    "untitled_entry": "(bez názvu)",
+    "this_app_fallback": "táto aplikácia",
+    "confirm_associate_title": "Zapamätať pre túto aplikáciu",
+    "confirm_associate_message": "Priradiť „{label}“ k {source}, aby sa nabudúce zobrazil automaticky?",
+    "fill_only": "Iba vyplniť",
+    "associate_and_fill": "Priradiť a vyplniť",
+    "cannot_autofill_title": "Tu sa nedá automaticky dopĺňať",
+    "cannot_autofill_message": "Formulár v {where} nepodporuje automatické dopĺňanie (býva to bežné v aplikáciách vytvorených pomocou Jetpack Compose).\n\nOtvorte KeepassUX a skopírujte používateľské meno a heslo záznamu, aby ste ich mohli vložiť ručne.",
+    "close": "Zavrieť",
+    "matches_header": "Zhody",
+    "no_matches_header": "Pre túto aplikáciu nie sú žiadne zhody",
+    "results_header": "Výsledky",
+    "fill_password_title": "Vyplniť heslo",
+    "for_source": "Pre: {source}",
+    "search_entry_hint": "Hľadať záznam",
+    "no_results": "Žiadne výsledky",
+    "empty_no_matches": "Tejto aplikácii nezodpovedá žiadny záznam.\nVyhľadajte vyššie a niektorý priraďte.",
+    "default_group_name": "Databáza",
+    "save_error": "Záznam sa nepodarilo uložiť.",
+    "saving_status": "Ukladá sa heslo…",
+    "saved_status": "Heslo bolo uložené",
+    "group_label": "Skupina: {group}",
+    "open_in_app": "Otvoriť v KeepassUX",
+    "associate_error": "Túto aplikáciu sa nepodarilo zapamätať, ale heslo sa aj tak vyplní."
+  }
+}

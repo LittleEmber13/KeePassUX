@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "此项为必填"
+  },
+  "exception": {
+    "invalid_password": "密码无效",
+    "unknown": "未知错误",
+    "save_failed": "无法保存。更改已撤销，数据库未发生变化。",
+    "save_failed_unrecoverable": "既无法保存，也无法恢复到之前的状态。请关闭应用并检查文件后再继续。"
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "数据库",
+    "password_hint": "密码",
+    "open_database": "打开数据库",
+    "open_database_error": "无法打开数据库文件，请重新选择。",
+    "create_database": "创建数据库",
+    "open_with_biometric": "用指纹打开",
+    "open_with_password": "用密码打开",
+    "biometric_reason": "请验证身份以打开数据库",
+    "biometric_error": "生物识别验证失败",
+    "biometric_locked": "生物识别验证已暂时锁定",
+    "biometric_save_message": "是否启用生物识别，以便用指纹打开数据库？",
+    "biometric_save_yes": "启用",
+    "biometric_save_no": "暂不启用"
+  },
+  "create_database_page": {
+    "title": "创建数据库",
+    "name_hint": "文件名",
+    "password_hint": "密码",
+    "open_database": "打开数据库",
+    "create_database": "创建数据库"
+  },
+  "entries_page": {
+    "title": "条目",
+    "search": "搜索条目"
+  },
+  "search_page": {
+    "title": "搜索",
+    "hint": "搜索群组和条目…",
+    "no_results": "未找到结果"
+  },
+  "app_bar": {
+    "trash": "回收站"
+  },
+  "nav_bar": {
+    "add": "添加",
+    "add_group": "添加群组",
+    "add_entry": "添加条目"
+  },
+  "move_mode": {
+    "copy": "复制",
+    "cut": "剪切",
+    "paste": "粘贴",
+    "delete": "删除",
+    "confirm_delete": "确定要把所选项目移到回收站吗？",
+    "invalid_target": "无法将文件夹粘贴到它自身中"
+  },
+  "add_entry": {
+    "add_entry": "添加条目",
+    "edit_entry": "编辑条目",
+    "information": "信息",
+    "title": "标题",
+    "user": "用户",
+    "url": "网址",
+    "notes": "备注",
+    "password": "密码",
+    "password_hint": "密码",
+    "security": "安全",
+    "special_characters": "特殊字符",
+    "save": "保存",
+    "edit_icon": "编辑图标",
+    "generator_title": "密码生成器",
+    "apply": "应用"
+  },
+  "add_group": {
+    "information": "信息",
+    "title": "标题",
+    "save": "保存",
+    "add_group": "添加群组",
+    "edit_group": "编辑群组"
+  },
+  "entry_data": {
+    "title": "标题",
+    "user": "用户",
+    "password": "密码",
+    "url": "网址",
+    "notes": "备注",
+    "edit": "编辑",
+    "save": "保存",
+    "cancel": "取消"
+  },
+  "settings_page": {
+    "title": "设置",
+    "language": "语言",
+    "biometric_login": "生物识别登录",
+    "dark_theme": "深色主题",
+    "change_password": "修改主密码",
+    "kdf_settings": "数据库安全",
+    "autofill_settings": "自动填充",
+    "autofill_settings_active": "已启用",
+    "autofill_settings_inactive": "未启用 — 点按进行设置",
+    "screenshot_protection": "阻止截屏",
+    "screenshot_protection_subtitle": "使用应用期间禁止截屏和录屏",
+    "screenshot_protection_disable_warning": "关闭截屏保护会降低安全性。为安全起见，当前会话将结束，你需要重新输入主密码。要继续吗？",
+    "screenshot_protection_cancel": "取消",
+    "screenshot_protection_confirm": "关闭"
+  },
+  "about_page": {
+    "title": "关于",
+    "secure_title": "从设计之初就安全",
+    "secure_text": "你的数据库采用 KeePass(.kdbx) 格式加密。主密码和密码库始终不会离开你的设备。",
+    "open_source_title": "开源",
+    "open_source_text": "KeepassUX 是自由开源软件。任何人都可以在官方仓库查看代码、参与贡献或报告问题。"
+  },
+  "autofill_settings_page": {
+    "title": "自动填充",
+    "intro": "自动填充可让 KeepassUX 在其他应用和浏览器中建议并填写你保存的用户名和密码。要让它正常工作，必须启用下面的选项。",
+    "autofill_toggle_title": "Android 自动填充服务",
+    "autofill_toggle_description": "把 KeepassUX 设为 Android 使用的自动填充服务，这样保存的登录信息就能直接在应用和浏览器的登录框中被建议并填入。",
+    "browser_note_title": "浏览器自动填充",
+    "browser_note_description": "有些浏览器默认启用了自带的自动填充。请在这些浏览器的密码设置中选择使用其他服务填写，从而启用 KeepassUX。"
+  },
+  "change_password_page": {
+    "title": "修改主密码",
+    "current_password_hint": "当前密码",
+    "new_password_hint": "新密码",
+    "confirm_password_hint": "确认新密码",
+    "save": "修改密码",
+    "success": "主密码已成功修改",
+    "error_wrong_current": "当前密码不正确",
+    "error_mismatch": "两次输入的密码不一致"
+  },
+  "kdf_settings_page": {
+    "title": "数据库安全",
+    "help_text": "这些数值决定了数据库解锁所需的时间，以及抵御暴力破解的能力。",
+    "memory_hint": "Argon2 内存 (MiB)",
+    "iterations_hint": "迭代次数",
+    "parallelism_hint": "并行度",
+    "save": "保存",
+    "success": "安全设置已更新",
+    "warning_heavy": "对手机来说这些数值偏高。解锁可能会非常慢，在可用内存较少的设备上甚至会彻底失败，自动填充窗口中同样如此。",
+    "error_unsupported_aes": "此数据库使用 AES-KDF（旧版）。",
+    "error_out_of_range": "必须是介于 {} 和 {} 之间的数字"
+  },
+  "icon_picker": {
+    "title": "选择图标",
+    "custom_icon": "上传自定义图标",
+    "change_custom_icon": "更换自定义图标",
+    "select": "选择",
+    "cancel": "取消"
+  },
+  "password_generator": {
+    "very_weak": "非常弱",
+    "weak": "弱",
+    "fair": "一般",
+    "strong": "强",
+    "very_strong": "非常强"
+  },
+  "alerts": {
+    "empty_title": "你的数据库是空的",
+    "empty_text": "点按 + 按钮，添加第一个条目或文件夹。",
+    "selection_title": "长按以选择",
+    "selection_text": "长按条目或文件夹约半秒，就会出现复制、剪切和删除选项。你可以选中多个项目，并把它们粘贴到任意文件夹。",
+    "drag_title": "继续按住即可拖动",
+    "drag_text": "再多按一会儿，项目就会脱离原位，你可以把它拖到其他文件夹或回收站上以完成移动。",
+    "biometric_title": "可使用生物识别登录",
+    "biometric_text": "你可以启用生物识别，用指纹打开数据库。该选项在“设置”中。",
+    "autofill_title": "密码自动填充",
+    "autofill_text": "KeepassUX 可以在其他应用中填写你的密码。请在系统设置 > 密码与自动填充中启用，并选择 KeepassUX 作为服务。",
+    "feedback_title": "发现问题了吗？",
+    "feedback_text": "如果你能在项目仓库反馈，我们将非常感谢：github.com/LittleEmber13/keepassUX。也欢迎提出建议。"
+  },
+  "delete": {
+    "title": "移到回收站",
+    "confirm_entry": "确定要把此条目移到回收站吗？",
+    "confirm_group": "确定要把此群组及其全部内容移到回收站吗？",
+    "cancel": "取消",
+    "delete": "移到回收站"
+  },
+  "trash": {
+    "restore_message": "把项目拖出即可还原",
+    "confirm_delete_entry": "确定要永久删除此条目吗？",
+    "confirm_delete_group": "确定要永久删除此群组及其全部内容吗？",
+    "confirm_delete_items": "确定要永久删除所选项目吗？群组将连同其全部内容一起删除。",
+    "delete": "永久删除",
+    "delete_short": "删除",
+    "restore": "还原",
+    "restored_in": "已还原到“{group}”",
+    "restored_items": "已还原所选项目",
+    "info_content": "这些项目已从你的文件夹中移除，但仍然保存在数据库里。",
+    "info_options": "点按项目旁边的选项按钮，可将其还原到原文件夹或将其删除。",
+    "info_permanent": "如果从这里删除，它将被永久清除且无法恢复。"
+  },
+  "autofill": {
+    "needs_setup_message": "使用自动填充前，请先打开 KeepassUX 并选择你的数据库。",
+    "open_database_error": "无法打开数据库，请重试。",
+    "unlock_subtitle_save": "解锁以保存密码",
+    "unlock_subtitle_fill": "解锁以填写密码",
+    "unlock_default_subtitle": "解锁你的数据库",
+    "master_password_hint": "主密码",
+    "unlock_empty_password_error": "请输入主密码。",
+    "unlock_biometric_error": "无法验证你的身份。",
+    "unlock_wrong_password_error": "密码不正确。",
+    "unlock_button": "解锁",
+    "use_fingerprint_button": "使用指纹",
+    "untitled_entry": "（无标题）",
+    "this_app_fallback": "此应用",
+    "confirm_associate_title": "记住此应用",
+    "confirm_associate_message": "是否将“{label}”与 {source} 关联，以便下次自动出现？",
+    "fill_only": "仅填写",
+    "associate_and_fill": "关联并填写",
+    "cannot_autofill_title": "此处无法自动填充",
+    "cannot_autofill_message": "{where} 的表单不支持自动填充（使用 Jetpack Compose 开发的应用常见此情况）。\n\n请打开 KeepassUX，复制该条目的用户名和密码后手动粘贴。",
+    "close": "关闭",
+    "matches_header": "匹配项",
+    "no_matches_header": "没有与此应用匹配的条目",
+    "results_header": "结果",
+    "fill_password_title": "填写密码",
+    "for_source": "适用于：{source}",
+    "search_entry_hint": "搜索条目",
+    "no_results": "没有结果",
+    "empty_no_matches": "没有条目与此应用匹配。\n请在上方搜索并关联一个条目。",
+    "default_group_name": "数据库",
+    "save_error": "无法保存该条目。",
+    "saving_status": "正在保存密码…",
+    "saved_status": "密码已保存",
+    "group_label": "群组：{group}",
+    "open_in_app": "在 KeepassUX 中打开",
+    "associate_error": "无法记住此应用，但密码仍会被填入。"
+  }
+}

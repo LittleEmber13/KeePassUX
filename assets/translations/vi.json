@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Trường này là bắt buộc"
+  },
+  "exception": {
+    "invalid_password": "Mật khẩu không hợp lệ",
+    "unknown": "Lỗi không xác định",
+    "save_failed": "Không thể lưu. Các thay đổi đã bị hủy và cơ sở dữ liệu của bạn không thay đổi.",
+    "save_failed_unrecoverable": "Không thể lưu cũng như khôi phục trạng thái trước đó. Hãy đóng ứng dụng và kiểm tra tệp của bạn trước khi tiếp tục."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Cơ sở dữ liệu",
+    "password_hint": "Mật khẩu",
+    "open_database": "Mở cơ sở dữ liệu",
+    "open_database_error": "Không thể mở tệp cơ sở dữ liệu. Vui lòng chọn lại.",
+    "create_database": "Tạo cơ sở dữ liệu",
+    "open_with_biometric": "Mở bằng vân tay",
+    "open_with_password": "Mở bằng mật khẩu",
+    "biometric_reason": "Xác thực để mở cơ sở dữ liệu của bạn",
+    "biometric_error": "Xác thực sinh trắc học thất bại",
+    "biometric_locked": "Xác thực sinh trắc học tạm thời bị khóa",
+    "biometric_save_message": "Bạn có muốn bật truy cập sinh trắc học để mở cơ sở dữ liệu bằng vân tay không?",
+    "biometric_save_yes": "Có, bật",
+    "biometric_save_no": "Không, cảm ơn"
+  },
+  "create_database_page": {
+    "title": "Tạo cơ sở dữ liệu",
+    "name_hint": "Tên tệp",
+    "password_hint": "Mật khẩu",
+    "open_database": "Mở cơ sở dữ liệu",
+    "create_database": "Tạo cơ sở dữ liệu"
+  },
+  "entries_page": {
+    "title": "Mục",
+    "search": "Tìm một mục"
+  },
+  "search_page": {
+    "title": "Tìm kiếm",
+    "hint": "Tìm trong nhóm và mục…",
+    "no_results": "Không tìm thấy kết quả nào"
+  },
+  "app_bar": {
+    "trash": "Thùng rác"
+  },
+  "nav_bar": {
+    "add": "Thêm",
+    "add_group": "Thêm nhóm",
+    "add_entry": "Thêm mục"
+  },
+  "move_mode": {
+    "copy": "Sao chép",
+    "cut": "Cắt",
+    "paste": "Dán",
+    "delete": "Xóa",
+    "confirm_delete": "Bạn có chắc muốn chuyển các mục đã chọn vào thùng rác không?",
+    "invalid_target": "Bạn không thể dán một thư mục vào chính nó"
+  },
+  "add_entry": {
+    "add_entry": "Thêm mục",
+    "edit_entry": "Sửa mục",
+    "information": "Thông tin",
+    "title": "Tiêu đề",
+    "user": "Người dùng",
+    "url": "URL",
+    "notes": "Ghi chú",
+    "password": "Mật khẩu",
+    "password_hint": "Mật khẩu",
+    "security": "Bảo mật",
+    "special_characters": "Ký tự đặc biệt",
+    "save": "Lưu",
+    "edit_icon": "Sửa biểu tượng",
+    "generator_title": "Trình tạo mật khẩu",
+    "apply": "Áp dụng"
+  },
+  "add_group": {
+    "information": "Thông tin",
+    "title": "Tiêu đề",
+    "save": "Lưu",
+    "add_group": "Thêm nhóm",
+    "edit_group": "Sửa nhóm"
+  },
+  "entry_data": {
+    "title": "Tiêu đề",
+    "user": "Người dùng",
+    "password": "Mật khẩu",
+    "url": "URL",
+    "notes": "Ghi chú",
+    "edit": "Sửa",
+    "save": "Lưu",
+    "cancel": "Hủy"
+  },
+  "settings_page": {
+    "title": "Cài đặt",
+    "language": "Ngôn ngữ",
+    "biometric_login": "Đăng nhập sinh trắc học",
+    "dark_theme": "Giao diện tối",
+    "change_password": "Đổi mật khẩu chính",
+    "kdf_settings": "Bảo mật cơ sở dữ liệu",
+    "autofill_settings": "Tự động điền",
+    "autofill_settings_active": "Đang bật",
+    "autofill_settings_inactive": "Đang tắt — chạm để thiết lập",
+    "screenshot_protection": "Chặn chụp màn hình",
+    "screenshot_protection_subtitle": "Ngăn chụp và quay màn hình khi bạn dùng ứng dụng",
+    "screenshot_protection_disable_warning": "Tắt bảo vệ chống chụp màn hình sẽ làm giảm mức độ bảo mật. Để an toàn, phiên làm việc của bạn sẽ được đóng và bạn phải nhập lại mật khẩu chính. Bạn có muốn tiếp tục không?",
+    "screenshot_protection_cancel": "Hủy",
+    "screenshot_protection_confirm": "Tắt"
+  },
+  "about_page": {
+    "title": "Giới thiệu",
+    "secure_title": "An toàn ngay từ thiết kế",
+    "secure_text": "Cơ sở dữ liệu của bạn được mã hóa theo định dạng KeePass (.kdbx). Mật khẩu chính và kho lưu trữ của bạn không bao giờ rời khỏi thiết bị.",
+    "open_source_title": "Mã nguồn mở",
+    "open_source_text": "KeepassUX là phần mềm tự do và mã nguồn mở. Bất kỳ ai cũng có thể xem mã nguồn, đóng góp hoặc báo lỗi trên kho lưu trữ chính thức."
+  },
+  "autofill_settings_page": {
+    "title": "Tự động điền",
+    "intro": "Tự động điền cho phép KeepassUX gợi ý và điền tên người dùng cùng mật khẩu đã lưu của bạn trong các ứng dụng khác và trong trình duyệt. Để hoạt động đúng, bạn phải bật tùy chọn sau.",
+    "autofill_toggle_title": "Dịch vụ tự động điền của Android",
+    "autofill_toggle_description": "Đặt KeepassUX làm dịch vụ tự động điền mà Android sử dụng, để thông tin đăng nhập đã lưu của bạn được gợi ý và điền thẳng vào các ô đăng nhập trong ứng dụng và trình duyệt.",
+    "browser_note_title": "Tự động điền của trình duyệt",
+    "browser_note_description": "Một số trình duyệt bật sẵn tính năng tự động điền của riêng chúng. Hãy bật KeepassUX trong phần cài đặt mật khẩu của trình duyệt đó bằng cách chọn điền bằng dịch vụ khác."
+  },
+  "change_password_page": {
+    "title": "Đổi mật khẩu chính",
+    "current_password_hint": "Mật khẩu hiện tại",
+    "new_password_hint": "Mật khẩu mới",
+    "confirm_password_hint": "Xác nhận mật khẩu mới",
+    "save": "Đổi mật khẩu",
+    "success": "Đã đổi mật khẩu chính thành công",
+    "error_wrong_current": "Mật khẩu hiện tại không đúng",
+    "error_mismatch": "Mật khẩu không khớp"
+  },
+  "kdf_settings_page": {
+    "title": "Bảo mật cơ sở dữ liệu",
+    "help_text": "Các giá trị này quyết định thời gian mở khóa cơ sở dữ liệu và khả năng chống lại các cuộc tấn công vét cạn.",
+    "memory_hint": "Bộ nhớ Argon2 (MiB)",
+    "iterations_hint": "Số vòng lặp",
+    "parallelism_hint": "Mức song song",
+    "save": "Lưu",
+    "success": "Đã cập nhật cài đặt bảo mật",
+    "warning_heavy": "Các giá trị này khá cao đối với điện thoại. Việc mở khóa có thể rất chậm, và trên thiết bị còn ít bộ nhớ trống thì có thể thất bại hoàn toàn, kể cả trong cửa sổ tự động điền.",
+    "error_unsupported_aes": "Cơ sở dữ liệu này dùng AES-KDF (đã cũ).",
+    "error_out_of_range": "Phải là một số từ {} đến {}"
+  },
+  "icon_picker": {
+    "title": "Chọn biểu tượng",
+    "custom_icon": "Tải lên biểu tượng tùy chỉnh",
+    "change_custom_icon": "Đổi biểu tượng tùy chỉnh",
+    "select": "Chọn",
+    "cancel": "Hủy"
+  },
+  "password_generator": {
+    "very_weak": "Rất yếu",
+    "weak": "Yếu",
+    "fair": "Trung bình",
+    "strong": "Mạnh",
+    "very_strong": "Rất mạnh"
+  },
+  "alerts": {
+    "empty_title": "Cơ sở dữ liệu của bạn đang trống",
+    "empty_text": "Chạm nút + để thêm những mục hoặc thư mục đầu tiên của bạn.",
+    "selection_title": "Nhấn giữ để chọn",
+    "selection_text": "Nhấn giữ một mục hoặc thư mục trong nửa giây, các tùy chọn sao chép, cắt và xóa sẽ xuất hiện. Bạn có thể chọn nhiều mục và dán chúng vào bất kỳ thư mục nào.",
+    "drag_title": "Giữ lâu hơn để kéo",
+    "drag_text": "Giữ thêm một chút nữa thì mục sẽ tách ra, để bạn kéo nó sang thư mục khác hoặc vào thùng rác nhằm di chuyển nó.",
+    "biometric_title": "Có thể đăng nhập sinh trắc học",
+    "biometric_text": "Bạn có thể bật truy cập sinh trắc học để mở cơ sở dữ liệu bằng vân tay. Tùy chọn nằm trong phần Cài đặt.",
+    "autofill_title": "Tự động điền mật khẩu",
+    "autofill_text": "KeepassUX có thể điền mật khẩu của bạn trong các ứng dụng khác. Hãy bật trong Cài đặt hệ thống > Mật khẩu và tự động điền, rồi chọn KeepassUX làm dịch vụ.",
+    "feedback_title": "Bạn phát hiện lỗi?",
+    "feedback_text": "Chúng tôi rất cảm ơn nếu bạn báo lỗi trên kho lưu trữ của dự án: github.com/LittleEmber13/keepassUX. Mọi góp ý cũng đều được hoan nghênh."
+  },
+  "delete": {
+    "title": "Chuyển vào thùng rác",
+    "confirm_entry": "Bạn có chắc muốn chuyển mục này vào thùng rác không?",
+    "confirm_group": "Bạn có chắc muốn chuyển nhóm này cùng toàn bộ nội dung vào thùng rác không?",
+    "cancel": "Hủy",
+    "delete": "Chuyển vào thùng rác"
+  },
+  "trash": {
+    "restore_message": "Kéo mục ra ngoài để khôi phục",
+    "confirm_delete_entry": "Bạn có chắc muốn xóa vĩnh viễn mục này không?",
+    "confirm_delete_group": "Bạn có chắc muốn xóa vĩnh viễn nhóm này cùng toàn bộ nội dung không?",
+    "confirm_delete_items": "Bạn có chắc muốn xóa vĩnh viễn các mục đã chọn không? Các nhóm sẽ bị xóa cùng toàn bộ nội dung.",
+    "delete": "Xóa vĩnh viễn",
+    "delete_short": "Xóa",
+    "restore": "Khôi phục",
+    "restored_in": "Đã khôi phục vào \"{group}\"",
+    "restored_items": "Đã khôi phục các mục đã chọn",
+    "info_content": "Những mục này đã được gỡ khỏi thư mục của bạn, nhưng vẫn được lưu trong cơ sở dữ liệu.",
+    "info_options": "Chạm nút tùy chọn bên cạnh một mục để khôi phục nó về thư mục ban đầu hoặc để xóa nó.",
+    "info_permanent": "Nếu bạn xóa từ đây, mục sẽ bị xóa vĩnh viễn và bạn sẽ không thể khôi phục."
+  },
+  "autofill": {
+    "needs_setup_message": "Hãy mở KeepassUX và chọn cơ sở dữ liệu của bạn trước khi dùng tự động điền.",
+    "open_database_error": "Không thể mở cơ sở dữ liệu. Vui lòng thử lại.",
+    "unlock_subtitle_save": "Mở khóa để lưu mật khẩu",
+    "unlock_subtitle_fill": "Mở khóa để điền mật khẩu",
+    "unlock_default_subtitle": "Mở khóa cơ sở dữ liệu của bạn",
+    "master_password_hint": "Mật khẩu chính",
+    "unlock_empty_password_error": "Hãy nhập mật khẩu chính.",
+    "unlock_biometric_error": "Không thể xác minh danh tính của bạn.",
+    "unlock_wrong_password_error": "Mật khẩu không đúng.",
+    "unlock_button": "Mở khóa",
+    "use_fingerprint_button": "Dùng vân tay",
+    "untitled_entry": "(không có tiêu đề)",
+    "this_app_fallback": "ứng dụng này",
+    "confirm_associate_title": "Ghi nhớ cho ứng dụng này",
+    "confirm_associate_message": "Liên kết \"{label}\" với {source} để lần sau tự động hiện ra?",
+    "fill_only": "Chỉ điền",
+    "associate_and_fill": "Liên kết và điền",
+    "cannot_autofill_title": "Không thể tự động điền ở đây",
+    "cannot_autofill_message": "Biểu mẫu của {where} không hỗ trợ tự động điền (thường gặp ở các ứng dụng viết bằng Jetpack Compose).\n\nHãy mở KeepassUX và sao chép tên người dùng cùng mật khẩu của mục để dán thủ công.",
+    "close": "Đóng",
+    "matches_header": "Kết quả khớp",
+    "no_matches_header": "Không có kết quả khớp cho ứng dụng này",
+    "results_header": "Kết quả",
+    "fill_password_title": "Điền mật khẩu",
+    "for_source": "Cho: {source}",
+    "search_entry_hint": "Tìm mục",
+    "no_results": "Không có kết quả",
+    "empty_no_matches": "Không có mục nào khớp với ứng dụng này.\nHãy tìm ở trên để liên kết một mục.",
+    "default_group_name": "Cơ sở dữ liệu",
+    "save_error": "Không thể lưu mục này.",
+    "saving_status": "Đang lưu mật khẩu…",
+    "saved_status": "Đã lưu mật khẩu",
+    "group_label": "Nhóm: {group}",
+    "open_in_app": "Mở trong KeepassUX",
+    "associate_error": "Không thể ghi nhớ ứng dụng này, nhưng mật khẩu vẫn sẽ được điền."
+  }
+}

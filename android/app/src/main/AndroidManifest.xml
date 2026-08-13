@@ -57,7 +57,7 @@
             android:value="ic_autofill_key" />
         <meta-data
             android:name="com.keevault.flutter_autofill_service.select_another_entry"
-            android:value="Buscar otra entrada en KeepassUX" />
+            android:value="@string/autofill_select_another_entry" />
         <service
             android:name="com.keevault.flutter_autofill_service.FlutterAutofillService"
             tools:node="remove" />
@@ -74,7 +74,7 @@
                 android:resource="@xml/service_configuration" />
             <meta-data
                 android:name="com.keevault.flutter_autofill_service.unlock_label"
-                android:value="Rellenar con KeepassUX" />
+                android:value="@string/autofill_unlock_label" />
             <meta-data
                 android:name="com.keevault.flutter_autofill_service.unlock_drawable_name"
                 android:value="ic_autofill_key" />

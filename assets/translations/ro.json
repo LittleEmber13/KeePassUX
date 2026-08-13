@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Acest câmp este obligatoriu"
+  },
+  "exception": {
+    "invalid_password": "Parolă incorectă",
+    "unknown": "Eroare necunoscută",
+    "save_failed": "Salvarea nu a reușit. Modificările au fost anulate, iar baza de date a rămas neschimbată.",
+    "save_failed_unrecoverable": "Nu s-a putut salva și nici restaura starea anterioară. Închide aplicația și verifică fișierul înainte de a continua."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Bază de date",
+    "password_hint": "Parolă",
+    "open_database": "Deschide baza de date",
+    "open_database_error": "Fișierul bazei de date nu a putut fi deschis. Selectează-l din nou.",
+    "create_database": "Creează bază de date",
+    "open_with_biometric": "Deschide cu amprenta",
+    "open_with_password": "Deschide cu parola",
+    "biometric_reason": "Autentifică-te pentru a deschide baza de date",
+    "biometric_error": "Autentificarea biometrică a eșuat",
+    "biometric_locked": "Autentificarea biometrică este blocată temporar",
+    "biometric_save_message": "Vrei să activezi accesul biometric pentru a deschide baza de date cu amprenta?",
+    "biometric_save_yes": "Da, activează",
+    "biometric_save_no": "Nu, mulțumesc"
+  },
+  "create_database_page": {
+    "title": "Creează bază de date",
+    "name_hint": "Numele fișierului",
+    "password_hint": "Parolă",
+    "open_database": "Deschide baza de date",
+    "create_database": "Creează bază de date"
+  },
+  "entries_page": {
+    "title": "Intrări",
+    "search": "Caută o intrare"
+  },
+  "search_page": {
+    "title": "Căutare",
+    "hint": "Caută în grupuri și intrări…",
+    "no_results": "Niciun rezultat găsit"
+  },
+  "app_bar": {
+    "trash": "Coș de gunoi"
+  },
+  "nav_bar": {
+    "add": "Adaugă",
+    "add_group": "Adaugă grup",
+    "add_entry": "Adaugă intrare"
+  },
+  "move_mode": {
+    "copy": "Copiază",
+    "cut": "Decupează",
+    "paste": "Lipește",
+    "delete": "Șterge",
+    "confirm_delete": "Sigur vrei să muți elementele selectate în coșul de gunoi?",
+    "invalid_target": "Nu poți lipi un dosar în el însuși"
+  },
+  "add_entry": {
+    "add_entry": "Adaugă intrare",
+    "edit_entry": "Editează intrarea",
+    "information": "Informații",
+    "title": "Titlu",
+    "user": "Utilizator",
+    "url": "URL",
+    "notes": "Notițe",
+    "password": "Parolă",
+    "password_hint": "Parolă",
+    "security": "Securitate",
+    "special_characters": "Caractere speciale",
+    "save": "Salvează",
+    "edit_icon": "Editează pictograma",
+    "generator_title": "Generator de parole",
+    "apply": "Aplică"
+  },
+  "add_group": {
+    "information": "Informații",
+    "title": "Titlu",
+    "save": "Salvează",
+    "add_group": "Adaugă grup",
+    "edit_group": "Editează grupul"
+  },
+  "entry_data": {
+    "title": "Titlu",
+    "user": "Utilizator",
+    "password": "Parolă",
+    "url": "URL",
+    "notes": "Notițe",
+    "edit": "Editează",
+    "save": "Salvează",
+    "cancel": "Anulează"
+  },
+  "settings_page": {
+    "title": "Setări",
+    "language": "Limbă",
+    "biometric_login": "Autentificare biometrică",
+    "dark_theme": "Temă întunecată",
+    "change_password": "Schimbă parola principală",
+    "kdf_settings": "Securitatea bazei de date",
+    "autofill_settings": "Completare automată",
+    "autofill_settings_active": "Activă",
+    "autofill_settings_inactive": "Inactivă — atinge pentru a configura",
+    "screenshot_protection": "Blochează capturile de ecran",
+    "screenshot_protection_subtitle": "Împiedică realizarea de capturi și înregistrări de ecran în timp ce folosești aplicația",
+    "screenshot_protection_disable_warning": "Dezactivarea protecției împotriva capturilor de ecran reduce securitatea. Pentru siguranță, sesiunea va fi închisă și va trebui să introduci din nou parola principală. Vrei să continui?",
+    "screenshot_protection_cancel": "Anulează",
+    "screenshot_protection_confirm": "Dezactivează"
+  },
+  "about_page": {
+    "title": "Despre",
+    "secure_title": "Sigură prin concepție",
+    "secure_text": "Baza ta de date este criptată în formatul KeePass (.kdbx). Parola principală și seiful tău nu părăsesc niciodată dispozitivul.",
+    "open_source_title": "Sursă deschisă",
+    "open_source_text": "KeepassUX este software liber, cu sursă deschisă. Oricine poate examina codul, poate contribui sau poate raporta probleme în depozitul oficial."
+  },
+  "autofill_settings_page": {
+    "title": "Completare automată",
+    "intro": "Completarea automată permite aplicației KeepassUX să sugereze și să introducă numele de utilizator și parolele salvate în alte aplicații și în browser. Pentru ca aceasta să funcționeze corect, trebuie să activezi opțiunea de mai jos.",
+    "autofill_toggle_title": "Serviciul de completare automată Android",
+    "autofill_toggle_description": "Setează KeepassUX drept serviciul de completare automată folosit de Android, astfel încât datele de autentificare salvate să fie sugerate și introduse direct în câmpurile de conectare din aplicații și browsere.",
+    "browser_note_title": "Completarea automată din browser",
+    "browser_note_description": "Unele browsere au propria completare automată activată implicit. Activează KeepassUX din setările lor de parole, alegând completarea cu un alt serviciu."
+  },
+  "change_password_page": {
+    "title": "Schimbă parola principală",
+    "current_password_hint": "Parola actuală",
+    "new_password_hint": "Parola nouă",
+    "confirm_password_hint": "Confirmă parola nouă",
+    "save": "Schimbă parola",
+    "success": "Parola principală a fost schimbată",
+    "error_wrong_current": "Parola actuală este incorectă",
+    "error_mismatch": "Parolele nu coincid"
+  },
+  "kdf_settings_page": {
+    "title": "Securitatea bazei de date",
+    "help_text": "Aceste valori stabilesc cât durează deblocarea bazei de date și cât de rezistentă este la atacurile prin forță brută.",
+    "memory_hint": "Memorie Argon2 (MiB)",
+    "iterations_hint": "Iterații",
+    "parallelism_hint": "Paralelism",
+    "save": "Salvează",
+    "success": "Setările de securitate au fost actualizate",
+    "warning_heavy": "Aceste valori sunt mari pentru un telefon. Deblocarea poate fi foarte lentă, iar pe dispozitivele cu puțină memorie liberă poate eșua complet, inclusiv în fereastra de completare automată.",
+    "error_unsupported_aes": "Această bază de date folosește AES-KDF (învechit).",
+    "error_out_of_range": "Trebuie să fie un număr între {} și {}"
+  },
+  "icon_picker": {
+    "title": "Alege pictograma",
+    "custom_icon": "Încarcă o pictogramă personalizată",
+    "change_custom_icon": "Schimbă pictograma personalizată",
+    "select": "Alege",
+    "cancel": "Anulează"
+  },
+  "password_generator": {
+    "very_weak": "Foarte slabă",
+    "weak": "Slabă",
+    "fair": "Acceptabilă",
+    "strong": "Puternică",
+    "very_strong": "Foarte puternică"
+  },
+  "alerts": {
+    "empty_title": "Baza ta de date este goală",
+    "empty_text": "Atinge butonul + pentru a adăuga primele intrări sau dosare.",
+    "selection_title": "Ține apăsat pentru a selecta",
+    "selection_text": "Ține apăsat pe o intrare sau pe un dosar timp de o jumătate de secundă și vor apărea opțiunile de copiere, decupare și ștergere. Poți alege mai multe elemente și le poți lipi în orice dosar.",
+    "drag_title": "Ține apăsat mai mult pentru a trage",
+    "drag_text": "Ține apăsat puțin mai mult și elementul se desprinde, ca să îl poți trage peste alt dosar sau peste coșul de gunoi pentru a-l muta.",
+    "biometric_title": "Autentificarea biometrică este disponibilă",
+    "biometric_text": "Poți activa accesul biometric pentru a deschide baza de date cu amprenta. Găsești opțiunea în Setări.",
+    "autofill_title": "Completarea automată a parolelor",
+    "autofill_text": "KeepassUX poate introduce parolele tale în alte aplicații. Activează-l din Setările sistemului > Parole și completare automată și alege KeepassUX ca serviciu.",
+    "feedback_title": "Ai găsit o eroare?",
+    "feedback_text": "Ți-am fi recunoscători dacă o raportezi în depozitul proiectului: github.com/LittleEmber13/keepassUX. Sugestiile sunt și ele binevenite."
+  },
+  "delete": {
+    "title": "Mută în coșul de gunoi",
+    "confirm_entry": "Sigur vrei să muți această intrare în coșul de gunoi?",
+    "confirm_group": "Sigur vrei să muți acest grup și tot conținutul lui în coșul de gunoi?",
+    "cancel": "Anulează",
+    "delete": "Mută în coșul de gunoi"
+  },
+  "trash": {
+    "restore_message": "Trage elementul în afară pentru a-l restaura",
+    "confirm_delete_entry": "Sigur vrei să ștergi definitiv această intrare?",
+    "confirm_delete_group": "Sigur vrei să ștergi definitiv acest grup și tot conținutul lui?",
+    "confirm_delete_items": "Sigur vrei să ștergi definitiv elementele selectate? Grupurile vor fi șterse cu tot conținutul lor.",
+    "delete": "Șterge definitiv",
+    "delete_short": "Șterge",
+    "restore": "Restaurează",
+    "restored_in": "Restaurat în „{group}”",
+    "restored_items": "Elementele selectate au fost restaurate",
+    "info_content": "Aceste elemente au fost deja scoase din dosarele tale, dar sunt încă stocate în baza de date.",
+    "info_options": "Atinge butonul de opțiuni de lângă un element pentru a-l restaura în dosarul inițial sau pentru a-l șterge.",
+    "info_permanent": "Dacă îl ștergi de aici, va fi eliminat definitiv și nu îl vei mai putea recupera."
+  },
+  "autofill": {
+    "needs_setup_message": "Deschide KeepassUX și selectează baza de date înainte de a folosi completarea automată.",
+    "open_database_error": "Baza de date nu a putut fi deschisă. Încearcă din nou.",
+    "unlock_subtitle_save": "Deblochează pentru a salva parola",
+    "unlock_subtitle_fill": "Deblochează pentru a completa parola",
+    "unlock_default_subtitle": "Deblochează baza de date",
+    "master_password_hint": "Parola principală",
+    "unlock_empty_password_error": "Introdu parola principală.",
+    "unlock_biometric_error": "Identitatea ta nu a putut fi verificată.",
+    "unlock_wrong_password_error": "Parolă incorectă.",
+    "unlock_button": "Deblochează",
+    "use_fingerprint_button": "Folosește amprenta",
+    "untitled_entry": "(fără titlu)",
+    "this_app_fallback": "această aplicație",
+    "confirm_associate_title": "Reține pentru această aplicație",
+    "confirm_associate_message": "Asociezi „{label}” cu {source}, ca să apară automat data viitoare?",
+    "fill_only": "Doar completează",
+    "associate_and_fill": "Asociază și completează",
+    "cannot_autofill_title": "Aici nu se poate completa automat",
+    "cannot_autofill_message": "Formularul din {where} nu acceptă completarea automată (lucru frecvent în aplicațiile realizate cu Jetpack Compose).\n\nDeschide KeepassUX și copiază numele de utilizator și parola intrării pentru a le lipi manual.",
+    "close": "Închide",
+    "matches_header": "Potriviri",
+    "no_matches_header": "Nicio potrivire pentru această aplicație",
+    "results_header": "Rezultate",
+    "fill_password_title": "Completează parola",
+    "for_source": "Pentru: {source}",
+    "search_entry_hint": "Caută intrare",
+    "no_results": "Niciun rezultat",
+    "empty_no_matches": "Nicio intrare nu se potrivește cu această aplicație.\nCaută mai sus pentru a asocia una.",
+    "default_group_name": "Bază de date",
+    "save_error": "Intrarea nu a putut fi salvată.",
+    "saving_status": "Se salvează parola…",
+    "saved_status": "Parola a fost salvată",
+    "group_label": "Grup: {group}",
+    "open_in_app": "Deschide în KeepassUX",
+    "associate_error": "Această aplicație nu a putut fi reținută, dar parola va fi completată oricum."
+  }
+}

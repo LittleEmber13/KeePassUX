@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Ovo polje je obavezno"
+  },
+  "exception": {
+    "invalid_password": "Nevažeća lozinka",
+    "unknown": "Nepoznata pogreška",
+    "save_failed": "Spremanje nije uspjelo. Promjene su odbačene i baza podataka je ostala nepromijenjena.",
+    "save_failed_unrecoverable": "Nije uspjelo ni spremanje ni vraćanje prethodnog stanja. Zatvorite aplikaciju i provjerite datoteku prije nego što nastavite."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Baza podataka",
+    "password_hint": "Lozinka",
+    "open_database": "Otvori bazu podataka",
+    "open_database_error": "Datoteku baze podataka nije moguće otvoriti. Odaberite je ponovno.",
+    "create_database": "Stvori bazu podataka",
+    "open_with_biometric": "Otvori otiskom prsta",
+    "open_with_password": "Otvori lozinkom",
+    "biometric_reason": "Potvrdite identitet da biste otvorili bazu podataka",
+    "biometric_error": "Biometrijska provjera nije uspjela",
+    "biometric_locked": "Biometrijska provjera privremeno je zaključana",
+    "biometric_save_message": "Želite li uključiti biometrijski pristup kako biste bazu podataka otvarali otiskom prsta?",
+    "biometric_save_yes": "Da, uključi",
+    "biometric_save_no": "Ne, hvala"
+  },
+  "create_database_page": {
+    "title": "Stvori bazu podataka",
+    "name_hint": "Naziv datoteke",
+    "password_hint": "Lozinka",
+    "open_database": "Otvori bazu podataka",
+    "create_database": "Stvori bazu podataka"
+  },
+  "entries_page": {
+    "title": "Unosi",
+    "search": "Pretraži unose"
+  },
+  "search_page": {
+    "title": "Pretraživanje",
+    "hint": "Pretraži grupe i unose…",
+    "no_results": "Nema rezultata"
+  },
+  "app_bar": {
+    "trash": "Koš za smeće"
+  },
+  "nav_bar": {
+    "add": "Dodaj",
+    "add_group": "Dodaj grupu",
+    "add_entry": "Dodaj unos"
+  },
+  "move_mode": {
+    "copy": "Kopiraj",
+    "cut": "Izreži",
+    "paste": "Zalijepi",
+    "delete": "Izbriši",
+    "confirm_delete": "Jeste li sigurni da želite premjestiti odabrane stavke u koš za smeće?",
+    "invalid_target": "Mapu ne možete zalijepiti u nju samu"
+  },
+  "add_entry": {
+    "add_entry": "Dodaj unos",
+    "edit_entry": "Uredi unos",
+    "information": "Informacije",
+    "title": "Naslov",
+    "user": "Korisnik",
+    "url": "URL",
+    "notes": "Bilješke",
+    "password": "Lozinka",
+    "password_hint": "Lozinka",
+    "security": "Sigurnost",
+    "special_characters": "Posebni znakovi",
+    "save": "Spremi",
+    "edit_icon": "Uredi ikonu",
+    "generator_title": "Generator lozinki",
+    "apply": "Primijeni"
+  },
+  "add_group": {
+    "information": "Informacije",
+    "title": "Naslov",
+    "save": "Spremi",
+    "add_group": "Dodaj grupu",
+    "edit_group": "Uredi grupu"
+  },
+  "entry_data": {
+    "title": "Naslov",
+    "user": "Korisnik",
+    "password": "Lozinka",
+    "url": "URL",
+    "notes": "Bilješke",
+    "edit": "Uredi",
+    "save": "Spremi",
+    "cancel": "Odustani"
+  },
+  "settings_page": {
+    "title": "Postavke",
+    "language": "Jezik",
+    "biometric_login": "Biometrijska prijava",
+    "dark_theme": "Tamna tema",
+    "change_password": "Promijeni glavnu lozinku",
+    "kdf_settings": "Sigurnost baze podataka",
+    "autofill_settings": "Automatsko popunjavanje",
+    "autofill_settings_active": "Uključeno",
+    "autofill_settings_inactive": "Isključeno — dodirnite za postavljanje",
+    "screenshot_protection": "Blokiraj snimke zaslona",
+    "screenshot_protection_subtitle": "Sprječava snimanje zaslona i snimanje videozapisa zaslona dok koristite aplikaciju",
+    "screenshot_protection_disable_warning": "Isključivanjem zaštite od snimaka zaslona smanjujete sigurnost. Radi opreza vaša će se sesija zatvoriti i morat ćete ponovno unijeti glavnu lozinku. Želite li nastaviti?",
+    "screenshot_protection_cancel": "Odustani",
+    "screenshot_protection_confirm": "Isključi"
+  },
+  "about_page": {
+    "title": "O aplikaciji",
+    "secure_title": "Sigurna po dizajnu",
+    "secure_text": "Vaša baza podataka šifrirana je u formatu KeePass (.kdbx). Glavna lozinka i vaš trezor nikada ne napuštaju uređaj.",
+    "open_source_title": "Otvoreni kod",
+    "open_source_text": "KeepassUX je slobodan softver otvorenog koda. Svatko može pregledati kod, doprinijeti ili prijaviti probleme u službenom repozitoriju."
+  },
+  "autofill_settings_page": {
+    "title": "Automatsko popunjavanje",
+    "intro": "Automatsko popunjavanje omogućuje aplikaciji KeepassUX da predlaže i upisuje vaša spremljena korisnička imena i lozinke u drugim aplikacijama i u pregledniku. Da bi ispravno radilo, morate uključiti sljedeću mogućnost.",
+    "autofill_toggle_title": "Androidova usluga automatskog popunjavanja",
+    "autofill_toggle_description": "Postavlja KeepassUX kao uslugu automatskog popunjavanja koju Android koristi, pa se spremljeni podaci za prijavu mogu predlagati i upisivati izravno u polja za prijavu u aplikacijama i preglednicima.",
+    "browser_note_title": "Automatsko popunjavanje u pregledniku",
+    "browser_note_description": "Neki preglednici imaju vlastito automatsko popunjavanje uključeno prema zadanim postavkama. Uključite KeepassUX u njihovim postavkama lozinki tako da odaberete popunjavanje pomoću druge usluge."
+  },
+  "change_password_page": {
+    "title": "Promijeni glavnu lozinku",
+    "current_password_hint": "Trenutačna lozinka",
+    "new_password_hint": "Nova lozinka",
+    "confirm_password_hint": "Potvrdite novu lozinku",
+    "save": "Promijeni lozinku",
+    "success": "Glavna lozinka uspješno je promijenjena",
+    "error_wrong_current": "Trenutačna lozinka nije točna",
+    "error_mismatch": "Lozinke se ne podudaraju"
+  },
+  "kdf_settings_page": {
+    "title": "Sigurnost baze podataka",
+    "help_text": "Ove vrijednosti određuju koliko dugo traje otključavanje baze podataka i koliko je otporna na napade grubom silom.",
+    "memory_hint": "Argon2 memorija (MiB)",
+    "iterations_hint": "Iteracije",
+    "parallelism_hint": "Paralelizam",
+    "save": "Spremi",
+    "success": "Sigurnosne postavke su ažurirane",
+    "warning_heavy": "Ove su vrijednosti visoke za telefon. Otključavanje može biti vrlo sporo, a na uređajima s malo slobodne memorije može potpuno zakazati, uključujući i u prozoru za automatsko popunjavanje.",
+    "error_unsupported_aes": "Ova baza podataka koristi AES-KDF (zastarjelo).",
+    "error_out_of_range": "Mora biti broj između {} i {}"
+  },
+  "icon_picker": {
+    "title": "Odaberi ikonu",
+    "custom_icon": "Prenesi prilagođenu ikonu",
+    "change_custom_icon": "Promijeni prilagođenu ikonu",
+    "select": "Odaberi",
+    "cancel": "Odustani"
+  },
+  "password_generator": {
+    "very_weak": "Vrlo slaba",
+    "weak": "Slaba",
+    "fair": "Osrednja",
+    "strong": "Jaka",
+    "very_strong": "Vrlo jaka"
+  },
+  "alerts": {
+    "empty_title": "Vaša baza podataka je prazna",
+    "empty_text": "Dodirnite gumb + da biste dodali svoje prve unose ili mape.",
+    "selection_title": "Držite pritisnuto za odabir",
+    "selection_text": "Držite unos ili mapu pritisnutima pola sekunde i pojavit će se mogućnosti kopiranja, izrezivanja i brisanja. Možete odabrati više stavki i zalijepiti ih u bilo koju mapu.",
+    "drag_title": "Držite dulje za povlačenje",
+    "drag_text": "Držite još malo dulje i stavka će se odvojiti, pa je možete povući na drugu mapu ili na koš za smeće kako biste je premjestili.",
+    "biometric_title": "Biometrijska prijava je dostupna",
+    "biometric_text": "Možete uključiti biometrijski pristup i otvarati bazu podataka otiskom prsta. Nalazi se u Postavkama.",
+    "autofill_title": "Automatsko popunjavanje lozinki",
+    "autofill_text": "KeepassUX može upisivati vaše lozinke u druge aplikacije. Uključite ga u Postavkama sustava > Lozinke i automatsko popunjavanje i odaberite KeepassUX kao uslugu.",
+    "feedback_title": "Našli ste grešku?",
+    "feedback_text": "Bili bismo vam vrlo zahvalni ako je prijavite u repozitoriju projekta: github.com/LittleEmber13/keepassUX. Prijedlozi su također dobrodošli."
+  },
+  "delete": {
+    "title": "Premjesti u koš za smeće",
+    "confirm_entry": "Jeste li sigurni da želite premjestiti ovaj unos u koš za smeće?",
+    "confirm_group": "Jeste li sigurni da želite premjestiti ovu grupu i sav njezin sadržaj u koš za smeće?",
+    "cancel": "Odustani",
+    "delete": "Premjesti u koš za smeće"
+  },
+  "trash": {
+    "restore_message": "Povucite stavku van da biste je vratili",
+    "confirm_delete_entry": "Jeste li sigurni da želite trajno izbrisati ovaj unos?",
+    "confirm_delete_group": "Jeste li sigurni da želite trajno izbrisati ovu grupu i sav njezin sadržaj?",
+    "confirm_delete_items": "Jeste li sigurni da želite trajno izbrisati odabrane stavke? Grupe će biti izbrisane sa svim svojim sadržajem.",
+    "delete": "Izbriši trajno",
+    "delete_short": "Izbriši",
+    "restore": "Vrati",
+    "restored_in": "Vraćeno u „{group}“",
+    "restored_items": "Odabrane stavke su vraćene",
+    "info_content": "Ove su stavke već uklonjene iz vaših mapa, ali se i dalje čuvaju u bazi podataka.",
+    "info_options": "Dodirnite gumb s mogućnostima pokraj stavke da biste je vratili u izvornu mapu ili je izbrisali.",
+    "info_permanent": "Ako je izbrišete odavde, bit će trajno uklonjena i nećete je moći vratiti."
+  },
+  "autofill": {
+    "needs_setup_message": "Otvorite KeepassUX i odaberite bazu podataka prije nego što upotrijebite automatsko popunjavanje.",
+    "open_database_error": "Bazu podataka nije moguće otvoriti. Pokušajte ponovno.",
+    "unlock_subtitle_save": "Otključajte da biste spremili lozinku",
+    "unlock_subtitle_fill": "Otključajte da biste upisali lozinku",
+    "unlock_default_subtitle": "Otključajte svoju bazu podataka",
+    "master_password_hint": "Glavna lozinka",
+    "unlock_empty_password_error": "Unesite glavnu lozinku.",
+    "unlock_biometric_error": "Nije bilo moguće potvrditi vaš identitet.",
+    "unlock_wrong_password_error": "Netočna lozinka.",
+    "unlock_button": "Otključaj",
+    "use_fingerprint_button": "Upotrijebi otisak prsta",
+    "untitled_entry": "(bez naslova)",
+    "this_app_fallback": "ova aplikacija",
+    "confirm_associate_title": "Zapamti za ovu aplikaciju",
+    "confirm_associate_message": "Želite li povezati „{label}“ s {source} kako bi se sljedeći put pojavio automatski?",
+    "fill_only": "Samo popuni",
+    "associate_and_fill": "Poveži i popuni",
+    "cannot_autofill_title": "Ovdje nije moguće automatsko popunjavanje",
+    "cannot_autofill_message": "Obrazac u {where} ne podržava automatsko popunjavanje (to je uobičajeno u aplikacijama izrađenima pomoću Jetpack Composea).\n\nOtvorite KeepassUX i kopirajte korisničko ime i lozinku unosa kako biste ih zalijepili ručno.",
+    "close": "Zatvori",
+    "matches_header": "Podudaranja",
+    "no_matches_header": "Nema podudaranja za ovu aplikaciju",
+    "results_header": "Rezultati",
+    "fill_password_title": "Popuni lozinku",
+    "for_source": "Za: {source}",
+    "search_entry_hint": "Pretraži unose",
+    "no_results": "Nema rezultata",
+    "empty_no_matches": "Nijedan unos ne odgovara ovoj aplikaciji.\nPretražite iznad da biste povezali jedan.",
+    "default_group_name": "Baza podataka",
+    "save_error": "Unos nije moguće spremiti.",
+    "saving_status": "Spremanje lozinke…",
+    "saved_status": "Lozinka je spremljena",
+    "group_label": "Grupa: {group}",
+    "open_in_app": "Otvori u KeepassUX-u",
+    "associate_error": "Ovu aplikaciju nije bilo moguće zapamtiti, ali lozinka će ipak biti upisana."
+  }
+}

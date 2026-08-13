@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  User-facing strings rendered by the Android system UI (autofill dropdown), not
+  by Flutter, so they cannot go through easy_localization. They follow the device
+  locale; translations live in values-es/strings.xml.
+-->
+<resources>
+    <string name="autofill_unlock_label">Fill with KeepassUX</string>
+    <string name="autofill_select_another_entry">Find another entry in KeepassUX</string>
+</resources>

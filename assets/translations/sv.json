@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Det här fältet är obligatoriskt"
+  },
+  "exception": {
+    "invalid_password": "Ogiltigt lösenord",
+    "unknown": "Okänt fel",
+    "save_failed": "Det gick inte att spara. Ändringarna har ångrats och databasen är oförändrad.",
+    "save_failed_unrecoverable": "Det gick varken att spara eller återställa det tidigare tillståndet. Stäng appen och kontrollera filen innan du fortsätter."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Databas",
+    "password_hint": "Lösenord",
+    "open_database": "Öppna databas",
+    "open_database_error": "Det gick inte att öppna databasfilen. Välj den igen.",
+    "create_database": "Skapa databas",
+    "open_with_biometric": "Öppna med fingeravtryck",
+    "open_with_password": "Öppna med lösenord",
+    "biometric_reason": "Autentisera dig för att öppna din databas",
+    "biometric_error": "Biometrisk autentisering misslyckades",
+    "biometric_locked": "Biometrisk autentisering tillfälligt spärrad",
+    "biometric_save_message": "Vill du aktivera biometrisk åtkomst för att öppna databasen med ditt fingeravtryck?",
+    "biometric_save_yes": "Ja, aktivera",
+    "biometric_save_no": "Nej tack"
+  },
+  "create_database_page": {
+    "title": "Skapa databas",
+    "name_hint": "Filnamn",
+    "password_hint": "Lösenord",
+    "open_database": "Öppna databas",
+    "create_database": "Skapa databas"
+  },
+  "entries_page": {
+    "title": "Poster",
+    "search": "Sök efter en post"
+  },
+  "search_page": {
+    "title": "Sök",
+    "hint": "Sök bland grupper och poster …",
+    "no_results": "Inga resultat hittades"
+  },
+  "app_bar": {
+    "trash": "Papperskorg"
+  },
+  "nav_bar": {
+    "add": "Lägg till",
+    "add_group": "Lägg till grupp",
+    "add_entry": "Lägg till post"
+  },
+  "move_mode": {
+    "copy": "Kopiera",
+    "cut": "Klipp ut",
+    "paste": "Klistra in",
+    "delete": "Ta bort",
+    "confirm_delete": "Vill du verkligen flytta de markerade objekten till papperskorgen?",
+    "invalid_target": "Du kan inte klistra in en mapp i sig själv"
+  },
+  "add_entry": {
+    "add_entry": "Lägg till post",
+    "edit_entry": "Redigera post",
+    "information": "Information",
+    "title": "Titel",
+    "user": "Användare",
+    "url": "Webbadress",
+    "notes": "Anteckningar",
+    "password": "Lösenord",
+    "password_hint": "Lösenord",
+    "security": "Säkerhet",
+    "special_characters": "Specialtecken",
+    "save": "Spara",
+    "edit_icon": "Redigera ikon",
+    "generator_title": "Lösenordsgenerator",
+    "apply": "Använd"
+  },
+  "add_group": {
+    "information": "Information",
+    "title": "Titel",
+    "save": "Spara",
+    "add_group": "Lägg till grupp",
+    "edit_group": "Redigera grupp"
+  },
+  "entry_data": {
+    "title": "Titel",
+    "user": "Användare",
+    "password": "Lösenord",
+    "url": "Webbadress",
+    "notes": "Anteckningar",
+    "edit": "Redigera",
+    "save": "Spara",
+    "cancel": "Avbryt"
+  },
+  "settings_page": {
+    "title": "Inställningar",
+    "language": "Språk",
+    "biometric_login": "Biometrisk inloggning",
+    "dark_theme": "Mörkt tema",
+    "change_password": "Byt huvudlösenord",
+    "kdf_settings": "Databassäkerhet",
+    "autofill_settings": "Autofyll",
+    "autofill_settings_active": "Aktiv",
+    "autofill_settings_inactive": "Inaktiv – tryck för att konfigurera",
+    "screenshot_protection": "Blockera skärmbilder",
+    "screenshot_protection_subtitle": "Hindrar skärmbilder och skärminspelning medan du använder appen",
+    "screenshot_protection_disable_warning": "Att stänga av skyddet mot skärmbilder försämrar säkerheten. För säkerhets skull avslutas din session och du måste ange huvudlösenordet igen. Vill du fortsätta?",
+    "screenshot_protection_cancel": "Avbryt",
+    "screenshot_protection_confirm": "Stäng av"
+  },
+  "about_page": {
+    "title": "Om",
+    "secure_title": "Säker från grunden",
+    "secure_text": "Din databas är krypterad med KeePass-formatet (.kdbx). Ditt huvudlösenord och ditt valv lämnar aldrig enheten.",
+    "open_source_title": "Öppen källkod",
+    "open_source_text": "KeepassUX är fri programvara med öppen källkod. Vem som helst kan granska koden, bidra eller rapportera problem i det officiella kodförrådet."
+  },
+  "autofill_settings_page": {
+    "title": "Autofyll",
+    "intro": "Med autofyll kan KeepassUX föreslå och fylla i dina sparade användarnamn och lösenord i andra appar och i webbläsaren. För att det ska fungera korrekt måste du aktivera följande alternativ.",
+    "autofill_toggle_title": "Androids autofylltjänst",
+    "autofill_toggle_description": "Gör KeepassUX till den autofylltjänst som Android använder, så att dina sparade inloggningsuppgifter kan föreslås och fyllas i direkt i inloggningsfält i appar och webbläsare.",
+    "browser_note_title": "Autofyll i webbläsaren",
+    "browser_note_description": "Vissa webbläsare har sin egen autofyll aktiverad som standard. Aktivera KeepassUX i deras lösenordsinställningar genom att välja att fylla i med en annan tjänst."
+  },
+  "change_password_page": {
+    "title": "Byt huvudlösenord",
+    "current_password_hint": "Nuvarande lösenord",
+    "new_password_hint": "Nytt lösenord",
+    "confirm_password_hint": "Bekräfta nytt lösenord",
+    "save": "Byt lösenord",
+    "success": "Huvudlösenordet har ändrats",
+    "error_wrong_current": "Det nuvarande lösenordet är felaktigt",
+    "error_mismatch": "Lösenorden stämmer inte överens"
+  },
+  "kdf_settings_page": {
+    "title": "Databassäkerhet",
+    "help_text": "Dessa värden styr hur lång tid det tar att låsa upp databasen och hur motståndskraftig den är mot brute force-attacker.",
+    "memory_hint": "Argon2-minne (MiB)",
+    "iterations_hint": "Iterationer",
+    "parallelism_hint": "Parallellitet",
+    "save": "Spara",
+    "success": "Säkerhetsinställningarna har uppdaterats",
+    "warning_heavy": "De här värdena är höga för en telefon. Upplåsningen kan bli mycket långsam, och på enheter med lite ledigt minne kan den misslyckas helt, även i autofyllfönstret.",
+    "error_unsupported_aes": "Den här databasen använder AES-KDF (föråldrat).",
+    "error_out_of_range": "Måste vara ett tal mellan {} och {}"
+  },
+  "icon_picker": {
+    "title": "Välj ikon",
+    "custom_icon": "Ladda upp egen ikon",
+    "change_custom_icon": "Byt egen ikon",
+    "select": "Välj",
+    "cancel": "Avbryt"
+  },
+  "password_generator": {
+    "very_weak": "Mycket svagt",
+    "weak": "Svagt",
+    "fair": "Godtagbart",
+    "strong": "Starkt",
+    "very_strong": "Mycket starkt"
+  },
+  "alerts": {
+    "empty_title": "Din databas är tom",
+    "empty_text": "Tryck på +-knappen för att lägga till dina första poster eller mappar.",
+    "selection_title": "Håll in för att markera",
+    "selection_text": "Håll in en post eller mapp i en halv sekund så visas alternativen kopiera, klipp ut och ta bort. Du kan välja flera objekt och klistra in dem i valfri mapp.",
+    "drag_title": "Fortsätt hålla in för att dra",
+    "drag_text": "Håll in lite längre så lossnar objektet och du kan dra det till en annan mapp eller till papperskorgen för att flytta det.",
+    "biometric_title": "Biometrisk inloggning tillgänglig",
+    "biometric_text": "Du kan aktivera biometrisk åtkomst för att öppna databasen med ditt fingeravtryck. Du hittar det i Inställningar.",
+    "autofill_title": "Autofyll av lösenord",
+    "autofill_text": "KeepassUX kan fylla i dina lösenord i andra appar. Aktivera det i systemets Inställningar > Lösenord och autofyll och välj KeepassUX som tjänst.",
+    "feedback_title": "Hittade du en bugg?",
+    "feedback_text": "Vi uppskattar verkligen om du rapporterar den i projektets kodförråd: github.com/LittleEmber13/keepassUX. Förslag är också välkomna."
+  },
+  "delete": {
+    "title": "Flytta till papperskorgen",
+    "confirm_entry": "Vill du verkligen flytta den här posten till papperskorgen?",
+    "confirm_group": "Vill du verkligen flytta den här gruppen och hela dess innehåll till papperskorgen?",
+    "cancel": "Avbryt",
+    "delete": "Flytta till papperskorgen"
+  },
+  "trash": {
+    "restore_message": "Dra ut objektet för att återställa det",
+    "confirm_delete_entry": "Vill du verkligen radera den här posten permanent?",
+    "confirm_delete_group": "Vill du verkligen radera den här gruppen och hela dess innehåll permanent?",
+    "confirm_delete_items": "Vill du verkligen radera de markerade objekten permanent? Grupper raderas med hela sitt innehåll.",
+    "delete": "Radera permanent",
+    "delete_short": "Ta bort",
+    "restore": "Återställ",
+    "restored_in": "Återställd till ”{group}”",
+    "restored_items": "De markerade objekten har återställts",
+    "info_content": "De här objekten har redan tagits bort från dina mappar, men de finns fortfarande lagrade i databasen.",
+    "info_options": "Tryck på alternativknappen bredvid ett objekt för att återställa det till dess ursprungliga mapp eller för att radera det.",
+    "info_permanent": "Om du raderar det härifrån försvinner det permanent och du kan inte få tillbaka det."
+  },
+  "autofill": {
+    "needs_setup_message": "Öppna KeepassUX och välj din databas innan du använder autofyll.",
+    "open_database_error": "Det gick inte att öppna databasen. Försök igen.",
+    "unlock_subtitle_save": "Lås upp för att spara lösenordet",
+    "unlock_subtitle_fill": "Lås upp för att fylla i lösenordet",
+    "unlock_default_subtitle": "Lås upp din databas",
+    "master_password_hint": "Huvudlösenord",
+    "unlock_empty_password_error": "Ange huvudlösenordet.",
+    "unlock_biometric_error": "Det gick inte att verifiera din identitet.",
+    "unlock_wrong_password_error": "Fel lösenord.",
+    "unlock_button": "Lås upp",
+    "use_fingerprint_button": "Använd fingeravtryck",
+    "untitled_entry": "(utan titel)",
+    "this_app_fallback": "den här appen",
+    "confirm_associate_title": "Kom ihåg för den här appen",
+    "confirm_associate_message": "Vill du koppla ”{label}” till {source} så att posten visas automatiskt nästa gång?",
+    "fill_only": "Fyll bara i",
+    "associate_and_fill": "Koppla och fyll i",
+    "cannot_autofill_title": "Autofyll fungerar inte här",
+    "cannot_autofill_message": "Formuläret i {where} har inte stöd för autofyll (vanligt i appar byggda med Jetpack Compose).\n\nÖppna KeepassUX och kopiera postens användarnamn och lösenord för att klistra in dem manuellt.",
+    "close": "Stäng",
+    "matches_header": "Träffar",
+    "no_matches_header": "Inga träffar för den här appen",
+    "results_header": "Resultat",
+    "fill_password_title": "Fyll i lösenord",
+    "for_source": "För: {source}",
+    "search_entry_hint": "Sök post",
+    "no_results": "Inga resultat",
+    "empty_no_matches": "Ingen post matchar den här appen.\nSök ovan för att koppla en.",
+    "default_group_name": "Databas",
+    "save_error": "Det gick inte att spara posten.",
+    "saving_status": "Sparar lösenord …",
+    "saved_status": "Lösenordet har sparats",
+    "group_label": "Grupp: {group}",
+    "open_in_app": "Öppna i KeepassUX",
+    "associate_error": "Det gick inte att komma ihåg den här appen, men lösenordet fylls i ändå."
+  }
+}

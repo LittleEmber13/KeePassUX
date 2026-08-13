@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Dit veld is verplicht"
+  },
+  "exception": {
+    "invalid_password": "Ongeldig wachtwoord",
+    "unknown": "Onbekende fout",
+    "save_failed": "Opslaan is mislukt. De wijzigingen zijn ongedaan gemaakt en je database is onveranderd.",
+    "save_failed_unrecoverable": "Opslaan en het herstellen van de vorige staat zijn mislukt. Sluit de app en controleer je bestand voordat je verdergaat."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Database",
+    "password_hint": "Wachtwoord",
+    "open_database": "Database openen",
+    "open_database_error": "Kan het databasebestand niet openen. Selecteer het opnieuw.",
+    "create_database": "Database aanmaken",
+    "open_with_biometric": "Openen met vingerafdruk",
+    "open_with_password": "Openen met wachtwoord",
+    "biometric_reason": "Verifieer jezelf om je database te openen",
+    "biometric_error": "Biometrische verificatie mislukt",
+    "biometric_locked": "Biometrische verificatie tijdelijk geblokkeerd",
+    "biometric_save_message": "Wil je biometrische toegang inschakelen om je database met je vingerafdruk te openen?",
+    "biometric_save_yes": "Ja, inschakelen",
+    "biometric_save_no": "Nee, bedankt"
+  },
+  "create_database_page": {
+    "title": "Database aanmaken",
+    "name_hint": "Bestandsnaam",
+    "password_hint": "Wachtwoord",
+    "open_database": "Database openen",
+    "create_database": "Database aanmaken"
+  },
+  "entries_page": {
+    "title": "Items",
+    "search": "Zoek een item"
+  },
+  "search_page": {
+    "title": "Zoeken",
+    "hint": "Zoek in groepen en items…",
+    "no_results": "Geen resultaten gevonden"
+  },
+  "app_bar": {
+    "trash": "Prullenbak"
+  },
+  "nav_bar": {
+    "add": "Toevoegen",
+    "add_group": "Groep toevoegen",
+    "add_entry": "Item toevoegen"
+  },
+  "move_mode": {
+    "copy": "Kopiëren",
+    "cut": "Knippen",
+    "paste": "Plakken",
+    "delete": "Verwijderen",
+    "confirm_delete": "Weet je zeker dat je de geselecteerde items naar de prullenbak wilt verplaatsen?",
+    "invalid_target": "Je kunt een map niet in zichzelf plakken"
+  },
+  "add_entry": {
+    "add_entry": "Item toevoegen",
+    "edit_entry": "Item bewerken",
+    "information": "Informatie",
+    "title": "Titel",
+    "user": "Gebruiker",
+    "url": "URL",
+    "notes": "Notities",
+    "password": "Wachtwoord",
+    "password_hint": "Wachtwoord",
+    "security": "Beveiliging",
+    "special_characters": "Speciale tekens",
+    "save": "Opslaan",
+    "edit_icon": "Pictogram bewerken",
+    "generator_title": "Wachtwoordgenerator",
+    "apply": "Toepassen"
+  },
+  "add_group": {
+    "information": "Informatie",
+    "title": "Titel",
+    "save": "Opslaan",
+    "add_group": "Groep toevoegen",
+    "edit_group": "Groep bewerken"
+  },
+  "entry_data": {
+    "title": "Titel",
+    "user": "Gebruiker",
+    "password": "Wachtwoord",
+    "url": "URL",
+    "notes": "Notities",
+    "edit": "Bewerken",
+    "save": "Opslaan",
+    "cancel": "Annuleren"
+  },
+  "settings_page": {
+    "title": "Instellingen",
+    "language": "Taal",
+    "biometric_login": "Biometrisch aanmelden",
+    "dark_theme": "Donker thema",
+    "change_password": "Hoofdwachtwoord wijzigen",
+    "kdf_settings": "Databasebeveiliging",
+    "autofill_settings": "Automatisch invullen",
+    "autofill_settings_active": "Actief",
+    "autofill_settings_inactive": "Niet actief — tik om in te stellen",
+    "screenshot_protection": "Schermafbeeldingen blokkeren",
+    "screenshot_protection_subtitle": "Voorkomt schermafbeeldingen en schermopnames terwijl je de app gebruikt",
+    "screenshot_protection_disable_warning": "Het uitschakelen van de schermafbeeldingsbeveiliging verlaagt de beveiliging. Voor de zekerheid wordt je sessie gesloten en moet je je hoofdwachtwoord opnieuw invoeren. Wil je doorgaan?",
+    "screenshot_protection_cancel": "Annuleren",
+    "screenshot_protection_confirm": "Uitschakelen"
+  },
+  "about_page": {
+    "title": "Over",
+    "secure_title": "Veilig van opzet",
+    "secure_text": "Je database is versleuteld met de KeePass-indeling (.kdbx). Je hoofdwachtwoord en je kluis verlaten nooit je apparaat.",
+    "open_source_title": "Opensource",
+    "open_source_text": "KeepassUX is vrije en opensourcesoftware. Iedereen kan de code bekijken, bijdragen of problemen melden in de officiële repository."
+  },
+  "autofill_settings_page": {
+    "title": "Automatisch invullen",
+    "intro": "Met automatisch invullen kan KeepassUX je opgeslagen gebruikersnamen en wachtwoorden voorstellen en invullen in andere apps en in je browser. Om dit goed te laten werken moet je de volgende optie inschakelen.",
+    "autofill_toggle_title": "Android-dienst voor automatisch invullen",
+    "autofill_toggle_description": "Maakt KeepassUX de dienst die Android gebruikt om automatisch in te vullen, zodat je opgeslagen inloggegevens rechtstreeks in aanmeldvelden van apps en browsers worden voorgesteld en ingevuld.",
+    "browser_note_title": "Automatisch invullen in de browser",
+    "browser_note_description": "Sommige browsers hebben hun eigen automatisch invullen standaard ingeschakeld. Schakel KeepassUX in bij hun wachtwoordinstellingen door te kiezen voor invullen via een andere dienst."
+  },
+  "change_password_page": {
+    "title": "Hoofdwachtwoord wijzigen",
+    "current_password_hint": "Huidig wachtwoord",
+    "new_password_hint": "Nieuw wachtwoord",
+    "confirm_password_hint": "Nieuw wachtwoord bevestigen",
+    "save": "Wachtwoord wijzigen",
+    "success": "Hoofdwachtwoord is gewijzigd",
+    "error_wrong_current": "Het huidige wachtwoord is onjuist",
+    "error_mismatch": "De wachtwoorden komen niet overeen"
+  },
+  "kdf_settings_page": {
+    "title": "Databasebeveiliging",
+    "help_text": "Deze waarden bepalen hoe lang het ontgrendelen van de database duurt en hoe goed die bestand is tegen brute-force-aanvallen.",
+    "memory_hint": "Argon2-geheugen (MiB)",
+    "iterations_hint": "Iteraties",
+    "parallelism_hint": "Parallellisme",
+    "save": "Opslaan",
+    "success": "Beveiligingsinstellingen bijgewerkt",
+    "warning_heavy": "Deze waarden zijn hoog voor een telefoon. Ontgrendelen kan erg traag worden en op apparaten met weinig vrij geheugen zelfs helemaal mislukken, ook in het venster voor automatisch invullen.",
+    "error_unsupported_aes": "Deze database gebruikt AES-KDF (verouderd).",
+    "error_out_of_range": "Moet een getal tussen {} en {} zijn"
+  },
+  "icon_picker": {
+    "title": "Pictogram kiezen",
+    "custom_icon": "Eigen pictogram uploaden",
+    "change_custom_icon": "Eigen pictogram wijzigen",
+    "select": "Kiezen",
+    "cancel": "Annuleren"
+  },
+  "password_generator": {
+    "very_weak": "Zeer zwak",
+    "weak": "Zwak",
+    "fair": "Redelijk",
+    "strong": "Sterk",
+    "very_strong": "Zeer sterk"
+  },
+  "alerts": {
+    "empty_title": "Je database is leeg",
+    "empty_text": "Tik op de knop + om je eerste items of mappen toe te voegen.",
+    "selection_title": "Houd ingedrukt om te selecteren",
+    "selection_text": "Houd een item of map een halve seconde ingedrukt en de opties kopiëren, knippen en verwijderen verschijnen. Je kunt meerdere items kiezen en ze in elke map plakken.",
+    "drag_title": "Blijf ingedrukt houden om te slepen",
+    "drag_text": "Houd nog iets langer ingedrukt en het item komt los, zodat je het naar een andere map of naar de prullenbak kunt slepen om het te verplaatsen.",
+    "biometric_title": "Biometrisch aanmelden beschikbaar",
+    "biometric_text": "Je kunt biometrische toegang inschakelen om je database met je vingerafdruk te openen. Je vindt dit bij Instellingen.",
+    "autofill_title": "Wachtwoorden automatisch invullen",
+    "autofill_text": "KeepassUX kan je wachtwoorden in andere apps invullen. Schakel dit in via de systeeminstellingen > Wachtwoorden en automatisch invullen en kies KeepassUX als dienst.",
+    "feedback_title": "Een bug gevonden?",
+    "feedback_text": "We stellen het zeer op prijs als je die meldt in de repository van het project: github.com/LittleEmber13/keepassUX. Suggesties zijn ook welkom."
+  },
+  "delete": {
+    "title": "Naar prullenbak verplaatsen",
+    "confirm_entry": "Weet je zeker dat je dit item naar de prullenbak wilt verplaatsen?",
+    "confirm_group": "Weet je zeker dat je deze groep en de volledige inhoud ervan naar de prullenbak wilt verplaatsen?",
+    "cancel": "Annuleren",
+    "delete": "Naar prullenbak verplaatsen"
+  },
+  "trash": {
+    "restore_message": "Sleep het item eruit om het te herstellen",
+    "confirm_delete_entry": "Weet je zeker dat je dit item definitief wilt verwijderen?",
+    "confirm_delete_group": "Weet je zeker dat je deze groep en de volledige inhoud ervan definitief wilt verwijderen?",
+    "confirm_delete_items": "Weet je zeker dat je de geselecteerde items definitief wilt verwijderen? Groepen worden met hun volledige inhoud verwijderd.",
+    "delete": "Definitief verwijderen",
+    "delete_short": "Verwijderen",
+    "restore": "Herstellen",
+    "restored_in": "Hersteld in \"{group}\"",
+    "restored_items": "Geselecteerde items hersteld",
+    "info_content": "Deze items zijn al uit je mappen verwijderd, maar ze staan nog steeds in de database.",
+    "info_options": "Tik op de optieknop naast een item om het in de oorspronkelijke map te herstellen of om het te verwijderen.",
+    "info_permanent": "Als je het hier verwijdert, wordt het definitief gewist en kun je het niet meer terughalen."
+  },
+  "autofill": {
+    "needs_setup_message": "Open KeepassUX en selecteer je database voordat je automatisch invullen gebruikt.",
+    "open_database_error": "Kan de database niet openen. Probeer het opnieuw.",
+    "unlock_subtitle_save": "Ontgrendel om het wachtwoord op te slaan",
+    "unlock_subtitle_fill": "Ontgrendel om het wachtwoord in te vullen",
+    "unlock_default_subtitle": "Ontgrendel je database",
+    "master_password_hint": "Hoofdwachtwoord",
+    "unlock_empty_password_error": "Voer het hoofdwachtwoord in.",
+    "unlock_biometric_error": "Kan je identiteit niet verifiëren.",
+    "unlock_wrong_password_error": "Onjuist wachtwoord.",
+    "unlock_button": "Ontgrendelen",
+    "use_fingerprint_button": "Vingerafdruk gebruiken",
+    "untitled_entry": "(zonder titel)",
+    "this_app_fallback": "deze app",
+    "confirm_associate_title": "Onthouden voor deze app",
+    "confirm_associate_message": "\"{label}\" koppelen aan {source}, zodat het item de volgende keer automatisch verschijnt?",
+    "fill_only": "Alleen invullen",
+    "associate_and_fill": "Koppelen en invullen",
+    "cannot_autofill_title": "Hier kan niet automatisch worden ingevuld",
+    "cannot_autofill_message": "Het formulier van {where} ondersteunt geen automatisch invullen (komt vaak voor bij apps die met Jetpack Compose zijn gemaakt).\n\nOpen KeepassUX en kopieer de gebruikersnaam en het wachtwoord van het item om ze handmatig te plakken.",
+    "close": "Sluiten",
+    "matches_header": "Overeenkomsten",
+    "no_matches_header": "Geen overeenkomsten voor deze app",
+    "results_header": "Resultaten",
+    "fill_password_title": "Wachtwoord invullen",
+    "for_source": "Voor: {source}",
+    "search_entry_hint": "Item zoeken",
+    "no_results": "Geen resultaten",
+    "empty_no_matches": "Geen enkel item hoort bij deze app.\nZoek hierboven om er een te koppelen.",
+    "default_group_name": "Database",
+    "save_error": "Kan het item niet opslaan.",
+    "saving_status": "Wachtwoord opslaan…",
+    "saved_status": "Wachtwoord opgeslagen",
+    "group_label": "Groep: {group}",
+    "open_in_app": "Openen in KeepassUX",
+    "associate_error": "Deze app kon niet worden onthouden, maar het wachtwoord wordt wel ingevuld."
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Aquest camp és obligatori"
+  },
+  "exception": {
+    "invalid_password": "Contrasenya no vàlida",
+    "unknown": "Error desconegut",
+    "save_failed": "No s'ha pogut desar. Els canvis s'han descartat i la base de dades no ha canviat.",
+    "save_failed_unrecoverable": "No s'ha pogut desar ni restaurar l'estat anterior. Tanca l'aplicació i comprova el fitxer abans de continuar."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Base de dades",
+    "password_hint": "Contrasenya",
+    "open_database": "Obre la base de dades",
+    "open_database_error": "No s'ha pogut obrir el fitxer de la base de dades. Torna'l a seleccionar.",
+    "create_database": "Crea una base de dades",
+    "open_with_biometric": "Obre amb l'empremta",
+    "open_with_password": "Obre amb la contrasenya",
+    "biometric_reason": "Autentica't per obrir la base de dades",
+    "biometric_error": "L'autenticació biomètrica ha fallat",
+    "biometric_locked": "L'autenticació biomètrica està bloquejada temporalment",
+    "biometric_save_message": "Vols activar l'accés biomètric per obrir la base de dades amb l'empremta digital?",
+    "biometric_save_yes": "Sí, activa'l",
+    "biometric_save_no": "No, gràcies"
+  },
+  "create_database_page": {
+    "title": "Crea una base de dades",
+    "name_hint": "Nom del fitxer",
+    "password_hint": "Contrasenya",
+    "open_database": "Obre la base de dades",
+    "create_database": "Crea una base de dades"
+  },
+  "entries_page": {
+    "title": "Entrades",
+    "search": "Cerca una entrada"
+  },
+  "search_page": {
+    "title": "Cerca",
+    "hint": "Cerca en grups i entrades…",
+    "no_results": "No s'ha trobat cap resultat"
+  },
+  "app_bar": {
+    "trash": "Paperera"
+  },
+  "nav_bar": {
+    "add": "Afegeix",
+    "add_group": "Afegeix un grup",
+    "add_entry": "Afegeix una entrada"
+  },
+  "move_mode": {
+    "copy": "Copia",
+    "cut": "Retalla",
+    "paste": "Enganxa",
+    "delete": "Elimina",
+    "confirm_delete": "Segur que vols moure els elements seleccionats a la paperera?",
+    "invalid_target": "No pots enganxar una carpeta dins d'ella mateixa"
+  },
+  "add_entry": {
+    "add_entry": "Afegeix una entrada",
+    "edit_entry": "Edita l'entrada",
+    "information": "Informació",
+    "title": "Títol",
+    "user": "Usuari",
+    "url": "URL",
+    "notes": "Notes",
+    "password": "Contrasenya",
+    "password_hint": "Contrasenya",
+    "security": "Seguretat",
+    "special_characters": "Caràcters especials",
+    "save": "Desa",
+    "edit_icon": "Edita la icona",
+    "generator_title": "Generador de contrasenyes",
+    "apply": "Aplica"
+  },
+  "add_group": {
+    "information": "Informació",
+    "title": "Títol",
+    "save": "Desa",
+    "add_group": "Afegeix un grup",
+    "edit_group": "Edita el grup"
+  },
+  "entry_data": {
+    "title": "Títol",
+    "user": "Usuari",
+    "password": "Contrasenya",
+    "url": "URL",
+    "notes": "Notes",
+    "edit": "Edita",
+    "save": "Desa",
+    "cancel": "Cancel·la"
+  },
+  "settings_page": {
+    "title": "Configuració",
+    "language": "Idioma",
+    "biometric_login": "Inici de sessió biomètric",
+    "dark_theme": "Tema fosc",
+    "change_password": "Canvia la contrasenya mestra",
+    "kdf_settings": "Seguretat de la base de dades",
+    "autofill_settings": "Emplenament automàtic",
+    "autofill_settings_active": "Actiu",
+    "autofill_settings_inactive": "Inactiu — toca per configurar-lo",
+    "screenshot_protection": "Bloqueja les captures de pantalla",
+    "screenshot_protection_subtitle": "Impedeix fer captures i enregistraments de pantalla mentre fas servir l'aplicació",
+    "screenshot_protection_disable_warning": "Desactivar la protecció contra les captures de pantalla redueix la seguretat. Per precaució, es tancarà la sessió i hauràs de tornar a introduir la contrasenya mestra. Vols continuar?",
+    "screenshot_protection_cancel": "Cancel·la",
+    "screenshot_protection_confirm": "Desactiva"
+  },
+  "about_page": {
+    "title": "Quant a",
+    "secure_title": "Segura per disseny",
+    "secure_text": "La teva base de dades està xifrada amb el format KeePass (.kdbx). La contrasenya mestra i la teva caixa forta no surten mai del dispositiu.",
+    "open_source_title": "Codi obert",
+    "open_source_text": "KeepassUX és programari lliure i de codi obert. Qualsevol persona pot revisar el codi, contribuir-hi o informar de problemes al repositori oficial."
+  },
+  "autofill_settings_page": {
+    "title": "Emplenament automàtic",
+    "intro": "L'emplenament automàtic permet que KeepassUX suggereixi i escrigui els noms d'usuari i les contrasenyes que has desat en altres aplicacions i al navegador. Perquè funcioni correctament has d'activar l'opció següent.",
+    "autofill_toggle_title": "Servei d'emplenament automàtic d'Android",
+    "autofill_toggle_description": "Fa que KeepassUX sigui el servei d'emplenament automàtic que utilitza Android, de manera que les credencials desades es puguin suggerir i escriure directament als camps d'inici de sessió d'aplicacions i navegadors.",
+    "browser_note_title": "Emplenament automàtic del navegador",
+    "browser_note_description": "Alguns navegadors tenen el seu propi emplenament automàtic activat per defecte. Activa KeepassUX des de la seva configuració de contrasenyes triant emplenar amb un altre servei."
+  },
+  "change_password_page": {
+    "title": "Canvia la contrasenya mestra",
+    "current_password_hint": "Contrasenya actual",
+    "new_password_hint": "Contrasenya nova",
+    "confirm_password_hint": "Confirma la contrasenya nova",
+    "save": "Canvia la contrasenya",
+    "success": "La contrasenya mestra s'ha canviat correctament",
+    "error_wrong_current": "La contrasenya actual no és correcta",
+    "error_mismatch": "Les contrasenyes no coincideixen"
+  },
+  "kdf_settings_page": {
+    "title": "Seguretat de la base de dades",
+    "help_text": "Aquests valors determinen quant triga a desbloquejar-se la base de dades i com de resistent és als atacs de força bruta.",
+    "memory_hint": "Memòria Argon2 (MiB)",
+    "iterations_hint": "Iteracions",
+    "parallelism_hint": "Paral·lelisme",
+    "save": "Desa",
+    "success": "S'ha actualitzat la configuració de seguretat",
+    "warning_heavy": "Aquests valors són alts per a un telèfon. El desbloqueig pot ser molt lent i, en dispositius amb poca memòria lliure, pot fallar del tot, també a la finestra d'emplenament automàtic.",
+    "error_unsupported_aes": "Aquesta base de dades utilitza AES-KDF (obsolet).",
+    "error_out_of_range": "Ha de ser un número entre {} i {}"
+  },
+  "icon_picker": {
+    "title": "Selecciona una icona",
+    "custom_icon": "Puja una icona personalitzada",
+    "change_custom_icon": "Canvia la icona personalitzada",
+    "select": "Selecciona",
+    "cancel": "Cancel·la"
+  },
+  "password_generator": {
+    "very_weak": "Molt feble",
+    "weak": "Feble",
+    "fair": "Acceptable",
+    "strong": "Forta",
+    "very_strong": "Molt forta"
+  },
+  "alerts": {
+    "empty_title": "La teva base de dades és buida",
+    "empty_text": "Toca el botó + per afegir les primeres entrades o carpetes.",
+    "selection_title": "Mantén premut per seleccionar",
+    "selection_text": "Mantén premuda una entrada o carpeta mig segon i apareixeran les opcions de copiar, retallar i eliminar. Pots triar diversos elements i enganxar-los a qualsevol carpeta.",
+    "drag_title": "Continua prement per arrossegar",
+    "drag_text": "Mantén premut una mica més i l'element es desenganxa, així el pots arrossegar cap a una altra carpeta o cap a la paperera per moure'l.",
+    "biometric_title": "Inici de sessió biomètric disponible",
+    "biometric_text": "Pots activar l'accés biomètric per obrir la base de dades amb l'empremta digital. El trobaràs a la Configuració.",
+    "autofill_title": "Emplenament automàtic de contrasenyes",
+    "autofill_text": "KeepassUX pot escriure les teves contrasenyes en altres aplicacions. Activa'l a la Configuració del sistema > Contrasenyes i emplenament automàtic i tria KeepassUX com a servei.",
+    "feedback_title": "Has trobat un error?",
+    "feedback_text": "T'agrairem molt que l'informis al repositori del projecte: github.com/LittleEmber13/keepassUX. Els suggeriments també són benvinguts."
+  },
+  "delete": {
+    "title": "Mou a la paperera",
+    "confirm_entry": "Segur que vols moure aquesta entrada a la paperera?",
+    "confirm_group": "Segur que vols moure aquest grup i tot el seu contingut a la paperera?",
+    "cancel": "Cancel·la",
+    "delete": "Mou a la paperera"
+  },
+  "trash": {
+    "restore_message": "Arrossega l'element cap a fora per restaurar-lo",
+    "confirm_delete_entry": "Segur que vols eliminar definitivament aquesta entrada?",
+    "confirm_delete_group": "Segur que vols eliminar definitivament aquest grup i tot el seu contingut?",
+    "confirm_delete_items": "Segur que vols eliminar definitivament els elements seleccionats? Els grups s'eliminaran amb tot el seu contingut.",
+    "delete": "Elimina definitivament",
+    "delete_short": "Elimina",
+    "restore": "Restaura",
+    "restored_in": "Restaurat a «{group}»",
+    "restored_items": "S'han restaurat els elements seleccionats",
+    "info_content": "Aquests elements ja s'han tret de les teves carpetes, però encara es guarden a la base de dades.",
+    "info_options": "Toca el botó d'opcions que hi ha al costat d'un element per restaurar-lo a la carpeta original o per eliminar-lo.",
+    "info_permanent": "Si l'elimines des d'aquí, s'esborrarà definitivament i no el podràs recuperar."
+  },
+  "autofill": {
+    "needs_setup_message": "Obre KeepassUX i selecciona la teva base de dades abans de fer servir l'emplenament automàtic.",
+    "open_database_error": "No s'ha pogut obrir la base de dades. Torna-ho a provar.",
+    "unlock_subtitle_save": "Desbloqueja per desar la contrasenya",
+    "unlock_subtitle_fill": "Desbloqueja per escriure la contrasenya",
+    "unlock_default_subtitle": "Desbloqueja la teva base de dades",
+    "master_password_hint": "Contrasenya mestra",
+    "unlock_empty_password_error": "Introdueix la contrasenya mestra.",
+    "unlock_biometric_error": "No s'ha pogut verificar la teva identitat.",
+    "unlock_wrong_password_error": "Contrasenya incorrecta.",
+    "unlock_button": "Desbloqueja",
+    "use_fingerprint_button": "Utilitza l'empremta",
+    "untitled_entry": "(sense títol)",
+    "this_app_fallback": "aquesta aplicació",
+    "confirm_associate_title": "Recorda-ho per a aquesta aplicació",
+    "confirm_associate_message": "Vols associar «{label}» amb {source} perquè aparegui automàticament la pròxima vegada?",
+    "fill_only": "Només emplena",
+    "associate_and_fill": "Associa i emplena",
+    "cannot_autofill_title": "Aquí no es pot emplenar automàticament",
+    "cannot_autofill_message": "El formulari de {where} no admet l'emplenament automàtic (és habitual en aplicacions fetes amb Jetpack Compose).\n\nObre KeepassUX i copia el nom d'usuari i la contrasenya de l'entrada per enganxar-los manualment.",
+    "close": "Tanca",
+    "matches_header": "Coincidències",
+    "no_matches_header": "Cap coincidència per a aquesta aplicació",
+    "results_header": "Resultats",
+    "fill_password_title": "Emplena la contrasenya",
+    "for_source": "Per a: {source}",
+    "search_entry_hint": "Cerca una entrada",
+    "no_results": "Cap resultat",
+    "empty_no_matches": "Cap entrada no coincideix amb aquesta aplicació.\nCerca a dalt per associar-ne una.",
+    "default_group_name": "Base de dades",
+    "save_error": "No s'ha pogut desar l'entrada.",
+    "saving_status": "S'està desant la contrasenya…",
+    "saved_status": "Contrasenya desada",
+    "group_label": "Grup: {group}",
+    "open_in_app": "Obre a KeepassUX",
+    "associate_error": "No s'ha pogut recordar aquesta aplicació, però la contrasenya s'escriurà igualment."
+  }
+}

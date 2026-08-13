@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Ez a mező kötelező"
+  },
+  "exception": {
+    "invalid_password": "Érvénytelen jelszó",
+    "unknown": "Ismeretlen hiba",
+    "save_failed": "A mentés nem sikerült. A módosításokat elvetettük, az adatbázis változatlan maradt.",
+    "save_failed_unrecoverable": "Sem a mentés, sem a korábbi állapot visszaállítása nem sikerült. Zárja be az alkalmazást, és ellenőrizze a fájlt, mielőtt folytatja."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Adatbázis",
+    "password_hint": "Jelszó",
+    "open_database": "Adatbázis megnyitása",
+    "open_database_error": "Az adatbázisfájl nem nyitható meg. Válassza ki újra.",
+    "create_database": "Adatbázis létrehozása",
+    "open_with_biometric": "Megnyitás ujjlenyomattal",
+    "open_with_password": "Megnyitás jelszóval",
+    "biometric_reason": "Azonosítsa magát az adatbázis megnyitásához",
+    "biometric_error": "A biometrikus azonosítás sikertelen",
+    "biometric_locked": "A biometrikus azonosítás átmenetileg zárolva van",
+    "biometric_save_message": "Bekapcsolja a biometrikus hozzáférést, hogy ujjlenyomattal nyithassa meg az adatbázist?",
+    "biometric_save_yes": "Igen, bekapcsolom",
+    "biometric_save_no": "Nem, köszönöm"
+  },
+  "create_database_page": {
+    "title": "Adatbázis létrehozása",
+    "name_hint": "Fájlnév",
+    "password_hint": "Jelszó",
+    "open_database": "Adatbázis megnyitása",
+    "create_database": "Adatbázis létrehozása"
+  },
+  "entries_page": {
+    "title": "Bejegyzések",
+    "search": "Bejegyzés keresése"
+  },
+  "search_page": {
+    "title": "Keresés",
+    "hint": "Keresés csoportok és bejegyzések között…",
+    "no_results": "Nincs találat"
+  },
+  "app_bar": {
+    "trash": "Kuka"
+  },
+  "nav_bar": {
+    "add": "Hozzáadás",
+    "add_group": "Csoport hozzáadása",
+    "add_entry": "Bejegyzés hozzáadása"
+  },
+  "move_mode": {
+    "copy": "Másolás",
+    "cut": "Kivágás",
+    "paste": "Beillesztés",
+    "delete": "Törlés",
+    "confirm_delete": "Biztosan a kukába helyezi a kijelölt elemeket?",
+    "invalid_target": "Egy mappát nem illeszthet be önmagába"
+  },
+  "add_entry": {
+    "add_entry": "Bejegyzés hozzáadása",
+    "edit_entry": "Bejegyzés szerkesztése",
+    "information": "Adatok",
+    "title": "Cím",
+    "user": "Felhasználó",
+    "url": "URL",
+    "notes": "Jegyzetek",
+    "password": "Jelszó",
+    "password_hint": "Jelszó",
+    "security": "Biztonság",
+    "special_characters": "Speciális karakterek",
+    "save": "Mentés",
+    "edit_icon": "Ikon szerkesztése",
+    "generator_title": "Jelszógenerátor",
+    "apply": "Alkalmaz"
+  },
+  "add_group": {
+    "information": "Adatok",
+    "title": "Cím",
+    "save": "Mentés",
+    "add_group": "Csoport hozzáadása",
+    "edit_group": "Csoport szerkesztése"
+  },
+  "entry_data": {
+    "title": "Cím",
+    "user": "Felhasználó",
+    "password": "Jelszó",
+    "url": "URL",
+    "notes": "Jegyzetek",
+    "edit": "Szerkesztés",
+    "save": "Mentés",
+    "cancel": "Mégse"
+  },
+  "settings_page": {
+    "title": "Beállítások",
+    "language": "Nyelv",
+    "biometric_login": "Biometrikus bejelentkezés",
+    "dark_theme": "Sötét téma",
+    "change_password": "Mesterjelszó módosítása",
+    "kdf_settings": "Adatbázis biztonsága",
+    "autofill_settings": "Automatikus kitöltés",
+    "autofill_settings_active": "Bekapcsolva",
+    "autofill_settings_inactive": "Kikapcsolva – koppintson a beállításhoz",
+    "screenshot_protection": "Képernyőképek tiltása",
+    "screenshot_protection_subtitle": "Megakadályozza a képernyőképek készítését és a képernyőrögzítést az alkalmazás használata közben",
+    "screenshot_protection_disable_warning": "A képernyőkép-védelem kikapcsolása csökkenti a biztonságot. Az óvatosság kedvéért a munkamenet lezárul, és újra meg kell adnia a mesterjelszavát. Folytatja?",
+    "screenshot_protection_cancel": "Mégse",
+    "screenshot_protection_confirm": "Kikapcsolás"
+  },
+  "about_page": {
+    "title": "Névjegy",
+    "secure_title": "Eleve biztonságos",
+    "secure_text": "Az adatbázisa KeePass (.kdbx) formátumban titkosítva van. A mesterjelszava és a széfje soha nem hagyja el a készülékét.",
+    "open_source_title": "Nyílt forráskód",
+    "open_source_text": "A KeepassUX szabad, nyílt forráskódú szoftver. Bárki átnézheti a kódot, hozzájárulhat a fejlesztéshez, vagy hibát jelenthet a hivatalos tárolóban."
+  },
+  "autofill_settings_page": {
+    "title": "Automatikus kitöltés",
+    "intro": "Az automatikus kitöltés lehetővé teszi, hogy a KeepassUX felajánlja és beírja a mentett felhasználóneveit és jelszavait más alkalmazásokban és a böngészőben. A helyes működéshez be kell kapcsolnia az alábbi lehetőséget.",
+    "autofill_toggle_title": "Android automatikus kitöltési szolgáltatás",
+    "autofill_toggle_description": "A KeepassUX lesz az a szolgáltatás, amelyet az Android az automatikus kitöltéshez használ, így a mentett bejelentkezési adatok közvetlenül az alkalmazások és böngészők bejelentkezési mezőiben jelennek meg és íródnak be.",
+    "browser_note_title": "Böngészőbeli automatikus kitöltés",
+    "browser_note_description": "Egyes böngészőkben alapértelmezés szerint be van kapcsolva a saját automatikus kitöltés. Kapcsolja be a KeepassUX-et a böngésző jelszóbeállításaiban, a más szolgáltatással való kitöltést választva."
+  },
+  "change_password_page": {
+    "title": "Mesterjelszó módosítása",
+    "current_password_hint": "Jelenlegi jelszó",
+    "new_password_hint": "Új jelszó",
+    "confirm_password_hint": "Új jelszó megerősítése",
+    "save": "Jelszó módosítása",
+    "success": "A mesterjelszó módosítása sikerült",
+    "error_wrong_current": "A jelenlegi jelszó helytelen",
+    "error_mismatch": "A jelszavak nem egyeznek"
+  },
+  "kdf_settings_page": {
+    "title": "Adatbázis biztonsága",
+    "help_text": "Ezek az értékek határozzák meg, mennyi ideig tart az adatbázis feloldása, és mennyire ellenálló a nyers erővel végzett támadásokkal szemben.",
+    "memory_hint": "Argon2 memória (MiB)",
+    "iterations_hint": "Iterációk",
+    "parallelism_hint": "Párhuzamosság",
+    "save": "Mentés",
+    "success": "A biztonsági beállítások frissültek",
+    "warning_heavy": "Ezek az értékek magasak egy telefonhoz. A feloldás nagyon lassú lehet, kevés szabad memóriával rendelkező készülékeken pedig teljesen meg is hiúsulhat, az automatikus kitöltés ablakában is.",
+    "error_unsupported_aes": "Ez az adatbázis AES-KDF-et használ (elavult).",
+    "error_out_of_range": "{} és {} közötti számnak kell lennie"
+  },
+  "icon_picker": {
+    "title": "Ikon kiválasztása",
+    "custom_icon": "Egyéni ikon feltöltése",
+    "change_custom_icon": "Egyéni ikon módosítása",
+    "select": "Kiválasztás",
+    "cancel": "Mégse"
+  },
+  "password_generator": {
+    "very_weak": "Nagyon gyenge",
+    "weak": "Gyenge",
+    "fair": "Elfogadható",
+    "strong": "Erős",
+    "very_strong": "Nagyon erős"
+  },
+  "alerts": {
+    "empty_title": "Az adatbázisa üres",
+    "empty_text": "Koppintson a + gombra az első bejegyzései vagy mappái hozzáadásához.",
+    "selection_title": "Tartsa nyomva a kijelöléshez",
+    "selection_text": "Tartson nyomva egy bejegyzést vagy mappát fél másodpercig, és megjelennek a másolás, kivágás és törlés lehetőségek. Több elemet is kijelölhet, és bármelyik mappába beillesztheti őket.",
+    "drag_title": "Tartsa tovább a húzáshoz",
+    "drag_text": "Tartsa nyomva még egy kicsit, és az elem leválik, így áthúzhatja egy másik mappára vagy a kukára az áthelyezéshez.",
+    "biometric_title": "Elérhető a biometrikus bejelentkezés",
+    "biometric_text": "Bekapcsolhatja a biometrikus hozzáférést, hogy ujjlenyomattal nyithassa meg az adatbázisát. A Beállításokban találja.",
+    "autofill_title": "Jelszavak automatikus kitöltése",
+    "autofill_text": "A KeepassUX be tudja írni a jelszavait más alkalmazásokban. Kapcsolja be a rendszer Beállítások > Jelszavak és automatikus kitöltés menüpontjában, és válassza a KeepassUX-et szolgáltatásként.",
+    "feedback_title": "Talált egy hibát?",
+    "feedback_text": "Nagyra értékelnénk, ha jelezné a projekt tárolójában: github.com/LittleEmber13/keepassUX. A javaslatokat is szívesen fogadjuk."
+  },
+  "delete": {
+    "title": "Áthelyezés a kukába",
+    "confirm_entry": "Biztosan a kukába helyezi ezt a bejegyzést?",
+    "confirm_group": "Biztosan a kukába helyezi ezt a csoportot és a teljes tartalmát?",
+    "cancel": "Mégse",
+    "delete": "Áthelyezés a kukába"
+  },
+  "trash": {
+    "restore_message": "Húzza ki az elemet a visszaállításához",
+    "confirm_delete_entry": "Biztosan véglegesen törli ezt a bejegyzést?",
+    "confirm_delete_group": "Biztosan véglegesen törli ezt a csoportot és a teljes tartalmát?",
+    "confirm_delete_items": "Biztosan véglegesen törli a kijelölt elemeket? A csoportok a teljes tartalmukkal együtt törlődnek.",
+    "delete": "Végleges törlés",
+    "delete_short": "Törlés",
+    "restore": "Visszaállítás",
+    "restored_in": "Visszaállítva ide: „{group}”",
+    "restored_items": "A kijelölt elemek visszaálltak",
+    "info_content": "Ezeket az elemeket már eltávolítottuk a mappáiból, de továbbra is az adatbázisban vannak tárolva.",
+    "info_options": "Koppintson az elem melletti beállítások gombra, hogy visszaállítsa az eredeti mappájába, vagy hogy törölje.",
+    "info_permanent": "Ha innen törli, véglegesen megsemmisül, és nem tudja visszaszerezni."
+  },
+  "autofill": {
+    "needs_setup_message": "Nyissa meg a KeepassUX-et, és válassza ki az adatbázisát, mielőtt az automatikus kitöltést használná.",
+    "open_database_error": "Az adatbázis nem nyitható meg. Próbálja újra.",
+    "unlock_subtitle_save": "Oldja fel a jelszó mentéséhez",
+    "unlock_subtitle_fill": "Oldja fel a jelszó kitöltéséhez",
+    "unlock_default_subtitle": "Oldja fel az adatbázisát",
+    "master_password_hint": "Mesterjelszó",
+    "unlock_empty_password_error": "Adja meg a mesterjelszót.",
+    "unlock_biometric_error": "Nem sikerült ellenőrizni a személyazonosságát.",
+    "unlock_wrong_password_error": "Helytelen jelszó.",
+    "unlock_button": "Feloldás",
+    "use_fingerprint_button": "Ujjlenyomat használata",
+    "untitled_entry": "(névtelen)",
+    "this_app_fallback": "ez az alkalmazás",
+    "confirm_associate_title": "Megjegyzés ehhez az alkalmazáshoz",
+    "confirm_associate_message": "Hozzárendeli a(z) „{label}” bejegyzést ehhez: {source}, hogy legközelebb automatikusan megjelenjen?",
+    "fill_only": "Csak kitöltés",
+    "associate_and_fill": "Hozzárendelés és kitöltés",
+    "cannot_autofill_title": "Itt nem lehet automatikusan kitölteni",
+    "cannot_autofill_message": "A(z) {where} űrlapja nem támogatja az automatikus kitöltést (ez gyakori a Jetpack Compose-zal készült alkalmazásokban).\n\nNyissa meg a KeepassUX-et, és másolja ki a bejegyzés felhasználónevét és jelszavát, hogy kézzel illeszthesse be őket.",
+    "close": "Bezárás",
+    "matches_header": "Találatok",
+    "no_matches_header": "Nincs találat ehhez az alkalmazáshoz",
+    "results_header": "Eredmények",
+    "fill_password_title": "Jelszó kitöltése",
+    "for_source": "Ehhez: {source}",
+    "search_entry_hint": "Bejegyzés keresése",
+    "no_results": "Nincs eredmény",
+    "empty_no_matches": "Egyetlen bejegyzés sem illik ehhez az alkalmazáshoz.\nKeressen fent, hogy hozzárendeljen egyet.",
+    "default_group_name": "Adatbázis",
+    "save_error": "A bejegyzést nem sikerült menteni.",
+    "saving_status": "Jelszó mentése…",
+    "saved_status": "A jelszó elmentve",
+    "group_label": "Csoport: {group}",
+    "open_in_app": "Megnyitás a KeepassUX-ben",
+    "associate_error": "Ezt az alkalmazást nem sikerült megjegyezni, de a jelszó így is kitöltésre kerül."
+  }
+}

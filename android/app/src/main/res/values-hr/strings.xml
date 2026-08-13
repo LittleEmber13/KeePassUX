@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="autofill_unlock_label">Popuni pomoću KeepassUX-a</string>
+    <string name="autofill_select_another_entry">Pronađi drugi unos u KeepassUX-u</string>
+</resources>

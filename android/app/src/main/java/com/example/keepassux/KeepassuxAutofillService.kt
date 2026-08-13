@@ -55,6 +55,7 @@ class KeepassuxAutofillService : AutofillService() {
     override fun onCreate() {
         super.onCreate()
         preferenceStore = AutofillPreferenceStore.getInstance(applicationContext)
+        unlockLabel = getString(R.string.autofill_unlock_label)
     }
 
     override fun onConnected() {

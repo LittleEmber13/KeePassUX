@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Tämä kenttä on pakollinen"
+  },
+  "exception": {
+    "invalid_password": "Virheellinen salasana",
+    "unknown": "Tuntematon virhe",
+    "save_failed": "Tallennus epäonnistui. Muutokset hylättiin, eikä tietokantasi muuttunut.",
+    "save_failed_unrecoverable": "Tallennus ja aiempaan tilaan palauttaminen epäonnistuivat. Sulje sovellus ja tarkista tiedostosi ennen jatkamista."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Tietokanta",
+    "password_hint": "Salasana",
+    "open_database": "Avaa tietokanta",
+    "open_database_error": "Tietokantatiedostoa ei voitu avata. Valitse se uudelleen.",
+    "create_database": "Luo tietokanta",
+    "open_with_biometric": "Avaa sormenjäljellä",
+    "open_with_password": "Avaa salasanalla",
+    "biometric_reason": "Tunnistaudu avataksesi tietokantasi",
+    "biometric_error": "Biometrinen tunnistus epäonnistui",
+    "biometric_locked": "Biometrinen tunnistus on tilapäisesti lukittu",
+    "biometric_save_message": "Otetaanko biometrinen tunnistus käyttöön, jotta voit avata tietokantasi sormenjäljellä?",
+    "biometric_save_yes": "Kyllä, ota käyttöön",
+    "biometric_save_no": "Ei kiitos"
+  },
+  "create_database_page": {
+    "title": "Luo tietokanta",
+    "name_hint": "Tiedoston nimi",
+    "password_hint": "Salasana",
+    "open_database": "Avaa tietokanta",
+    "create_database": "Luo tietokanta"
+  },
+  "entries_page": {
+    "title": "Tietueet",
+    "search": "Etsi tietuetta"
+  },
+  "search_page": {
+    "title": "Haku",
+    "hint": "Hae ryhmistä ja tietueista…",
+    "no_results": "Ei tuloksia"
+  },
+  "app_bar": {
+    "trash": "Roskakori"
+  },
+  "nav_bar": {
+    "add": "Lisää",
+    "add_group": "Lisää ryhmä",
+    "add_entry": "Lisää tietue"
+  },
+  "move_mode": {
+    "copy": "Kopioi",
+    "cut": "Leikkaa",
+    "paste": "Liitä",
+    "delete": "Poista",
+    "confirm_delete": "Haluatko varmasti siirtää valitut kohteet roskakoriin?",
+    "invalid_target": "Kansiota ei voi liittää itsensä sisään"
+  },
+  "add_entry": {
+    "add_entry": "Lisää tietue",
+    "edit_entry": "Muokkaa tietuetta",
+    "information": "Tiedot",
+    "title": "Otsikko",
+    "user": "Käyttäjä",
+    "url": "URL-osoite",
+    "notes": "Muistiinpanot",
+    "password": "Salasana",
+    "password_hint": "Salasana",
+    "security": "Turvallisuus",
+    "special_characters": "Erikoismerkit",
+    "save": "Tallenna",
+    "edit_icon": "Muokkaa kuvaketta",
+    "generator_title": "Salasanageneraattori",
+    "apply": "Käytä"
+  },
+  "add_group": {
+    "information": "Tiedot",
+    "title": "Otsikko",
+    "save": "Tallenna",
+    "add_group": "Lisää ryhmä",
+    "edit_group": "Muokkaa ryhmää"
+  },
+  "entry_data": {
+    "title": "Otsikko",
+    "user": "Käyttäjä",
+    "password": "Salasana",
+    "url": "URL-osoite",
+    "notes": "Muistiinpanot",
+    "edit": "Muokkaa",
+    "save": "Tallenna",
+    "cancel": "Peruuta"
+  },
+  "settings_page": {
+    "title": "Asetukset",
+    "language": "Kieli",
+    "biometric_login": "Biometrinen kirjautuminen",
+    "dark_theme": "Tumma teema",
+    "change_password": "Vaihda pääsalasana",
+    "kdf_settings": "Tietokannan turvallisuus",
+    "autofill_settings": "Automaattinen täyttö",
+    "autofill_settings_active": "Käytössä",
+    "autofill_settings_inactive": "Ei käytössä – määritä napauttamalla",
+    "screenshot_protection": "Estä kuvakaappaukset",
+    "screenshot_protection_subtitle": "Estää kuvakaappaukset ja näytön tallennuksen sovelluksen käytön aikana",
+    "screenshot_protection_disable_warning": "Kuvakaappaussuojauksen poistaminen heikentää turvallisuutta. Varmuuden vuoksi istuntosi suljetaan ja sinun on syötettävä pääsalasanasi uudelleen. Haluatko jatkaa?",
+    "screenshot_protection_cancel": "Peruuta",
+    "screenshot_protection_confirm": "Poista käytöstä"
+  },
+  "about_page": {
+    "title": "Tietoja",
+    "secure_title": "Turvallinen jo suunnittelultaan",
+    "secure_text": "Tietokantasi on salattu KeePass-muodossa (.kdbx). Pääsalasanasi ja holvisi eivät koskaan poistu laitteeltasi.",
+    "open_source_title": "Avoin lähdekoodi",
+    "open_source_text": "KeepassUX on vapaa ja avoimen lähdekoodin ohjelmisto. Kuka tahansa voi tarkastella koodia, osallistua kehitykseen tai ilmoittaa ongelmista virallisessa koodivarastossa."
+  },
+  "autofill_settings_page": {
+    "title": "Automaattinen täyttö",
+    "intro": "Automaattisen täytön avulla KeepassUX voi ehdottaa ja syöttää tallentamasi käyttäjätunnukset ja salasanat muissa sovelluksissa ja selaimessasi. Jotta se toimisi oikein, sinun on otettava seuraava asetus käyttöön.",
+    "autofill_toggle_title": "Androidin automaattisen täytön palvelu",
+    "autofill_toggle_description": "Asettaa KeepassUX:n palveluksi, jota Android käyttää automaattiseen täyttöön, jolloin tallennetut kirjautumistiedot voidaan ehdottaa ja syöttää suoraan sovellusten ja selainten kirjautumiskenttiin.",
+    "browser_note_title": "Selaimen automaattinen täyttö",
+    "browser_note_description": "Joissakin selaimissa on oma automaattinen täyttö oletuksena käytössä. Ota KeepassUX käyttöön niiden salasana-asetuksista valitsemalla täyttö toisen palvelun avulla."
+  },
+  "change_password_page": {
+    "title": "Vaihda pääsalasana",
+    "current_password_hint": "Nykyinen salasana",
+    "new_password_hint": "Uusi salasana",
+    "confirm_password_hint": "Vahvista uusi salasana",
+    "save": "Vaihda salasana",
+    "success": "Pääsalasana vaihdettiin",
+    "error_wrong_current": "Nykyinen salasana on väärä",
+    "error_mismatch": "Salasanat eivät täsmää"
+  },
+  "kdf_settings_page": {
+    "title": "Tietokannan turvallisuus",
+    "help_text": "Nämä arvot määrittävät, kuinka kauan tietokannan avaaminen kestää ja kuinka hyvin se kestää raa'an voiman hyökkäyksiä.",
+    "memory_hint": "Argon2-muisti (MiB)",
+    "iterations_hint": "Kierrokset",
+    "parallelism_hint": "Rinnakkaisuus",
+    "save": "Tallenna",
+    "success": "Turvallisuusasetukset päivitettiin",
+    "warning_heavy": "Nämä arvot ovat puhelimelle korkeita. Avaaminen voi olla hyvin hidasta, ja laitteilla joissa on vähän vapaata muistia se voi epäonnistua kokonaan, myös automaattisen täytön ikkunassa.",
+    "error_unsupported_aes": "Tämä tietokanta käyttää AES-KDF:ää (vanhentunut).",
+    "error_out_of_range": "Oltava luku väliltä {}–{}"
+  },
+  "icon_picker": {
+    "title": "Valitse kuvake",
+    "custom_icon": "Lataa oma kuvake",
+    "change_custom_icon": "Vaihda oma kuvake",
+    "select": "Valitse",
+    "cancel": "Peruuta"
+  },
+  "password_generator": {
+    "very_weak": "Erittäin heikko",
+    "weak": "Heikko",
+    "fair": "Kohtalainen",
+    "strong": "Vahva",
+    "very_strong": "Erittäin vahva"
+  },
+  "alerts": {
+    "empty_title": "Tietokantasi on tyhjä",
+    "empty_text": "Napauta +-painiketta lisätäksesi ensimmäiset tietueesi tai kansiosi.",
+    "selection_title": "Valitse painamalla pitkään",
+    "selection_text": "Paina tietuetta tai kansiota puolen sekunnin ajan, niin kopioi-, leikkaa- ja poista-valinnat tulevat näkyviin. Voit valita useita kohteita ja liittää ne mihin tahansa kansioon.",
+    "drag_title": "Vedä painamalla vielä pidempään",
+    "drag_text": "Pidä painettuna hetki pidempään, niin kohde irtoaa ja voit vetää sen toiseen kansioon tai roskakoriin siirtääksesi sen.",
+    "biometric_title": "Biometrinen kirjautuminen on käytettävissä",
+    "biometric_text": "Voit ottaa biometrisen tunnistuksen käyttöön ja avata tietokantasi sormenjäljellä. Asetus löytyy Asetuksista.",
+    "autofill_title": "Salasanojen automaattinen täyttö",
+    "autofill_text": "KeepassUX voi syöttää salasanasi muissa sovelluksissa. Ota se käyttöön järjestelmän asetuksista kohdasta Salasanat ja automaattinen täyttö ja valitse KeepassUX palveluksi.",
+    "feedback_title": "Löysitkö virheen?",
+    "feedback_text": "Arvostamme suuresti, jos ilmoitat siitä projektin koodivarastossa: github.com/LittleEmber13/keepassUX. Myös ehdotukset ovat tervetulleita."
+  },
+  "delete": {
+    "title": "Siirrä roskakoriin",
+    "confirm_entry": "Haluatko varmasti siirtää tämän tietueen roskakoriin?",
+    "confirm_group": "Haluatko varmasti siirtää tämän ryhmän ja koko sen sisällön roskakoriin?",
+    "cancel": "Peruuta",
+    "delete": "Siirrä roskakoriin"
+  },
+  "trash": {
+    "restore_message": "Palauta kohde vetämällä se ulos",
+    "confirm_delete_entry": "Haluatko varmasti poistaa tämän tietueen pysyvästi?",
+    "confirm_delete_group": "Haluatko varmasti poistaa tämän ryhmän ja koko sen sisällön pysyvästi?",
+    "confirm_delete_items": "Haluatko varmasti poistaa valitut kohteet pysyvästi? Ryhmät poistetaan koko sisältöineen.",
+    "delete": "Poista pysyvästi",
+    "delete_short": "Poista",
+    "restore": "Palauta",
+    "restored_in": "Palautettu kansioon ”{group}”",
+    "restored_items": "Valitut kohteet palautettiin",
+    "info_content": "Nämä kohteet on jo poistettu kansioistasi, mutta ne ovat yhä tallessa tietokannassa.",
+    "info_options": "Napauta kohteen vieressä olevaa valintapainiketta palauttaaksesi sen alkuperäiseen kansioonsa tai poistaaksesi sen.",
+    "info_permanent": "Jos poistat sen täältä, se häviää pysyvästi etkä voi palauttaa sitä."
+  },
+  "autofill": {
+    "needs_setup_message": "Avaa KeepassUX ja valitse tietokantasi ennen automaattisen täytön käyttöä.",
+    "open_database_error": "Tietokantaa ei voitu avata. Yritä uudelleen.",
+    "unlock_subtitle_save": "Avaa lukitus tallentaaksesi salasanan",
+    "unlock_subtitle_fill": "Avaa lukitus syöttääksesi salasanan",
+    "unlock_default_subtitle": "Avaa tietokantasi lukitus",
+    "master_password_hint": "Pääsalasana",
+    "unlock_empty_password_error": "Syötä pääsalasana.",
+    "unlock_biometric_error": "Henkilöllisyyttäsi ei voitu vahvistaa.",
+    "unlock_wrong_password_error": "Väärä salasana.",
+    "unlock_button": "Avaa lukitus",
+    "use_fingerprint_button": "Käytä sormenjälkeä",
+    "untitled_entry": "(nimetön)",
+    "this_app_fallback": "tämä sovellus",
+    "confirm_associate_title": "Muista tämä sovellus",
+    "confirm_associate_message": "Yhdistetäänkö ”{label}” kohteeseen {source}, jotta se näkyy ensi kerralla automaattisesti?",
+    "fill_only": "Vain täytä",
+    "associate_and_fill": "Yhdistä ja täytä",
+    "cannot_autofill_title": "Täällä ei voi täyttää automaattisesti",
+    "cannot_autofill_message": "Kohteen {where} lomake ei tue automaattista täyttöä (yleistä Jetpack Composella tehdyissä sovelluksissa).\n\nAvaa KeepassUX ja kopioi tietueen käyttäjätunnus ja salasana liittääksesi ne käsin.",
+    "close": "Sulje",
+    "matches_header": "Osumat",
+    "no_matches_header": "Ei osumia tälle sovellukselle",
+    "results_header": "Tulokset",
+    "fill_password_title": "Täytä salasana",
+    "for_source": "Kohteelle: {source}",
+    "search_entry_hint": "Etsi tietuetta",
+    "no_results": "Ei tuloksia",
+    "empty_no_matches": "Yksikään tietue ei vastaa tätä sovellusta.\nHae yltä yhdistääksesi jonkin niistä.",
+    "default_group_name": "Tietokanta",
+    "save_error": "Tietuetta ei voitu tallentaa.",
+    "saving_status": "Tallennetaan salasanaa…",
+    "saved_status": "Salasana tallennettiin",
+    "group_label": "Ryhmä: {group}",
+    "open_in_app": "Avaa KeepassUX:ssä",
+    "associate_error": "Tätä sovellusta ei voitu muistaa, mutta salasana täytetään silti."
+  }
+}

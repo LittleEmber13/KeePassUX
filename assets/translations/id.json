@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "Kolom ini wajib diisi"
+  },
+  "exception": {
+    "invalid_password": "Kata sandi tidak valid",
+    "unknown": "Kesalahan tidak dikenal",
+    "save_failed": "Tidak dapat menyimpan. Perubahan dibatalkan dan basis data Anda tidak berubah.",
+    "save_failed_unrecoverable": "Tidak dapat menyimpan maupun memulihkan kondisi sebelumnya. Tutup aplikasi dan periksa berkas Anda sebelum melanjutkan."
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "Basis data",
+    "password_hint": "Kata sandi",
+    "open_database": "Buka basis data",
+    "open_database_error": "Berkas basis data tidak dapat dibuka. Silakan pilih lagi.",
+    "create_database": "Buat basis data",
+    "open_with_biometric": "Buka dengan sidik jari",
+    "open_with_password": "Buka dengan kata sandi",
+    "biometric_reason": "Autentikasi diri Anda untuk membuka basis data",
+    "biometric_error": "Autentikasi biometrik gagal",
+    "biometric_locked": "Autentikasi biometrik terkunci sementara",
+    "biometric_save_message": "Aktifkan akses biometrik agar Anda dapat membuka basis data dengan sidik jari?",
+    "biometric_save_yes": "Ya, aktifkan",
+    "biometric_save_no": "Tidak, terima kasih"
+  },
+  "create_database_page": {
+    "title": "Buat basis data",
+    "name_hint": "Nama berkas",
+    "password_hint": "Kata sandi",
+    "open_database": "Buka basis data",
+    "create_database": "Buat basis data"
+  },
+  "entries_page": {
+    "title": "Entri",
+    "search": "Cari entri"
+  },
+  "search_page": {
+    "title": "Cari",
+    "hint": "Cari grup dan entri…",
+    "no_results": "Tidak ada hasil yang ditemukan"
+  },
+  "app_bar": {
+    "trash": "Tempat sampah"
+  },
+  "nav_bar": {
+    "add": "Tambah",
+    "add_group": "Tambah grup",
+    "add_entry": "Tambah entri"
+  },
+  "move_mode": {
+    "copy": "Salin",
+    "cut": "Potong",
+    "paste": "Tempel",
+    "delete": "Hapus",
+    "confirm_delete": "Yakin ingin memindahkan item yang dipilih ke tempat sampah?",
+    "invalid_target": "Anda tidak dapat menempelkan folder ke dalam dirinya sendiri"
+  },
+  "add_entry": {
+    "add_entry": "Tambah entri",
+    "edit_entry": "Edit entri",
+    "information": "Informasi",
+    "title": "Judul",
+    "user": "Pengguna",
+    "url": "URL",
+    "notes": "Catatan",
+    "password": "Kata sandi",
+    "password_hint": "Kata sandi",
+    "security": "Keamanan",
+    "special_characters": "Karakter khusus",
+    "save": "Simpan",
+    "edit_icon": "Edit ikon",
+    "generator_title": "Pembuat kata sandi",
+    "apply": "Terapkan"
+  },
+  "add_group": {
+    "information": "Informasi",
+    "title": "Judul",
+    "save": "Simpan",
+    "add_group": "Tambah grup",
+    "edit_group": "Edit grup"
+  },
+  "entry_data": {
+    "title": "Judul",
+    "user": "Pengguna",
+    "password": "Kata sandi",
+    "url": "URL",
+    "notes": "Catatan",
+    "edit": "Edit",
+    "save": "Simpan",
+    "cancel": "Batal"
+  },
+  "settings_page": {
+    "title": "Pengaturan",
+    "language": "Bahasa",
+    "biometric_login": "Masuk dengan biometrik",
+    "dark_theme": "Tema gelap",
+    "change_password": "Ubah kata sandi utama",
+    "kdf_settings": "Keamanan basis data",
+    "autofill_settings": "Isi otomatis",
+    "autofill_settings_active": "Aktif",
+    "autofill_settings_inactive": "Tidak aktif — ketuk untuk mengatur",
+    "screenshot_protection": "Blokir tangkapan layar",
+    "screenshot_protection_subtitle": "Mencegah tangkapan layar dan perekaman layar saat Anda menggunakan aplikasi",
+    "screenshot_protection_disable_warning": "Menonaktifkan perlindungan tangkapan layar mengurangi keamanan. Demi keamanan, sesi Anda akan ditutup dan Anda harus memasukkan kata sandi utama lagi. Ingin melanjutkan?",
+    "screenshot_protection_cancel": "Batal",
+    "screenshot_protection_confirm": "Nonaktifkan"
+  },
+  "about_page": {
+    "title": "Tentang",
+    "secure_title": "Aman sejak dirancang",
+    "secure_text": "Basis data Anda dienkripsi dengan format KeePass (.kdbx). Kata sandi utama dan brankas Anda tidak pernah meninggalkan perangkat.",
+    "open_source_title": "Sumber terbuka",
+    "open_source_text": "KeepassUX adalah perangkat lunak bebas dan sumber terbuka. Siapa pun dapat meninjau kodenya, ikut berkontribusi, atau melaporkan masalah di repositori resmi."
+  },
+  "autofill_settings_page": {
+    "title": "Isi otomatis",
+    "intro": "Isi otomatis memungkinkan KeepassUX menyarankan dan mengisi nama pengguna serta kata sandi tersimpan Anda di aplikasi lain dan di peramban. Agar berfungsi dengan benar, Anda harus mengaktifkan opsi berikut.",
+    "autofill_toggle_title": "Layanan isi otomatis Android",
+    "autofill_toggle_description": "Menjadikan KeepassUX sebagai layanan isi otomatis yang dipakai Android, sehingga kredensial tersimpan Anda dapat disarankan dan diisikan langsung ke kolom masuk di aplikasi dan peramban.",
+    "browser_note_title": "Isi otomatis peramban",
+    "browser_note_description": "Beberapa peramban mengaktifkan isi otomatis miliknya sendiri secara bawaan. Aktifkan KeepassUX dari pengaturan kata sandi peramban tersebut dengan memilih pengisian melalui layanan lain."
+  },
+  "change_password_page": {
+    "title": "Ubah kata sandi utama",
+    "current_password_hint": "Kata sandi saat ini",
+    "new_password_hint": "Kata sandi baru",
+    "confirm_password_hint": "Konfirmasi kata sandi baru",
+    "save": "Ubah kata sandi",
+    "success": "Kata sandi utama berhasil diubah",
+    "error_wrong_current": "Kata sandi saat ini salah",
+    "error_mismatch": "Kata sandi tidak cocok"
+  },
+  "kdf_settings_page": {
+    "title": "Keamanan basis data",
+    "help_text": "Nilai-nilai ini menentukan berapa lama basis data terbuka kuncinya dan seberapa tahan terhadap serangan brute force.",
+    "memory_hint": "Memori Argon2 (MiB)",
+    "iterations_hint": "Iterasi",
+    "parallelism_hint": "Paralelisme",
+    "save": "Simpan",
+    "success": "Pengaturan keamanan diperbarui",
+    "warning_heavy": "Nilai-nilai ini tinggi untuk sebuah ponsel. Membuka kunci bisa jadi sangat lambat, dan pada perangkat dengan memori bebas yang sedikit bisa gagal sepenuhnya, termasuk di jendela isi otomatis.",
+    "error_unsupported_aes": "Basis data ini memakai AES-KDF (usang).",
+    "error_out_of_range": "Harus berupa angka antara {} dan {}"
+  },
+  "icon_picker": {
+    "title": "Pilih ikon",
+    "custom_icon": "Unggah ikon khusus",
+    "change_custom_icon": "Ubah ikon khusus",
+    "select": "Pilih",
+    "cancel": "Batal"
+  },
+  "password_generator": {
+    "very_weak": "Sangat lemah",
+    "weak": "Lemah",
+    "fair": "Cukup",
+    "strong": "Kuat",
+    "very_strong": "Sangat kuat"
+  },
+  "alerts": {
+    "empty_title": "Basis data Anda kosong",
+    "empty_text": "Ketuk tombol + untuk menambahkan entri atau folder pertama Anda.",
+    "selection_title": "Tekan lama untuk memilih",
+    "selection_text": "Tekan dan tahan sebuah entri atau folder selama setengah detik, lalu opsi salin, potong, dan hapus akan muncul. Anda dapat memilih beberapa item dan menempelkannya ke folder mana pun.",
+    "drag_title": "Terus tahan untuk menyeret",
+    "drag_text": "Tahan sedikit lebih lama dan item akan terlepas, sehingga Anda dapat menyeretnya ke folder lain atau ke tempat sampah untuk memindahkannya.",
+    "biometric_title": "Masuk dengan biometrik tersedia",
+    "biometric_text": "Anda dapat mengaktifkan akses biometrik untuk membuka basis data dengan sidik jari. Opsinya ada di Pengaturan.",
+    "autofill_title": "Isi otomatis kata sandi",
+    "autofill_text": "KeepassUX dapat mengisikan kata sandi Anda di aplikasi lain. Aktifkan di Pengaturan sistem > Kata sandi dan isi otomatis, lalu pilih KeepassUX sebagai layanannya.",
+    "feedback_title": "Menemukan bug?",
+    "feedback_text": "Kami sangat menghargai jika Anda melaporkannya di repositori proyek: github.com/LittleEmber13/keepassUX. Saran juga kami terima dengan senang hati."
+  },
+  "delete": {
+    "title": "Pindahkan ke tempat sampah",
+    "confirm_entry": "Yakin ingin memindahkan entri ini ke tempat sampah?",
+    "confirm_group": "Yakin ingin memindahkan grup ini beserta seluruh isinya ke tempat sampah?",
+    "cancel": "Batal",
+    "delete": "Pindahkan ke tempat sampah"
+  },
+  "trash": {
+    "restore_message": "Seret item keluar untuk memulihkannya",
+    "confirm_delete_entry": "Yakin ingin menghapus entri ini secara permanen?",
+    "confirm_delete_group": "Yakin ingin menghapus grup ini beserta seluruh isinya secara permanen?",
+    "confirm_delete_items": "Yakin ingin menghapus item yang dipilih secara permanen? Grup akan dihapus beserta seluruh isinya.",
+    "delete": "Hapus permanen",
+    "delete_short": "Hapus",
+    "restore": "Pulihkan",
+    "restored_in": "Dipulihkan ke \"{group}\"",
+    "restored_items": "Item yang dipilih telah dipulihkan",
+    "info_content": "Item-item ini sudah dikeluarkan dari folder Anda, tetapi masih tersimpan di basis data.",
+    "info_options": "Ketuk tombol opsi di samping sebuah item untuk memulihkannya ke folder asalnya atau untuk menghapusnya.",
+    "info_permanent": "Jika Anda menghapusnya dari sini, item akan terhapus permanen dan tidak dapat dipulihkan."
+  },
+  "autofill": {
+    "needs_setup_message": "Buka KeepassUX dan pilih basis data Anda sebelum menggunakan isi otomatis.",
+    "open_database_error": "Basis data tidak dapat dibuka. Silakan coba lagi.",
+    "unlock_subtitle_save": "Buka kunci untuk menyimpan kata sandi",
+    "unlock_subtitle_fill": "Buka kunci untuk mengisi kata sandi",
+    "unlock_default_subtitle": "Buka kunci basis data Anda",
+    "master_password_hint": "Kata sandi utama",
+    "unlock_empty_password_error": "Masukkan kata sandi utama.",
+    "unlock_biometric_error": "Identitas Anda tidak dapat diverifikasi.",
+    "unlock_wrong_password_error": "Kata sandi salah.",
+    "unlock_button": "Buka kunci",
+    "use_fingerprint_button": "Gunakan sidik jari",
+    "untitled_entry": "(tanpa judul)",
+    "this_app_fallback": "aplikasi ini",
+    "confirm_associate_title": "Ingat untuk aplikasi ini",
+    "confirm_associate_message": "Kaitkan \"{label}\" dengan {source} agar muncul otomatis lain kali?",
+    "fill_only": "Isi saja",
+    "associate_and_fill": "Kaitkan dan isi",
+    "cannot_autofill_title": "Tidak bisa mengisi otomatis di sini",
+    "cannot_autofill_message": "Formulir {where} tidak mendukung isi otomatis (umum terjadi pada aplikasi yang dibuat dengan Jetpack Compose).\n\nBuka KeepassUX dan salin nama pengguna serta kata sandi entri untuk menempelkannya secara manual.",
+    "close": "Tutup",
+    "matches_header": "Kecocokan",
+    "no_matches_header": "Tidak ada yang cocok untuk aplikasi ini",
+    "results_header": "Hasil",
+    "fill_password_title": "Isi kata sandi",
+    "for_source": "Untuk: {source}",
+    "search_entry_hint": "Cari entri",
+    "no_results": "Tidak ada hasil",
+    "empty_no_matches": "Tidak ada entri yang cocok dengan aplikasi ini.\nCari di atas untuk mengaitkan salah satunya.",
+    "default_group_name": "Basis data",
+    "save_error": "Entri tidak dapat disimpan.",
+    "saving_status": "Menyimpan kata sandi…",
+    "saved_status": "Kata sandi tersimpan",
+    "group_label": "Grup: {group}",
+    "open_in_app": "Buka di KeepassUX",
+    "associate_error": "Aplikasi ini tidak dapat diingat, tetapi kata sandi tetap akan diisikan."
+  }
+}

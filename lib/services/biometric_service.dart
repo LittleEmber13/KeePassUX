@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:local_auth/local_auth.dart';
@@ -25,7 +26,7 @@ class BiometricService {
   Future<String?> authenticateAndRetrievePassword(String uri) async {
     try {
       final authenticated = await _localAuth.authenticate(
-        localizedReason: 'Autentícate para abrir tu base de datos',
+        localizedReason: tr("start_page.biometric_reason"),
         options: const AuthenticationOptions(stickyAuth: true),
       );
       if (!authenticated) return null;

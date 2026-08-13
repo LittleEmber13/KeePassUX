@@ -1,0 +1,232 @@
+{
+  "form_error": {
+    "required": "この項目は必須です"
+  },
+  "exception": {
+    "invalid_password": "パスワードが正しくありません",
+    "unknown": "不明なエラー",
+    "save_failed": "保存できませんでした。変更は破棄され、データベースは変更されていません。",
+    "save_failed_unrecoverable": "保存も以前の状態への復元もできませんでした。アプリを終了し、ファイルを確認してから続けてください。"
+  },
+  "start_page": {
+    "title": "KeePass",
+    "folder_hint": "データベース",
+    "password_hint": "パスワード",
+    "open_database": "データベースを開く",
+    "open_database_error": "データベースファイルを開けませんでした。もう一度選択してください。",
+    "create_database": "データベースを作成",
+    "open_with_biometric": "指紋で開く",
+    "open_with_password": "パスワードで開く",
+    "biometric_reason": "データベースを開くには認証してください",
+    "biometric_error": "生体認証に失敗しました",
+    "biometric_locked": "生体認証が一時的にロックされています",
+    "biometric_save_message": "指紋でデータベースを開けるように、生体認証によるアクセスを有効にしますか？",
+    "biometric_save_yes": "有効にする",
+    "biometric_save_no": "今はしない"
+  },
+  "create_database_page": {
+    "title": "データベースを作成",
+    "name_hint": "ファイル名",
+    "password_hint": "パスワード",
+    "open_database": "データベースを開く",
+    "create_database": "データベースを作成"
+  },
+  "entries_page": {
+    "title": "エントリ",
+    "search": "エントリを検索"
+  },
+  "search_page": {
+    "title": "検索",
+    "hint": "グループとエントリを検索…",
+    "no_results": "該当する結果がありません"
+  },
+  "app_bar": {
+    "trash": "ごみ箱"
+  },
+  "nav_bar": {
+    "add": "追加",
+    "add_group": "グループを追加",
+    "add_entry": "エントリを追加"
+  },
+  "move_mode": {
+    "copy": "コピー",
+    "cut": "切り取り",
+    "paste": "貼り付け",
+    "delete": "削除",
+    "confirm_delete": "選択した項目をごみ箱に移動しますか？",
+    "invalid_target": "フォルダを自分自身の中に貼り付けることはできません"
+  },
+  "add_entry": {
+    "add_entry": "エントリを追加",
+    "edit_entry": "エントリを編集",
+    "information": "情報",
+    "title": "タイトル",
+    "user": "ユーザー",
+    "url": "URL",
+    "notes": "メモ",
+    "password": "パスワード",
+    "password_hint": "パスワード",
+    "security": "セキュリティ",
+    "special_characters": "記号",
+    "save": "保存",
+    "edit_icon": "アイコンを編集",
+    "generator_title": "パスワード生成",
+    "apply": "適用"
+  },
+  "add_group": {
+    "information": "情報",
+    "title": "タイトル",
+    "save": "保存",
+    "add_group": "グループを追加",
+    "edit_group": "グループを編集"
+  },
+  "entry_data": {
+    "title": "タイトル",
+    "user": "ユーザー",
+    "password": "パスワード",
+    "url": "URL",
+    "notes": "メモ",
+    "edit": "編集",
+    "save": "保存",
+    "cancel": "キャンセル"
+  },
+  "settings_page": {
+    "title": "設定",
+    "language": "言語",
+    "biometric_login": "生体認証でログイン",
+    "dark_theme": "ダークテーマ",
+    "change_password": "マスターパスワードを変更",
+    "kdf_settings": "データベースのセキュリティ",
+    "autofill_settings": "自動入力",
+    "autofill_settings_active": "有効",
+    "autofill_settings_inactive": "無効 — タップして設定",
+    "screenshot_protection": "スクリーンショットをブロック",
+    "screenshot_protection_subtitle": "アプリの使用中にスクリーンショットや画面録画ができないようにします",
+    "screenshot_protection_disable_warning": "スクリーンショット保護を無効にすると安全性が下がります。念のためセッションを終了しますので、マスターパスワードを入力し直してください。続けますか？",
+    "screenshot_protection_cancel": "キャンセル",
+    "screenshot_protection_confirm": "無効にする"
+  },
+  "about_page": {
+    "title": "このアプリについて",
+    "secure_title": "設計から安全に",
+    "secure_text": "データベースは KeePass 形式（.kdbx）で暗号化されます。マスターパスワードと保管庫が端末の外に出ることはありません。",
+    "open_source_title": "オープンソース",
+    "open_source_text": "KeepassUX は自由でオープンソースのソフトウェアです。誰でも公式リポジトリでコードを確認したり、貢献したり、問題を報告したりできます。"
+  },
+  "autofill_settings_page": {
+    "title": "自動入力",
+    "intro": "自動入力を使うと、保存したユーザー名とパスワードを KeepassUX が他のアプリやブラウザで候補として表示し、入力できます。正しく動作させるには次の項目を有効にしてください。",
+    "autofill_toggle_title": "Android の自動入力サービス",
+    "autofill_toggle_description": "KeepassUX を Android が使う自動入力サービスに設定します。これにより、保存した認証情報をアプリやブラウザのログイン欄へ直接候補表示・入力できます。",
+    "browser_note_title": "ブラウザの自動入力",
+    "browser_note_description": "一部のブラウザは独自の自動入力が既定で有効になっています。そのブラウザのパスワード設定で「他のサービスを使って入力する」を選び、KeepassUX を有効にしてください。"
+  },
+  "change_password_page": {
+    "title": "マスターパスワードを変更",
+    "current_password_hint": "現在のパスワード",
+    "new_password_hint": "新しいパスワード",
+    "confirm_password_hint": "新しいパスワードを再入力",
+    "save": "パスワードを変更",
+    "success": "マスターパスワードを変更しました",
+    "error_wrong_current": "現在のパスワードが正しくありません",
+    "error_mismatch": "パスワードが一致しません"
+  },
+  "kdf_settings_page": {
+    "title": "データベースのセキュリティ",
+    "help_text": "これらの値は、データベースのロック解除にかかる時間と、総当たり攻撃に対する強さを決めます。",
+    "memory_hint": "Argon2 メモリ（MiB）",
+    "iterations_hint": "反復回数",
+    "parallelism_hint": "並列度",
+    "save": "保存",
+    "success": "セキュリティ設定を更新しました",
+    "warning_heavy": "この値はスマートフォンには大きすぎます。ロック解除が非常に遅くなり、空きメモリの少ない端末では自動入力の画面も含めて失敗することがあります。",
+    "error_unsupported_aes": "このデータベースは AES-KDF（旧方式）を使用しています。",
+    "error_out_of_range": "{} から {} までの数値を入力してください"
+  },
+  "icon_picker": {
+    "title": "アイコンを選択",
+    "custom_icon": "カスタムアイコンをアップロード",
+    "change_custom_icon": "カスタムアイコンを変更",
+    "select": "選択",
+    "cancel": "キャンセル"
+  },
+  "password_generator": {
+    "very_weak": "非常に弱い",
+    "weak": "弱い",
+    "fair": "普通",
+    "strong": "強い",
+    "very_strong": "非常に強い"
+  },
+  "alerts": {
+    "empty_title": "データベースは空です",
+    "empty_text": "＋ボタンをタップして、最初のエントリやフォルダを追加しましょう。",
+    "selection_title": "長押しで選択",
+    "selection_text": "エントリやフォルダを 0.5 秒ほど長押しすると、コピー・切り取り・削除の操作が表示されます。複数の項目を選んで、好きなフォルダに貼り付けられます。",
+    "drag_title": "さらに長押しでドラッグ",
+    "drag_text": "もう少し長く押し続けると項目が外れ、別のフォルダやごみ箱までドラッグして移動できます。",
+    "biometric_title": "生体認証でログインできます",
+    "biometric_text": "生体認証によるアクセスを有効にすると、指紋でデータベースを開けます。設定から変更できます。",
+    "autofill_title": "パスワードの自動入力",
+    "autofill_text": "KeepassUX は他のアプリにパスワードを入力できます。システムの設定 > パスワードと自動入力 で有効にし、サービスとして KeepassUX を選んでください。",
+    "feedback_title": "不具合を見つけましたか？",
+    "feedback_text": "プロジェクトのリポジトリにご報告いただけると助かります: github.com/LittleEmber13/keepassUX 。ご提案も歓迎です。"
+  },
+  "delete": {
+    "title": "ごみ箱に移動",
+    "confirm_entry": "このエントリをごみ箱に移動しますか？",
+    "confirm_group": "このグループと中身をすべてごみ箱に移動しますか？",
+    "cancel": "キャンセル",
+    "delete": "ごみ箱に移動"
+  },
+  "trash": {
+    "restore_message": "項目を外へドラッグすると復元できます",
+    "confirm_delete_entry": "このエントリを完全に削除しますか？",
+    "confirm_delete_group": "このグループと中身をすべて完全に削除しますか？",
+    "confirm_delete_items": "選択した項目を完全に削除しますか？ グループは中身ごと削除されます。",
+    "delete": "完全に削除",
+    "delete_short": "削除",
+    "restore": "復元",
+    "restored_in": "「{group}」に復元しました",
+    "restored_items": "選択した項目を復元しました",
+    "info_content": "これらの項目はすでにフォルダから取り除かれていますが、まだデータベース内に保存されています。",
+    "info_options": "項目の横にあるオプションボタンをタップすると、元のフォルダに復元したり削除したりできます。",
+    "info_permanent": "ここから削除すると完全に消去され、元に戻せません。"
+  },
+  "autofill": {
+    "needs_setup_message": "自動入力を使う前に、KeepassUX を開いてデータベースを選択してください。",
+    "open_database_error": "データベースを開けませんでした。もう一度お試しください。",
+    "unlock_subtitle_save": "パスワードを保存するにはロックを解除してください",
+    "unlock_subtitle_fill": "パスワードを入力するにはロックを解除してください",
+    "unlock_default_subtitle": "データベースのロックを解除してください",
+    "master_password_hint": "マスターパスワード",
+    "unlock_empty_password_error": "マスターパスワードを入力してください。",
+    "unlock_biometric_error": "本人確認ができませんでした。",
+    "unlock_wrong_password_error": "パスワードが違います。",
+    "unlock_button": "ロック解除",
+    "use_fingerprint_button": "指紋を使う",
+    "untitled_entry": "（無題）",
+    "this_app_fallback": "このアプリ",
+    "confirm_associate_title": "このアプリ用に記憶する",
+    "confirm_associate_message": "次回から自動的に表示されるように、「{label}」を {source} に関連付けますか？",
+    "fill_only": "入力のみ",
+    "associate_and_fill": "関連付けて入力",
+    "cannot_autofill_title": "ここでは自動入力できません",
+    "cannot_autofill_message": "{where} のフォームは自動入力に対応していません（Jetpack Compose で作られたアプリでよくあります）。\n\nKeepassUX を開いてエントリのユーザー名とパスワードをコピーし、手動で貼り付けてください。",
+    "close": "閉じる",
+    "matches_header": "一致するもの",
+    "no_matches_header": "このアプリに一致するものはありません",
+    "results_header": "検索結果",
+    "fill_password_title": "パスワードを入力",
+    "for_source": "対象: {source}",
+    "search_entry_hint": "エントリを検索",
+    "no_results": "結果はありません",
+    "empty_no_matches": "このアプリに一致するエントリはありません。\n上で検索して関連付けてください。",
+    "default_group_name": "データベース",
+    "save_error": "エントリを保存できませんでした。",
+    "saving_status": "パスワードを保存中…",
+    "saved_status": "パスワードを保存しました",
+    "group_label": "グループ: {group}",
+    "open_in_app": "KeepassUX で開く",
+    "associate_error": "このアプリを記憶できませんでしたが、パスワードは入力されます。"
+  }
+}

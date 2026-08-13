@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_autofill_service/flutter_autofill_service.dart';
@@ -11,8 +11,38 @@ import 'package:keepassux/services/screenshot_protection_service.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:keepassux/ui/theme/theme_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:zxcvbnm/messages.dart';
-import 'package:zxcvbnm_flutter/zxcvbnm_flutter.dart';
+
+const supportedLocales = <Locale>[
+  Locale('en'),
+  Locale('es'),
+  Locale('de'),
+  Locale('fr'),
+  Locale('pt'),
+  Locale('it'),
+  Locale('nl'),
+  Locale('pl'),
+  Locale('sv'),
+  Locale('tr'),
+  Locale('nb'),
+  Locale('id'),
+  Locale('da'),
+  Locale('ro'),
+  Locale('ja'),
+  Locale('ko'),
+  Locale('zh'),
+  Locale('ca'),
+  Locale('ru'),
+  Locale('vi'),
+  Locale('bg'),
+  Locale('el'),
+  Locale('fi'),
+  Locale('hi'),
+  Locale('hr'),
+  Locale('hu'),
+  Locale('lt'),
+  Locale('sk'),
+  Locale('uk'),
+];
 
 @pragma('vm:entry-point')
 Future<void> autofillEntryPoint() async {
@@ -22,7 +52,7 @@ Future<void> autofillEntryPoint() async {
   await themeController.load();
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('es')],
+      supportedLocales: supportedLocales,
       path: 'assets/translations',
       fallbackLocale: Locale('en'),
       child: const AutofillApp(),
@@ -33,7 +63,6 @@ Future<void> autofillEntryPoint() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await initializeZxcvbnmMessages('es');
   final prefs = await SharedPreferences.getInstance();
   if (prefs.getBool('screenshot_protection_enabled') ?? true) {
     await ScreenshotProtectionService().enableProtection();
@@ -42,7 +71,7 @@ void main() async {
   await themeController.load();
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('es')],
+      supportedLocales: supportedLocales,
       path: 'assets/translations',
       fallbackLocale: Locale('en'),
       child: const MyApp(),
@@ -76,19 +105,19 @@ class MyApp extends StatelessWidget {
         builder: (context, themeMode, _) {
           return MaterialApp(
             title: 'KeepassUX',
-            localizationsDelegates: [
-              ...context.localizationDelegates,
-              ZxcvbnmLocalizations.delegate,
-            ],
+            localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             theme: lightThemeData,
             darkTheme: darkThemeData,
             themeMode: themeMode,
-            builder: (context, child) => Listener(
-              onPointerDown: (_) => autoLock.registerInteraction(),
-              onPointerMove: (_) => autoLock.registerInteraction(),
-              child: child ?? const SizedBox.shrink(),
+            builder: (context, child) => Directionality(
+              textDirection: TextDirection.ltr,
+              child: Listener(
+                onPointerDown: (_) => autoLock.registerInteraction(),
+                onPointerMove: (_) => autoLock.registerInteraction(),
+                child: child ?? const SizedBox.shrink(),
+              ),
             ),
             home: StartPage(),
           );
