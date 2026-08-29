@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 
 class ScreenshotProtectionService {
-  static const _channel = MethodChannel('com.example.keepassux/saf');
+  static const _channel = MethodChannel('com.cinderfall.keepassux/saf');
 
   Future<void> enableProtection() async {
     if (Platform.isAndroid) {

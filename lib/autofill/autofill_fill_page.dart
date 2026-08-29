@@ -14,7 +14,7 @@ import '../ui/widgets/kdbx_icon_widget.dart';
 import '../ui/widgets/loading_overlay.dart';
 import 'autofill_matcher.dart';
 
-const _channel = MethodChannel('com.example.keepassux/autofill');
+const _channel = MethodChannel('com.cinderfall.keepassux/autofill');
 
 class AutofillFillPage extends StatefulWidget {
   const AutofillFillPage({

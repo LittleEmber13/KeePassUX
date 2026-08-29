@@ -1,4 +1,4 @@
-package com.example.keepassux;
+package com.cinderfall.keepassux;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,7 +9,7 @@ import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugin.common.MethodChannel;
 
 public class MainActivity extends FlutterFragmentActivity {
-    private static final String CHANNEL = "com.example.keepassux/saf";
+    private static final String CHANNEL = "com.cinderfall.keepassux/saf";
     private static final int REQUEST_OPEN_DOCUMENT = 4311;
     private static final int REQUEST_CREATE_DOCUMENT = 4312;
 

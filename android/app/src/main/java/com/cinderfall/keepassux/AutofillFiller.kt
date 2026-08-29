@@ -1,4 +1,4 @@
-package com.example.keepassux
+package com.cinderfall.keepassux
 
 import android.app.Activity
 import android.app.assist.AssistStructure

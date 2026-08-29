@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
     <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
     <application
-        android:label="keepassux"
+        android:label="KeepassUX"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="false">
@@ -33,7 +33,7 @@
             android:name=".AutofillActivity"
             android:exported="true"
             android:launchMode="singleTop"
-            android:taskAffinity="com.example.keepassux.autofill"
+            android:taskAffinity="com.cinderfall.keepassux.autofill"
             android:excludeFromRecents="true"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -45,10 +45,10 @@
         </activity>
         <meta-data
             android:name="com.keevault.flutter_autofill_service.ACTIVITY_NAME"
-            android:value="com.example.keepassux.AutofillActivity" />
+            android:value="com.cinderfall.keepassux.AutofillActivity" />
         <meta-data
             android:name="com.keevault.flutter_autofill_service.SAVE_ACTIVITY_NAME"
-            android:value="com.example.keepassux.AutofillActivity" />
+            android:value="com.cinderfall.keepassux.AutofillActivity" />
         <meta-data
             android:name="com.keevault.flutter_autofill_service.match_header_drawable_name"
             android:value="ic_autofill_key" />

@@ -11,7 +11,7 @@ import '../utils/kdbx_command.dart';
 import '../utils/kdbx_isolate.dart';
 import 'autofill_matcher.dart';
 
-const _channel = MethodChannel('com.example.keepassux/autofill');
+const _channel = MethodChannel('com.cinderfall.keepassux/autofill');
 
 enum _SavePhase { saving, saved, error }
 

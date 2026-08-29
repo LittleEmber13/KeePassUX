@@ -1,4 +1,4 @@
-package com.example.keepassux
+package com.cinderfall.keepassux
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -37,12 +37,12 @@ class KeepassuxAutofillService : AutofillService() {
         private const val TAG = "KpuxAutofill"
         private const val STATE_COMPAT_MODE = "isCompatMode"
 
-        const val EXTRA_STRUCTURE_BUNDLE = "com.example.keepassux.autofill.BUNDLE"
-        const val EXTRA_STRUCTURE_COPY = "com.example.keepassux.autofill.ASSIST_STRUCTURE"
+        const val EXTRA_STRUCTURE_BUNDLE = "com.cinderfall.keepassux.autofill.BUNDLE"
+        const val EXTRA_STRUCTURE_COPY = "com.cinderfall.keepassux.autofill.ASSIST_STRUCTURE"
     }
 
     private val excludedPackages = listOf(
-        "com.example.keepassux",
+        "com.cinderfall.keepassux",
         "android",
         "com.android.settings",
         "com.oneplus.applocker",
@@ -267,7 +267,7 @@ class KeepassuxAutofillService : AutofillService() {
     private fun activityName(): String =
         packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
             .metaData.getString("com.keevault.flutter_autofill_service.ACTIVITY_NAME")
-            ?: "com.example.keepassux.AutofillActivity"
+            ?: "com.cinderfall.keepassux.AutofillActivity"
 
     private fun isFillablePackage(packageName: String?): Boolean =
         packageName == null || packageName !in excludedPackages

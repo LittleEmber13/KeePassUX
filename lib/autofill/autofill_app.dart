@@ -131,7 +131,7 @@ class _AutofillGateState extends State<_AutofillGate> {
   String? _appPackageForAssociation(AutofillMetadata? meta) {
     if (meta == null || meta.webDomains.isNotEmpty) return null;
     for (final p in meta.packageNames) {
-      if (p != 'android' && p != 'com.example.keepassux') return p;
+      if (p != 'android' && p != 'com.cinderfall.keepassux') return p;
     }
     return null;
   }

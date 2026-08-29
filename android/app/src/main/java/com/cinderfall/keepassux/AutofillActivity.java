@@ -1,4 +1,4 @@
-package com.example.keepassux;
+package com.cinderfall.keepassux;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugin.common.MethodChannel;
 
 public class AutofillActivity extends FlutterFragmentActivity {
-    private static final String CHANNEL = "com.example.keepassux/autofill";
+    private static final String CHANNEL = "com.cinderfall.keepassux/autofill";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
