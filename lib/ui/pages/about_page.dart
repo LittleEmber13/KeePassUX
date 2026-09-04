@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:keepassux/ui/theme/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -117,9 +118,15 @@ class AboutTab extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Center(
-            child: Text(
-              'v0.0.0',
-              style: TextStyle(color: context.appColors.secondaryText),
+            child: FutureBuilder<PackageInfo>(
+              future: PackageInfo.fromPlatform(),
+              builder: (context, snapshot) {
+                final version = snapshot.hasData ? snapshot.data!.version : '';
+                return Text(
+                  'v$version',
+                  style: TextStyle(color: context.appColors.secondaryText),
+                );
+              },
             ),
           ),
         ],
