@@ -7,7 +7,9 @@ import 'package:keepassux/ui/pages/main_tabs_page.dart';
 import 'package:keepassux/ui/pages/start_page.dart';
 import 'package:keepassux/services/saf_service.dart';
 import 'package:keepassux/ui/theme/theme.dart';
+import 'package:keepassux/ui/widgets/app_logo.dart';
 import 'package:keepassux/ui/widgets/loading_overlay.dart';
+import 'package:keepassux/ui/widgets/slide_to_open_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../bloc/entries/keepass_events.dart';
@@ -26,20 +28,31 @@ class _CreateDatabasePageState extends State<CreateDatabasePage> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  bool obscurePassword = false;
+  bool obscurePassword = true;
 
   SharedPreferences? preferences;
+
+  bool get _canCreateDatabase =>
+      nameController.text.isNotEmpty && passwordController.text.isNotEmpty;
 
   @override
   void initState() {
     SharedPreferences.getInstance().then((preferences) {
       this.preferences = preferences;
     });
+    nameController.addListener(_onCredentialsChanged);
+    passwordController.addListener(_onCredentialsChanged);
     super.initState();
+  }
+
+  void _onCredentialsChanged() {
+    setState(() {});
   }
 
   @override
   void dispose() {
+    nameController.removeListener(_onCredentialsChanged);
+    passwordController.removeListener(_onCredentialsChanged);
     nameController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -78,152 +91,151 @@ class _CreateDatabasePageState extends State<CreateDatabasePage> {
 
   Widget _page() {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(),
-          Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _buildTopGroup(),
+              _buildBottomGroup(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTopGroup() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SizedBox(height: 42),
+        const Center(child: AppLogo()),
+        const SizedBox(height: 40),
+        Text(
+          tr("create_database_page.title"),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 18,
+            color: context.appColors.secondaryText,
+          ),
+        ),
+        const SizedBox(height: 16),
+        _buildFormCard(),
+        const SizedBox(height: 20),
+      ],
+    );
+  }
+
+  Widget _buildBottomGroup() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Center(child: _buildCreateAction()),
+        const SizedBox(height: 16),
+        Center(
+          child: GestureDetector(
+            onTap: () async {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const StartPage(),
+                ),
+              );
+            },
             child: Text(
-              tr("create_database_page.title"),
-              style: TextStyle(fontSize: 32),
+              tr("create_database_page.open_database"),
+              textAlign: TextAlign.center,
+              style: TextStyle(color: context.appColors.secondaryText),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Container(
-              decoration: cardDecoration(context),
-              child: Form(
-                key: _formKey,
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TextFormField(
-                        controller: nameController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return tr("form_error.required");
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          labelText: tr("create_database_page.name_hint"),
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      TextFormField(
-                        controller: passwordController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return tr("form_error.required");
-                          }
-                          return null;
-                        },
-                        obscureText: obscurePassword,
-                        decoration: InputDecoration(
-                          labelText: tr("create_database_page.password_hint"),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              obscurePassword == true
-                                  ? Icons.visibility_outlined
-                                  : Icons.visibility_off_outlined,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                obscurePassword = !obscurePassword;
-                              });
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
+        ),
+        const SizedBox(height: 24),
+      ],
+    );
+  }
+
+  Widget _buildCreateAction() {
+    return SlideToOpenButton(
+      label: tr("create_database_page.create_database"),
+      enabled: _canCreateDatabase,
+      onConfirmed: _createDatabase,
+    );
+  }
+
+  Future<bool> _createDatabase() async {
+    if (!_formKey.currentState!.validate()) return false;
+    if (preferences == null) return false;
+    final safUri = await _safService.createDocument(
+      "${nameController.text}.kdbx",
+    );
+    if (safUri == null) return false;
+    if (!mounted) return false;
+    context.read<KeePassBloc>().add(
+      CreateDatabase(
+        uri: safUri,
+        password: passwordController.text,
+      ),
+    );
+    return true;
+  }
+
+  Widget _buildFormCard() {
+    return Container(
+      decoration: cardDecoration(context),
+      child: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                controller: nameController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return tr("form_error.required");
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  labelText: tr("create_database_page.name_hint"),
+                ),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                controller: passwordController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return tr("form_error.required");
+                  }
+                  return null;
+                },
+                obscureText: obscurePassword,
+                decoration: InputDecoration(
+                  labelText: tr("create_database_page.password_hint"),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      obscurePassword == true
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        obscurePassword = !obscurePassword;
+                      });
+                    },
                   ),
                 ),
               ),
-            ),
+            ],
           ),
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                InkWell(
-                  onTap: () async {
-                    if (_formKey.currentState!.validate()) {
-                      if (preferences == null) {
-                        return;
-                      }
-                      final safUri = await _safService.createDocument(
-                        "${nameController.text}.kdbx",
-                      );
-                      if (safUri == null) {
-                        return;
-                      }
-                      if (!mounted) return;
-                      context.read<KeePassBloc>().add(
-                        CreateDatabase(
-                          uri: safUri,
-                          password: passwordController.text,
-                        ),
-                      );
-                    }
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF374151),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(Icons.call_received),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              tr("create_database_page.create_database"),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16),
-                InkWell(
-                  onTap: () async {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const StartPage(),
-                      ),
-                    );
-                  },
-                  child: InkWell(
-                    child: Text(tr("create_database_page.open_database")),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
       ),
     );
   }

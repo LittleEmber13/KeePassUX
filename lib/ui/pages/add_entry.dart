@@ -52,7 +52,7 @@ class _AddEntryPageState extends State<AddEntryPage> {
   TextEditingController notesController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  bool obscurePassword = false;
+  bool obscurePassword = true;
 
   int? _selectedIcon;
   Uint8List? _selectedCustomIconData;

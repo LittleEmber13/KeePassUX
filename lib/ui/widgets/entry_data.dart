@@ -25,24 +25,10 @@ class EntryData extends StatefulWidget {
 class _EntryDataState extends State<EntryData> {
   bool obscurePassword = true;
 
-  late TextEditingController _notesController;
-
   final _inputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(8),
     borderSide: BorderSide(color: Colors.transparent, width: 1),
   );
-
-  @override
-  void initState() {
-    super.initState();
-    _notesController = TextEditingController(text: widget.entry.notes);
-  }
-
-  @override
-  void dispose() {
-    _notesController.dispose();
-    super.dispose();
-  }
 
   void _showDeleteDialog() {
     showDialog(
@@ -256,18 +242,22 @@ class _EntryDataState extends State<EntryData> {
   }
 
   Widget _buildNotesField() {
+    final text = widget.entry.notes;
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: TextFormField(
-        controller: _notesController,
-        readOnly: true,
-        minLines: 2,
-        maxLines: null,
+      child: InputDecorator(
+        isEmpty: text.isEmpty,
         decoration: InputDecoration(
           labelText: tr("entry_data.notes"),
           enabledBorder: _inputBorder,
           focusedBorder: _inputBorder,
           disabledBorder: _inputBorder,
+        ),
+        child: Text(
+          text,
+          maxLines: null,
+          softWrap: true,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
       ),
     );
