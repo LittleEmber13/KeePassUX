@@ -111,7 +111,8 @@
     "secure_title": "Secure by design",
     "secure_text": "Your database is encrypted with the KeePass (.kdbx) format. Your master password and vault never leave your device.",
     "open_source_title": "Open source",
-    "open_source_text": "KeepassUX is free and open source software. Anyone can review the code, contribute, or report issues on the official repository."
+    "open_source_text": "KeepassUX is free and open source software. Anyone can review the code, contribute, or report issues on the official repository.",
+    "privacy_policy": "Privacy policy"
   },
   "autofill_settings_page": {
     "title": "Autofill",

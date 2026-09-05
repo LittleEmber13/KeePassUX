@@ -111,7 +111,8 @@
     "secure_title": "Turvallinen jo suunnittelultaan",
     "secure_text": "Tietokantasi on salattu KeePass-muodossa (.kdbx). Pääsalasanasi ja holvisi eivät koskaan poistu laitteeltasi.",
     "open_source_title": "Avoin lähdekoodi",
-    "open_source_text": "KeepassUX on vapaa ja avoimen lähdekoodin ohjelmisto. Kuka tahansa voi tarkastella koodia, osallistua kehitykseen tai ilmoittaa ongelmista virallisessa koodivarastossa."
+    "open_source_text": "KeepassUX on vapaa ja avoimen lähdekoodin ohjelmisto. Kuka tahansa voi tarkastella koodia, osallistua kehitykseen tai ilmoittaa ongelmista virallisessa koodivarastossa.",
+    "privacy_policy": "Tietosuojakäytäntö"
   },
   "autofill_settings_page": {
     "title": "Automaattinen täyttö",

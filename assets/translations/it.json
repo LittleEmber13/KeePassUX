@@ -111,7 +111,8 @@
     "secure_title": "Sicuro fin dalla progettazione",
     "secure_text": "Il tuo database è cifrato con il formato KeePass (.kdbx). La password principale e la tua cassaforte non lasciano mai il dispositivo.",
     "open_source_title": "Open source",
-    "open_source_text": "KeepassUX è software libero e open source. Chiunque può esaminare il codice, contribuire o segnalare problemi nel repository ufficiale."
+    "open_source_text": "KeepassUX è software libero e open source. Chiunque può esaminare il codice, contribuire o segnalare problemi nel repository ufficiale.",
+    "privacy_policy": "Informativa sulla privacy"
   },
   "autofill_settings_page": {
     "title": "Compilazione automatica",

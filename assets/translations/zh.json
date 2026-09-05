@@ -111,7 +111,8 @@
     "secure_title": "从设计之初就安全",
     "secure_text": "你的数据库采用 KeePass(.kdbx) 格式加密。主密码和密码库始终不会离开你的设备。",
     "open_source_title": "开源",
-    "open_source_text": "KeepassUX 是自由开源软件。任何人都可以在官方仓库查看代码、参与贡献或报告问题。"
+    "open_source_text": "KeepassUX 是自由开源软件。任何人都可以在官方仓库查看代码、参与贡献或报告问题。",
+    "privacy_policy": "隐私政策"
   },
   "autofill_settings_page": {
     "title": "自动填充",

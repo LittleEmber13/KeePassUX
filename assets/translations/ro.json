@@ -111,7 +111,8 @@
     "secure_title": "Sigură prin concepție",
     "secure_text": "Baza ta de date este criptată în formatul KeePass (.kdbx). Parola principală și seiful tău nu părăsesc niciodată dispozitivul.",
     "open_source_title": "Sursă deschisă",
-    "open_source_text": "KeepassUX este software liber, cu sursă deschisă. Oricine poate examina codul, poate contribui sau poate raporta probleme în depozitul oficial."
+    "open_source_text": "KeepassUX este software liber, cu sursă deschisă. Oricine poate examina codul, poate contribui sau poate raporta probleme în depozitul oficial.",
+    "privacy_policy": "Politica de confidențialitate"
   },
   "autofill_settings_page": {
     "title": "Completare automată",

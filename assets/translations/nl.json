@@ -111,7 +111,8 @@
     "secure_title": "Veilig van opzet",
     "secure_text": "Je database is versleuteld met de KeePass-indeling (.kdbx). Je hoofdwachtwoord en je kluis verlaten nooit je apparaat.",
     "open_source_title": "Opensource",
-    "open_source_text": "KeepassUX is vrije en opensourcesoftware. Iedereen kan de code bekijken, bijdragen of problemen melden in de officiële repository."
+    "open_source_text": "KeepassUX is vrije en opensourcesoftware. Iedereen kan de code bekijken, bijdragen of problemen melden in de officiële repository.",
+    "privacy_policy": "Privacybeleid"
   },
   "autofill_settings_page": {
     "title": "Automatisch invullen",

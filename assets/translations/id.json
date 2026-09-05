@@ -111,7 +111,8 @@
     "secure_title": "Aman sejak dirancang",
     "secure_text": "Basis data Anda dienkripsi dengan format KeePass (.kdbx). Kata sandi utama dan brankas Anda tidak pernah meninggalkan perangkat.",
     "open_source_title": "Sumber terbuka",
-    "open_source_text": "KeepassUX adalah perangkat lunak bebas dan sumber terbuka. Siapa pun dapat meninjau kodenya, ikut berkontribusi, atau melaporkan masalah di repositori resmi."
+    "open_source_text": "KeepassUX adalah perangkat lunak bebas dan sumber terbuka. Siapa pun dapat meninjau kodenya, ikut berkontribusi, atau melaporkan masalah di repositori resmi.",
+    "privacy_policy": "Kebijakan privasi"
   },
   "autofill_settings_page": {
     "title": "Isi otomatis",

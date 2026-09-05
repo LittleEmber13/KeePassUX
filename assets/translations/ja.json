@@ -111,7 +111,8 @@
     "secure_title": "設計から安全に",
     "secure_text": "データベースは KeePass 形式（.kdbx）で暗号化されます。マスターパスワードと保管庫が端末の外に出ることはありません。",
     "open_source_title": "オープンソース",
-    "open_source_text": "KeepassUX は自由でオープンソースのソフトウェアです。誰でも公式リポジトリでコードを確認したり、貢献したり、問題を報告したりできます。"
+    "open_source_text": "KeepassUX は自由でオープンソースのソフトウェアです。誰でも公式リポジトリでコードを確認したり、貢献したり、問題を報告したりできます。",
+    "privacy_policy": "プライバシーポリシー"
   },
   "autofill_settings_page": {
     "title": "自動入力",

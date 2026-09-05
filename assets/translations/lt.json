@@ -111,7 +111,8 @@
     "secure_title": "Saugi iš prigimties",
     "secure_text": "Jūsų duomenų bazė užšifruota KeePass (.kdbx) formatu. Pagrindinis slaptažodis ir saugykla niekada nepalieka jūsų įrenginio.",
     "open_source_title": "Atvirasis kodas",
-    "open_source_text": "KeepassUX yra laisva atvirojo kodo programinė įranga. Bet kas gali peržiūrėti kodą, prisidėti prie kūrimo ar pranešti apie problemas oficialioje saugykloje."
+    "open_source_text": "KeepassUX yra laisva atvirojo kodo programinė įranga. Bet kas gali peržiūrėti kodą, prisidėti prie kūrimo ar pranešti apie problemas oficialioje saugykloje.",
+    "privacy_policy": "Privatumo politika"
   },
   "autofill_settings_page": {
     "title": "Automatinis pildymas",

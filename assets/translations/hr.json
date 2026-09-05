@@ -111,7 +111,8 @@
     "secure_title": "Sigurna po dizajnu",
     "secure_text": "Vaša baza podataka šifrirana je u formatu KeePass (.kdbx). Glavna lozinka i vaš trezor nikada ne napuštaju uređaj.",
     "open_source_title": "Otvoreni kod",
-    "open_source_text": "KeepassUX je slobodan softver otvorenog koda. Svatko može pregledati kod, doprinijeti ili prijaviti probleme u službenom repozitoriju."
+    "open_source_text": "KeepassUX je slobodan softver otvorenog koda. Svatko može pregledati kod, doprinijeti ili prijaviti probleme u službenom repozitoriju.",
+    "privacy_policy": "Politika privatnosti"
   },
   "autofill_settings_page": {
     "title": "Automatsko popunjavanje",

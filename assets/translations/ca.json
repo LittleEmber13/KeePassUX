@@ -111,7 +111,8 @@
     "secure_title": "Segura per disseny",
     "secure_text": "La teva base de dades està xifrada amb el format KeePass (.kdbx). La contrasenya mestra i la teva caixa forta no surten mai del dispositiu.",
     "open_source_title": "Codi obert",
-    "open_source_text": "KeepassUX és programari lliure i de codi obert. Qualsevol persona pot revisar el codi, contribuir-hi o informar de problemes al repositori oficial."
+    "open_source_text": "KeepassUX és programari lliure i de codi obert. Qualsevol persona pot revisar el codi, contribuir-hi o informar de problemes al repositori oficial.",
+    "privacy_policy": "Política de privacitat"
   },
   "autofill_settings_page": {
     "title": "Emplenament automàtic",

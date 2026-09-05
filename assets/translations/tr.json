@@ -111,7 +111,8 @@
     "secure_title": "Tasarımı gereği güvenli",
     "secure_text": "Veritabanınız KeePass (.kdbx) biçimiyle şifrelenir. Ana parolanız ve kasanız cihazınızdan asla çıkmaz.",
     "open_source_title": "Açık kaynak",
-    "open_source_text": "KeepassUX özgür ve açık kaynaklı bir yazılımdır. Herkes kodu inceleyebilir, katkıda bulunabilir veya resmî depoda sorun bildirebilir."
+    "open_source_text": "KeepassUX özgür ve açık kaynaklı bir yazılımdır. Herkes kodu inceleyebilir, katkıda bulunabilir veya resmî depoda sorun bildirebilir.",
+    "privacy_policy": "Gizlilik politikası"
   },
   "autofill_settings_page": {
     "title": "Otomatik doldurma",

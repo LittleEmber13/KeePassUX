@@ -111,7 +111,8 @@
     "secure_title": "Bezpečná už od návrhu",
     "secure_text": "Vaša databáza je zašifrovaná vo formáte KeePass (.kdbx). Hlavné heslo ani trezor nikdy neopustia vaše zariadenie.",
     "open_source_title": "Otvorený zdrojový kód",
-    "open_source_text": "KeepassUX je slobodný softvér s otvoreným zdrojovým kódom. Ktokoľvek si môže prezrieť kód, prispieť alebo nahlásiť problémy v oficiálnom repozitári."
+    "open_source_text": "KeepassUX je slobodný softvér s otvoreným zdrojovým kódom. Ktokoľvek si môže prezrieť kód, prispieť alebo nahlásiť problémy v oficiálnom repozitári.",
+    "privacy_policy": "Zásady ochrany osobných údajov"
   },
   "autofill_settings_page": {
     "title": "Automatické dopĺňanie",

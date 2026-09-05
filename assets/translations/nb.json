@@ -111,7 +111,8 @@
     "secure_title": "Sikker fra bunnen av",
     "secure_text": "Databasen din er kryptert med KeePass-formatet (.kdbx). Hovedpassordet og hvelvet ditt forlater aldri enheten.",
     "open_source_title": "Åpen kildekode",
-    "open_source_text": "KeepassUX er fri programvare med åpen kildekode. Hvem som helst kan gå gjennom koden, bidra eller melde fra om problemer i det offisielle kodelageret."
+    "open_source_text": "KeepassUX er fri programvare med åpen kildekode. Hvem som helst kan gå gjennom koden, bidra eller melde fra om problemer i det offisielle kodelageret.",
+    "privacy_policy": "Personvernerklæring"
   },
   "autofill_settings_page": {
     "title": "Autofyll",

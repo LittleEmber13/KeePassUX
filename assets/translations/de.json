@@ -111,7 +111,8 @@
     "secure_title": "Sicher von Grund auf",
     "secure_text": "Ihre Datenbank ist mit dem KeePass-Format (.kdbx) verschlüsselt. Ihr Master-Passwort und Ihr Tresor verlassen niemals Ihr Gerät.",
     "open_source_title": "Open Source",
-    "open_source_text": "KeepassUX ist freie und quelloffene Software. Jede und jeder kann den Code prüfen, mitwirken oder Probleme im offiziellen Repository melden."
+    "open_source_text": "KeepassUX ist freie und quelloffene Software. Jede und jeder kann den Code prüfen, mitwirken oder Probleme im offiziellen Repository melden.",
+    "privacy_policy": "Datenschutzerklärung"
   },
   "autofill_settings_page": {
     "title": "Automatisches Ausfüllen",

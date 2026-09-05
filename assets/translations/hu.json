@@ -111,7 +111,8 @@
     "secure_title": "Eleve biztonságos",
     "secure_text": "Az adatbázisa KeePass (.kdbx) formátumban titkosítva van. A mesterjelszava és a széfje soha nem hagyja el a készülékét.",
     "open_source_title": "Nyílt forráskód",
-    "open_source_text": "A KeepassUX szabad, nyílt forráskódú szoftver. Bárki átnézheti a kódot, hozzájárulhat a fejlesztéshez, vagy hibát jelenthet a hivatalos tárolóban."
+    "open_source_text": "A KeepassUX szabad, nyílt forráskódú szoftver. Bárki átnézheti a kódot, hozzájárulhat a fejlesztéshez, vagy hibát jelenthet a hivatalos tárolóban.",
+    "privacy_policy": "Adatvédelmi irányelvek"
   },
   "autofill_settings_page": {
     "title": "Automatikus kitöltés",

@@ -111,7 +111,8 @@
     "secure_title": "Seguro por conceção",
     "secure_text": "A sua base de dados é cifrada com o formato KeePass (.kdbx). A sua palavra-passe mestra e o seu cofre nunca saem do seu dispositivo.",
     "open_source_title": "Código aberto",
-    "open_source_text": "O KeepassUX é software livre e de código aberto. Qualquer pessoa pode rever o código, contribuir ou comunicar problemas no repositório oficial."
+    "open_source_text": "O KeepassUX é software livre e de código aberto. Qualquer pessoa pode rever o código, contribuir ou comunicar problemas no repositório oficial.",
+    "privacy_policy": "Política de privacidade"
   },
   "autofill_settings_page": {
     "title": "Preenchimento automático",

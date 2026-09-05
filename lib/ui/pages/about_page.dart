@@ -9,9 +9,16 @@ class AboutTab extends StatelessWidget {
 
   static const String repositoryUrl =
       'https://github.com/LittleEmber13/keepassUX';
+  static const String privacyPolicyUrl =
+      'https://danielduran.is-a.dev/project/keepassux/privacy';
 
   Future<void> _openRepository() async {
     final uri = Uri.parse(repositoryUrl);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+
+  Future<void> _openPrivacyPolicy() async {
+    final uri = Uri.parse(privacyPolicyUrl);
     await launchUrl(uri, mode: LaunchMode.externalApplication);
   }
 
@@ -103,6 +110,62 @@ class AboutTab extends StatelessWidget {
                         Expanded(
                           child: Text(
                             repositoryUrl,
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          Container(
+            width: double.infinity,
+            decoration: cardDecoration(context),
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.privacy_tip_outlined,
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        tr("about_page.privacy_policy"),
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                InkWell(
+                  onTap: _openPrivacyPolicy,
+                  borderRadius: BorderRadius.circular(12),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.link,
+                          size: 18,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            privacyPolicyUrl,
                             style: TextStyle(
                               color: Theme.of(context).colorScheme.primary,
                               decoration: TextDecoration.underline,

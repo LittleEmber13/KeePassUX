@@ -111,7 +111,8 @@
     "secure_title": "An toàn ngay từ thiết kế",
     "secure_text": "Cơ sở dữ liệu của bạn được mã hóa theo định dạng KeePass (.kdbx). Mật khẩu chính và kho lưu trữ của bạn không bao giờ rời khỏi thiết bị.",
     "open_source_title": "Mã nguồn mở",
-    "open_source_text": "KeepassUX là phần mềm tự do và mã nguồn mở. Bất kỳ ai cũng có thể xem mã nguồn, đóng góp hoặc báo lỗi trên kho lưu trữ chính thức."
+    "open_source_text": "KeepassUX là phần mềm tự do và mã nguồn mở. Bất kỳ ai cũng có thể xem mã nguồn, đóng góp hoặc báo lỗi trên kho lưu trữ chính thức.",
+    "privacy_policy": "Chính sách bảo mật"
   },
   "autofill_settings_page": {
     "title": "Tự động điền",

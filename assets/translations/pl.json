@@ -111,7 +111,8 @@
     "secure_title": "Bezpieczna z założenia",
     "secure_text": "Twoja baza danych jest szyfrowana w formacie KeePass (.kdbx). Hasło główne i sejf nigdy nie opuszczają Twojego urządzenia.",
     "open_source_title": "Otwarte źródła",
-    "open_source_text": "KeepassUX to wolne oprogramowanie o otwartym kodzie źródłowym. Każdy może przejrzeć kod, współtworzyć projekt lub zgłaszać problemy w oficjalnym repozytorium."
+    "open_source_text": "KeepassUX to wolne oprogramowanie o otwartym kodzie źródłowym. Każdy może przejrzeć kod, współtworzyć projekt lub zgłaszać problemy w oficjalnym repozytorium.",
+    "privacy_policy": "Polityka prywatności"
   },
   "autofill_settings_page": {
     "title": "Autouzupełnianie",
