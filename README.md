@@ -2,25 +2,21 @@
 
 A mobile application built with Flutter for managing passwords using the KDBX format (compatible with KeePass), with a strong focus on delivering a clean, elegant, and visually appealing user interface. The goal of the project is to offer a secure and intuitiv way to store and access passwords while prioritizing a polished UX.
 
-> ⚠️ Project status:
-> The app is functional for basic password management but is still in active development. Several features are incomplete or missing, and there are known bugs. Not ready for production use.
-
-## What Works
+## Features
 
 - Open and view KDBX databases
 - Create new KDBX databases
-- Add, edit, and delete entries
-- Add, edit, and delete groups
-- Drag-and-drop to move entries and groups between folders
+- Add, edit, copy, move and delete entries
+- Add, editt, copy, move and delete groups
 - Recycle bin with soft delete, permanent delete, and restore
 - Change master password
 - Search entries and groups
 - Password generator
-- Password strength meter
 - Biometric authentication to unlock the database
 - Screenshot prevention
 - Dark/light theme
-- Internationalization (English / Spanish)
+- Internationalization
+- Auto fill
 
 ## Technologies Used
 
@@ -39,5 +35,4 @@ A mobile application built with Flutter for managing passwords using the KDBX fo
 
 ## Planned Features
 
-- **Autofill**
 - **IOS Support**
